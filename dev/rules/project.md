@@ -50,20 +50,40 @@ maintained in the `tmp` directory (not under source control):
    - Document new features and configuration options
    - Update development docs when changing core functionality
 
-5. File layout:
+5. **File Layout**
 
 ```text
 ├── README.txt -> keep updated and read it. txxt, not markdown.
 ├── bin
-│   ├── fetch-data -> calls the script to gen the dataset and places it in data.
-│   └── run-tests -> run tests, used all the timed, hopefully.
+│   ├── fetch-data -> calls the script to gen the dataset and places it in data.
+│   └── run-tests -> run tests, used all the timed, hopefully.
 ├── data
-│   └── unifill-datafetch -> data set
+│   └── unifill-datafetch -> data set
 ├── dev -> dev oriented information
-│   └── rules -> rules for coding assistant (this doc)
+│   └── rules -> rules for coding assistant (this doc)
+├── lua
+│   └── unifill -> plugin source code
+│       ├── init.lua -> main entry point and plugin setup
+│       ├── data.lua -> data loading functionality
+│       ├── format.lua -> text formatting utilities
+│       ├── search.lua -> search scoring and matching
+│       └── telescope.lua -> telescope integration
 ├── spec -> .plenary tests
 ├── unifill-datafetch -> python fetcher for the dataset.
-│   └── src
-│       └── setup_dataset.py -> .the main file.
-└── unifill.lua -> core plugin functionality.
+│   └── src
+│       └── setup_dataset.py -> .the main file.
+└── unifill.lua -> legacy entry point (deprecated)
 ```
+
+## Module Structure
+
+The plugin's code is organized into these logical components:
+
+- **init.lua**: Main entry point, exports public API, handles plugin setup
+- **data.lua**: Handles loading and processing of Unicode data
+- **format.lua**: Text formatting utilities for display
+- **search.lua**: Search algorithm implementation
+- **telescope.lua**: Telescope picker integration and UI
+
+Each module has a specific responsibility and exports only the necessary functions.
+This separation makes the code more maintainable and easier to test.
