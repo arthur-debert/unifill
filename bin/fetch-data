@@ -1,0 +1,50 @@
+#!/usr/bin/env zsh
+
+# Exit immediately if a command exits with a non-zero status.
+set -e
+
+# Get the absolute path of the directory where the script is located
+SCRIPT_DIR="${0:a:h}"
+
+# Project root is assumed to be one level up from the 'bin' directory
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Define key directories and filenames
+UNIFILL_DATAFETCH_DIR="$PROJECT_ROOT/unifill-datafetch"
+OUTPUT_FORMAT="lua"  # Changed default to lua
+GENERATED_FILE_NAME="unicode_data.lua"  # Changed to .lua extension
+
+# The file is generated in UNIFILL_DATAFETCH_DIR when 'poetry run unidata' is run
+SOURCE_FILE_IN_DATAFETCH_DIR="$GENERATED_FILE_NAME"
+
+DESTINATION_PARENT_DIR="$PROJECT_ROOT/data"
+DESTINATION_SUBDIR_NAME="unifill-datafetch"
+FULL_DESTINATION_DIR="$DESTINATION_PARENT_DIR/$DESTINATION_SUBDIR_NAME"
+DESTINATION_FILE_PATH="$FULL_DESTINATION_DIR/$GENERATED_FILE_NAME"
+
+# Ensure the destination directory exists
+mkdir -p "$FULL_DESTINATION_DIR"
+
+# Navigate to the unifill-datafetch directory
+cd "$UNIFILL_DATAFETCH_DIR"
+
+# Install dependencies using Poetry
+echo "Installing/updating dependencies with Poetry..."
+poetry install --no-interaction --no-ansi >/dev/null 2>&1
+
+# Run the data fetching script using Poetry with lua format
+poetry run python src/setup_dataset.py --format "$OUTPUT_FORMAT"
+
+# Check if the file was generated
+if [ ! -f "$SOURCE_FILE_IN_DATAFETCH_DIR" ]; then
+    echo "Error: $SOURCE_FILE_IN_DATAFETCH_DIR not found in $PWD after running the script."
+    exit 1
+fi
+
+# Move the generated file to the project's data/unifill-datafetch/ directory
+mv "$SOURCE_FILE_IN_DATAFETCH_DIR" "$DESTINATION_FILE_PATH"
+
+printf "There you go: \e[32m%s\e[0m\n" "$DESTINATION_FILE_PATH"
+
+# Navigate back to the project root
+cd "$PROJECT_ROOT"
