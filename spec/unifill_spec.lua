@@ -53,4 +53,60 @@ describe("unifill", function()
     assert(type(first.category) == "string", "entry should have category as string")
     assert(type(first.aliases) == "table", "entry should have aliases as table")
   end)
+
+  describe("entry formatting", function()
+    local unifill = require("unifill")
+    local entry_maker = unifill._test.entry_maker
+
+    -- Add entry_maker to test exports
+    before_each(function()
+      unifill._test.entry_maker = require("unifill")._test.entry_maker
+    end)
+
+    it("converts names to title case", function()
+      local to_title_case = unifill._test.to_title_case
+      assert.equals("Hello World", to_title_case("HELLO WORLD"))
+      assert.equals("Right Arrow", to_title_case("RIGHT ARROW"))
+      assert.equals("Em Dash", to_title_case("EM-DASH"))
+    end)
+
+    it("formats aliases correctly", function()
+      local format_aliases = unifill._test.format_aliases
+      assert.equals("", format_aliases({}))
+      assert.equals(" (aka Right Arrow)", format_aliases({"RIGHT ARROW"}))
+      assert.equals(" (aka Right Arrow, Forward)", format_aliases({"RIGHT ARROW", "FORWARD"}))
+    end)
+
+    it("provides friendly category names", function()
+      local friendly_category = unifill._test.friendly_category
+      assert.equals("Math Symbol", friendly_category("Sm"))
+      assert.equals("Other Symbol", friendly_category("So"))
+      assert.equals("Currency Symbol", friendly_category("Sc"))
+    end)
+
+    it("filters out control characters", function()
+      local result = entry_maker({
+        character = "",
+        name = "NULL",
+        code_point = "U+0000",
+        category = "Cc",
+        aliases = {}
+      })
+      assert.is_nil(result)
+    end)
+
+    it("formats display text correctly", function()
+      local result = entry_maker({
+        character = "→",
+        name = "RIGHTWARDS ARROW",
+        code_point = "U+2192",
+        category = "Sm",
+        aliases = {"RIGHT ARROW", "FORWARD"}
+      })
+      assert.equals(
+        "→     Rightwards Arrow (aka Right Arrow, Forward) (Math Symbol)",
+        result.display
+      )
+    end)
+  end)
 end)
