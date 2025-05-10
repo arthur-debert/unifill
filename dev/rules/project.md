@@ -49,3 +49,21 @@ maintained in the `tmp` directory (not under source control):
      file's convention, but do not format this as markdown.
    - Document new features and configuration options
    - Update development docs when changing core functionality
+
+5. File layout:
+
+```text
+├── README.txt -> keep updated and read it. txxt, not markdown.
+├── bin
+│   ├── fetch-data -> calls the script to gen the dataset and places it in data.
+│   └── run-tests -> run tests, used all the timed, hopefully.
+├── data
+│   └── unifill-datafetch -> data set
+├── dev -> dev oriented information
+│   └── rules -> rules for coding assistant (this doc)
+├── spec -> .plenary tests
+├── unifill-datafetch -> python fetcher for the dataset.
+│   └── src
+│       └── setup_dataset.py -> .the main file.
+└── unifill.lua -> core plugin functionality.
+```
