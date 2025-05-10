@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Get the directory containing this script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PROJECT_ROOT="$( cd "$SCRIPT_DIR/.." && pwd )"
+
+# Run plenary tests
+nvim --headless --noplugin \
+  -u "${PROJECT_ROOT}/spec/minimal_init.lua" \
+  -c "lua require('plenary.test_harness').test_directory('${PROJECT_ROOT}/spec/')" \
+  -c "lua vim.api.nvim_command('q')"

@@ -80,5 +80,8 @@ vim.keymap.set('n', '<leader>iu', unifill, { noremap = true, silent = true })
 
 -- Return the module
 return {
-    unifill = unifill
+    unifill = unifill,
+    _test = {
+        load_unicode_data = load_unicode_data
+    }
 }
