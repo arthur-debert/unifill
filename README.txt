@@ -13,3 +13,13 @@ The plugin uses plenary.nvim for testing. To run the test suite:
 2. Run `bin/run-tests` from the project root
 
 Tests are located in the spec/ directory and use the plenary test format.
+
+Continuous Integration
+--------------------
+Tests are automatically run on every push and pull request using GitHub Actions.
+The workflow:
+- Sets up Neovim
+- Installs required plugins
+- Runs the test suite
+
+You can see test results in the GitHub Actions tab.
