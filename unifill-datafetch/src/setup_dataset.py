@@ -198,10 +198,20 @@ def write_lua_output(unicode_data, aliases_data, output_filename):
             
             for code_point_hex, data in unicode_data.items():
                 aliases = aliases_data.get(code_point_hex, [])
-                # Properly escape special characters in strings
-                char = data['char_obj'].encode('unicode_escape').decode()
-                if char == '"':
-                    char = '\\"'  # Special handling for quotation mark
+                # Handle special characters for Lua
+                char = data['char_obj']
+                if char == '\n':
+                    char = '\\n'
+                elif char == '\r':
+                    char = '\\r'
+                elif char == '\t':
+                    char = '\\t'
+                elif char == '"':
+                    char = '\\"'
+                elif char == '\\':
+                    char = '\\\\'
+                elif ord(char) < 32:  # Other control characters
+                    char = f'\\{ord(char):03d}'
                 name = data['name'].replace('"', '\\"')
                 
                 f.write("  {\n")

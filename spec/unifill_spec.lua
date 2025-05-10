@@ -38,9 +38,19 @@ describe("unifill", function()
     assert(type(unifill.unifill) == "function", "unifill.unifill should be a function")
   end)
 
-  it("attempts to load unicode data", function()
+  it("can load and use unicode data", function()
     local unifill = require("unifill")
     local data = unifill._test.load_unicode_data()
     assert(type(data) == "table", "unicode data should be a table")
+    assert(#data > 0, "unicode data table should not be empty")
+    
+    -- Verify first entry has the expected structure
+    local first = data[1]
+    assert(type(first) == "table", "data entry should be a table")
+    assert(type(first.code_point) == "string", "entry should have code_point as string")
+    assert(type(first.character) == "string", "entry should have character as string")
+    assert(type(first.name) == "string", "entry should have name as string")
+    assert(type(first.category) == "string", "entry should have category as string")
+    assert(type(first.aliases) == "table", "entry should have aliases as table")
   end)
 end)
