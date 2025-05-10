@@ -105,7 +105,50 @@ local function friendly_category(cat)
 end
 
 -- Entry maker for telescope
--- Helper function to check word matches
+--[[
+Search Scoring Algorithm
+
+The search algorithm scores matches based on two factors:
+1. Match location (name > alias > category)
+2. Match quality (exact word > word start)
+
+Match Types:
+- Exact word match: "right" matches "RIGHT" or "ARROW POINTING RIGHT"
+- Word start match: "right" matches "RIGHTWARDS"
+
+Scoring Weights:
+- Name matches: 1000000000000 points
+  * Any match in name (exact or word-start) gets this score
+  * This ensures name matches always rank higher than alias matches
+- Alias matches: 1 point
+  * Only exact word matches count
+  * Word-start matches are ignored
+- Category matches: 0.0001 points
+  * Only exact word matches count
+  * Word-start matches are ignored
+
+Example Scoring:
+Entry 1: { name = "RIGHTWARDS ARROW", aliases = {"FORWARD"} }
+Entry 2: { name = "ARROW POINTING RIGHT", aliases = {"RIGHTWARDS"} }
+Search term: "right"
+
+Entry 1 scoring:
+- "right" is start of "RIGHTWARDS" in name
+- Score: 1000000000000 (name match)
+
+Entry 2 scoring:
+- "right" is exact word in name
+- Score: 1000000000000 (name match)
+
+Both entries get the same score because any match in name (exact or word-start)
+scores higher than any match in alias or category.
+--]]
+
+-- Helper function to check word matches in text
+-- Returns:
+-- 2: Exact word match (e.g., "right" matches "RIGHT" or "ARROW POINTING RIGHT")
+-- 1: Word start match (e.g., "right" matches "RIGHTWARDS")
+-- 0: No match
 local function check_word_match(text, term)
     text = text:lower()
     term = term:lower()
@@ -127,6 +170,27 @@ local function check_word_match(text, term)
 end
 
 -- Score a match based on where terms are found
+--
+-- Scores matches based on two factors:
+-- 1. Location priority: name > alias > category
+-- 2. Match quality: exact word > word start
+--
+-- For each search term, finds the best match across all locations.
+-- A term must match somewhere for the entry to be considered.
+--
+-- Scoring:
+-- - Name matches: 1000000000000 points (any match quality)
+-- - Alias matches: 1 point (exact word matches only)
+-- - Category matches: 0.0001 points (exact word matches only)
+--
+-- Example:
+-- Entry: { name = "RIGHTWARDS ARROW", aliases = {"FORWARD"} }
+-- Terms: {"right"}
+-- Result: 1000000000000 (word start match in name)
+--
+-- @param entry Table with name, category, and optional aliases
+-- @param terms Array of search terms
+-- @return Score, or 0 if any term doesn't match
 local function score_match(entry, terms)
     if not entry or not entry.name or not entry.category then
         return 0
