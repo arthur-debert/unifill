@@ -105,16 +105,134 @@ local function friendly_category(cat)
 end
 
 -- Entry maker for telescope
+-- Helper function to check word matches
+local function check_word_match(text, term)
+    text = text:lower()
+    term = term:lower()
+    
+    -- Split text into words
+    local words = {}
+    for word in text:gmatch("[%w_]+") do
+        -- Check for exact word match (highest priority)
+        if word == term then
+            return 2  -- Exact word match
+        end
+        -- Check for word-part match (lower priority)
+        if word:find("^" .. vim.pesc(term)) then
+            return 1  -- Word-part match
+        end
+    end
+    
+    return 0  -- No match
+end
+
+-- Score a match based on where terms are found
+local function score_match(entry, terms)
+    if not entry or not entry.name or not entry.category then
+        return 0
+    end
+
+    local matched_terms = {}
+    local total_score = 0
+
+    -- Check each term
+    for _, term in ipairs(terms) do
+        local found = false
+        local best_match = 0
+        local location = 0  -- 0=none, 1=category, 2=alias, 3=name
+        
+        -- Check name (highest priority)
+        local name_match = check_word_match(entry.name, term)
+        if name_match > 0 then
+            -- Any match in name scores higher than any match in alias
+            total_score = total_score + 1000000000000  -- Base score for name location
+            found = true
+        end
+        
+        -- Check aliases (medium priority)
+        if not found and entry.aliases then
+            for _, alias in ipairs(entry.aliases) do
+                local alias_match = check_word_match(alias, term)
+                if alias_match > 0 then
+                    -- Only count exact word matches in aliases
+                    if alias_match == 2 then
+                        total_score = total_score + 1  -- Much lower score for alias matches
+                        found = true
+                        break
+                    end
+                end
+            end
+        end
+        
+        -- Check category (lowest priority)
+        if not found then
+            local category_match = check_word_match(friendly_category(entry.category), term)
+            if category_match == 2 then  -- Only count exact word matches in category
+                total_score = total_score + 0.0001  -- Lowest score for category matches
+                found = true
+            end
+        end
+
+        if found then
+            matched_terms[term] = true
+        end
+    end
+
+    -- Return 0 if not all terms matched
+    if vim.tbl_count(matched_terms) < #terms then
+        return 0
+    end
+
+    -- Return total score multiplied by number of matched terms
+    return total_score * vim.tbl_count(matched_terms)
+end
+
+-- Custom sorter for telescope
+local function custom_sorter(opts)
+    return require("telescope.sorters").Sorter:new {
+        scoring_function = function(_, prompt, line)
+            if prompt == "" then
+                return 1
+            end
+
+            -- For telescope, convert our score to its convention (lower is better)
+            local terms = vim.split(prompt, "%s+")
+            local test_score = score_match(line.value, terms)
+            
+            -- Convert score: 0 becomes -1 (filtered), higher becomes lower (better match)
+            if test_score == 0 then
+                return -1
+            end
+            return 1 / test_score
+        end,
+
+        highlighter = opts.highlighter or function(_, prompt, display)
+            -- Highlight matching terms
+            local highlights = {}
+            local terms = vim.split(prompt:lower(), "%s+")
+            local display_lower = display:lower()
+            
+            for _, term in ipairs(terms) do
+                local pattern = "%f[%w_]" .. vim.pesc(term) .. "%f[^%w_]"
+                local start = display_lower:find(pattern)
+                if start then
+                    table.insert(highlights, {
+                        start = start,
+                        finish = start + #term - 1
+                    })
+                end
+            end
+            
+            return highlights
+        end
+    }
+end
+
+-- Entry maker for telescope
 local function entry_maker(entry)
     -- Skip control characters
     if entry.category == "Cc" or entry.category == "Cn" then
         return nil
-    end
-
-    -- Create search text from name and aliases
-    local search_text = entry.name
-    if entry.aliases and #entry.aliases > 0 then
-        search_text = search_text .. " " .. table.concat(entry.aliases, " ")
     end
 
     -- Format the name and category
@@ -133,10 +251,9 @@ local function entry_maker(entry)
     return {
         value = entry,
         display = display_text,
-        ordinal = search_text
+        ordinal = entry.name
     }
 end
-
 -- Main picker function
 local function unifill(opts)
     opts = opts or {}
@@ -147,7 +264,7 @@ local function unifill(opts)
             results = load_unicode_data(),
             entry_maker = entry_maker
         },
-        sorter = conf.generic_sorter(opts),
+        sorter = custom_sorter(opts),
         attach_mappings = function(prompt_bufnr, map)
             actions.select_default:replace(function()
                 actions.close(prompt_bufnr)
@@ -171,6 +288,7 @@ return {
         entry_maker = entry_maker,
         to_title_case = to_title_case,
         format_aliases = format_aliases,
-        friendly_category = friendly_category
+        friendly_category = friendly_category,
+        score_match = score_match
     }
 }

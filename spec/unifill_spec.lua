@@ -109,4 +109,81 @@ describe("unifill", function()
       )
     end)
   end)
+
+  describe("search functionality", function()
+    local unifill = require("unifill")
+    local score_match = unifill._test.score_match
+    
+    it("scores matches by location priority", function()
+      -- Test entry with match in name (highest priority)
+      local name_match = score_match({
+        name = "RIGHTWARDS ARROW",
+        category = "Other Symbol",
+        aliases = {"FORWARD"}
+      }, {"right"})
+      
+      -- Test entry with match in alias (medium priority)
+      local alias_match = score_match({
+        name = "ARROW POINTING RIGHT",
+        category = "Other Symbol",
+        aliases = {"RIGHTWARDS"}
+      }, {"right"})
+      
+      -- Test entry with match in category (lowest priority)
+      local category_match = score_match({
+        name = "PLUS SIGN",
+        category = "Math Symbol",
+        aliases = {"ADD"}
+      }, {"math"})
+
+      assert(name_match > alias_match, "Name matches should score higher than alias matches")
+      assert(alias_match > category_match, "Alias matches should score higher than category matches")
+    end)
+
+    it("requires full term matches", function()
+      local entry = {
+        name = "RIGHTWARDS ARROW",
+        category = "Math Symbol",
+        aliases = {"RIGHT ARROW"}
+      }
+
+      -- Should match full terms
+      local full_match = score_match(entry, {"right", "arrow"})
+      assert(full_match > 0, "Should match full terms")
+
+      -- Should not match partial terms
+      local partial_match = score_match(entry, {"ma", "th"})
+      assert(partial_match == 0, "Should not match partial terms")
+    end)
+
+    it("scores higher for multiple term matches", function()
+      local entry = {
+        name = "RIGHTWARDS ARROW",
+        category = "Math Symbol",
+        aliases = {"RIGHT ARROW"}
+      }
+
+      local single_match = score_match(entry, {"right"})
+      local double_match = score_match(entry, {"right", "arrow"})
+      local triple_match = score_match(entry, {"right", "arrow", "math"})
+
+      assert(double_match > single_match, "Multiple term matches should score higher")
+      assert(triple_match > double_match, "More matching terms should score even higher")
+    end)
+
+    it("matches case insensitively", function()
+      local entry = {
+        name = "RIGHTWARDS ARROW",
+        category = "Math Symbol",
+        aliases = {"RIGHT ARROW"}
+      }
+
+      local upper_score = score_match(entry, {"RIGHT"})
+      local lower_score = score_match(entry, {"right"})
+      local mixed_score = score_match(entry, {"RiGhT"})
+
+      assert.equals(upper_score, lower_score, "Upper and lowercase searches should score the same")
+      assert.equals(upper_score, mixed_score, "Mixed case searches should score the same")
+    end)
+  end)
 end)
