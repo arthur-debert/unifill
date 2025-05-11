@@ -1,5 +1,5 @@
 """
-Type definitions and dataclasses for the unifill-datafetch package.
+Type definitions and dataclasses for the glyph-catcher package.
 """
 
 from dataclasses import dataclass
@@ -19,6 +19,7 @@ class FetchOptions:
     """Options for fetching Unicode data files."""
     use_cache: bool = False
     cache_dir: Optional[str] = None
+    use_temp_cache: bool = False  # If True, use temporary cache location
 
 
 @dataclass
@@ -26,3 +27,4 @@ class ExportOptions:
     """Options for exporting Unicode data."""
     format_type: str = 'csv'
     output_dir: str = '.'
+    unicode_blocks: Optional[List[str]] = None  # List of Unicode block names to include

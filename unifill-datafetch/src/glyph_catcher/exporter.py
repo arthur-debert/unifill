@@ -1,0 +1,278 @@
+"""
+Module for exporting processed Unicode data to various formats.
+"""
+
+import os
+import csv
+import json
+import shutil
+from typing import Dict, List, Any, Optional
+
+from .types import ExportOptions
+from .processor import filter_by_unicode_blocks
+
+
+def export_data(
+    unicode_data: Dict[str, Dict[str, str]],
+    aliases_data: Dict[str, List[str]],
+    options: ExportOptions
+) -> List[str]:
+    """
+    Export Unicode data to the specified format(s).
+    
+    Args:
+        unicode_data: Dictionary mapping code points to character information
+        aliases_data: Dictionary mapping code points to lists of aliases
+        options: Export options
+        
+    Returns:
+        List of paths to the generated output files
+    """
+    # Filter data by Unicode blocks if specified
+    if options.unicode_blocks:
+        print(f"Filtering data to include only these Unicode blocks: {', '.join(options.unicode_blocks)}")
+        unicode_data, aliases_data = filter_by_unicode_blocks(unicode_data, aliases_data, options.unicode_blocks)
+        print(f"Filtered data contains {len(unicode_data)} characters")
+    
+    # Create output directory if it doesn't exist
+    os.makedirs(options.output_dir, exist_ok=True)
+    
+    output_files = []
+    
+    # Determine which formats to export
+    formats = ['csv', 'json', 'lua', 'txt'] if options.format_type == 'all' else [options.format_type]
+    
+    # Export to each format
+    for fmt in formats:
+        output_filename = os.path.join(options.output_dir, f"unicode_data.{fmt}")
+        
+        if fmt == 'csv':
+            write_csv_output(unicode_data, aliases_data, output_filename)
+        elif fmt == 'json':
+            write_json_output(unicode_data, aliases_data, output_filename)
+        elif fmt == 'lua':
+            write_lua_output(unicode_data, aliases_data, output_filename)
+        elif fmt == 'txt':
+            write_txt_output(unicode_data, aliases_data, output_filename)
+        
+        output_files.append(output_filename)
+        print(f"Data written to {output_filename}")
+    
+    return output_files
+
+
+def write_csv_output(
+    unicode_data: Dict[str, Dict[str, str]],
+    aliases_data: Dict[str, List[str]],
+    output_filename: str
+) -> None:
+    """
+    Write Unicode data to CSV format.
+    
+    Args:
+        unicode_data: Dictionary mapping code points to character information
+        aliases_data: Dictionary mapping code points to lists of aliases
+        output_filename: Path to the output file
+    """
+    if not unicode_data:
+        print("No Unicode data to write. Aborting CSV creation.")
+        return
+
+    # Determine the maximum number of aliases for any character
+    max_aliases = 0
+    if aliases_data:
+        for cp in unicode_data.keys():
+            if cp in aliases_data:
+                max_aliases = max(max_aliases, len(aliases_data[cp]))
+
+    # Create CSV headers
+    headers = ['code_point', 'character', 'name', 'category', 'block']
+    for i in range(1, max_aliases + 1):
+        headers.append(f'alias_{i}')
+
+    try:
+        with open(output_filename, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(headers)
+
+            for code_point_hex, data in unicode_data.items():
+                current_aliases = aliases_data.get(code_point_hex, [])
+                row = [
+                    f"U+{code_point_hex}",
+                    data['char_obj'],
+                    data['name'],
+                    data['category'],
+                    data.get('block', 'Unknown Block')
+                ]
+                for i in range(max_aliases):
+                    row.append(current_aliases[i] if i < len(current_aliases) else '')
+                writer.writerow(row)
+
+    except Exception as e:
+        print(f"Error writing CSV file: {e}")
+
+
+def write_json_output(
+    unicode_data: Dict[str, Dict[str, str]],
+    aliases_data: Dict[str, List[str]],
+    output_filename: str
+) -> None:
+    """
+    Write Unicode data to JSON format.
+    
+    Args:
+        unicode_data: Dictionary mapping code points to character information
+        aliases_data: Dictionary mapping code points to lists of aliases
+        output_filename: Path to the output file
+    """
+    if not unicode_data:
+        print("No Unicode data to write. Aborting JSON creation.")
+        return
+
+    json_data = []
+    for code_point_hex, data in unicode_data.items():
+        entry = {
+            'code_point': f"U+{code_point_hex}",
+            'character': data['char_obj'],
+            'name': data['name'],
+            'category': data['category'],
+            'block': data.get('block', 'Unknown Block'),
+            'aliases': aliases_data.get(code_point_hex, [])
+        }
+        json_data.append(entry)
+
+    try:
+        with open(output_filename, 'w', encoding='utf-8') as f:
+            json.dump(json_data, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"Error writing JSON file: {e}")
+
+
+def write_lua_output(
+    unicode_data: Dict[str, Dict[str, str]],
+    aliases_data: Dict[str, List[str]],
+    output_filename: str
+) -> None:
+    """
+    Write Unicode data as a Lua module.
+    
+    Args:
+        unicode_data: Dictionary mapping code points to character information
+        aliases_data: Dictionary mapping code points to lists of aliases
+        output_filename: Path to the output file
+    """
+    if not unicode_data:
+        print("No Unicode data to write. Aborting Lua module creation.")
+        return
+
+    try:
+        with open(output_filename, 'w', encoding='utf-8') as f:
+            f.write("-- Auto-generated unicode data module\n")
+            f.write("-- Generated by glyph-catcher\n")
+            f.write("return {\n")
+            
+            for code_point_hex, data in unicode_data.items():
+                aliases = aliases_data.get(code_point_hex, [])
+                # Handle special characters for Lua
+                char = data['char_obj']
+                if char == '\n':
+                    char = '\\n'
+                elif char == '\r':
+                    char = '\\r'
+                elif char == '\t':
+                    char = '\\t'
+                elif char == '"':
+                    char = '\\"'
+                elif char == '\\':
+                    char = '\\\\'
+                elif ord(char) < 32:  # Other control characters
+                    char = f'\\{ord(char):03d}'
+                name = data['name'].replace('"', '\\"')
+                
+                f.write("  {\n")
+                f.write(f'    code_point = "U+{code_point_hex}",\n')
+                f.write(f'    character = "{char}",\n')
+                f.write(f'    name = "{name}",\n')
+                f.write(f'    category = "{data["category"]}",\n')
+                f.write(f'    block = "{data.get("block", "Unknown Block")}",\n')
+                
+                # Write aliases as a Lua table
+                if aliases:
+                    f.write('    aliases = {\n')
+                    for alias in aliases:
+                        escaped_alias = alias.replace('"', '\\"')
+                        f.write(f'      "{escaped_alias}",\n')
+                    f.write('    },\n')
+                else:
+                    f.write('    aliases = {},\n')
+                
+                f.write("  },\n")
+            
+            f.write("}\n")
+    except Exception as e:
+        print(f"Error writing Lua module: {e}")
+
+
+def write_txt_output(
+    unicode_data: Dict[str, Dict[str, str]],
+    aliases_data: Dict[str, List[str]],
+    output_filename: str
+) -> None:
+    """
+    Write Unicode data in a grep-friendly text format.
+    
+    Args:
+        unicode_data: Dictionary mapping code points to character information
+        aliases_data: Dictionary mapping code points to lists of aliases
+        output_filename: Path to the output file
+    """
+    if not unicode_data:
+        print("No Unicode data to write. Aborting text file creation.")
+        return
+
+    try:
+        with open(output_filename, 'w', encoding='utf-8') as f:
+            for code_point_hex, data in unicode_data.items():
+                # Format: character|name|code_point|category|block|alias1|alias2|...
+                # Optimized for grep with searchable fields first
+                
+                # Create the base parts of the line
+                line_parts = [
+                    data['char_obj'],
+                    data['name'],
+                    f"U+{code_point_hex}",
+                    data['category'],
+                    data.get('block', 'Unknown Block')
+                ]
+                
+                # Add aliases if they exist
+                if code_point_hex in aliases_data:
+                    line_parts.extend(aliases_data[code_point_hex])
+                
+                # Join with pipe separator
+                f.write('|'.join(line_parts) + '\n')
+    except Exception as e:
+        print(f"Error writing text file: {e}")
+
+
+def save_source_files(file_paths: Dict[str, str], output_dir: str) -> None:
+    """
+    Save copies of the source Unicode data files.
+    
+    Args:
+        file_paths: Dictionary mapping file types to file paths
+        output_dir: Directory to save the files to
+    """
+    try:
+        # Create output directory if it doesn't exist
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Copy each source file to the output directory
+        for file_type, file_path in file_paths.items():
+            if os.path.exists(file_path):
+                filename = os.path.basename(file_path)
+                dest_path = os.path.join(output_dir, filename)
+                shutil.copy2(file_path, dest_path)
+                print(f"Saved source file: {dest_path}")
+    except Exception as e:
+        print(f"Error saving source files: {e}")

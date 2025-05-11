@@ -2,26 +2,75 @@
 Module for processing Unicode data files.
 """
 
+import os
 import xml.etree.ElementTree as ET
 from collections import defaultdict
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, Tuple, List, Any, Optional
 
-from .types import UnicodeCharInfo
+# Dictionary mapping Unicode code points to their block names
+# This is a simplified mapping for common blocks
+UNICODE_BLOCKS = {
+    # Basic Latin (ASCII): U+0000 to U+007F
+    range(0x0000, 0x0080): "Basic Latin",
+    
+    # Latin-1 Supplement: U+0080 to U+00FF
+    range(0x0080, 0x0100): "Latin-1 Supplement",
+    
+    # Latin Extended-A: U+0100 to U+017F
+    range(0x0100, 0x0180): "Latin Extended-A",
+    
+    # Latin Extended-B: U+0180 to U+024F
+    range(0x0180, 0x0250): "Latin Extended-B",
+    
+    # Greek and Coptic: U+0370 to U+03FF
+    range(0x0370, 0x0400): "Greek and Coptic",
+    
+    # Cyrillic: U+0400 to U+04FF
+    range(0x0400, 0x0500): "Cyrillic",
+    
+    # General Punctuation: U+2000 to U+206F
+    range(0x2000, 0x2070): "General Punctuation",
+    
+    # Arrows: U+2190 to U+21FF
+    range(0x2190, 0x2200): "Arrows",
+    
+    # Mathematical Operators: U+2200 to U+22FF
+    range(0x2200, 0x2300): "Mathematical Operators",
+    
+    # Miscellaneous Symbols: U+2600 to U+26FF
+    range(0x2600, 0x2700): "Miscellaneous Symbols",
+    
+    # Emoticons: U+1F600 to U+1F64F
+    range(0x1F600, 0x1F650): "Emoticons",
+}
 
 
-def parse_unicode_data(filename: str) -> Optional[Dict[str, UnicodeCharInfo]]:
+def get_unicode_block(code_point: int) -> str:
     """
-    Parse UnicodeData.txt file.
+    Get the Unicode block name for a given code point.
     
     Args:
-        filename: Path to the UnicodeData.txt file
+        code_point: Unicode code point as an integer
         
     Returns:
-        Dictionary mapping code points to character info:
-        {
-            code_point_hex: UnicodeCharInfo(name, category, char_obj)
-        }
-        or None if parsing failed
+        Name of the Unicode block, or "Unknown Block" if not found
+    """
+    for block_range, block_name in UNICODE_BLOCKS.items():
+        if code_point in block_range:
+            return block_name
+    return "Unknown Block"
+
+
+def parse_unicode_data(filename: str) -> Dict[str, Dict[str, str]]:
+    """
+    Parse UnicodeData.txt.
+    
+    Args:
+        filename: Path to UnicodeData.txt
+        
+    Returns:
+        Dictionary mapping code points to character information:
+        {code_point_hex: {'name': name, 'category': category, 'char_obj': char}}
     """
     data = {}
     try:
@@ -33,7 +82,6 @@ def parse_unicode_data(filename: str) -> Optional[Dict[str, UnicodeCharInfo]]:
                     name = fields[1]
                     category = fields[2]
 
-                    # Skip character range definitions
                     if name.startswith('<') and name.endswith(', First>'):
                         continue
                     if name.startswith('<') and name.endswith(', Last>'):
@@ -41,33 +89,34 @@ def parse_unicode_data(filename: str) -> Optional[Dict[str, UnicodeCharInfo]]:
 
                     try:
                         char_obj = chr(int(code_point_hex, 16))
-                        data[code_point_hex] = UnicodeCharInfo(
-                            name=name,
-                            category=category,
-                            char_obj=char_obj
-                        )
+                        data[code_point_hex] = {
+                            'name': name,
+                            'category': category,
+                            'char_obj': char_obj,
+                            'block': get_unicode_block(int(code_point_hex, 16))
+                        }
                     except ValueError:
                         print(f"Skipping invalid code point: {code_point_hex} - {name}")
                         continue
         return data
     except FileNotFoundError:
         print(f"Error: {filename} not found.")
-        return None
+        return {}
     except Exception as e:
         print(f"An error occurred while parsing {filename}: {e}")
-        return None
+        return {}
 
 
-def parse_name_aliases(filename: str) -> Optional[Dict[str, List[str]]]:
+def parse_name_aliases(filename: str) -> Dict[str, List[str]]:
     """
-    Parse NameAliases.txt file.
+    Parse NameAliases.txt.
     
     Args:
-        filename: Path to the NameAliases.txt file
+        filename: Path to NameAliases.txt
         
     Returns:
-        Dictionary mapping code points to lists of aliases,
-        or None if parsing failed
+        Dictionary mapping code points to lists of aliases:
+        {code_point_hex: [alias1, alias2, ...]}
     """
     aliases_data = defaultdict(list)
     try:
@@ -81,36 +130,32 @@ def parse_name_aliases(filename: str) -> Optional[Dict[str, List[str]]]:
                     code_point_hex = fields[0]
                     alias = fields[1]
                     aliases_data[code_point_hex].append(alias)
-        return dict(aliases_data)
+        return aliases_data
     except FileNotFoundError:
         print(f"Error: {filename} not found.")
-        return None
+        return {}
     except Exception as e:
         print(f"An error occurred while parsing {filename}: {e}")
-        return None
+        return {}
 
 
-def parse_names_list(filename: str) -> Optional[Dict[str, List[str]]]:
+def parse_names_list(filename: str) -> Dict[str, List[str]]:
     """
-    Parse NamesList.txt file to extract informative aliases.
+    Parse NamesList.txt to extract informative aliases.
     
     Args:
-        filename: Path to the NamesList.txt file
+        filename: Path to NamesList.txt
         
     Returns:
-        Dictionary mapping code points to lists of informative aliases,
-        or None if parsing failed
+        Dictionary mapping code points to lists of informative aliases:
+        {code_point_hex: [alias1, alias2, ...]}
     """
     informative_aliases = defaultdict(list)
     current_code_point = None
     
-    print(f"Starting to parse {filename}")
-    
     try:
         with open(filename, 'r', encoding='utf-8') as f:
-            line_number = 0
             for line in f:
-                line_number += 1
                 original_line = line
                 line = line.strip()
                 
@@ -125,9 +170,6 @@ def parse_names_list(filename: str) -> Optional[Dict[str, List[str]]]:
                         try:
                             # Store the code point as a hex string
                             current_code_point = parts[0].strip()
-                            # Debug output for specific code points
-                            if current_code_point == "2192":
-                                print(f"Line {line_number}: Found RIGHTWARDS ARROW: {current_code_point}")
                         except ValueError:
                             current_code_point = None
                     else:
@@ -139,9 +181,6 @@ def parse_names_list(filename: str) -> Optional[Dict[str, List[str]]]:
                     # Convert code point to uppercase hex format to match unicode_char_info keys
                     code_point_hex = current_code_point.upper()
                     informative_aliases[code_point_hex].append(alias)
-                    # Debug output for specific code points
-                    if current_code_point == "2192":
-                        print(f"Line {line_number}: Added alias for RIGHTWARDS ARROW: '{alias}'")
                 # Also include cross-references as aliases (lines starting with "* ")
                 elif current_code_point and '*' in line and line.lstrip().startswith('*'):
                     # Extract the descriptive note (remove the "* " prefix)
@@ -150,35 +189,26 @@ def parse_names_list(filename: str) -> Optional[Dict[str, List[str]]]:
                     if len(note) < 50 and not "(" in note and not ")" in note:
                         code_point_hex = current_code_point.upper()
                         informative_aliases[code_point_hex].append(note)
-                        # Debug output for specific code points
-                        if current_code_point == "2192":
-                            print(f"Line {line_number}: Added note for RIGHTWARDS ARROW: '{note}'")
         
-        # Debug output for the final result
-        if "2192" in informative_aliases:
-            print(f"Final aliases for RIGHTWARDS ARROW: {informative_aliases['2192']}")
-        else:
-            print(f"No aliases found for RIGHTWARDS ARROW")
-        
-        return dict(informative_aliases)
+        return informative_aliases
     except FileNotFoundError:
         print(f"Error: {filename} not found.")
-        return None
+        return {}
     except Exception as e:
         print(f"An error occurred while parsing {filename}: {e}")
-        return None
+        return {}
 
 
-def parse_cldr_annotations(filename: str) -> Optional[Dict[str, List[str]]]:
+def parse_cldr_annotations(filename: str) -> Dict[str, List[str]]:
     """
-    Parse CLDR annotations XML file.
+    Parse CLDR annotations XML file to extract common names and descriptions.
     
     Args:
-        filename: Path to the CLDR annotations XML file
+        filename: Path to CLDR annotations XML file
         
     Returns:
-        Dictionary mapping code points to lists of annotations,
-        or None if parsing failed
+        Dictionary mapping code points to lists of annotations:
+        {code_point_hex: [annotation1, annotation2, ...]}
     """
     cldr_annotations = defaultdict(list)
     
@@ -207,102 +237,83 @@ def parse_cldr_annotations(filename: str) -> Optional[Dict[str, List[str]]]:
                     # Split by pipe and strip whitespace
                     aliases = [alias.strip() for alias in annotation.text.split('|')]
                     cldr_annotations[code_point_hex].extend(aliases)
-                    
-                    # Debug output for specific code points
-                    if code_point_hex == "2192":
-                        print(f"Added CLDR annotations for RIGHTWARDS ARROW: {aliases}")
         
-        return dict(cldr_annotations)
+        return cldr_annotations
     except FileNotFoundError:
         print(f"Error: {filename} not found.")
-        return None
+        return {}
     except Exception as e:
         print(f"An error occurred while parsing {filename}: {e}")
-        return None
+        return {}
 
 
-def merge_aliases(
-    formal_aliases: Dict[str, List[str]],
-    informative_aliases: Dict[str, List[str]],
-    cldr_annotations: Optional[Dict[str, List[str]]] = None
-) -> Dict[str, List[str]]:
+def process_data_files(file_paths: Dict[str, str]) -> Tuple[Dict[str, Dict[str, str]], Dict[str, List[str]]]:
     """
-    Merge aliases from different sources.
-    
-    Args:
-        formal_aliases: Aliases from NameAliases.txt
-        informative_aliases: Aliases from NamesList.txt
-        cldr_annotations: Annotations from CLDR
-        
-    Returns:
-        Dictionary mapping code points to merged lists of aliases
-    """
-    merged_aliases = defaultdict(list)
-    
-    # Add formal aliases
-    for code_point, aliases in formal_aliases.items():
-        merged_aliases[code_point].extend(aliases)
-        if code_point == "2192":
-            print(f"Added formal aliases for RIGHTWARDS ARROW: {aliases}")
-    
-    # Add informative aliases
-    for code_point, aliases in informative_aliases.items():
-        # Convert code point format to match the one used in unicode_char_info
-        code_point_hex = code_point.upper()
-        merged_aliases[code_point_hex].extend(aliases)
-        if code_point == "2192":
-            print(f"Added informative aliases for RIGHTWARDS ARROW: {aliases}")
-    
-    # Add CLDR annotations if available
-    if cldr_annotations:
-        for code_point, annotations in cldr_annotations.items():
-            merged_aliases[code_point].extend(annotations)
-            if code_point == "2192":
-                print(f"Added CLDR annotations for RIGHTWARDS ARROW: {annotations}")
-    
-    # Debug output for the final result
-    if "2192" in merged_aliases:
-        print(f"Final aliases for RIGHTWARDS ARROW: {merged_aliases['2192']}")
-    
-    return dict(merged_aliases)
-
-
-def process_data_files(file_paths: Dict[str, str]) -> Tuple[Optional[Dict[str, UnicodeCharInfo]], Optional[Dict[str, List[str]]]]:
-    """
-    Process all Unicode data files.
+    Process Unicode data files.
     
     Args:
         file_paths: Dictionary mapping file types to file paths
         
     Returns:
-        Tuple of (unicode_char_info, aliases_info) or (None, None) if processing failed
+        Tuple of (unicode_data, aliases_data) where:
+        - unicode_data is a dictionary mapping code points to character information
+        - aliases_data is a dictionary mapping code points to lists of aliases
     """
-    # Parse UnicodeData.txt
+    # Parse the Unicode data files
     unicode_data = parse_unicode_data(file_paths['unicode_data'])
-    if not unicode_data:
-        print("Failed to parse UnicodeData.txt")
-        return None, None
-    
-    # Parse NameAliases.txt
     formal_aliases = parse_name_aliases(file_paths['name_aliases'])
-    if not formal_aliases:
-        print("Failed to parse NameAliases.txt")
-        return None, None
-    
-    # Parse NamesList.txt
     informative_aliases = parse_names_list(file_paths['names_list'])
-    if not informative_aliases:
-        print("Failed to parse NamesList.txt")
-        return None, None
     
-    # Parse CLDR annotations (optional)
-    cldr_annotations = None
+    # Parse CLDR annotations if available
+    cldr_annotations = {}
     if 'cldr_annotations' in file_paths:
         cldr_annotations = parse_cldr_annotations(file_paths['cldr_annotations'])
-        if not cldr_annotations:
-            print("Warning: Failed to parse CLDR annotations. Continuing without CLDR annotations.")
     
-    # Merge aliases
-    aliases_info = merge_aliases(formal_aliases, informative_aliases, cldr_annotations)
+    # Merge all aliases
+    aliases_data = defaultdict(list)
     
-    return unicode_data, aliases_info
+    # Add formal aliases
+    for code_point, aliases in formal_aliases.items():
+        aliases_data[code_point].extend(aliases)
+    
+    # Add informative aliases
+    for code_point, aliases in informative_aliases.items():
+        code_point_hex = code_point.upper()
+        aliases_data[code_point_hex].extend(aliases)
+    
+    # Add CLDR annotations
+    for code_point, annotations in cldr_annotations.items():
+        aliases_data[code_point].extend(annotations)
+    
+    return unicode_data, aliases_data
+
+
+def filter_by_unicode_blocks(
+    unicode_data: Dict[str, Dict[str, str]], 
+    aliases_data: Dict[str, List[str]], 
+    blocks: Optional[List[str]]
+) -> Tuple[Dict[str, Dict[str, str]], Dict[str, List[str]]]:
+    """
+    Filter Unicode data by block names.
+    
+    Args:
+        unicode_data: Dictionary mapping code points to character information
+        aliases_data: Dictionary mapping code points to lists of aliases
+        blocks: List of Unicode block names to include, or None to include all blocks
+        
+    Returns:
+        Tuple of filtered (unicode_data, aliases_data)
+    """
+    if not blocks:
+        return unicode_data, aliases_data
+    
+    filtered_unicode_data = {}
+    filtered_aliases_data = {}
+    
+    for code_point, char_info in unicode_data.items():
+        if 'block' in char_info and char_info['block'] in blocks:
+            filtered_unicode_data[code_point] = char_info
+            if code_point in aliases_data:
+                filtered_aliases_data[code_point] = aliases_data[code_point]
+    
+    return filtered_unicode_data, filtered_aliases_data

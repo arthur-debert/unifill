@@ -10,9 +10,9 @@ SCRIPT_DIR="${0:a:h}"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
 # Define key directories and filenames
-UNIFILL_DATAFETCH_DIR="$PROJECT_ROOT/unifill-datafetch"
+GLYPH_CATCHER_DIR="$PROJECT_ROOT/unifill-datafetch"  # Directory name will be changed later
 DESTINATION_PARENT_DIR="$PROJECT_ROOT/data"
-DESTINATION_SUBDIR_NAME="unifill-datafetch"
+DESTINATION_SUBDIR_NAME="unifill-datafetch"  # Keep this for backward compatibility
 FULL_DESTINATION_DIR="$DESTINATION_PARENT_DIR/$DESTINATION_SUBDIR_NAME"
 
 # Define file formats and their corresponding filenames
@@ -23,6 +23,8 @@ FORMAT_FILES[txt]="unicode_data.txt"
 
 # Default formats to generate
 FORMATS=("lua" "txt")
+# Additional arguments to pass to glyph-catcher
+EXTRA_ARGS=""
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -35,10 +37,18 @@ while [[ $# -gt 0 ]]; do
       fi
       shift 2
       ;;
+    --)
+      # Everything after -- is passed to glyph-catcher
+      shift
+      # Store all remaining arguments in an array to preserve spaces
+      EXTRA_ARGS=("$@")
+      break
+      ;;
     *)
       echo "Unknown option: $1"
-      echo "Usage: $0 [--format FORMAT]"
+      echo "Usage: $0 [--format FORMAT] [-- EXTRA_ARGS]"
       echo "FORMAT can be: lua, csv, txt, or all"
+      echo "EXTRA_ARGS are passed directly to glyph-catcher (e.g., --unicode-blocks \"Basic Latin\")"
       exit 1
       ;;
   esac
@@ -47,8 +57,8 @@ done
 # Ensure the destination directory exists
 mkdir -p "$FULL_DESTINATION_DIR"
 
-# Navigate to the unifill-datafetch directory
-cd "$UNIFILL_DATAFETCH_DIR"
+# Navigate to the glyph-catcher directory
+cd "$GLYPH_CATCHER_DIR"
 
 # Install dependencies using Poetry
 echo "Installing/updating dependencies with Poetry..."
@@ -64,7 +74,12 @@ for format in "${FORMATS[@]}"; do
   DESTINATION_FILE_PATH="$FULL_DESTINATION_DIR/$GENERATED_FILE_NAME"
   
   # Run the data fetching script using Poetry with the specified format
-  poetry run unidata generate --format "$format"
+  if [[ ${#EXTRA_ARGS[@]} -gt 0 ]]; then
+    echo "Using additional arguments: ${EXTRA_ARGS[*]}"
+    poetry run glyph-catcher generate --format "$format" "${EXTRA_ARGS[@]}"
+  else
+    poetry run glyph-catcher generate --format "$format"
+  fi
   
   # Check if the file was generated
   if [ ! -f "$SOURCE_FILE_IN_DATAFETCH_DIR" ]; then

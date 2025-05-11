@@ -1,5 +1,5 @@
 """
-Configuration constants and settings for the unifill-datafetch package.
+Configuration constants and settings for the glyph-catcher package.
 """
 
 # URLs for data sources
@@ -18,7 +18,17 @@ OUTPUT_FILES = {
 }
 
 # Default cache directory
-DEFAULT_CACHE_DIR = "./cache"
+import os
+import tempfile
+
+# Use XDG_CACHE_HOME if available, otherwise use a temporary directory
+DEFAULT_CACHE_DIR = os.path.join(
+    os.environ.get("XDG_CACHE_HOME", os.path.join(os.path.expanduser("~"), ".cache")),
+    "glyph-catcher"
+)
+
+# Alternative cache location in /tmp for non-persistent storage
+TMP_CACHE_DIR = os.path.join(tempfile.gettempdir(), "glyph-catcher-cache")
 
 # User agent for HTTP requests
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'

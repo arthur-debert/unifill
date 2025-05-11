@@ -5,6 +5,7 @@ Module for retrieving raw Unicode data files.
 import os
 import tempfile
 import requests
+import shutil
 from typing import Optional, Dict
 
 from .types import FetchOptions
@@ -14,6 +15,8 @@ from .config import (
     NAMES_LIST_FILE_URL,
     CLDR_ANNOTATIONS_URL,
     USER_AGENT,
+    DEFAULT_CACHE_DIR,
+    TMP_CACHE_DIR,
 )
 
 
@@ -31,9 +34,16 @@ def download_file(url: str, options: FetchOptions) -> Optional[str]:
     # Extract the filename from the URL
     filename = os.path.basename(url)
     
+    # Determine which cache directory to use
+    cache_dir = options.cache_dir
+    if options.use_temp_cache:
+        cache_dir = TMP_CACHE_DIR
+    elif not cache_dir and options.use_cache:
+        cache_dir = DEFAULT_CACHE_DIR
+    
     # If cache is enabled, check if the file exists in the cache directory
-    if options.use_cache and options.cache_dir:
-        cache_path = os.path.join(options.cache_dir, filename)
+    if options.use_cache and cache_dir:
+        cache_path = os.path.join(cache_dir, filename)
         if os.path.exists(cache_path):
             print(f"Using cached file: {cache_path}")
             return cache_path
@@ -55,9 +65,9 @@ def download_file(url: str, options: FetchOptions) -> Optional[str]:
                     f.write(chunk)
             
             # If cache is enabled, save the file to the cache directory
-            if options.use_cache and options.cache_dir:
-                os.makedirs(options.cache_dir, exist_ok=True)
-                cache_path = os.path.join(options.cache_dir, filename)
+            if options.use_cache and cache_dir:
+                os.makedirs(cache_dir, exist_ok=True)
+                cache_path = os.path.join(cache_dir, filename)
                 with open(temp_file.name, 'rb') as src, open(cache_path, 'wb') as dst:
                     dst.write(src.read())
                 print(f"Cached file to: {cache_path}")
@@ -125,3 +135,26 @@ def fetch_all_data_files(options: FetchOptions) -> Dict[str, str]:
         print("Warning: Failed to download CLDR annotations. Continuing without CLDR annotations.")
     
     return result
+
+
+def clean_cache(options: FetchOptions) -> None:
+    """
+    Clean up cache directories.
+    
+    Args:
+        options: Fetch options including cache settings
+    """
+    # Determine which cache directory to clean
+    cache_dir = options.cache_dir
+    if options.use_temp_cache:
+        cache_dir = TMP_CACHE_DIR
+    elif not cache_dir and options.use_cache:
+        cache_dir = DEFAULT_CACHE_DIR
+    
+    if cache_dir and os.path.exists(cache_dir):
+        print(f"Cleaning cache directory: {cache_dir}")
+        try:
+            shutil.rmtree(cache_dir)
+            print(f"Cache directory removed: {cache_dir}")
+        except Exception as e:
+            print(f"Error cleaning cache directory: {e}")
