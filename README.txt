@@ -8,7 +8,7 @@ unifill
     telescope UI that can search unicode chars by the official name, any of its common 
     aliases and category. Once selected, the unicode char will be inserted into your 
     current buffer.
-
+→
 
 1. Installing
     
@@ -69,3 +69,40 @@ unifill
             - Sets up Neovim
             - Installs required plugins
             - Runs the test suite
+
+4. UI Customization
+
+    4.1 Theming
+
+        The plugin now uses a centralized theme configuration for consistent UI styling.
+        The theme provides:
+        
+        - Dropdown layout with 40% screen width/height
+        - Bold, 100% black Unicode characters with increased width
+        - 80% black text for other content
+        - Italic formatting for matched text
+        
+        All UI options are centralized in the theme.lua file, making it easy to customize
+        the appearance to your preferences.
+        
+    4.2 Custom Configuration
+    
+        If you want to customize the UI, you can modify the theme settings in your
+        configuration:
+        
+        ---
+        local unifill = require('unifill')
+        local theme = require('unifill.theme')
+        
+        -- Customize UI layout
+        theme.ui.layout.width = 0.5  -- 50% of screen width
+        theme.ui.layout.height = 0.6  -- 60% of screen height
+        
+        -- Customize highlight groups
+        vim.api.nvim_command('highlight UnifillCharacter guifg=#FF5555 gui=bold')
+        vim.api.nvim_command('highlight UnifillName guifg=#888888')
+        
+        -- Set up key mapping
+        vim.keymap.set('n', '<leader>iu', unifill.unifill,
+            { desc = 'Insert Unicode character' })
+        ---  lua

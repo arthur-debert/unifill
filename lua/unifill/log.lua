@@ -35,8 +35,8 @@ if f then
     f:close()
 end
 
--- Print log location for easy reference
-vim.api.nvim_echo({{"Unifill logs at: " .. log_path, "Normal"}}, true, {})
+-- Log location is available but not printed on startup
+-- vim.api.nvim_echo({{"Unifill logs at: " .. log_path, "Normal"}}, true, {})
 
 -- Create the logger
 local log = plenary_log.new({

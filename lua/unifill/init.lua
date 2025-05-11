@@ -7,18 +7,27 @@ local pickers = require "telescope.pickers"
 local finders = require "telescope.finders"
 local actions = require "telescope.actions"
 local action_state = require "telescope.actions.state"
+local themes = require "telescope.themes"
 
 local data = require("unifill.data")
 local format = require("unifill.format")
 local telescope_utils = require("unifill.telescope")
+local theme = require("unifill.theme")
 local log = require("unifill.log")
 
-log.info("Unifill plugin initialized")
+-- Log initialization silently
+log.debug("Unifill plugin initialized")
+
+-- Set up the theme
+theme.setup()
 
 -- Main picker function
 local function unifill(opts)
     log.debug("Unifill picker called with opts:", opts)
     opts = opts or {}
+    
+    -- Apply dropdown theme with custom sizing
+    opts = themes.get_dropdown(theme.ui.layout)
 
     local unicode_data = data.load_unicode_data()
     if not unicode_data then
@@ -41,8 +50,15 @@ local function unifill(opts)
                 local selection = action_state.get_selected_entry()
                 log.info("Character selected:", selection.value.character,
                     "Name:", selection.value.name)
-                -- Insert the unicode character at cursor
-                vim.api.nvim_put({ selection.value.character }, "", false, true)
+                -- Check if the current buffer is modifiable
+                if vim.api.nvim_buf_get_option(0, 'modifiable') then
+                    -- Insert the unicode character at cursor
+                    vim.api.nvim_put({ selection.value.character }, "", false, true)
+                else
+                    -- Show an error message if the buffer is not modifiable
+                    vim.notify("Cannot insert character in a non-modifiable buffer", vim.log.levels.ERROR)
+                    log.error("Attempted to insert character in a non-modifiable buffer")
+                end
             end)
             return true
         end,
