@@ -28,7 +28,6 @@ import argparse
 import os
 import tempfile
 from collections import defaultdict
-from pathlib import Path
 
 # --- Configuration ---
 UCD_LATEST_URL = "https://www.unicode.org/Public/UCD/latest/ucd/"
