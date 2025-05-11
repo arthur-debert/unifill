@@ -1,7 +1,7 @@
 
 === Benchmarking lua backend ===
 
-Data loading time: 76.94 ms
+Data loading time: 273.21 ms
 Number of entries: 40078
 
 Search performance:
@@ -12,35 +12,72 @@ Searching for: 'arrow'
 
 Searching for: 'right arrow'
   Matches found: 224
-  Average search time per match: 0.092 ms
+  Average search time per match: 0.087 ms
 
 Searching for: 'mathematical symbol'
   Matches found: 49
-  Average search time per match: 0.069 ms
+  Average search time per match: 0.073 ms
 
 Searching for: 'latin letter small'
   Matches found: 903
-  Average search time per match: 0.070 ms
+  Average search time per match: 0.069 ms
 
 === Benchmarking csv backend ===
 
-Data loading time: 225.43 ms
+Data loading time: 155.23 ms
 Number of entries: 40013
 
 Search performance:
 
 Searching for: 'arrow'
   Matches found: 638
-  Average search time per match: 0.007 ms
+  Average search time per match: 0.015 ms
 
 Searching for: 'right arrow'
   Matches found: 224
-  Average search time per match: 0.344 ms
+  Average search time per match: 0.060 ms
 
 Searching for: 'mathematical symbol'
   Matches found: 49
-  Average search time per match: 0.077 ms
+  Average search time per match: 0.070 ms
 
 Searching for: 'latin letter small'
   Matches found: 903
-  Average search time per match: 0.063 ms
+  Average search time per match: 0.058 ms
+
+=== Benchmarking grep backend ===
+
+Backend initialization time: 0.37 ms
+
+Search performance:
+
+Searching for: 'arrow'
+  Matches found: 1
+  Total search time: 20.314 ms
+
+Searching for: 'right arrow'
+  Matches found (exact phrase): 1
+  Matches for 'right': 1
+  Matches for 'arrow': 1
+  Total search time: 6.956 ms
+
+Searching for: 'mathematical symbol'
+  Matches found (exact phrase): 0
+  Matches for 'mathematical': 1
+  Matches for 'symbol': 1
+  Total search time: 8.621 ms
+
+Searching for: 'latin letter small'
+  Matches found (exact phrase): 1
+  Matches for 'latin': 1
+  Matches for 'letter': 1
+  Matches for 'small': 1
+  Total search time: 6.768 ms
+
+=== Benchmark Results ===
+
+Backend  Init Time   Entries  arrow           right arrow           mathematical symbol   latin letter small    Median Time  
+-------  ----------  -------  --------------  --------------------  --------------------  --------------------  -----------  
+lua       273.21 ms  40078    638 /  0.00 ms  224 /  0.09 ms        49 /  0.07 ms         903 /  0.07 ms         0.07 ms     
+csv       155.23 ms  40013    638 /  0.01 ms  224 /  0.06 ms        49 /  0.07 ms         903 /  0.06 ms         0.06 ms     
+grep        0.37 ms  N/A      1 / 20.31 ms    1 (exact) /  6.96 ms  0 (exact) /  8.62 ms  1 (exact) /  6.77 ms   7.79 ms     

@@ -47,7 +47,8 @@ local log = plenary_log.new({
     level = vim.env.UNIFILL_LOG_LEVEL or "info",
     
     -- Show in console for debugging (can be true, false, or "sync")
-    use_console = true,
+    -- Default to false to avoid cluttering the UI
+    use_console = false,
     
     -- Write to log file
     use_file = true,

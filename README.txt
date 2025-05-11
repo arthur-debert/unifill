@@ -61,18 +61,23 @@ u#nifill
     
     - Lua backend (default): Uses a Lua table for fast loading and searching
     - CSV backend: Uses a CSV file, which may be easier to inspect or modify
+    - Grep backend: Uses external grep tools for ultra-fast initialization
 
     You can configure the data backend using the setup function:
 
         ---
         require('unifill').setup({
-            backend = "lua",  -- Use "lua" or "csv"
+            backend = "lua",  -- Use "lua", "csv", or "grep"
             backends = {
                 lua = {
                     data_path = "/path/to/your/unicode_data.lua"  -- Optional custom path
                 },
                 csv = {
                     data_path = "/path/to/your/unicode_data.csv"  -- Optional custom path
+                },
+                grep = {
+                    data_path = "/path/to/your/unicode_data.txt",  -- Optional custom path
+                    grep_command = "rg"  -- Command to use for grep (default: "rg" for ripgrep)
                 }
             }
         })
@@ -81,13 +86,25 @@ u#nifill
     The default configuration will use the Lua backend with the dataset located at
     the standard path in the plugin directory.
     
-    You can generate both data formats by running:
+    You can generate all data formats by running:
     
         --
             bin/fetch-data --format all
         --  bash
     
-    This will create both the Lua and CSV versions of the dataset.
+    This will create the Lua, CSV, and TXT versions of the dataset.
+|
+    2.1.1 Backend Comparison
+|
+    Each backend has different performance characteristics:
+|
+    - Lua: Fast searching (~0.1ms), moderate initialization time (~70-320ms)
+    - CSV: Fast searching (~0.1ms), moderate initialization time (~180-225ms)
+    - Grep: Slower searching (~8-35ms), very fast initialization (~1-3ms)
+|
+    The grep backend is ideal for situations where you need to start up quickly
+    and don't search frequently. For more details on the grep backend, see
+    dev/guides/grep-backend.md.
 
 
 3. Development

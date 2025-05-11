@@ -19,6 +19,7 @@ FULL_DESTINATION_DIR="$DESTINATION_PARENT_DIR/$DESTINATION_SUBDIR_NAME"
 declare -A FORMAT_FILES
 FORMAT_FILES[lua]="unicode_data.lua"
 FORMAT_FILES[csv]="unicode_data.csv"
+FORMAT_FILES[txt]="unicode_data.txt"
 
 # Default formats to generate
 FORMATS=("lua")
@@ -28,7 +29,7 @@ while [[ $# -gt 0 ]]; do
   case $1 in
     --format)
       if [[ "$2" == "all" ]]; then
-        FORMATS=("lua" "csv")
+        FORMATS=("lua" "csv" "txt")
       else
         FORMATS=("$2")
       fi
@@ -37,7 +38,7 @@ while [[ $# -gt 0 ]]; do
     *)
       echo "Unknown option: $1"
       echo "Usage: $0 [--format FORMAT]"
-      echo "FORMAT can be: lua, csv, or all"
+      echo "FORMAT can be: lua, csv, txt, or all"
       exit 1
       ;;
   esac

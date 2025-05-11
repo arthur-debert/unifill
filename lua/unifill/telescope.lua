@@ -15,6 +15,13 @@ local theme = require("unifill.theme")
 -- Custom sorter for telescope
 local function custom_sorter(opts)
     log.debug("Creating custom sorter with opts:", vim.inspect(opts))
+    
+    -- Use Telescope's native sorter for grep backend
+    if opts and opts.backend == "grep" then
+        log.debug("Using native FZY sorter for grep backend")
+        return require("telescope.sorters").get_fzy_sorter(opts)
+    end
+    
     return require("telescope.sorters").Sorter:new {
         scoring_function = function(_, prompt, line, entry)
             local start_time = vim.loop.hrtime()

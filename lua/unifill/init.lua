@@ -37,6 +37,9 @@ local function unifill(opts)
     end
     log.info("Unicode data loaded successfully")
 
+    -- Add backend name to opts for sorter selection
+    opts.backend = data.get_backend_name()
+    
     pickers.new(opts, {
         prompt_title = "Unicode Characters",
         finder = finders.new_table {

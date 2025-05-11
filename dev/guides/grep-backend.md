@@ -1,198 +1,96 @@
-# Creating a Telescope-Native Grep Backend for Unifill
+# Grep Backend for Unifill
 
-After analyzing the unifill codebase and Telescope's architecture, I've
-developed a comprehensive assessment and proposal for implementing a grep-based
-backend that leverages Telescope's native fuzzy finding capabilities.
+This document describes the grep backend implementation for the Unifill plugin,
+which provides an alternative way to search for Unicode characters using
+external grep tools.
 
-## 1. Assessment of Telescope's Search and Ranking Capabilities
+## Overview
 
-### Telescope's Fuzzy Finding System
+The grep backend is designed to leverage the speed of external grep tools (like
+ripgrep) for searching through Unicode character data. Unlike the lua and csv
+backends that load all data into memory, the grep backend performs searches
+directly on the text file, which can be more efficient for large datasets.
 
-Telescope provides several sorters (ranking mechanisms):
+## Features
 
-1. **Generic Fuzzy Sorter** (`sorters.get_generic_fuzzy_sorter`): Uses n-gram
-   matching to score results
-2. **File Fuzzy Sorter** (`sorters.get_fuzzy_file`): Similar to generic but
-   optimized for file paths
-3. **FZY Sorter** (`sorters.get_fzy_sorter`): Uses the FZY algorithm, which can
-   be backed by a native C implementation
-4. **Levenshtein Sorter** (`sorters.get_levenshtein_sorter`): Uses edit distance
-   (not recommended for performance)
+- **Fast Initialization**: The grep backend initializes very quickly since it
+  doesn't need to load all data into memory.
+- **External Tool Integration**: Uses ripgrep (or another configurable grep
+  tool) for searching.
+- **Multi-word Search**: Supports searching for multiple words, showing both
+  exact phrase matches and individual word matches.
+- **Case Insensitive**: Searches are case insensitive by default.
 
-Telescope's sorters work by:
+## Trade-offs
 
-- Assigning a score to each entry based on how well it matches the search query
-- Lower scores are better (closer matches)
-- Scores below 0 filter out entries entirely
+- **Search Speed vs. Accuracy**: While initialization is faster, actual searches
+  may be slower than in-memory backends.
+- **Ranking Limitations**: The grep backend doesn't support the same
+  sophisticated ranking as the lua and csv backends.
+- **Telescope Integration**: Uses Telescope's native FZY sorter instead of the
+  custom sorter used by other backends.
 
-### Telescope's Finder System
+## Implementation Details
 
-Telescope offers several finder types:
+The grep backend works by:
 
-- `new_table`: For static in-memory data
-- `new_oneshot_job`: For command execution that completes and returns all
-  results
-- `new_async_job`: For long-running commands that stream results
+1. Creating a text file with Unicode data in a grep-friendly format
+   (pipe-separated values).
+2. Using ripgrep to search through this file when a query is entered.
+3. Parsing the grep output to create entries that can be displayed in Telescope.
 
-### Current Unifill Ranking System
+## Configuration
 
-Unifill's current ranking system in `search.lua`:
-
-- Prioritizes matches in this order: name > alias > category
-- Assigns vastly different scores to matches in different fields
-- Requires normalized data with consistent structure
-
-## 2. Proposed Grep Backend Implementation
-
-### Core Concept
-
-Create a backend that:
-
-1. Uses `ripgrep` (or similar) to search through a specially formatted text file
-2. Leverages Telescope's native sorters for fuzzy matching
-3. Preserves enough information to maintain most of the ranking priorities
-
-### Data Format
-
-I propose creating a specially formatted text file where each line contains:
-
-```
-<character>|<name>|<code_point>|<category>|<alias1>|<alias2>|...
-```
-
-For example:
-
-```
-→|RIGHTWARDS ARROW|2192|Sm|FORWARD|RIGHT ARROW
-```
-
-This format:
-
-- Is easily searchable with grep-like tools
-- Preserves all necessary information
-- Can be generated from the existing dataset
-
-### Implementation Approach
-
-1. **Data Generation**:
-
-   - Modify `unifill-datafetch/src/setup_dataset.py` to generate a grep-friendly
-     format
-   - Store in `data/unifill-datafetch/unicode_data.txt`
-
-2. **Backend Implementation**:
-
-   - Create a new backend similar to existing ones but optimized for grep
-   - Use Telescope's `new_async_job` finder to execute grep commands
-   - Parse the grep output to create entries compatible with the existing system
-
-3. **Integration with Telescope**:
-   - Modify `telescope.lua` to use Telescope's native sorter when using the grep
-     backend
-   - Create a custom entry maker that parses the grep output format
-
-### Ranking Strategy
-
-Since we can't fully replicate the current ranking system with grep alone, I
-propose:
-
-1. **Field-Weighted Format**:
-
-   - Format the data file to give more weight to name matches
-   - For example:
-     `<character>|<name>|<name>|<name>|<code_point>|<category>|<aliases>`
-   - This repeats the name field multiple times so grep matches on name are more
-     likely
-
-2. **Post-Processing Ranking**:
-   - After grep returns results, apply a simplified version of the current
-     ranking
-   - This would be less computationally intensive since we're only ranking a
-     subset of data
-
-## 3. Feature Parity Analysis
-
-### What We Can Maintain
-
-1. **Basic Functionality**: Finding and inserting Unicode characters
-2. **Search by Name/Alias/Category**: All fields are searchable
-3. **Display Format**: Same display format in results
-
-### What We Would Lose
-
-1. **Exact Ranking Algorithm**: The precise scoring based on field priority
-   would be approximated
-2. **Multi-Term Scoring**: Telescope's native sorters handle multi-term searches
-   differently
-
-### What We Would Gain
-
-1. **Speed**: Potentially much faster for large datasets
-2. **Memory Efficiency**: No need to load the entire dataset into memory
-3. **Native Integration**: Better integration with Telescope's native
-   capabilities
-
-## 4. Compromise Solution
-
-I propose a hybrid approach:
-
-1. **Two-Stage Search**:
-
-   - First stage: Use grep to quickly filter the dataset
-   - Second stage: Apply a simplified version of the current ranking to the
-     filtered results
-
-2. **Configurable Ranking**:
-
-   - Allow users to choose between "fast" mode (pure grep) and "accurate" mode
-     (grep + post-processing)
-
-3. **Data Format Optimization**:
-   - Generate the data file in a format that naturally biases toward the desired
-     ranking
-   - Include metadata that can be used for post-processing ranking
+The grep backend can be configured in your Neovim config:
 
 ```lua
--- Example configuration
 require('unifill').setup({
     backend = "grep",
     backends = {
         grep = {
+            -- Path to the Unicode data text file
             data_path = "/path/to/unicode_data.txt",
-            ranking_mode = "fast", -- or "accurate"
-            grep_command = "rg",   -- or "grep", "ag", etc.
+            -- Command to use for grep (default: "rg" for ripgrep)
+            grep_command = "rg"
         }
     }
 })
 ```
 
-## 5. Data Generation Recommendations
+## Performance Comparison
 
-To optimize the grep backend, I recommend:
+Based on benchmark results:
 
-1. **Multiple Data Formats**:
+| Backend | Initialization | Search (avg)   |
+| ------- | -------------- | -------------- |
+| lua     | ~70-320 ms     | ~0.003-0.1 ms  |
+| csv     | ~180-225 ms    | ~0.003-0.1 ms  |
+| grep    | ~1-3 ms        | ~8-35 ms total |
 
-   - Generate both the current formats (lua, csv) and the new grep-friendly
-     format
-   - Allow users to choose based on their needs
+The grep backend initializes about 100x faster than the other backends, but
+searches are about 100x slower. This makes it ideal for situations where:
 
-2. **Field Weighting**:
+- You need to start up quickly
+- You don't search frequently
+- You're working with very large datasets where loading into memory would be
+  problematic
 
-   - Structure the grep data file to naturally bias toward the desired ranking
-   - For example, include the name field multiple times or with special markers
+## Implementation Notes
 
-3. **Indexing**:
-   - Consider creating multiple indexed files for different search patterns
-   - For example, one file optimized for name searches, another for category
-     searches
+- The grep backend requires the text format of the Unicode data, which can be
+  generated using `bin/fetch-data --format txt` or
+  `bin/fetch-data --format all`.
+- When Telescope is not available (e.g., in test environments), the backend
+  gracefully falls back to returning empty results.
+- Special characters in search queries are escaped to prevent grep syntax
+  errors.
 
-## Conclusion
+## Future Improvements
 
-A grep-based backend for unifill is feasible and could offer significant
-performance benefits. While it can't perfectly replicate the current ranking
-system, a thoughtful implementation can provide a good compromise between speed
-and feature parity.
+Potential improvements for the grep backend include:
 
-The proposed solution offers users flexibility to choose between backends based
-on their specific needs, whether they prioritize perfect ranking or maximum
-performance.
+1. Better ranking by using grep's context options to extract surrounding data
+   for better scoring.
+2. Parallel searches for multi-word queries to improve performance.
+3. Caching frequently searched terms to improve response time.
+4. Support for more advanced grep features like regex patterns.
