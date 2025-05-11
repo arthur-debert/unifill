@@ -22,7 +22,7 @@ FORMAT_FILES[csv]="unicode_data.csv"
 FORMAT_FILES[txt]="unicode_data.txt"
 
 # Default formats to generate
-FORMATS=("lua")
+FORMATS=("lua" "txt")
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do

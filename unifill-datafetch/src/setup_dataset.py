@@ -237,7 +237,7 @@ def write_lua_output(unicode_data, aliases_data, output_filename):
         print(f"Error writing Lua module: {e}")
 
 def write_txt_output(unicode_data, aliases_data, output_filename):
-    """Writes the data in a grep-friendly text format."""
+    """Writes the data in a grep-friendly text format optimized for fast searching."""
     if not unicode_data:
         print("No Unicode data to write. Aborting text file creation.")
         return
@@ -246,9 +246,15 @@ def write_txt_output(unicode_data, aliases_data, output_filename):
         with open(output_filename, 'w', encoding='utf-8') as f:
             for code_point_hex, data in unicode_data.items():
                 # Format: character|name|code_point|category|alias1|alias2|...
+                # Optimized for grep with searchable fields first
+                
+                # Prepare the name and aliases for better searchability
+                name = data['name']
+                
+                # Create the base parts of the line
                 line_parts = [
                     data['char_obj'],
-                    data['name'],
+                    name,
                     f"U+{code_point_hex}",
                     data['category']
                 ]

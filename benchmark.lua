@@ -30,7 +30,8 @@ end
 local benchmark_results = {
     lua = { name = "lua", load_time = 0, entries = 0, searches = {} },
     csv = { name = "csv", load_time = 0, entries = 0, searches = {} },
-    grep = { name = "grep", init_time = 0, searches = {} }
+    grep = { name = "grep", init_time = 0, searches = {} },
+    fast_grep = { name = "fast_grep", init_time = 0, searches = {} }
 }
 
 -- Helper function to write to log file
@@ -134,23 +135,26 @@ local function benchmark_standard_backend(backend_name, search_terms)
 end
 
 -- Benchmark function for grep backend
-local function benchmark_grep_backend(search_terms)
+local function benchmark_grep_backend(backend_name, search_terms)
     -- Configure the backend
     unifill.setup({
-        backend = "grep"
+        backend = backend_name
     })
     
     -- Measure initialization time
     local start_time = vim.loop.hrtime()
-    local backend = require("unifill.backends.grep_backend").new(require("unifill.data").get_config().backends.grep)
+    local backend_module = backend_name == "grep"
+        and require("unifill.backends.grep_backend")
+        or require("unifill.backends.fast_grep_backend")
+    local backend = backend_module.new(require("unifill.data").get_config().backends[backend_name])
     local end_time = vim.loop.hrtime()
     local init_time_ms = (end_time - start_time) / 1000000
     
     -- Store results
-    benchmark_results.grep.init_time = init_time_ms
+    benchmark_results[backend_name].init_time = init_time_ms
     
     -- Log for file
-    log("\n=== Benchmarking grep backend ===\n")
+    log(string.format("\n=== Benchmarking %s backend ===\n", backend_name))
     log(string.format("Backend initialization time: %.2f ms", init_time_ms))
     log("\nSearch performance:")
     
@@ -233,7 +237,7 @@ local function benchmark_grep_backend(search_terms)
         end
         
         -- Add to results
-        table.insert(benchmark_results.grep.searches, search_result)
+        table.insert(benchmark_results[backend_name].searches, search_result)
         
         -- Log for file
         log(string.format("  Total search time: %.3f ms", search_time_ms))
@@ -252,7 +256,8 @@ local search_terms = {
 -- Run benchmarks for all backends
 benchmark_standard_backend("lua", search_terms)
 benchmark_standard_backend("csv", search_terms)
-benchmark_grep_backend(search_terms)
+benchmark_grep_backend("grep", search_terms)
+benchmark_grep_backend("fast_grep", search_terms)
 
 -- Format and display results in tables for the log file
 log("\n=== Benchmark Results ===\n")
@@ -280,6 +285,7 @@ end
 local lua_search_times = {}
 local csv_search_times = {}
 local grep_search_times = {}
+local fast_grep_search_times = {}
 
 for _, search in ipairs(benchmark_results.lua.searches) do
     table.insert(lua_search_times, search.time)
@@ -293,9 +299,14 @@ for _, search in ipairs(benchmark_results.grep.searches) do
     table.insert(grep_search_times, search.time)
 end
 
+for _, search in ipairs(benchmark_results.fast_grep.searches) do
+    table.insert(fast_grep_search_times, search.time)
+end
+
 local lua_median = calculate_median(lua_search_times)
 local csv_median = calculate_median(csv_search_times)
 local grep_median = calculate_median(grep_search_times)
+local fast_grep_median = calculate_median(fast_grep_search_times)
 
 -- Create headers: Backend, Init Time, Search Term 1, Search Term 2, etc., Median
 local headers = {"Backend", "Init Time", "Entries"}
@@ -311,7 +322,7 @@ local rows = {}
 local function find_search_result(backend_name, term)
     for _, search in ipairs(benchmark_results[backend_name].searches) do
         if search.terms == term then
-            if backend_name == "grep" then
+            if backend_name == "grep" or backend_name == "fast_grep" then
                 local match_info = search.matches
                 if #search.individual_matches > 0 then
                     match_info = search.matches .. " (exact)"
@@ -350,6 +361,14 @@ for _, term in ipairs(search_terms_list) do
 end
 table.insert(grep_row, string.format("%5.2f ms", grep_median))
 table.insert(rows, grep_row)
+
+-- Fast Grep backend row
+local fast_grep_row = {"fast_grep", string.format("%7.2f ms", benchmark_results.fast_grep.init_time), "N/A"}
+for _, term in ipairs(search_terms_list) do
+    table.insert(fast_grep_row, find_search_result("fast_grep", term))
+end
+table.insert(fast_grep_row, string.format("%5.2f ms", fast_grep_median))
+table.insert(rows, fast_grep_row)
 
 -- Output the table
 log(format_table(headers, rows))

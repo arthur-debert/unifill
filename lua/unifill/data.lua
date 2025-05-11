@@ -23,6 +23,12 @@ local default_config = {
             data_path = nil,
             -- Default grep command
             grep_command = "rg"
+        },
+        fast_grep = {
+            -- Will be set based on plugin root
+            data_path = nil,
+            -- Default grep command
+            grep_command = "rg"
         }
     }
 }
@@ -55,6 +61,9 @@ function DataManager.setup(user_config)
     end
     if not config.backends.grep.data_path then
         config.backends.grep.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.txt"
+    end
+    if not config.backends.fast_grep.data_path then
+        config.backends.fast_grep.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.txt"
     end
     
     log.debug("DataManager setup complete with backend: " .. config.backend)
@@ -108,6 +117,9 @@ function DataManager.load_unicode_data()
     elseif backend_name == "grep" then
         local GrepBackend = require("unifill.backends.grep_backend")
         backend = GrepBackend.new(backend_config)
+    elseif backend_name == "fast_grep" then
+        local FastGrepBackend = require("unifill.backends.fast_grep_backend")
+        backend = FastGrepBackend.new(backend_config)
     else
         -- Unknown backend
         local err_msg = "Unknown backend: " .. backend_name

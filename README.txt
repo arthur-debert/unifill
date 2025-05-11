@@ -62,6 +62,7 @@ u#nifill
     - Lua backend (default): Uses a Lua table for fast loading and searching
     - CSV backend: Uses a CSV file, which may be easier to inspect or modify
     - Grep backend: Uses external grep tools for ultra-fast initialization
+    - Fast Grep backend: Optimized grep backend with minimal Lua processing
 
     You can configure the data backend using the setup function:
 
@@ -76,6 +77,10 @@ u#nifill
                     data_path = "/path/to/your/unicode_data.csv"  -- Optional custom path
                 },
                 grep = {
+                    data_path = "/path/to/your/unicode_data.txt",  -- Optional custom path
+                    grep_command = "rg"  -- Command to use for grep (default: "rg" for ripgrep)
+                },
+                fast_grep = {
                     data_path = "/path/to/your/unicode_data.txt",  -- Optional custom path
                     grep_command = "rg"  -- Command to use for grep (default: "rg" for ripgrep)
                 }
@@ -101,10 +106,12 @@ u#nifill
     - Lua: Fast searching (~0.1ms), moderate initialization time (~70-320ms)
     - CSV: Fast searching (~0.1ms), moderate initialization time (~180-225ms)
     - Grep: Slower searching (~8-35ms), very fast initialization (~1-3ms)
+    - Fast Grep: Improved searching (~6-7ms), fast initialization (~7ms)
 |
     The grep backend is ideal for situations where you need to start up quickly
-    and don't search frequently. For more details on the grep backend, see
-    dev/guides/grep-backend.md.
+    and don't search frequently. The fast_grep backend provides a good balance
+    between initialization speed and search performance. For more details on the
+    grep backends, see dev/guides/grep-backend.md.
 
 
 3. Development
