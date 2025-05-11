@@ -18,11 +18,14 @@ classifiers = [
 ]
 
 # Dependencies
-dependencies = ["requests (>=2.32.3,<3.0.0)"]
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+    "click (>=8.1.3,<9.0.0)"
+]
 
 
 [project.scripts]
-unidata = "setup_dataset:main"
+unidata = "unifill_datafetch.__main__:main"
 
 [project.urls]
 Homepage = "https://github.com/arthur-debert/univim/"
@@ -33,7 +36,7 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-packages = [{ include = "setup_dataset.py", from = "src" }]
+packages = [{ include = "unifill_datafetch", from = "src" }]
 include = ["bin/**/*", "README.txt", "LICENSE"]
 exclude = ["**/*.lua", "**/*.csv", "**/*.txt"]
 
