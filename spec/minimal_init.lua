@@ -7,7 +7,8 @@ vim.opt.runtimepath:append('.')
 
 -- Set test environment variable
 vim.env.PLENARY_TEST = "1"
-vim.env.UNIFILL_LOG_LEVEL = "error"  -- Minimize logging during tests
+-- Set log level from environment variable or default to error
+vim.env.UNIFILL_LOG_LEVEL = vim.env.UNIFILL_LOG_LEVEL or "error"  -- Minimize logging during tests
 
 -- Create test cache directory
 local cache_dir = vim.fn.stdpath('cache')

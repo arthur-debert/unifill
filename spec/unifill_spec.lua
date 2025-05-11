@@ -7,6 +7,7 @@ describe("unifill", function()
         package.loaded['unifill.format'] = nil
         package.loaded['unifill.search'] = nil
         package.loaded['unifill.telescope'] = nil
+        package.loaded['unifill.log'] = nil
 
         -- Mock telescope modules before loading unifill
         _G.telescope = {
@@ -52,7 +53,8 @@ describe("unifill", function()
 
         -- Ensure test environment variables are set
         vim.env.PLENARY_TEST = "1"
-        vim.env.UNIFILL_LOG_LEVEL = "error"
+        -- Set log level from environment variable or default to error
+        vim.env.UNIFILL_LOG_LEVEL = vim.env.UNIFILL_LOG_LEVEL or "error"
     end)
 
     -- Clean up after each test
@@ -67,6 +69,27 @@ describe("unifill", function()
 
     it("simple test", function()
         assert(true, "this test should pass")
+    end)
+    
+    it("can load and use logger", function()
+        local log = require("unifill.log")
+        assert(type(log) == "table", "log module should be a table")
+        assert(type(log.debug) == "function", "log.debug should be a function")
+        assert(type(log.info) == "function", "log.info should be a function")
+        assert(type(log.warn) == "function", "log.warn should be a function")
+        assert(type(log.error) == "function", "log.error should be a function")
+        
+        -- Test logging (this should not throw errors)
+        log.debug("Test debug message")
+        log.info("Test info message")
+        log.warn("Test warning message")
+        log.error("Test error message")
+        
+        -- Test logging with tables
+        log.debug("Test table logging", { key = "value", nested = { inner = true } })
+        
+        -- Test multiple arguments
+        log.info("Multiple", "arguments", "test")
     end)
 
     it("can load unifill module", function()

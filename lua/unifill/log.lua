@@ -1,64 +1,27 @@
--- Logging functionality for unifill
+-- Logging functionality for unifill using plenary.nvim's logger
 
--- Set up direct file logging
-local log_dir = vim.fn.expand('%:p:h:h:h') .. '/tmp/logs'
-local log_path = log_dir..'/unifill.log'
-vim.fn.mkdir(log_dir, 'p')
+-- Import plenary logger
+local plenary_log = require("plenary.log")
 
--- Clear previous log file
-local f = io.open(log_path, "w")
-if f then
-    f:write("Unifill log started at " .. os.date() .. "\n")
-    f:close()
-end
-
--- Print log location for easy reference
-vim.api.nvim_echo({{"Unifill logs at: " .. log_path, "Normal"}}, true, {})
-
--- Simple logger implementation
-local log = {}
-
-local function write_log(level, ...)
-    local args = {...}
-    local msg = ""
+-- Create the logger
+local log = plenary_log.new({
+    -- Plugin name
+    plugin = "unifill",
     
-    for i, v in ipairs(args) do
-        if type(v) == "table" then
-            msg = msg .. vim.inspect(v)
-        else
-            msg = msg .. tostring(v)
-        end
-        
-        if i < #args then
-            msg = msg .. " "
-        end
-    end
+    -- Log level from environment or default to info
+    level = vim.env.UNIFILL_LOG_LEVEL or "info",
     
-    local info = debug.getinfo(3, "Sl")
-    local fileinfo = info and string.format(" (%s:%s)", info.short_src, info.currentline) or ""
-    local log_msg = string.format('[%s]%s %s\n', level, fileinfo, msg)
+    -- Show in console for debugging
+    use_console = "sync",
     
-    local f = io.open(log_path, "a")
-    if f then
-        f:write(log_msg)
-        f:close()
-    end
-end
+    -- Don't write to log file
+    use_file = false,
+    
+    -- Add highlights to console output
+    highlights = true,
+})
 
-function log.debug(...)
-    write_log("DEBUG", ...)
-end
-
-function log.info(...)
-    write_log("INFO", ...)
-end
-
-function log.warn(...)
-    write_log("WARN", ...)
-end
-
-function log.error(...)
-    write_log("ERROR", ...)
-end
+-- Print a message to indicate the logger is initialized
+print("Unifill logger initialized with level: " .. (vim.env.UNIFILL_LOG_LEVEL or "info"))
 
 return log
