@@ -27,7 +27,7 @@ local function load_unicode_data()
         return {}
     end
     file:close()
-    log.info("Unicode data file found")
+    log.debug("Unicode data file found")
     
     -- Load the data
     local ok, data = pcall(dofile, data_path)
@@ -37,7 +37,7 @@ local function load_unicode_data()
         vim.notify(err_msg, vim.log.levels.ERROR)
         return {}
     end
-    log.info("Unicode data file loaded successfully")
+    log.debug("Unicode data file loaded successfully")
     
     -- Validate data structure
     if type(data) ~= "table" or #data == 0 then
@@ -46,7 +46,7 @@ local function load_unicode_data()
         vim.notify(err_msg, vim.log.levels.ERROR)
         return {}
     end
-    log.info("Unicode data validated, entries found:", #data)
+    log.debug("Unicode data validated, entries found:", #data)
     
     -- Convert characters to proper UTF-8
     local converted_count = 0
@@ -58,7 +58,7 @@ local function load_unicode_data()
     end
     log.debug("UTF-8 conversion completed. Converted entries:", converted_count)
     
-    log.info("Unicode data loading completed successfully")
+    log.debug("Unicode data loading completed successfully")
     return data
 end
 

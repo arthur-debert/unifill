@@ -8,6 +8,7 @@ describe("unifill", function()
         package.loaded['unifill.search'] = nil
         package.loaded['unifill.telescope'] = nil
         package.loaded['unifill.log'] = nil
+        package.loaded['unifill.theme'] = nil
 
         -- Mock telescope modules before loading unifill
         _G.telescope = {
@@ -43,6 +44,11 @@ describe("unifill", function()
                 get_selected_entry = function()
                     return {}
                 end
+            },
+            themes = {
+                get_dropdown = function(opts)
+                    return opts or {}
+                end
             }
         }
         package.loaded['telescope.pickers'] = telescope.pickers
@@ -50,6 +56,18 @@ describe("unifill", function()
         package.loaded['telescope.config'] = telescope.config
         package.loaded['telescope.actions'] = telescope.actions
         package.loaded['telescope.actions.state'] = telescope.actions_state
+        package.loaded['telescope.themes'] = telescope.themes
+        package.loaded['telescope.pickers.entry_display'] = {
+            create = function(opts)
+                return function(items)
+                    local result = ""
+                    for _, item in ipairs(items) do
+                        result = result .. item[1] .. "     "
+                    end
+                    return result:sub(1, -6) -- Remove trailing spaces
+                end
+            end
+        }
 
         -- Ensure test environment variables are set
         vim.env.PLENARY_TEST = "1"
@@ -65,6 +83,7 @@ describe("unifill", function()
         package.loaded['unifill.format'] = nil
         package.loaded['unifill.search'] = nil
         package.loaded['unifill.telescope'] = nil
+        package.loaded['unifill.theme'] = nil
     end)
 
     it("simple test", function()
@@ -96,6 +115,13 @@ describe("unifill", function()
         local unifill = require("unifill")
         assert(type(unifill) == "table", "unifill module should be a table")
         assert(type(unifill.unifill) == "function", "unifill.unifill should be a function")
+        
+        -- Verify theme is loaded
+        local theme = require("unifill.theme")
+        assert(type(theme) == "table", "theme module should be a table")
+        assert(type(theme.ui) == "table", "theme.ui should be a table")
+        assert(type(theme.highlights) == "table", "theme.highlights should be a table")
+        assert(type(theme.setup) == "function", "theme.setup should be a function")
     end)
 
     it("can load and use unicode data", function()
@@ -163,7 +189,11 @@ describe("unifill", function()
                 category = "Sm",
                 aliases = {"RIGHT ARROW", "FORWARD"}
             })
-            assert.equals("→     Rightwards Arrow (aka Right Arrow, Forward) (Math Symbol)", result.display)
+            
+            -- Since we're now using a display function, we need to call it
+            local display_text = result.display()
+            -- The exact spacing might vary based on the mock implementation
+            assert.is_true(display_text:match("→.*Rightwards Arrow.*%(aka Right Arrow, Forward%) %(Math Symbol%)") ~= nil)
         end)
     end)
 
@@ -247,6 +277,54 @@ describe("unifill", function()
 
             assert.equals(upper_score, lower_score, "Upper and lowercase searches should score the same")
             assert.equals(upper_score, mixed_score, "Mixed case searches should score the same")
+        end)
+    end)
+    
+    describe("theme functionality", function()
+        local theme = require("unifill.theme")
+        
+        it("has the correct UI configuration", function()
+            assert.equals(0.4, theme.ui.layout.width)
+            assert.equals(0.4, theme.ui.layout.height)
+            assert.equals(false, theme.ui.layout.previewer)
+            assert.equals("Unicode Characters", theme.ui.layout.prompt_title)
+            
+            -- Check column configuration
+            assert.equals(6, theme.ui.columns.character.width)
+            assert.equals(30, theme.ui.columns.name.width)
+            assert.equals(true, theme.ui.columns.details.remaining)
+            
+            -- Check separator
+            assert.equals("   ", theme.ui.separator)
+        end)
+        
+        it("has the correct highlight groups", function()
+            assert.equals("UnifillCharacter", theme.highlights.character)
+            assert.equals("UnifillName", theme.highlights.name)
+            assert.equals("UnifillDetails", theme.highlights.details)
+            assert.equals("UnifillMatch", theme.highlights.match)
+        end)
+        
+        it("can set up highlight groups", function()
+            -- Mock vim.api.nvim_command
+            local commands = {}
+            local original_command = vim.api.nvim_command
+            vim.api.nvim_command = function(cmd)
+                table.insert(commands, cmd)
+            end
+            
+            -- Call setup
+            theme.setup()
+            
+            -- Restore original function
+            vim.api.nvim_command = original_command
+            
+            -- Check that the correct highlight commands were issued
+            assert.equals(4, #commands)
+            assert.equals('highlight UnifillCharacter guifg=#000000 gui=bold', commands[1])
+            assert.equals('highlight UnifillName guifg=#333333', commands[2])
+            assert.equals('highlight UnifillDetails guifg=#333333', commands[3])
+            assert.equals('highlight UnifillMatch gui=italic', commands[4])
         end)
     end)
 end)

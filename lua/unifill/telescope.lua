@@ -5,10 +5,12 @@ local finders = require "telescope.finders"
 local conf = require("telescope.config").values
 local actions = require "telescope.actions"
 local action_state = require "telescope.actions.state"
+local entry_display = require("telescope.pickers.entry_display")
 
 local format = require("unifill.format")
 local search = require("unifill.search")
 local log = require("unifill.log")
+local theme = require("unifill.theme")
 
 -- Custom sorter for telescope
 local function custom_sorter(opts)
@@ -75,7 +77,7 @@ local function custom_sorter(opts)
         end,
 
         highlighter = opts.highlighter or function(_, prompt, display)
-            -- Highlight matching terms
+            -- Highlight matching terms with italic
             local highlights = {}
             local terms = vim.split(prompt:lower(), "%s+")
             local display_lower = display:lower()
@@ -86,7 +88,8 @@ local function custom_sorter(opts)
                 if start then
                     table.insert(highlights, {
                         start = start,
-                        finish = start + #term - 1
+                        finish = start + #term - 1,
+                        hl_group = theme.highlights.match
                     })
                 end
             end
@@ -108,21 +111,31 @@ local function entry_maker(entry)
     local name = format.to_title_case(entry.name)
     local aliases = format.format_aliases(entry.aliases)
     local category = format.friendly_category(entry.category)
+    
+    -- Create a displayer with specific column widths
+    local displayer = entry_display.create {
+        separator = theme.ui.separator,
+        items = {
+            theme.ui.columns.character,
+            theme.ui.columns.name,
+            theme.ui.columns.details,
+        },
+    }
+    
+    -- Create display function that returns formatted text with highlights
+    local display = function()
+        return displayer {
+            { entry.character, theme.highlights.character },
+            { name, theme.highlights.name },
+            { aliases .. " (" .. category .. ")", theme.highlights.details },
+        }
+    end
 
-    -- Create display text with more spacing for readability
-    local display_text = string.format("%s     %s%s (%s)",
-        entry.character,
-        name,
-        aliases,
-        category
-    )
-
-    log.debug(string.format("Created telescope entry for '%s': %s",
-        entry.name, display_text))
+    log.debug(string.format("Created telescope entry for '%s'", entry.name))
 
     return {
         value = entry,
-        display = display_text,
+        display = display,
         ordinal = entry.name .. " " .. (entry.aliases and table.concat(entry.aliases, " ") or "")
     }
 end
