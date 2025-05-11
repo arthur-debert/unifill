@@ -70,8 +70,18 @@ vim.keymap.set('n', '<leader>fu', unifill, { noremap = true, silent = true })
 
 -- Return the module
 return {
+    -- Main picker function
     unifill = unifill,
-    log = require("unifill.log"),  -- Re-export the logger for API compatibility
+    
+    -- Setup function for configuration
+    setup = function(config)
+        return data.setup(config)
+    end,
+    
+    -- Re-export the logger for API compatibility
+    log = require("unifill.log"),
+    
+    -- Test exports
     _test = {
         load_unicode_data = data.load_unicode_data,
         entry_maker = telescope_utils.entry_maker,
