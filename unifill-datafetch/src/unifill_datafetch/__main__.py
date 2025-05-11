@@ -1,13 +1,51 @@
 """
 Command-line interface for the unifill-datafetch package.
-
-This module provides a CLI interface using Click to download and process
-Unicode character data for the Unifill Neovim plugin.
 """
 
 import os
 import click
-from .core import process_unicode_data, OUTPUT_FILES
+from typing import Tuple, List
+
+from .types import FetchOptions, ExportOptions
+from .fetcher import fetch_all_data_files
+from .processor import process_data_files
+from .exporter import export_data, save_source_files
+from .config import DEFAULT_CACHE_DIR
+
+
+def process_unicode_data(
+    fetch_options: FetchOptions,
+    export_options: ExportOptions
+) -> Tuple[bool, List[str]]:
+    """
+    Process Unicode data and generate output files.
+    
+    Args:
+        fetch_options: Options for fetching Unicode data files
+        export_options: Options for exporting Unicode data
+        
+    Returns:
+        Tuple of (success, output_files) where success is a boolean indicating
+        if the operation was successful, and output_files is a list of generated file paths.
+    """
+    # Fetch the data files
+    file_paths = fetch_all_data_files(fetch_options)
+    if not file_paths:
+        return False, []
+    
+    # Process the data files
+    unicode_data, aliases_data = process_data_files(file_paths)
+    if not unicode_data or not aliases_data:
+        return False, []
+    
+    # Export the data
+    output_files = export_data(unicode_data, aliases_data, export_options)
+    
+    # Save the source files
+    save_source_files(file_paths, export_options.output_dir)
+    
+    return bool(output_files), output_files
+
 
 @click.group()
 def cli():
@@ -19,6 +57,7 @@ def cli():
     with the Unifill Neovim plugin.
     """
     pass
+
 
 @cli.command()
 @click.option(
@@ -41,8 +80,8 @@ def cli():
 @click.option(
     "--cache-dir",
     type=click.Path(exists=False, file_okay=False, dir_okay=True),
-    default="./cache",
-    help="Directory to store cached files (default: ./cache)",
+    default=DEFAULT_CACHE_DIR,
+    help=f"Directory to store cached files (default: {DEFAULT_CACHE_DIR})",
 )
 def generate(format, output_dir, use_cache, cache_dir):
     """
@@ -52,16 +91,12 @@ def generate(format, output_dir, use_cache, cache_dir):
     in the specified format. The output can be in CSV, JSON, Lua, or
     text format, or all formats at once.
     """
-    # Create output directory if it doesn't exist
-    os.makedirs(output_dir, exist_ok=True)
+    # Create options objects
+    fetch_options = FetchOptions(use_cache=use_cache, cache_dir=cache_dir)
+    export_options = ExportOptions(format_type=format, output_dir=output_dir)
     
     # Process the data
-    success, output_files = process_unicode_data(
-        format_type=format,
-        output_dir=output_dir,
-        use_cache=use_cache,
-        cache_dir=cache_dir
-    )
+    success, output_files = process_unicode_data(fetch_options, export_options)
     
     if success:
         click.echo(click.style("✓ Unicode data processing completed successfully!", fg="green"))
@@ -73,6 +108,7 @@ def generate(format, output_dir, use_cache, cache_dir):
         return 1
     
     return 0
+
 
 @cli.command()
 def info():
@@ -104,9 +140,11 @@ def info():
     click.echo("")
     click.echo("Use the 'generate' command with the --format option to create these files.")
 
+
 def main():
     """Entry point for the CLI."""
     return cli()
+
 
 if __name__ == "__main__":
     main()

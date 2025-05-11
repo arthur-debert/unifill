@@ -92,13 +92,16 @@ USAGE
 -----
 
 Basic usage:
-  python src/setup_dataset.py --format all
+  poetry run python -m unifill_datafetch generate --format all
 
 Options:
   --format FORMAT    Output format: csv, json, lua, txt, or all (default: csv)
   --output-dir DIR   Output directory (default: current directory)
   --use-cache        Use cached files if available
   --cache-dir DIR    Directory to store cached files (default: ./cache)
+
+You can also use the CLI to get information about the data formats:
+  poetry run python -m unifill_datafetch info
 
 The script will generate the following files:
   - unicode_data.csv: CSV format
