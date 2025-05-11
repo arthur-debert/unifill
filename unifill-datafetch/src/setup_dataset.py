@@ -36,8 +36,8 @@ NAME_ALIASES_FILE_URL = UCD_LATEST_URL + "NameAliases.txt"
 
 # Output file names for different formats
 OUTPUT_FILES = {
-    'csv': "unicode_characters_table.csv",
-    'json': "unicode_characters_table.json",
+    'csv': "unicode_data.csv",
+    'json': "unicode_data.json",
     'lua': "unicode_data.lua"
 }
 

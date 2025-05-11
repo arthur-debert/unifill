@@ -17,6 +17,7 @@ local function custom_sorter(opts)
     log.debug("Creating custom sorter with opts:", vim.inspect(opts))
     return require("telescope.sorters").Sorter:new {
         scoring_function = function(_, prompt, line, entry)
+            local start_time = vim.loop.hrtime()
             log.debug("=== TELESCOPE SCORING START ===")
             log.debug("Prompt: '" .. prompt .. "'")
             
@@ -70,9 +71,20 @@ local function custom_sorter(opts)
             
             -- Normalize the score for Telescope (lower is better)
             local final_score = 1 / (test_score + 0.0001) -- Avoid division by zero
-            log.debug(string.format("Final telescope score for '%s': %s (original: %s)",
-                entry.value.name, final_score, test_score))
+            
+            local end_time = vim.loop.hrtime()
+            local scoring_time_ms = (end_time - start_time) / 1000000
+            
+            log.debug(string.format("Final telescope score for '%s': %s (original: %s, time: %.3f ms)",
+                entry.value.name, final_score, test_score, scoring_time_ms))
             log.debug("=== TELESCOPE SCORING END (SCORE: " .. final_score .. ") ===")
+            
+            -- Log performance for complex queries
+            if #filtered_terms > 1 and test_score > 0 then
+                log.info(string.format("Telescope scoring for '%s' with query '%s' took %.3f ms",
+                    entry.value.name, prompt, scoring_time_ms))
+            end
+            
             return final_score
         end,
 

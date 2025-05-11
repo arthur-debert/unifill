@@ -1,4 +1,4 @@
-unifill
+u#nifill
 -------
 
     unifill is a vim plugin to insert unicode characters.
@@ -11,31 +11,38 @@ unifill
 →
 
 1. Installing
+    1. Installing
+        
+        Install with your favorite plugin manager. For example, with lazy.nvim:
     
-    Install with your favorite plugin manager. For example, with lazy.nvim:
-
-        --- 
-        {
-        "arthur-debert/unifill",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim", -- required for testing
-        },
-        config = function()
-            -- Optional: set up key mappings
-            vim.keymap.set('n', '<leader>iu', require('unifill').unifill, 
-            { desc = 'Insert Unicode character' })
-        end
-        }
-    ---  lua
-
-
+            ---
+            {
+            "arthur-debert/unifill",
+            dependencies = {
+                "nvim-telescope/telescope.nvim",
+                "nvim-lua/plenary.nvim", -- required for testing
+            },
+            config = function()
+                -- Configure the plugin (optional)
+                local unifill = require('unifill')
+                unifill.setup({
+                    -- Use default configuration
+                    -- See section 2.1 for backend configuration options
+                })
+                
+                -- Set up key mappings
+                vim.keymap.set('n', '<leader>iu', unifill.unifill,
+                { desc = 'Insert Unicode character' })
+            end
+            }
+        ---  lua
+    
 2. Dataset
 
-    The plugin uses a database of unicode code points, names, categories and common 
+    The plugin uses a database of unicode code points, names, categories and common
     aliases. This is a largish file, at 5MB, but gets unloaded after execution.
 
-    As an optimization, we're saving the data as a lua file, which makes the plugin 
+    As an optimization, we're saving the data as a lua file, which makes the plugin
     code much simpler. It's a lookup table, and should be faster to run.
 
     The dataset can be generated automatically by running:
@@ -45,8 +52,42 @@ unifill
 
         --  bash
 
-    This executes unifill-datafetch/src/setup_dataset.py. It will create a .venv and 
+    This executes unifill-datafetch/src/setup_dataset.py. It will create a .venv and
     Install deps in the unifill-datafetch directory.
+
+2.1 Data Backends
+
+    The plugin now supports configurable data backends. You can choose between:
+    
+    - Lua backend (default): Uses a Lua table for fast loading and searching
+    - CSV backend: Uses a CSV file, which may be easier to inspect or modify
+
+    You can configure the data backend using the setup function:
+
+        ---
+        require('unifill').setup({
+            backend = "lua",  -- Use "lua" or "csv"
+            backends = {
+                lua = {
+                    data_path = "/path/to/your/unicode_data.lua"  -- Optional custom path
+                },
+                csv = {
+                    data_path = "/path/to/your/unicode_data.csv"  -- Optional custom path
+                }
+            }
+        })
+        ---  lua
+
+    The default configuration will use the Lua backend with the dataset located at
+    the standard path in the plugin directory.
+    
+    You can generate both data formats by running:
+    
+        --
+            bin/fetch-data --format all
+        --  bash
+    
+    This will create both the Lua and CSV versions of the dataset.
 
 
 3. Development

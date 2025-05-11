@@ -55,6 +55,7 @@ end
 -- @param terms Array of search terms
 -- @return Score, or 0 if any term doesn't match
 local function score_match(entry, terms)
+    local start_time = vim.loop.hrtime()
     log.debug("=== START SCORING ===")
     log.debug("Scoring entry: " .. (entry.name or "unknown"))
     log.debug("Terms: " .. vim.inspect(terms))
@@ -155,9 +156,19 @@ local function score_match(entry, terms)
 
     -- Calculate final score
     local final_score = total_score * vim.tbl_count(matched_terms)
-    log.debug(string.format("Final score for '%s': %s (matched terms: %s)",
-        entry.name, final_score, vim.tbl_count(matched_terms)))
+    
+    local end_time = vim.loop.hrtime()
+    local search_time_ms = (end_time - start_time) / 1000000
+    
+    log.debug(string.format("Final score for '%s': %s (matched terms: %s, time: %.3f ms)",
+        entry.name, final_score, vim.tbl_count(matched_terms), search_time_ms))
     log.debug("=== END SCORING (SCORE: " .. final_score .. ") ===")
+    
+    -- For significant searches (with multiple terms), log performance info
+    if #terms > 1 and final_score > 0 then
+        log.info(string.format("Search for '%s' in '%s' took %.3f ms (score: %s)",
+            table.concat(terms, " "), entry.name, search_time_ms, final_score))
+    end
     
     return final_score
 end
