@@ -13,6 +13,10 @@ local default_config = {
         lua = {
             -- Will be set based on plugin root
             data_path = nil
+        },
+        csv = {
+            -- Will be set based on plugin root
+            data_path = nil
         }
     }
 }
@@ -39,6 +43,9 @@ function DataManager.setup(user_config)
     local plugin_root = get_plugin_root()
     if not config.backends.lua.data_path then
         config.backends.lua.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.lua"
+    end
+    if not config.backends.csv.data_path then
+        config.backends.csv.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.csv"
     end
     
     log.debug("DataManager setup complete with backend: " .. config.backend)
@@ -73,27 +80,22 @@ end
 -- Load the Unicode data using the configured backend
 -- @return Table with Unicode data entries
 function DataManager.load_unicode_data()
+    local start_time = vim.loop.hrtime()
     log.debug("Loading unicode data with backend: " .. config.backend)
     
     -- Get backend configuration
     local backend_name = config.backend
     local backend_config = config.backends[backend_name]
     
+    -- Load the appropriate backend
+    local backend = nil
+    
     if backend_name == "lua" then
-        -- Load Lua backend
         local LuaBackend = require("unifill.backends.lua_backend")
-        local backend = LuaBackend.new(backend_config)
-        
-        -- Load data
-        local data = backend:load_data()
-        
-        -- Validate data structure
-        if not validate_data(data, backend:get_entry_structure()) then
-            log.error("Data validation failed")
-            return {}
-        end
-        
-        return data
+        backend = LuaBackend.new(backend_config)
+    elseif backend_name == "csv" then
+        local CSVBackend = require("unifill.backends.csv_backend")
+        backend = CSVBackend.new(backend_config)
     else
         -- Unknown backend
         local err_msg = "Unknown backend: " .. backend_name
@@ -101,6 +103,22 @@ function DataManager.load_unicode_data()
         vim.notify(err_msg, vim.log.levels.ERROR)
         return {}
     end
+    
+    -- Load data
+    local data = backend:load_data()
+    
+    -- Validate data structure
+    if not validate_data(data, backend:get_entry_structure()) then
+        log.error("Data validation failed")
+        return {}
+    end
+    
+    local end_time = vim.loop.hrtime()
+    local load_time_ms = (end_time - start_time) / 1000000
+    log.info(string.format("Backend '%s' loaded %d entries in %.2f ms",
+                          backend_name, #data, load_time_ms))
+    
+    return data
 end
 
 -- Initialize with default configuration

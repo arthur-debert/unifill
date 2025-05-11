@@ -1,4 +1,4 @@
-unifill
+u#nifill
 -------
 
     unifill is a vim plugin to insert unicode characters.
@@ -57,17 +57,22 @@ unifill
 
 2.1 Data Backends
 
-    The plugin now supports configurable data backends. Currently, only the Lua backend
-    is implemented, but the architecture allows for additional backends in the future.
+    The plugin now supports configurable data backends. You can choose between:
+    
+    - Lua backend (default): Uses a Lua table for fast loading and searching
+    - CSV backend: Uses a CSV file, which may be easier to inspect or modify
 
     You can configure the data backend using the setup function:
 
         ---
         require('unifill').setup({
-            backend = "lua",  -- Currently only "lua" is supported
+            backend = "lua",  -- Use "lua" or "csv"
             backends = {
                 lua = {
                     data_path = "/path/to/your/unicode_data.lua"  -- Optional custom path
+                },
+                csv = {
+                    data_path = "/path/to/your/unicode_data.csv"  -- Optional custom path
                 }
             }
         })
@@ -75,6 +80,14 @@ unifill
 
     The default configuration will use the Lua backend with the dataset located at
     the standard path in the plugin directory.
+    
+    You can generate both data formats by running:
+    
+        --
+            bin/fetch-data --format all
+        --  bash
+    
+    This will create both the Lua and CSV versions of the dataset.
 
 
 3. Development

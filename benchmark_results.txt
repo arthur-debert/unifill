@@ -1,0 +1,46 @@
+
+=== Benchmarking lua backend ===
+
+Data loading time: 76.94 ms
+Number of entries: 40078
+
+Search performance:
+
+Searching for: 'arrow'
+  Matches found: 638
+  Average search time per match: 0.003 ms
+
+Searching for: 'right arrow'
+  Matches found: 224
+  Average search time per match: 0.092 ms
+
+Searching for: 'mathematical symbol'
+  Matches found: 49
+  Average search time per match: 0.069 ms
+
+Searching for: 'latin letter small'
+  Matches found: 903
+  Average search time per match: 0.070 ms
+
+=== Benchmarking csv backend ===
+
+Data loading time: 225.43 ms
+Number of entries: 40013
+
+Search performance:
+
+Searching for: 'arrow'
+  Matches found: 638
+  Average search time per match: 0.007 ms
+
+Searching for: 'right arrow'
+  Matches found: 224
+  Average search time per match: 0.344 ms
+
+Searching for: 'mathematical symbol'
+  Matches found: 49
+  Average search time per match: 0.077 ms
+
+Searching for: 'latin letter small'
+  Matches found: 903
+  Average search time per match: 0.063 ms

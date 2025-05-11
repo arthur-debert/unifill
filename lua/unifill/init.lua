@@ -74,6 +74,27 @@ return {
     unifill = unifill,
     
     -- Setup function for configuration
+    -- @param config Table with configuration options:
+    -- {
+    --   backend = "lua",  -- Data backend to use: "lua" (default) or "csv"
+    --   backends = {
+    --     lua = {
+    --       data_path = nil  -- Optional custom path to lua data file
+    --     },
+    --     csv = {
+    --       data_path = nil  -- Optional custom path to csv data file
+    --     }
+    --   }
+    -- }
+    --
+    -- Benchmark results (why lua is the default backend):
+    -- - Data loading: lua=77ms vs csv=225ms (lua is ~3x faster)
+    -- - Search performance: lua is generally faster, especially for complex queries
+    --   - Simple search "arrow": lua=0.003ms vs csv=0.007ms per match
+    --   - Complex search "right arrow": lua=0.092ms vs csv=0.344ms per match
+    --
+    -- The CSV backend is provided for easier inspection and modification of the dataset.
+    -- To generate both data formats, run: bin/fetch-data --format all
     setup = function(config)
         return data.setup(config)
     end,

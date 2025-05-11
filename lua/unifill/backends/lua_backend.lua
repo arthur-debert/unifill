@@ -63,6 +63,7 @@ end
 -- Load the Unicode data from the Lua module
 -- @return Table with Unicode data entries
 function LuaBackend:load_data()
+    local start_time = vim.loop.hrtime()
     log.debug("Starting Lua unicode data load")
     local data_path = self.config.data_path
     log.debug("Data path:", data_path)
@@ -107,7 +108,11 @@ function LuaBackend:load_data()
     end
     log.debug("UTF-8 conversion completed. Converted entries:", converted_count)
     
-    log.debug("Lua unicode data loading completed successfully")
+    local end_time = vim.loop.hrtime()
+    local load_time_ms = (end_time - start_time) / 1000000
+    log.info(string.format("Lua unicode data loaded successfully in %.2f ms, entries found: %d",
+                          load_time_ms, #data))
+    
     return data
 end
 
