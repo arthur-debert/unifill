@@ -1,7 +1,6 @@
 -- unifill is a vim plugin to insert unicode characters.
 -- it leverages telescope, that is it's written as telescope extension.
 -- we recommend the "<leader>+  iu" (insert unicode) :-), once that is pressed you get a telescope UI that can search unicode chars by the official name, any of it's common aliases and category, once selected the UI char will be inserted into your current buffer.
-
 -- Import required modules
 local pickers = require "telescope.pickers"
 local finders = require "telescope.finders"
@@ -25,7 +24,7 @@ theme.setup()
 local function unifill(opts)
     log.debug("Unifill picker called with opts:", opts)
     opts = opts or {}
-    
+
     -- Apply dropdown theme with custom sizing
     opts = themes.get_dropdown(theme.ui.layout)
 
@@ -39,7 +38,7 @@ local function unifill(opts)
 
     -- Add backend name to opts for sorter selection
     opts.backend = data.get_backend_name()
-    
+
     pickers.new(opts, {
         prompt_title = "Unicode Characters",
         finder = finders.new_table {
@@ -51,12 +50,11 @@ local function unifill(opts)
             actions.select_default:replace(function()
                 actions.close(prompt_bufnr)
                 local selection = action_state.get_selected_entry()
-                log.info("Character selected:", selection.value.character,
-                    "Name:", selection.value.name)
+                log.info("Character selected:", selection.value.character, "Name:", selection.value.name)
                 -- Check if the current buffer is modifiable
                 if vim.api.nvim_buf_get_option(0, 'modifiable') then
                     -- Insert the unicode character at cursor
-                    vim.api.nvim_put({ selection.value.character }, "", false, true)
+                    vim.api.nvim_put({selection.value.character}, "", false, true)
                 else
                     -- Show an error message if the buffer is not modifiable
                     vim.notify("Cannot insert character in a non-modifiable buffer", vim.log.levels.ERROR)
@@ -64,18 +62,21 @@ local function unifill(opts)
                 end
             end)
             return true
-        end,
+        end
     }):find()
 end
 
 -- Set up the key mapping
-vim.keymap.set('n', '<leader>fu', unifill, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>fu', unifill, {
+    noremap = true,
+    silent = true
+})
 
 -- Return the module
 return {
     -- Main picker function
     unifill = unifill,
-    
+
     -- Setup function for configuration
     -- @param config Table with configuration options:
     -- {
@@ -97,14 +98,14 @@ return {
     --   - Complex search "right arrow": lua=0.092ms vs csv=0.344ms per match
     --
     -- The CSV backend is provided for easier inspection and modification of the dataset.
-    -- To generate both data formats, run: bin/fetch-data --format all
+    -- To generate both data formats, run: bin/gen-datasets --format all
     setup = function(config)
         return data.setup(config)
     end,
-    
+
     -- Re-export the logger for API compatibility
     log = require("unifill.log"),
-    
+
     -- Test exports
     _test = {
         load_unicode_data = data.load_unicode_data,

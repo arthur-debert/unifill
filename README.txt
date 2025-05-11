@@ -48,7 +48,7 @@ u#nifill
     The dataset can be generated automatically by running:
 
         --
-            bin/fetch-data
+            bin/gen-datasets
 
         --  bash
 
@@ -117,7 +117,7 @@ u#nifill
     You can generate all data formats by running:
     
         --
-            bin/fetch-data --format all
+            bin/gen-datasets --format all
         --  bash
     
     This will create the Lua, CSV, and TXT versions of the dataset.

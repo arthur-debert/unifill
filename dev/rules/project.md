@@ -39,7 +39,7 @@ maintained in the `tmp` directory (not under source control):
 3. **Dataset Management**
 
    - The Unicode dataset is stored as a Lua lookup table for performance
-   - Generate updated dataset using `bin/fetch-data`
+   - Generate updated dataset using `bin/gen-datasets`
    - Dataset changes should be tested thoroughly
 
 4. **Documentation**
@@ -55,7 +55,7 @@ maintained in the `tmp` directory (not under source control):
 ```text
 ├── README.txt -> keep updated and read it. txxt, not markdown.
 ├── bin
-│   ├── fetch-data -> calls the script to gen the dataset and places it in data.
+│   ├── gen-datasets -> calls the script to gen the dataset and places it in data.
 │   └── run-tests -> run tests, used all the timed, hopefully.
 ├── data
 │   └── glyph-catcher -> data set
