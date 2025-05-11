@@ -91,16 +91,32 @@ functions. This separation makes the code more maintainable and easier to test.
 
 ## Logging
 
-The plugin uses a custom logging system for debugging:
+The plugin uses plenary.nvim's logger for debugging:
 
 - Logs are stored in `<projectRoot>/tmp/logs/unifill.log`
 - The `tmp` directory is not under source control
 - Log levels include: DEBUG, INFO, WARN, ERROR
 - Each log entry includes:
   - Log level
-  - Source file and line number
   - Timestamp
+  - Source file and line number
   - Message content
+
+### Log Level Configuration
+
+The log level can be configured using the `UNIFILL_LOG_LEVEL` environment variable:
+
+```bash
+# Set log level to debug to see all messages
+UNIFILL_LOG_LEVEL=debug nvim
+
+# Set log level to error to see only error messages
+UNIFILL_LOG_LEVEL=error nvim
+```
+
+Default log level is "info" if not specified.
+
+### Viewing Logs
 
 To view logs:
 
@@ -113,6 +129,8 @@ To monitor logs in real-time:
 ```bash
 tail -f tmp/logs/unifill.log
 ```
+
+### Important Log Messages
 
 When debugging Telescope integration issues, pay special attention to:
 
