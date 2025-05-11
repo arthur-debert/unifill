@@ -7,9 +7,9 @@ import tempfile
 import unittest
 from unittest.mock import patch, MagicMock
 
-from unifill_datafetch.types import FetchOptions
-from unifill_datafetch.fetcher import download_file, fetch_all_data_files
-from unifill_datafetch.config import (
+from glyph_catcher.types import FetchOptions
+from glyph_catcher.fetcher import download_file, fetch_all_data_files
+from glyph_catcher.config import (
     UNICODE_DATA_FILE_URL,
     NAME_ALIASES_FILE_URL,
     NAMES_LIST_FILE_URL,
@@ -90,7 +90,7 @@ class TestFetcher(unittest.TestCase):
         # Check that the function returned None
         self.assertIsNone(result)
 
-    @patch('unifill_datafetch.fetcher.download_file')
+    @patch('glyph_catcher.fetcher.download_file')
     def test_fetch_all_data_files_success(self, mock_download):
         """Test fetching all data files successfully."""
         # Set up the mock response
@@ -119,7 +119,7 @@ class TestFetcher(unittest.TestCase):
         mock_download.assert_any_call(NAMES_LIST_FILE_URL, options)
         mock_download.assert_any_call(CLDR_ANNOTATIONS_URL, options)
 
-    @patch('unifill_datafetch.fetcher.download_file')
+    @patch('glyph_catcher.fetcher.download_file')
     def test_fetch_all_data_files_required_file_missing(self, mock_download):
         """Test fetching all data files with a required file missing."""
         # Set up the mock response to simulate a missing file
@@ -137,7 +137,7 @@ class TestFetcher(unittest.TestCase):
         # Check that the function returned an empty dictionary
         self.assertEqual(result, {})
 
-    @patch('unifill_datafetch.fetcher.download_file')
+    @patch('glyph_catcher.fetcher.download_file')
     def test_fetch_all_data_files_optional_file_missing(self, mock_download):
         """Test fetching all data files with an optional file missing."""
         # Set up the mock response to simulate a missing optional file

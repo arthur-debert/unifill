@@ -8,13 +8,12 @@ import unittest
 from unittest.mock import patch, mock_open, MagicMock
 from collections import defaultdict
 
-from unifill_datafetch.types import UnicodeCharInfo
-from unifill_datafetch.processor import (
+from glyph_catcher.types import UnicodeCharInfo
+from glyph_catcher.processor import (
     parse_unicode_data,
     parse_name_aliases,
     parse_names_list,
     parse_cldr_annotations,
-    merge_aliases,
     process_data_files,
 )
 
@@ -34,7 +33,6 @@ class TestProcessor(unittest.TestCase):
         with tempfile.NamedTemporaryFile(mode='w', delete=False) as temp_file:
             temp_file.write(test_data)
             temp_file_path = temp_file.name
-        
         try:
             # Parse the test data
             result = parse_unicode_data(temp_file_path)
@@ -44,24 +42,27 @@ class TestProcessor(unittest.TestCase):
             
             # Check the first character
             self.assertIn('0041', result)
-            self.assertEqual(result['0041'].name, 'LATIN CAPITAL LETTER A')
-            self.assertEqual(result['0041'].category, 'Lu')
-            self.assertEqual(result['0041'].char_obj, 'A')
+            self.assertEqual(result['0041']['name'], 'LATIN CAPITAL LETTER A')
+            self.assertEqual(result['0041']['category'], 'Lu')
+            self.assertEqual(result['0041']['char_obj'], 'A')
             
             # Check the second character
             self.assertIn('0042', result)
-            self.assertEqual(result['0042'].name, 'LATIN CAPITAL LETTER B')
-            self.assertEqual(result['0042'].category, 'Lu')
-            self.assertEqual(result['0042'].char_obj, 'B')
+            self.assertEqual(result['0042']['name'], 'LATIN CAPITAL LETTER B')
+            self.assertEqual(result['0042']['category'], 'Lu')
+            self.assertEqual(result['0042']['char_obj'], 'B')
             
             # Check the third character
             self.assertIn('0043', result)
-            self.assertEqual(result['0043'].name, 'LATIN CAPITAL LETTER C')
-            self.assertEqual(result['0043'].category, 'Lu')
-            self.assertEqual(result['0043'].char_obj, 'C')
+            self.assertEqual(result['0043']['name'], 'LATIN CAPITAL LETTER C')
+            self.assertEqual(result['0043']['category'], 'Lu')
+            self.assertEqual(result['0043']['char_obj'], 'C')
         finally:
             # Clean up
-            os.unlink(temp_file_path)
+            try:
+                os.unlink(temp_file_path)
+            except FileNotFoundError:
+                pass
 
     def test_parse_unicode_data_with_range(self):
         """Test parsing UnicodeData.txt with character ranges."""
@@ -98,8 +99,8 @@ class TestProcessor(unittest.TestCase):
         # Call the function with a non-existent file
         result = parse_unicode_data('/non/existent/file.txt')
         
-        # Check that the function returned None
-        self.assertIsNone(result)
+        # Check that the function returned an empty dictionary
+        self.assertEqual(result, {})
 
     def test_parse_name_aliases(self):
         """Test parsing NameAliases.txt."""
@@ -142,8 +143,8 @@ class TestProcessor(unittest.TestCase):
         # Call the function with a non-existent file
         result = parse_name_aliases('/non/existent/file.txt')
         
-        # Check that the function returned None
-        self.assertIsNone(result)
+        # Check that the function returned an empty dictionary
+        self.assertEqual(result, {})
 
     def test_parse_names_list(self):
         """Test parsing NamesList.txt."""
@@ -186,8 +187,8 @@ class TestProcessor(unittest.TestCase):
         # Call the function with a non-existent file
         result = parse_names_list('/non/existent/file.txt')
         
-        # Check that the function returned None
-        self.assertIsNone(result)
+        # Check that the function returned an empty dictionary
+        self.assertEqual(result, {})
 
     @patch('xml.etree.ElementTree.parse')
     def test_parse_cldr_annotations(self, mock_parse):
@@ -239,92 +240,77 @@ class TestProcessor(unittest.TestCase):
         # Call the function
         result = parse_cldr_annotations('/non/existent/file.xml')
         
-        # Check that the function returned None
-        self.assertIsNone(result)
+        # Check that the function returned an empty dictionary
+        self.assertEqual(result, {})
 
-    def test_merge_aliases(self):
-        """Test merging aliases from different sources."""
-        # Create test data
-        formal_aliases = {
-            '0041': ['LATIN LETTER A', 'LA'],
-            '0042': ['LATIN LETTER B'],
-        }
-        
-        informative_aliases = {
-            '0041': ['first letter of the Latin alphabet'],
-            '0043': ['third letter of the Latin alphabet'],
-        }
-        
-        cldr_annotations = {
-            '0041': ['letter a', 'first letter'],
-            '0042': ['letter b'],
-        }
-        
-        # Merge the aliases
-        result = merge_aliases(formal_aliases, informative_aliases, cldr_annotations)
-        
-        # Check the result
-        self.assertEqual(len(result), 3)
-        
-        # Check the merged aliases for the first character
-        self.assertIn('0041', result)
-        self.assertEqual(len(result['0041']), 5)  # Updated to match the actual count
-        self.assertIn('LATIN LETTER A', result['0041'])
-        self.assertIn('LA', result['0041'])
-        self.assertIn('first letter of the Latin alphabet', result['0041'])
-        self.assertIn('letter a', result['0041'])
-        self.assertIn('first letter', result['0041'])
-        
-        # Check the merged aliases for the second character
-        self.assertIn('0042', result)
-        self.assertEqual(len(result['0042']), 2)
-        self.assertIn('LATIN LETTER B', result['0042'])
-        self.assertIn('letter b', result['0042'])
-        
-        # Check the merged aliases for the third character
-        self.assertIn('0043', result)
-        self.assertEqual(len(result['0043']), 1)
-        self.assertIn('third letter of the Latin alphabet', result['0043'])
+    def test_process_data_files_merges_aliases(self):
+        """Test that process_data_files correctly merges aliases from different sources."""
+        # Create test data files
+        with tempfile.NamedTemporaryFile(mode='w', delete=False) as unicode_data_file:
+            unicode_data_file.write("0041;LATIN CAPITAL LETTER A;Lu;0;L;;;;;N;;;;0061;\n")
+            unicode_data_file.write("0042;LATIN CAPITAL LETTER B;Lu;0;L;;;;;N;;;;0062;\n")
+            unicode_data_file.write("0043;LATIN CAPITAL LETTER C;Lu;0;L;;;;;N;;;;0063;\n")
+            unicode_data_path = unicode_data_file.name
+            
+        with tempfile.NamedTemporaryFile(mode='w', delete=False) as name_aliases_file:
+            name_aliases_file.write("0041;LATIN LETTER A;correction;\n")
+            name_aliases_file.write("0041;LA;abbreviation;\n")
+            name_aliases_file.write("0042;LATIN LETTER B;correction;\n")
+            name_aliases_path = name_aliases_file.name
+            
+        with tempfile.NamedTemporaryFile(mode='w', delete=False) as names_list_file:
+            names_list_file.write("0041\tLATIN CAPITAL LETTER A\n")
+            names_list_file.write("\t= first letter of the Latin alphabet\n")
+            names_list_file.write("0043\tLATIN CAPITAL LETTER C\n")
+            names_list_file.write("\t= third letter of the Latin alphabet\n")
+            names_list_path = names_list_file.name
+            
+        try:
+            # Call process_data_files with our test files
+            file_paths = {
+                'unicode_data': unicode_data_path,
+                'name_aliases': name_aliases_path,
+                'names_list': names_list_path,
+            }
+            unicode_data, aliases_data = process_data_files(file_paths)
+            
+            # Check that the aliases were merged correctly
+            self.assertEqual(len(aliases_data), 3)
+            
+            # Check the merged aliases for the first character
+            self.assertIn('0041', aliases_data)
+            self.assertEqual(len(aliases_data['0041']), 3)
+            self.assertIn('LATIN LETTER A', aliases_data['0041'])
+            self.assertIn('LA', aliases_data['0041'])
+            self.assertIn('first letter of the Latin alphabet', aliases_data['0041'])
+            
+            # Check the merged aliases for the second character
+            self.assertIn('0042', aliases_data)
+            self.assertEqual(len(aliases_data['0042']), 1)
+            self.assertIn('LATIN LETTER B', aliases_data['0042'])
+            
+            # Check the merged aliases for the third character
+            self.assertIn('0043', aliases_data)
+            self.assertEqual(len(aliases_data['0043']), 1)
+            self.assertIn('third letter of the Latin alphabet', aliases_data['0043'])
+        finally:
+            # Clean up
+            os.unlink(unicode_data_path)
+            os.unlink(name_aliases_path)
+            os.unlink(names_list_path)
 
-    def test_merge_aliases_without_cldr(self):
-        """Test merging aliases without CLDR annotations."""
-        # Create test data
-        formal_aliases = {
-            '0041': ['LATIN LETTER A', 'LA'],
-            '0042': ['LATIN LETTER B'],
-        }
-        
-        informative_aliases = {
-            '0041': ['first letter of the Latin alphabet'],
-            '0043': ['third letter of the Latin alphabet'],
-        }
-        
-        # Merge the aliases without CLDR annotations
-        result = merge_aliases(formal_aliases, informative_aliases)
-        
-        # Check the result
-        self.assertEqual(len(result), 3)
-        
-        # Check the merged aliases for the first character
-        self.assertIn('0041', result)
-        self.assertEqual(len(result['0041']), 3)
-        self.assertIn('LATIN LETTER A', result['0041'])
-        self.assertIn('LA', result['0041'])
-        self.assertIn('first letter of the Latin alphabet', result['0041'])
-
-    @patch('unifill_datafetch.processor.parse_unicode_data')
-    @patch('unifill_datafetch.processor.parse_name_aliases')
-    @patch('unifill_datafetch.processor.parse_names_list')
-    @patch('unifill_datafetch.processor.parse_cldr_annotations')
-    @patch('unifill_datafetch.processor.merge_aliases')
+    @patch('glyph_catcher.processor.parse_unicode_data')
+    @patch('glyph_catcher.processor.parse_name_aliases')
+    @patch('glyph_catcher.processor.parse_names_list')
+    @patch('glyph_catcher.processor.parse_cldr_annotations')
     def test_process_data_files_success(
-        self, mock_merge, mock_parse_cldr, mock_parse_names, mock_parse_aliases, mock_parse_unicode
+        self, mock_parse_cldr, mock_parse_names, mock_parse_aliases, mock_parse_unicode
     ):
         """Test processing all data files successfully."""
         # Set up the mock returns
         unicode_data = {
-            '0041': UnicodeCharInfo(name='LATIN CAPITAL LETTER A', category='Lu', char_obj='A'),
-            '0042': UnicodeCharInfo(name='LATIN CAPITAL LETTER B', category='Lu', char_obj='B'),
+            '0041': {'name': 'LATIN CAPITAL LETTER A', 'category': 'Lu', 'char_obj': 'A', 'block': 'Basic Latin'},
+            '0042': {'name': 'LATIN CAPITAL LETTER B', 'category': 'Lu', 'char_obj': 'B', 'block': 'Basic Latin'},
         }
         mock_parse_unicode.return_value = unicode_data
         
@@ -337,11 +323,7 @@ class TestProcessor(unittest.TestCase):
         cldr_annotations = {'0041': ['letter a']}
         mock_parse_cldr.return_value = cldr_annotations
         
-        merged_aliases = {
-            '0041': ['LATIN LETTER A', 'letter a'],
-            '0042': ['second letter'],
-        }
-        mock_merge.return_value = merged_aliases
+        # We don't need to mock the merge_aliases function anymore as it's integrated into process_data_files
         
         # Call the function
         file_paths = {
@@ -354,16 +336,28 @@ class TestProcessor(unittest.TestCase):
         
         # Check the result
         self.assertEqual(result_unicode_data, unicode_data)
-        self.assertEqual(result_aliases, merged_aliases)
+        
+        # Create expected aliases data by merging the mock data
+        expected_aliases = defaultdict(list)
+        for code_point, aliases in formal_aliases.items():
+            expected_aliases[code_point].extend(aliases)
+        for code_point, aliases in informative_aliases.items():
+            expected_aliases[code_point].extend(aliases)
+        for code_point, aliases in cldr_annotations.items():
+            expected_aliases[code_point].extend(aliases)
+            
+        self.assertEqual(result_aliases, expected_aliases)
+        
+        # Check the result
+        self.assertEqual(result_unicode_data, unicode_data)
         
         # Check that the parsing functions were called with the correct arguments
         mock_parse_unicode.assert_called_once_with('/path/to/UnicodeData.txt')
         mock_parse_aliases.assert_called_once_with('/path/to/NameAliases.txt')
         mock_parse_names.assert_called_once_with('/path/to/NamesList.txt')
         mock_parse_cldr.assert_called_once_with('/path/to/en.xml')
-        mock_merge.assert_called_once_with(formal_aliases, informative_aliases, cldr_annotations)
 
-    @patch('unifill_datafetch.processor.parse_unicode_data')
+    @patch('glyph_catcher.processor.parse_unicode_data')
     def test_process_data_files_unicode_data_missing(self, mock_parse_unicode):
         """Test processing data files when UnicodeData.txt parsing fails."""
         # Set up the mock to return None
@@ -377,9 +371,9 @@ class TestProcessor(unittest.TestCase):
         }
         result_unicode_data, result_aliases = process_data_files(file_paths)
         
-        # Check that the function returned None, None
+        # Check that the function returned None for unicode_data and an empty defaultdict for aliases_data
         self.assertIsNone(result_unicode_data)
-        self.assertIsNone(result_aliases)
+        self.assertEqual(result_aliases, defaultdict(list))
 
 
 if __name__ == '__main__':

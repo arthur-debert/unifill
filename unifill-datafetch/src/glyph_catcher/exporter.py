@@ -202,20 +202,43 @@ def write_lua_output(
                     char = '\\\\'
                 elif ord(char) < 32:  # Other control characters
                     char = f'\\{ord(char):03d}'
-                name = data['name'].replace('"', '\\"')
+                
+                # Helper function to properly escape Lua strings
+                def escape_lua_string(s):
+                    # First escape backslashes
+                    s = s.replace('\\', '\\\\')
+                    # Then escape other special characters
+                    s = s.replace('"', '\\"')
+                    s = s.replace('\n', '\\n')
+                    s = s.replace('\r', '\\r')
+                    s = s.replace('\t', '\\t')
+                    # Replace any other control characters
+                    result = ""
+                    for c in s:
+                        if ord(c) < 32 and c not in '\n\r\t':
+                            result += f'\\{ord(c):03d}'
+                        else:
+                            result += c
+                    return result
+                
+                # Escape special characters in all string fields
+                name = escape_lua_string(data['name'])
+                category = escape_lua_string(data['category'])
+                block = escape_lua_string(data.get('block', 'Unknown Block'))
                 
                 f.write("  {\n")
                 f.write(f'    code_point = "U+{code_point_hex}",\n')
                 f.write(f'    character = "{char}",\n')
                 f.write(f'    name = "{name}",\n')
-                f.write(f'    category = "{data["category"]}",\n')
-                f.write(f'    block = "{data.get("block", "Unknown Block")}",\n')
+                f.write(f'    category = "{category}",\n')
+                f.write(f'    block = "{block}",\n')
                 
                 # Write aliases as a Lua table
                 if aliases:
                     f.write('    aliases = {\n')
                     for alias in aliases:
-                        escaped_alias = alias.replace('"', '\\"')
+                        # Use the same escaping function for aliases
+                        escaped_alias = escape_lua_string(alias)
                         f.write(f'      "{escaped_alias}",\n')
                     f.write('    },\n')
                 else:
