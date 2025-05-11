@@ -47,10 +47,10 @@ def download_file(url: str, options: FetchOptions) -> Optional[str]:
         if os.path.exists(cache_path):
             print(f"Using cached file: {cache_path}")
             return cache_path
-    
     try:
-        # Create a temporary file that will be automatically cleaned up
-        temp_file = tempfile.NamedTemporaryFile(delete=False)
+        # Create a temporary file in the system's temp directory
+        temp_dir = tempfile.gettempdir()
+        temp_file_path = os.path.join(temp_dir, f"glyph-catcher-{filename}")
         
         # Add a user agent to avoid rate limiting
         headers = {'User-Agent': USER_AGENT}
@@ -60,7 +60,7 @@ def download_file(url: str, options: FetchOptions) -> Optional[str]:
             response = requests.get(url, stream=True, headers=headers)
             response.raise_for_status()
             
-            with temp_file as f:
+            with open(temp_file_path, 'wb') as f:
                 for chunk in response.iter_content(chunk_size=8192):
                     f.write(chunk)
             
@@ -68,16 +68,17 @@ def download_file(url: str, options: FetchOptions) -> Optional[str]:
             if options.use_cache and cache_dir:
                 os.makedirs(cache_dir, exist_ok=True)
                 cache_path = os.path.join(cache_dir, filename)
-                with open(temp_file.name, 'rb') as src, open(cache_path, 'wb') as dst:
-                    dst.write(src.read())
+                shutil.copy2(temp_file_path, cache_path)
                 print(f"Cached file to: {cache_path}")
+                # Clean up the temporary file
+                os.unlink(temp_file_path)
                 return cache_path
             
-            return temp_file.name
+            return temp_file_path
         except (requests.exceptions.RequestException, Exception) as e:
             print(f"Error downloading {url}: {e}")
-            if os.path.exists(temp_file.name):
-                os.unlink(temp_file.name)
+            if os.path.exists(temp_file_path):
+                os.unlink(temp_file_path)
             return None
     except Exception as e:
         print(f"Unexpected error: {e}")

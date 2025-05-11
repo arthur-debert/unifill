@@ -11,6 +11,16 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
 # Define key directories and filenames
 GLYPH_CATCHER_DIR="$PROJECT_ROOT/glyph-catcher"
+
+# Use XDG_DATA_HOME if available, otherwise use default location
+if [ -n "$XDG_DATA_HOME" ]; then
+  XDG_DATA_DIR="$XDG_DATA_HOME/unifill"
+else
+  XDG_DATA_DIR="$HOME/.local/share/unifill"
+fi
+
+# Default destination is the project data directory
+# But we'll also copy to XDG_DATA_HOME for system-wide access
 DESTINATION_DIR="$PROJECT_ROOT/data"
 
 # Define file formats and their corresponding filenames
@@ -52,8 +62,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# Ensure the destination directory exists
+# Ensure the destination directories exist
 mkdir -p "$DESTINATION_DIR"
+mkdir -p "$XDG_DATA_DIR"
 
 # Navigate to the glyph-catcher directory
 cd "$GLYPH_CATCHER_DIR"
@@ -85,10 +96,15 @@ for format in "${FORMATS[@]}"; do
     exit 1
   fi
 
-  # Move the generated file to the project's data/glyph-catcher/ directory
+  # Move the generated file to the project's data directory
   mv "$SOURCE_FILE_IN_DATAFETCH_DIR" "$DESTINATION_FILE_PATH"
+  
+  # Copy to XDG data directory for system-wide access
+  XDG_FILE_PATH="$XDG_DATA_DIR/$GENERATED_FILE_NAME"
+  cp "$DESTINATION_FILE_PATH" "$XDG_FILE_PATH"
 
   printf "Generated: \e[32m%s\e[0m\n" "$DESTINATION_FILE_PATH"
+  printf "Copied to: \e[32m%s\e[0m\n" "$XDG_FILE_PATH"
 done
 
 # Navigate back to the project root

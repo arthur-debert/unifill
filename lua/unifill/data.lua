@@ -43,6 +43,26 @@ local function get_plugin_root()
     return vim.fn.fnamemodify(file, ":h:h:h")
 end
 
+-- Get XDG data directory
+local function get_xdg_data_home()
+    local xdg_data = os.getenv("XDG_DATA_HOME")
+    if xdg_data then
+        return xdg_data
+    else
+        return vim.fn.expand("~/.local/share")
+    end
+end
+
+-- Get XDG cache directory
+local function get_xdg_cache_home()
+    local xdg_cache = os.getenv("XDG_CACHE_HOME")
+    if xdg_cache then
+        return xdg_cache
+    else
+        return vim.fn.expand("~/.cache")
+    end
+end
+
 -- Setup the data manager with configuration
 -- @param user_config Table with user configuration
 -- @return DataManager for chaining
@@ -50,19 +70,47 @@ function DataManager.setup(user_config)
     -- Merge user config with defaults
     config = vim.tbl_deep_extend("force", default_config, user_config or {})
 
-    -- Set default paths based on plugin root if not provided
+    -- Set default paths based on XDG directories if available, otherwise use plugin root
     local plugin_root = get_plugin_root()
+    local xdg_data_dir = get_xdg_data_home() .. "/unifill"
+    
+    -- Check if data files exist in XDG data directory
+    local Path = require("plenary.path")
+    local xdg_lua_path = Path:new(xdg_data_dir, "unicode_data.lua")
+    local xdg_csv_path = Path:new(xdg_data_dir, "unicode_data.csv")
+    local xdg_txt_path = Path:new(xdg_data_dir, "unicode_data.txt")
+    
+    -- Set paths based on availability
     if not config.backends.lua.data_path then
-        config.backends.lua.data_path = plugin_root .. "/data/unicode_data.lua"
+        if xdg_lua_path:exists() then
+            config.backends.lua.data_path = xdg_lua_path.filename
+        else
+            config.backends.lua.data_path = plugin_root .. "/data/unicode_data.lua"
+        end
     end
+    
     if not config.backends.csv.data_path then
-        config.backends.csv.data_path = plugin_root .. "/data/unicode_data.csv"
+        if xdg_csv_path:exists() then
+            config.backends.csv.data_path = xdg_csv_path.filename
+        else
+            config.backends.csv.data_path = plugin_root .. "/data/unicode_data.csv"
+        end
     end
+    
     if not config.backends.grep.data_path then
-        config.backends.grep.data_path = plugin_root .. "/data/unicode_data.txt"
+        if xdg_txt_path:exists() then
+            config.backends.grep.data_path = xdg_txt_path.filename
+        else
+            config.backends.grep.data_path = plugin_root .. "/data/unicode_data.txt"
+        end
     end
+    
     if not config.backends.fast_grep.data_path then
-        config.backends.fast_grep.data_path = plugin_root .. "/data/unicode_data.txt"
+        if xdg_txt_path:exists() then
+            config.backends.fast_grep.data_path = xdg_txt_path.filename
+        else
+            config.backends.fast_grep.data_path = plugin_root .. "/data/unicode_data.txt"
+        end
     end
 
     log.debug("DataManager setup complete with backend: " .. config.backend)

@@ -295,7 +295,7 @@ def write_txt_output(
 
 def save_source_files(file_paths: Dict[str, str], output_dir: str) -> None:
     """
-    Save copies of the source Unicode data files.
+    Save the source files to the output directory.
     
     Args:
         file_paths: Dictionary mapping file types to file paths
@@ -305,11 +305,29 @@ def save_source_files(file_paths: Dict[str, str], output_dir: str) -> None:
         # Create output directory if it doesn't exist
         os.makedirs(output_dir, exist_ok=True)
         
-        # Copy each source file to the output directory
+        # Get XDG data directory for source files
+        xdg_data_dir = os.environ.get("XDG_DATA_HOME", os.path.join(os.path.expanduser("~"), ".local", "share"))
+        source_files_dir = os.path.join(xdg_data_dir, "glyph-catcher", "source-files")
+        
+        # Create XDG directory if it doesn't exist
+        os.makedirs(source_files_dir, exist_ok=True)
+        
+        # Copy each source file to the XDG data directory
         for file_type, file_path in file_paths.items():
             if os.path.exists(file_path):
-                filename = os.path.basename(file_path)
-                dest_path = os.path.join(output_dir, filename)
+                # Map file types to more descriptive filenames
+                if file_type == 'unicode_data':
+                    filename = 'UnicodeData.txt'
+                elif file_type == 'name_aliases':
+                    filename = 'NameAliases.txt'
+                elif file_type == 'names_list':
+                    filename = 'NamesList.txt'
+                elif file_type == 'cldr_annotations':
+                    filename = 'en.xml'
+                else:
+                    filename = os.path.basename(file_path)
+                
+                dest_path = os.path.join(source_files_dir, filename)
                 shutil.copy2(file_path, dest_path)
                 print(f"Saved source file: {dest_path}")
     except Exception as e:
