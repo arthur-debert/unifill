@@ -1,6 +1,7 @@
 -- Search functionality for unifill
 
 local format = require("unifill.format")
+local log = require("unifill.log")
 
 -- Helper function to check word matches in text
 -- Returns:
@@ -50,25 +51,41 @@ end
 -- @param terms Array of search terms
 -- @return Score, or 0 if any term doesn't match
 local function score_match(entry, terms)
+    log.debug("Scoring match for terms:", vim.inspect(terms))
+    
     if not entry or not entry.name or not entry.category then
+        log.debug("Invalid entry structure:", vim.inspect(entry))
         return 0
     end
 
     local matched_terms = {}
     local total_score = 0
+    local match_details = {}  -- Store details about where matches occurred
 
     -- Check each term
     for _, term in ipairs(terms) do
         local found = false
         local best_match = 0
-        local location = 0  -- 0=none, 1=category, 2=alias, 3=name
+        local location = "none"  -- none, category, alias, name
         
         -- Check name (highest priority)
         local name_match = check_word_match(entry.name, term)
         if name_match > 0 then
-            -- Any match in name scores higher than any match in alias
-            total_score = total_score + 1000000000000  -- Base score for name location
+            -- Score based on match quality
+            local name_score = name_match == 2
+                and 1000000000000  -- Exact word match in name
+                or 100000000000    -- Partial word match in name
+            total_score = total_score + name_score
             found = true
+            location = "name"
+            match_details[term] = {
+                location = "name",
+                match_type = name_match == 2 and "exact" or "partial",
+                text = entry.name,
+                score = name_score
+            }
+            log.debug(string.format("Term '%s' matched in name: %s (score: %s, match_type: %s)",
+                term, entry.name, name_score, name_match == 2 and "exact" or "partial"))
         end
         
         -- Check aliases (medium priority)
@@ -80,6 +97,14 @@ local function score_match(entry, terms)
                     if alias_match == 2 then
                         total_score = total_score + 1  -- Much lower score for alias matches
                         found = true
+                        location = "alias"
+                        match_details[term] = {
+                            location = "alias",
+                            match_type = "exact",
+                            text = alias
+                        }
+                        log.debug(string.format("Term '%s' matched in alias: %s (score: 1)",
+                            term, alias))
                         break
                     end
                 end
@@ -88,25 +113,42 @@ local function score_match(entry, terms)
         
         -- Check category (lowest priority)
         if not found then
-            local category_match = check_word_match(format.friendly_category(entry.category), term)
+            local friendly_category = format.friendly_category(entry.category)
+            local category_match = check_word_match(friendly_category, term)
             if category_match == 2 then  -- Only count exact word matches in category
                 total_score = total_score + 0.0001  -- Lowest score for category matches
                 found = true
+                location = "category"
+                match_details[term] = {
+                    location = "category",
+                    match_type = "exact",
+                    text = friendly_category
+                }
+                log.debug(string.format("Term '%s' matched in category: %s (score: 0.0001)",
+                    term, friendly_category))
             end
         end
 
         if found then
             matched_terms[term] = true
+        else
+            log.debug(string.format("Term '%s' not found in entry: %s",
+                term, entry.name))
         end
     end
 
     -- Return 0 if not all terms matched
     if vim.tbl_count(matched_terms) < #terms then
+        log.debug("Not all terms matched. Matched terms:", vim.inspect(match_details))
         return 0
     end
 
-    -- Return total score multiplied by number of matched terms
-    return total_score * vim.tbl_count(matched_terms)
+    -- Calculate final score
+    local final_score = total_score * vim.tbl_count(matched_terms)
+    log.debug(string.format("Final score for '%s': %s (matched terms: %s)",
+        entry.name, final_score, vim.tbl_count(matched_terms)))
+    
+    return final_score
 end
 
 return {
