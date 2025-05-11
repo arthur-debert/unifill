@@ -46,25 +46,31 @@ def download_file(url: str, options: FetchOptions) -> Optional[str]:
         headers = {'User-Agent': USER_AGENT}
         
         print(f"Downloading {url}...")
-        response = requests.get(url, stream=True, headers=headers)
-        response.raise_for_status()
-        
-        with temp_file as f:
-            for chunk in response.iter_content(chunk_size=8192):
-                f.write(chunk)
-        
-        # If cache is enabled, save the file to the cache directory
-        if options.use_cache and options.cache_dir:
-            os.makedirs(options.cache_dir, exist_ok=True)
-            cache_path = os.path.join(options.cache_dir, filename)
-            with open(temp_file.name, 'rb') as src, open(cache_path, 'wb') as dst:
-                dst.write(src.read())
-            print(f"Cached file to: {cache_path}")
-            return cache_path
-        
-        return temp_file.name
-    except requests.exceptions.RequestException as e:
-        print(f"Error downloading {url}: {e}")
+        try:
+            response = requests.get(url, stream=True, headers=headers)
+            response.raise_for_status()
+            
+            with temp_file as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            
+            # If cache is enabled, save the file to the cache directory
+            if options.use_cache and options.cache_dir:
+                os.makedirs(options.cache_dir, exist_ok=True)
+                cache_path = os.path.join(options.cache_dir, filename)
+                with open(temp_file.name, 'rb') as src, open(cache_path, 'wb') as dst:
+                    dst.write(src.read())
+                print(f"Cached file to: {cache_path}")
+                return cache_path
+            
+            return temp_file.name
+        except (requests.exceptions.RequestException, Exception) as e:
+            print(f"Error downloading {url}: {e}")
+            if os.path.exists(temp_file.name):
+                os.unlink(temp_file.name)
+            return None
+    except Exception as e:
+        print(f"Unexpected error: {e}")
         return None
 
 

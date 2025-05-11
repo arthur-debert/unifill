@@ -64,7 +64,7 @@ for format in "${FORMATS[@]}"; do
   DESTINATION_FILE_PATH="$FULL_DESTINATION_DIR/$GENERATED_FILE_NAME"
   
   # Run the data fetching script using Poetry with the specified format
-  poetry run python -m unifill_datafetch generate --format "$format"
+  poetry run unidata generate --format "$format"
   
   # Check if the file was generated
   if [ ! -f "$SOURCE_FILE_IN_DATAFETCH_DIR" ]; then

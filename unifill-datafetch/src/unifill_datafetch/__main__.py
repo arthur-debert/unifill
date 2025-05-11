@@ -31,11 +31,13 @@ def process_unicode_data(
     # Fetch the data files
     file_paths = fetch_all_data_files(fetch_options)
     if not file_paths:
+        print("Failed to fetch data files")
         return False, []
     
     # Process the data files
     unicode_data, aliases_data = process_data_files(file_paths)
     if not unicode_data or not aliases_data:
+        print("Failed to process data files")
         return False, []
     
     # Export the data
@@ -83,7 +85,13 @@ def cli():
     default=DEFAULT_CACHE_DIR,
     help=f"Directory to store cached files (default: {DEFAULT_CACHE_DIR})",
 )
-def generate(format, output_dir, use_cache, cache_dir):
+@click.option(
+    "--exit-on-error",
+    is_flag=True,
+    default=False,
+    help="Exit with code 1 on error",
+)
+def generate(format, output_dir, use_cache, cache_dir, exit_on_error):
     """
     Generate Unicode character dataset in the specified format.
     
@@ -103,11 +111,12 @@ def generate(format, output_dir, use_cache, cache_dir):
         click.echo("Generated files:")
         for file_path in output_files:
             click.echo(f"  - {file_path}")
+        return 0
     else:
         click.echo(click.style("✗ Unicode data processing failed.", fg="red"))
-        return 1
-    
-    return 0
+        if exit_on_error:
+            return 1
+        return 0
 
 
 @cli.command()
