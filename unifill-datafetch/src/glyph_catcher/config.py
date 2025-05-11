@@ -17,6 +17,9 @@ OUTPUT_FILES = {
     'txt': "unicode_data.txt"
 }
 
+# Master data file name (contains the complete processed dataset)
+MASTER_DATA_FILE = "unicode_master_data.json"
+
 # Default cache directory
 import os
 import tempfile
@@ -24,6 +27,12 @@ import tempfile
 # Use XDG_CACHE_HOME if available, otherwise use a temporary directory
 DEFAULT_CACHE_DIR = os.path.join(
     os.environ.get("XDG_CACHE_HOME", os.path.join(os.path.expanduser("~"), ".cache")),
+    "glyph-catcher"
+)
+
+# Default data directory for storing the master data file
+DEFAULT_DATA_DIR = os.path.join(
+    os.environ.get("XDG_DATA_HOME", os.path.join(os.path.expanduser("~"), ".local", "share")),
     "glyph-catcher"
 )
 

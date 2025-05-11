@@ -8,9 +8,9 @@ from typing import Tuple, List, Dict, Any
 
 from .types import FetchOptions, ExportOptions
 from .fetcher import fetch_all_data_files, clean_cache
-from .processor import process_data_files
+from .processor import process_data_files, save_master_data_file, get_master_file_path
 from .exporter import export_data, save_source_files
-from .config import DEFAULT_CACHE_DIR, TMP_CACHE_DIR
+from .config import DEFAULT_CACHE_DIR, TMP_CACHE_DIR, DEFAULT_DATA_DIR
 
 
 def process_unicode_data(
@@ -39,6 +39,14 @@ def process_unicode_data(
     if not unicode_data or not aliases_data:
         print("Failed to process data files")
         return False, []
+    
+    # Save the processed data to the master file
+    data_dir = fetch_options.data_dir or DEFAULT_DATA_DIR
+    master_file_path = save_master_data_file(unicode_data, aliases_data, data_dir)
+    
+    # Set the master file path in the export options
+    if master_file_path:
+        export_options.master_file_path = master_file_path
     
     # Export the data
     output_files = export_data(unicode_data, aliases_data, export_options)
@@ -102,7 +110,19 @@ def cli():
     default=False,
     help="Exit with code 1 on error",
 )
-def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_blocks, exit_on_error):
+@click.option(
+    "--data-dir",
+    type=click.Path(exists=False, file_okay=False, dir_okay=True),
+    default=None,
+    help=f"Directory to store the master data file (default: {DEFAULT_DATA_DIR})",
+)
+@click.option(
+    "--no-master-file",
+    is_flag=True,
+    default=False,
+    help="Don't use the master data file for exporting",
+)
+def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_blocks, exit_on_error, data_dir, no_master_file):
     """
     Generate Unicode character dataset in the specified format.
     
@@ -118,18 +138,21 @@ def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_b
     """
     # Create options objects
     fetch_options = FetchOptions(
-        use_cache=use_cache, 
+        use_cache=use_cache,
         cache_dir=cache_dir,
-        use_temp_cache=use_temp_cache
+        use_temp_cache=use_temp_cache,
+        data_dir=data_dir
     )
     
     # Convert unicode_blocks tuple to list if specified
     blocks_list = list(unicode_blocks) if unicode_blocks else None
     
     export_options = ExportOptions(
-        format_type=format, 
+        format_type=format,
         output_dir=output_dir,
-        unicode_blocks=blocks_list
+        unicode_blocks=blocks_list,
+        use_master_file=not no_master_file,
+        master_file_path=get_master_file_path(fetch_options) if not no_master_file else None
     )
     
     # Process the data

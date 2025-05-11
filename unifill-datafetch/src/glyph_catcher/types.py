@@ -20,6 +20,7 @@ class FetchOptions:
     use_cache: bool = False
     cache_dir: Optional[str] = None
     use_temp_cache: bool = False  # If True, use temporary cache location
+    data_dir: Optional[str] = None  # Directory to store the master data file
 
 
 @dataclass
@@ -28,3 +29,5 @@ class ExportOptions:
     format_type: str = 'csv'
     output_dir: str = '.'
     unicode_blocks: Optional[List[str]] = None  # List of Unicode block names to include
+    use_master_file: bool = True  # Whether to use the master data file for exporting
+    master_file_path: Optional[str] = None  # Path to the master data file

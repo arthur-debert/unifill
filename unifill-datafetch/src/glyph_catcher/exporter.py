@@ -9,7 +9,7 @@ import shutil
 from typing import Dict, List, Any, Optional
 
 from .types import ExportOptions
-from .processor import filter_by_unicode_blocks
+from .processor import filter_by_unicode_blocks, load_master_data_file
 
 
 def export_data(
@@ -28,6 +28,21 @@ def export_data(
     Returns:
         List of paths to the generated output files
     """
+    # If use_master_file is True and master_file_path is provided, load data from the master file
+    if options.use_master_file and options.master_file_path:
+        try:
+            print(f"Loading data from master file: {options.master_file_path}")
+            loaded_unicode_data, loaded_aliases_data = load_master_data_file(options.master_file_path)
+            
+            if loaded_unicode_data and loaded_aliases_data:
+                unicode_data = loaded_unicode_data
+                aliases_data = loaded_aliases_data
+            else:
+                print("Warning: Failed to load data from master file. Using provided data instead.")
+        except Exception as e:
+            print(f"Error loading master file: {e}")
+            print("Using provided data instead.")
+    
     # Filter data by Unicode blocks if specified
     if options.unicode_blocks:
         print(f"Filtering data to include only these Unicode blocks: {', '.join(options.unicode_blocks)}")

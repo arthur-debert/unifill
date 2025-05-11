@@ -3,9 +3,11 @@ Module for processing Unicode data files.
 """
 
 import os
+import json
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 from typing import Dict, Tuple, List, Any, Optional
+from pathlib import Path
 
 # Dictionary mapping Unicode code points to their block names
 # This is a simplified mapping for common blocks
@@ -317,3 +319,118 @@ def filter_by_unicode_blocks(
                 filtered_aliases_data[code_point] = aliases_data[code_point]
     
     return filtered_unicode_data, filtered_aliases_data
+
+
+def save_master_data_file(
+    unicode_data: Dict[str, Dict[str, str]],
+    aliases_data: Dict[str, List[str]],
+    data_dir: str
+) -> Optional[str]:
+    """
+    Save the processed Unicode data to a master JSON file.
+    
+    Args:
+        unicode_data: Dictionary mapping code points to character information
+        aliases_data: Dictionary mapping code points to lists of aliases
+        data_dir: Directory to save the master data file
+        
+    Returns:
+        Path to the saved master data file, or None if saving failed
+    """
+    from .config import MASTER_DATA_FILE
+    
+    if not unicode_data or not aliases_data:
+        print("Error: No data to save to master file")
+        return None
+    
+    try:
+        # Create the data directory if it doesn't exist
+        os.makedirs(data_dir, exist_ok=True)
+        
+        # Prepare the data for serialization
+        master_data = {
+            'unicode_data': {},
+            'aliases_data': aliases_data
+        }
+        
+        # Convert UnicodeCharInfo objects to dictionaries
+        for code_point, char_info in unicode_data.items():
+            master_data['unicode_data'][code_point] = {
+                'name': char_info['name'],
+                'category': char_info['category'],
+                'char_obj': char_info['char_obj'],
+                'block': char_info['block'] if 'block' in char_info else "Unknown Block"
+            }
+        
+        # Save the data to the master file
+        master_file_path = os.path.join(data_dir, MASTER_DATA_FILE)
+        with open(master_file_path, 'w', encoding='utf-8') as f:
+            json.dump(master_data, f, ensure_ascii=False, indent=2)
+        
+        print(f"Master data file saved to: {master_file_path}")
+        return master_file_path
+    
+    except Exception as e:
+        print(f"Error saving master data file: {e}")
+        return None
+
+
+def load_master_data_file(master_file_path: str) -> Tuple[Optional[Dict[str, Dict[str, str]]], Optional[Dict[str, List[str]]]]:
+    """
+    Load the processed Unicode data from a master JSON file.
+    
+    Args:
+        master_file_path: Path to the master data file
+        
+    Returns:
+        Tuple of (unicode_data, aliases_data), or (None, None) if loading failed
+    """
+    try:
+        # Check if the master file exists
+        if not os.path.exists(master_file_path):
+            print(f"Master data file not found: {master_file_path}")
+            return None, None
+        
+        # Load the data from the master file
+        with open(master_file_path, 'r', encoding='utf-8') as f:
+            master_data = json.load(f)
+        
+        # Extract the unicode_data and aliases_data
+        unicode_data_dict = master_data.get('unicode_data', {})
+        aliases_data = master_data.get('aliases_data', {})
+        
+        # Convert dictionaries to UnicodeCharInfo objects
+        unicode_data = unicode_data_dict
+        
+        print(f"Loaded master data file: {master_file_path}")
+        print(f"Loaded {len(unicode_data)} characters and {sum(len(aliases) for aliases in aliases_data.values())} aliases")
+        
+        return unicode_data, aliases_data
+    
+    except json.JSONDecodeError as e:
+        print(f"Error decoding master data file: {e}")
+        return None, None
+    except Exception as e:
+        print(f"Error loading master data file: {e}")
+        return None, None
+
+
+def get_master_file_path(fetch_options) -> str:
+    """
+    Get the path to the master data file based on the fetch options.
+    
+    Args:
+        fetch_options: Options for fetching Unicode data files
+        
+    Returns:
+        Path to the master data file
+    """
+    from .config import MASTER_DATA_FILE, DEFAULT_DATA_DIR
+    
+    # Determine which data directory to use
+    data_dir = fetch_options.data_dir
+    if not data_dir:
+        data_dir = DEFAULT_DATA_DIR
+    
+    # Return the path to the master data file
+    return os.path.join(data_dir, MASTER_DATA_FILE)
