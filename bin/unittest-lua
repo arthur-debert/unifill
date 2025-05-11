@@ -1,11 +1,45 @@
 #!/usr/bin/env bash
 
 # Get the directory containing this script
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PROJECT_ROOT="$( cd "$SCRIPT_DIR/.." && pwd )"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+TMP_OUTPUT="/tmp/unifill_test_output.txt"
 
-# Run plenary tests
+# Run plenary tests and capture output
 nvim --headless --noplugin \
   -u "${PROJECT_ROOT}/spec/minimal_init.lua" \
   -c "lua require('plenary.test_harness').test_directory('${PROJECT_ROOT}/spec/')" \
-  -c "lua vim.api.nvim_command('q')"
+  -c "lua vim.api.nvim_command('q')" 2>&1 | tee "$TMP_OUTPUT"
+
+# Define colors
+GREEN='\033[32m'
+RED='\033[31m'
+# Define colors using tput
+GREEN=$(tput setaf 2)
+RED=$(tput setaf 1)
+RESET=$(tput sgr0)
+
+# Extract and tally test results
+echo ""
+echo ""
+echo ""
+echo "==== Suite Summary ===="
+echo ""
+SUCCESS_TOTAL=$(grep "Success:" "$TMP_OUTPUT" | cut -f2 | awk '{sum += $1} END {print sum}')
+FAILED_TOTAL=$(grep "Failed :" "$TMP_OUTPUT" | cut -f2 | awk '{sum += $1} END {print sum}')
+ERRORS_TOTAL=$(grep "Errors :" "$TMP_OUTPUT" | cut -f2 | awk '{sum += $1} END {print sum}')
+
+# Set default values if empty
+SUCCESS_TOTAL=${SUCCESS_TOTAL:-0}
+FAILED_TOTAL=${FAILED_TOTAL:-0}
+ERRORS_TOTAL=${ERRORS_TOTAL:-0}
+
+# Print colorized summary
+echo "${GREEN}Success:${RESET} $SUCCESS_TOTAL"
+echo "${RED}Failed :${RESET} $FAILED_TOTAL"
+echo "${RED}Errors :${RESET} $ERRORS_TOTAL"
+
+# Return non-zero exit code if there were failures or errors
+if [ "$FAILED_TOTAL" -gt 0 ] || [ "$ERRORS_TOTAL" -gt 0 ]; then
+  exit 1
+fi
