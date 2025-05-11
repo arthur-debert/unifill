@@ -1,37 +1,37 @@
-This is what remains to be done on  unifil
+This is what remains to be done on  unifill
 
 
-[ ] Grep backend
+[x] Grep backend
 
     The idea is to give up some of the ranking sophistication and gain less
     code and much faster speeds, by replacing the custom lua code with
     telescope's builtin grep and fuzzy finding.
 
     If the results seem promising (that is we get a nice result that's very
-    fast) we may consider using a two pass algo to fine tune raning a sumall
+    fast) we may consider using a two pass algo to fine tune ranking a small
     subset of items.
 
-[ ] Verify aliases
+[x] Verify aliases
 
     While we are downloading the alias, I've yet to see it show up on  any
-    result item, so we should check that we're matching the codepoint dataset
+    result item, so we should check that we're matching the code-point dataset
     to the alias one correctly.
 
 
 [ ] Improve theming
 
     We're skinning the telescope UI, but we're doing it in a blind way, for
-    example by settting text to black regardless of a user's theme.
-    The right way to do this is more like use entities (like emphasys text) or
+    example by setting text to black regardless of a user's theme.
+    The right way to do this is more like use entities (like emphasis text) or
     light background that will be configured on the user's theme, so this can
-    be integratted and work regardless of user theming.
+    be integrated and work regardless of user theming.
 
 
 [ ] Verify plugin setup
     We did a quick throwaway thing for the setup, now it's time  to make sure
     that the plugin is ready for distribution: 
         - is the file layout looking good? 
-        - do we follow plugin desing best practices? If not, what's to be
+        - do we follow plugin design best practices? If not, what's to be
           changed? 
         - what about the entire dataset generation thing? this shouldnt be
           redistributed. also, should we have the dataset be in git or the
@@ -40,14 +40,14 @@ This is what remains to be done on  unifil
 
 []  Install from github
 
-    When htat is all done, we can ditch the local install and test the regular
+    When that is all done, we can ditch the local install and test the regular
     github based install
 
 
 [ ] Frequently used
-    Currently we're showing / ranking lexographically all characters. IRL  ,
+    Currently we're showing / ranking lexicographically all characters. IRL  ,
     people will use a subset of these much  more often. 
-    We could generate a frequently used rankiong and reserve the top 5 places
+    We could generate a frequently used ranking and reserve the top 5 places
     for these, both at cold start (no search query term is entered) and when
         sorting results (that is, if a frequently used one is part of the
         results, it should be bumped up)
@@ -62,10 +62,10 @@ This is what remains to be done on  unifil
     but could be changed to unabridged.
     
 
-[ ] Unicodize
+[ ] Embellish Me
     
-    Instead of typing / inserting all unicoide, have a unicodize this command
-    that searchs the buffer for good canditates and in a search and replace
+    Instead of typing / inserting all unicode, have a unicodize this command
+    that search the buffer for good candidates and in a search and replace
     sequence like thing proposes changes, like changing PI to ፲ , or -> to →. 
 
     Is there a good mapping of these? Of course we could let users add their
