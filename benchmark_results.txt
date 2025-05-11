@@ -1,7 +1,7 @@
 
 === Benchmarking lua backend ===
 
-Data loading time: 76.94 ms
+Data loading time: 111.33 ms
 Number of entries: 40078
 
 Search performance:
@@ -12,35 +12,102 @@ Searching for: 'arrow'
 
 Searching for: 'right arrow'
   Matches found: 224
-  Average search time per match: 0.092 ms
+  Average search time per match: 0.068 ms
 
 Searching for: 'mathematical symbol'
   Matches found: 49
-  Average search time per match: 0.069 ms
+  Average search time per match: 0.072 ms
 
 Searching for: 'latin letter small'
   Matches found: 903
-  Average search time per match: 0.070 ms
+  Average search time per match: 0.075 ms
 
 === Benchmarking csv backend ===
 
-Data loading time: 225.43 ms
+Data loading time: 146.22 ms
 Number of entries: 40013
 
 Search performance:
 
 Searching for: 'arrow'
   Matches found: 638
-  Average search time per match: 0.007 ms
+  Average search time per match: 0.005 ms
 
 Searching for: 'right arrow'
   Matches found: 224
-  Average search time per match: 0.344 ms
+  Average search time per match: 0.061 ms
 
 Searching for: 'mathematical symbol'
   Matches found: 49
-  Average search time per match: 0.077 ms
+  Average search time per match: 0.073 ms
 
 Searching for: 'latin letter small'
   Matches found: 903
-  Average search time per match: 0.063 ms
+  Average search time per match: 0.060 ms
+
+=== Benchmarking grep backend ===
+
+Backend initialization time: 0.34 ms
+
+Search performance:
+
+Searching for: 'arrow'
+  Matches found: 1
+  Total search time: 15.454 ms
+
+Searching for: 'right arrow'
+  Matches found (exact phrase): 1
+  Matches for 'right': 1
+  Matches for 'arrow': 1
+  Total search time: 6.910 ms
+
+Searching for: 'mathematical symbol'
+  Matches found (exact phrase): 0
+  Matches for 'mathematical': 1
+  Matches for 'symbol': 1
+  Total search time: 6.438 ms
+
+Searching for: 'latin letter small'
+  Matches found (exact phrase): 1
+  Matches for 'latin': 1
+  Matches for 'letter': 1
+  Matches for 'small': 1
+  Total search time: 5.918 ms
+
+=== Benchmarking fast_grep backend ===
+
+Backend initialization time: 6.96 ms
+
+Search performance:
+
+Searching for: 'arrow'
+  Matches found: 1
+  Total search time: 6.224 ms
+
+Searching for: 'right arrow'
+  Matches found (exact phrase): 1
+  Matches for 'right': 1
+  Matches for 'arrow': 1
+  Total search time: 5.665 ms
+
+Searching for: 'mathematical symbol'
+  Matches found (exact phrase): 0
+  Matches for 'mathematical': 1
+  Matches for 'symbol': 1
+  Total search time: 6.132 ms
+
+Searching for: 'latin letter small'
+  Matches found (exact phrase): 1
+  Matches for 'latin': 1
+  Matches for 'letter': 1
+  Matches for 'small': 1
+  Total search time: 5.712 ms
+
+=== Benchmark Results ===
+
+Backend    Init Time   Entries  arrow           right arrow           mathematical symbol   latin letter small    Median Time  
+---------  ----------  -------  --------------  --------------------  --------------------  --------------------  -----------  
+lua         111.33 ms  40078    638 /  0.00 ms  224 /  0.07 ms        49 /  0.07 ms         903 /  0.08 ms         0.07 ms     
+csv         146.22 ms  40013    638 /  0.00 ms  224 /  0.06 ms        49 /  0.07 ms         903 /  0.06 ms         0.06 ms     
+grep          0.34 ms  N/A      1 / 15.45 ms    1 (exact) /  6.91 ms  0 (exact) /  6.44 ms  1 (exact) /  5.92 ms   6.67 ms     
+fast_grep     6.96 ms  N/A      1 /  6.22 ms    1 (exact) /  5.67 ms  0 (exact) /  6.13 ms  1 (exact) /  5.71 ms   5.92 ms     

@@ -38,7 +38,8 @@ NAME_ALIASES_FILE_URL = UCD_LATEST_URL + "NameAliases.txt"
 OUTPUT_FILES = {
     'csv': "unicode_data.csv",
     'json': "unicode_data.json",
-    'lua': "unicode_data.lua"
+    'lua': "unicode_data.lua",
+    'txt': "unicode_data.txt"
 }
 
 # --- Helper Functions ---
@@ -235,11 +236,45 @@ def write_lua_output(unicode_data, aliases_data, output_filename):
     except Exception as e:
         print(f"Error writing Lua module: {e}")
 
+def write_txt_output(unicode_data, aliases_data, output_filename):
+    """Writes the data in a grep-friendly text format optimized for fast searching."""
+    if not unicode_data:
+        print("No Unicode data to write. Aborting text file creation.")
+        return
+
+    try:
+        with open(output_filename, 'w', encoding='utf-8') as f:
+            for code_point_hex, data in unicode_data.items():
+                # Format: character|name|code_point|category|alias1|alias2|...
+                # Optimized for grep with searchable fields first
+                
+                # Prepare the name and aliases for better searchability
+                name = data['name']
+                
+                # Create the base parts of the line
+                line_parts = [
+                    data['char_obj'],
+                    name,
+                    f"U+{code_point_hex}",
+                    data['category']
+                ]
+                
+                # Add aliases if they exist
+                if code_point_hex in aliases_data:
+                    line_parts.extend(aliases_data[code_point_hex])
+                
+                # Join with pipe separator
+                f.write('|'.join(line_parts) + '\n')
+    except Exception as e:
+        print(f"Error writing text file: {e}")
+
 # --- Main Execution ---
 def main():
     parser = argparse.ArgumentParser(description='Process Unicode data into various formats')
-    parser.add_argument('--format', choices=['csv', 'json', 'lua'], default='csv',
+    parser.add_argument('--format', choices=['csv', 'json', 'lua', 'txt', 'all'], default='csv',
                       help='Output format (default: csv)')
+    parser.add_argument('--output-dir', default='.',
+                      help='Output directory (default: current directory)')
     args = parser.parse_args()
 
     # Download files to temporary location
@@ -260,15 +295,23 @@ def main():
             return
 
         # Write output in the specified format
-        output_filename = OUTPUT_FILES[args.format]
-        if args.format == 'csv':
-            write_csv_output(unicode_char_info, aliases_info, output_filename)
-        elif args.format == 'json':
-            write_json_output(unicode_char_info, aliases_info, output_filename)
-        else:  # lua
-            write_lua_output(unicode_char_info, aliases_info, output_filename)
-
-        print(f"Data written to {output_filename}")
+        if args.format == 'all':
+            formats = ['csv', 'lua', 'txt']
+        else:
+            formats = [args.format]
+            
+        for fmt in formats:
+            output_filename = os.path.join(args.output_dir, OUTPUT_FILES[fmt])
+            if fmt == 'csv':
+                write_csv_output(unicode_char_info, aliases_info, output_filename)
+            elif fmt == 'json':
+                write_json_output(unicode_char_info, aliases_info, output_filename)
+            elif fmt == 'txt':
+                write_txt_output(unicode_char_info, aliases_info, output_filename)
+            else:  # lua
+                write_lua_output(unicode_char_info, aliases_info, output_filename)
+            
+            print(f"Data written to {output_filename}")
 
     finally:
         # Clean up temporary files

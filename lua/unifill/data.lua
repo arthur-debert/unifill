@@ -17,6 +17,18 @@ local default_config = {
         csv = {
             -- Will be set based on plugin root
             data_path = nil
+        },
+        grep = {
+            -- Will be set based on plugin root
+            data_path = nil,
+            -- Default grep command
+            grep_command = "rg"
+        },
+        fast_grep = {
+            -- Will be set based on plugin root
+            data_path = nil,
+            -- Default grep command
+            grep_command = "rg"
         }
     }
 }
@@ -46,6 +58,12 @@ function DataManager.setup(user_config)
     end
     if not config.backends.csv.data_path then
         config.backends.csv.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.csv"
+    end
+    if not config.backends.grep.data_path then
+        config.backends.grep.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.txt"
+    end
+    if not config.backends.fast_grep.data_path then
+        config.backends.fast_grep.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.txt"
     end
     
     log.debug("DataManager setup complete with backend: " .. config.backend)
@@ -96,6 +114,12 @@ function DataManager.load_unicode_data()
     elseif backend_name == "csv" then
         local CSVBackend = require("unifill.backends.csv_backend")
         backend = CSVBackend.new(backend_config)
+    elseif backend_name == "grep" then
+        local GrepBackend = require("unifill.backends.grep_backend")
+        backend = GrepBackend.new(backend_config)
+    elseif backend_name == "fast_grep" then
+        local FastGrepBackend = require("unifill.backends.fast_grep_backend")
+        backend = FastGrepBackend.new(backend_config)
     else
         -- Unknown backend
         local err_msg = "Unknown backend: " .. backend_name
@@ -124,8 +148,22 @@ end
 -- Initialize with default configuration
 DataManager.setup()
 
+-- Get the current backend name
+-- @return String with the current backend name
+function DataManager.get_backend_name()
+    return config.backend
+end
+
+-- Get the current configuration
+-- @return Table with the current configuration
+function DataManager.get_config()
+    return config
+end
+
 return {
     setup = DataManager.setup,
     get_plugin_root = get_plugin_root,
-    load_unicode_data = DataManager.load_unicode_data
+    load_unicode_data = DataManager.load_unicode_data,
+    get_backend_name = DataManager.get_backend_name,
+    get_config = DataManager.get_config
 }

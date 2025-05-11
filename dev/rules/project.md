@@ -67,7 +67,14 @@ maintained in the `tmp` directory (not under source control):
 │       ├── data.lua -> data loading functionality
 │       ├── format.lua -> text formatting utilities
 │       ├── search.lua -> search scoring and matching
-│       └── telescope.lua -> telescope integration
+│       ├── telescope.lua -> telescope integration
+│       ├── log.lua -> logging functionality
+│       └── backends -> data backend implementations
+│           ├── interface.lua -> backend interface definition
+│           ├── lua_backend.lua -> Lua table backend
+│           ├── csv_backend.lua -> CSV file backend
+│           ├── grep_backend.lua -> Grep-based backend
+│           └── fast_grep_backend.lua -> Optimized grep backend
 ├── spec -> .plenary tests
 ├── unifill-datafetch -> python fetcher for the dataset.
 │   └── src
@@ -85,6 +92,12 @@ The plugin's code is organized into these logical components:
 - **search.lua**: Search algorithm implementation
 - **telescope.lua**: Telescope picker integration and UI
 - **log.lua**: Logging functionality for debugging
+- **backends/**: Data backend implementations
+  - **interface.lua**: Defines the common interface for all backends
+  - **lua_backend.lua**: Implements the Lua table backend
+  - **csv_backend.lua**: Implements the CSV file backend
+  - **grep_backend.lua**: Implements the grep-based backend
+  - **fast_grep_backend.lua**: Implements the optimized grep backend
 
 Each module has a specific responsibility and exports only the necessary
 functions. This separation makes the code more maintainable and easier to test.
