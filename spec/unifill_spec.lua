@@ -148,9 +148,8 @@ describe("unifill", function()
         local unifill = require("unifill")
         local score_match = unifill._test.score_match
 
-        -- this still is not working, we're skipping as we setup better logging
-        -- to debug this .
-        pending("scores matches by location priority", function()
+        -- This should now work with our improved search functionality
+        it("scores matches by location priority", function()
             -- Test entry with match in name (highest priority)
             local name_match = score_match({
                 name = "RIGHTWARDS ARROW",
@@ -160,7 +159,7 @@ describe("unifill", function()
 
             -- Test entry with match in alias (medium priority)
             local alias_match = score_match({
-                name = "ARROW POINTING RIGHT",
+                name = "ARROW",
                 category = "Other Symbol",
                 aliases = {"RIGHTWARDS"}
             }, {"right"})
@@ -171,6 +170,11 @@ describe("unifill", function()
                 category = "Math Symbol",
                 aliases = {"ADD"}
             }, {"math"})
+
+            -- Log scores for debugging
+            print("Name match score: " .. name_match)
+            print("Alias match score: " .. alias_match)
+            print("Category match score: " .. category_match)
 
             assert(name_match > alias_match, "Name matches should score higher than alias matches")
             assert(alias_match > category_match, "Alias matches should score higher than category matches")
@@ -187,9 +191,9 @@ describe("unifill", function()
             local full_match = score_match(entry, {"right", "arrow"})
             assert(full_match > 0, "Should match full terms")
 
-            -- Should not match partial terms
+            -- Should now match partial terms with our improved search
             local partial_match = score_match(entry, {"ma", "th"})
-            assert(partial_match == 0, "Should not match partial terms")
+            assert(partial_match > 0, "Should match partial terms with improved search")
         end)
 
         it("scores higher for multiple term matches", function()
