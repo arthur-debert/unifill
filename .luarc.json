@@ -1,9 +1,9 @@
 {
-    "diagnostics": {
-        "disable": ["lowercase-global"]
-    },
-    "workspace": {
-        "ignoreDir": ["data/unifill-datafetch"],
-        "library": []
-    }
+  "diagnostics": {
+    "disable": ["lowercase-global"]
+  },
+  "workspace": {
+    "ignoreDir": ["data/glyph-catcher"],
+    "library": []
+  }
 }

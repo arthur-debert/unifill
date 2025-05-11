@@ -143,7 +143,7 @@ debian-build/
 local/**
 tests/smoke/*
 
-data/unifill-datafetch/unicode_data.lua
+data/glyph-catcher/unicode_data.lua
 
 # Unicode data files that should not be in source control
 NameAliases.txt

@@ -52,8 +52,8 @@ u#nifill
 
         --  bash
 
-    This executes unifill-datafetch/src/setup_dataset.py. It will create a .venv and
-    Install deps in the unifill-datafetch directory.
+    This executes glyph-catcher/src/setup_dataset.py. It will create a .venv and
+    Install deps in the glyph-catcher directory.
 
 2.1 Data Backends
 

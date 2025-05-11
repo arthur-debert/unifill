@@ -1,6 +1,5 @@
 -- Data management functionality for unifill
 -- This module manages the data backends and provides a unified interface
-
 local log = require("unifill.log")
 
 -- Data Manager
@@ -50,22 +49,22 @@ end
 function DataManager.setup(user_config)
     -- Merge user config with defaults
     config = vim.tbl_deep_extend("force", default_config, user_config or {})
-    
+
     -- Set default paths based on plugin root if not provided
     local plugin_root = get_plugin_root()
     if not config.backends.lua.data_path then
-        config.backends.lua.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.lua"
+        config.backends.lua.data_path = plugin_root .. "/data/unicode_data.lua"
     end
     if not config.backends.csv.data_path then
-        config.backends.csv.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.csv"
+        config.backends.csv.data_path = plugin_root .. "/data/unicode_data.csv"
     end
     if not config.backends.grep.data_path then
-        config.backends.grep.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.txt"
+        config.backends.grep.data_path = plugin_root .. "/data/unicode_data.txt"
     end
     if not config.backends.fast_grep.data_path then
-        config.backends.fast_grep.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.txt"
+        config.backends.fast_grep.data_path = plugin_root .. "/data/unicode_data.txt"
     end
-    
+
     log.debug("DataManager setup complete with backend: " .. config.backend)
     return DataManager
 end
@@ -79,19 +78,17 @@ local function validate_data(data, structure)
         log.error("Invalid data format: not a table or empty")
         return false
     end
-    
+
     -- Check first entry structure
     local entry = data[1]
     for field, expected_type in pairs(structure) do
-        if type(entry[field]) ~= expected_type and
-           not (expected_type == "table" and entry[field] == nil) then
-            log.error("Invalid entry structure: field '" .. field ..
-                      "' should be " .. expected_type ..
-                      " but is " .. type(entry[field]))
+        if type(entry[field]) ~= expected_type and not (expected_type == "table" and entry[field] == nil) then
+            log.error("Invalid entry structure: field '" .. field .. "' should be " .. expected_type .. " but is " ..
+                          type(entry[field]))
             return false
         end
     end
-    
+
     return true
 end
 
@@ -100,14 +97,14 @@ end
 function DataManager.load_unicode_data()
     local start_time = vim.loop.hrtime()
     log.debug("Loading unicode data with backend: " .. config.backend)
-    
+
     -- Get backend configuration
     local backend_name = config.backend
     local backend_config = config.backends[backend_name]
-    
+
     -- Load the appropriate backend
     local backend = nil
-    
+
     if backend_name == "lua" then
         local LuaBackend = require("unifill.backends.lua_backend")
         backend = LuaBackend.new(backend_config)
@@ -127,21 +124,20 @@ function DataManager.load_unicode_data()
         vim.notify(err_msg, vim.log.levels.ERROR)
         return {}
     end
-    
+
     -- Load data
     local data = backend:load_data()
-    
+
     -- Validate data structure
     if not validate_data(data, backend:get_entry_structure()) then
         log.error("Data validation failed")
         return {}
     end
-    
+
     local end_time = vim.loop.hrtime()
     local load_time_ms = (end_time - start_time) / 1000000
-    log.info(string.format("Backend '%s' loaded %d entries in %.2f ms",
-                          backend_name, #data, load_time_ms))
-    
+    log.info(string.format("Backend '%s' loaded %d entries in %.2f ms", backend_name, #data, load_time_ms))
+
     return data
 end
 

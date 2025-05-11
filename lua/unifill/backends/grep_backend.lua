@@ -1,6 +1,5 @@
 -- Grep backend implementation for unifill
 -- This backend uses ripgrep (or another grep tool) to search through a text file
-
 local log = require("unifill.log")
 local interface = require("unifill.backends.interface")
 
@@ -17,16 +16,16 @@ GrepBackend.__index = GrepBackend
 function GrepBackend.new(config)
     local self = setmetatable({}, GrepBackend)
     self.config = config or {}
-    
+
     -- Set default data path if not provided
     if not self.config.data_path then
         local plugin_root = self:get_plugin_root()
-        self.config.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.txt"
+        self.config.data_path = plugin_root .. "/data/unicode_data.txt"
     end
-    
+
     -- Set default grep command if not provided
     self.config.grep_command = self.config.grep_command or "rg"
-    
+
     return self
 end
 
@@ -43,12 +42,14 @@ end
 -- @param line String with the grep output line
 -- @return Table with the parsed entry
 function GrepBackend.parse_grep_line(line)
-    local parts = vim.split(line, "|", { plain = true })
+    local parts = vim.split(line, "|", {
+        plain = true
+    })
     if #parts < 4 then
         log.debug("Invalid grep line format:", line)
         return nil
     end
-    
+
     local entry = {
         character = parts[1],
         name = parts[2],
@@ -56,14 +57,14 @@ function GrepBackend.parse_grep_line(line)
         category = parts[4],
         aliases = {}
     }
-    
+
     -- Add aliases if they exist
     for i = 5, #parts do
         if parts[i] and parts[i] ~= "" then
             table.insert(entry.aliases, parts[i])
         end
     end
-    
+
     return entry
 end
 
@@ -74,38 +75,28 @@ function GrepBackend:create_command_generator(prompt)
     if prompt == "" then
         return nil
     end
-    
+
     -- For multi-word searches, we need to search for each word separately
     local words = {}
     for word in prompt:gmatch("%S+") do
         table.insert(words, word)
     end
-    
+
     -- Escape special characters in the prompt
     local escaped_prompt = prompt:gsub("([%^%$%(%)%%%.%[%]%*%+%-%?])", "\\%1")
-    
+
     -- For benchmark, use a simpler command that works with the file path
     if #words > 1 then
         return {
             command = self.config.grep_command,
-            args = {
-                "--no-heading",
-                "--line-number",
-                "-i",  -- Case insensitive
-                "-e", escaped_prompt,
-                self.config.data_path
-            }
+            args = {"--no-heading", "--line-number", "-i", -- Case insensitive
+            "-e", escaped_prompt, self.config.data_path}
         }
     else
         return {
             command = self.config.grep_command,
-            args = {
-                "--no-heading",
-                "--line-number",
-                "-i",  -- Case insensitive
-                escaped_prompt,
-                self.config.data_path
-            }
+            args = {"--no-heading", "--line-number", "-i", -- Case insensitive
+            escaped_prompt, self.config.data_path}
         }
     end
 end
@@ -115,7 +106,7 @@ end
 function GrepBackend:load_data()
     local start_time = vim.loop.hrtime()
     log.debug("Starting grep unicode data load")
-    
+
     -- Check if file exists
     local file = io.open(self.config.data_path, "r")
     if not file then
@@ -125,33 +116,25 @@ function GrepBackend:load_data()
         return {}
     end
     file:close()
-    
+
     local end_time = vim.loop.hrtime()
     local load_time_ms = (end_time - start_time) / 1000000
     log.info(string.format("Grep backend initialized in %.2f ms", load_time_ms))
-    
+
     -- In test environment, return an empty table
     if not has_telescope then
         log.debug("Telescope not available, returning empty table")
         return {}
     end
-    
+
     -- Return a function that will be used by the finder
     return function(prompt)
-        return finders.new_oneshot_job(
-            {
-                self.config.grep_command,
-                "--no-heading",
-                "--line-number",
-                prompt,
-                self.config.data_path
-            },
-            {
-                entry_maker = function(line)
-                    return GrepBackend.parse_grep_line(line)
-                end
-            }
-        )
+        return finders.new_oneshot_job({self.config.grep_command, "--no-heading", "--line-number", prompt,
+                                        self.config.data_path}, {
+            entry_maker = function(line)
+                return GrepBackend.parse_grep_line(line)
+            end
+        })
     end
 end
 
@@ -159,11 +142,11 @@ end
 -- @return Table with entry structure definition
 function GrepBackend:get_entry_structure()
     return {
-        name = "string",       -- Unicode character name
-        character = "string",  -- The actual Unicode character
+        name = "string", -- Unicode character name
+        character = "string", -- The actual Unicode character
         code_point = "string", -- Unicode code point
-        category = "string",   -- Unicode category
-        aliases = "table"      -- Optional aliases (array of strings)
+        category = "string", -- Unicode category
+        aliases = "table" -- Optional aliases (array of strings)
     }
 end
 

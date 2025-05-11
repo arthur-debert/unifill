@@ -19,7 +19,7 @@ SCRIPT_DIR="${0:a:h}"
 PROJECT_ROOT="$(pwd)"
 
 # Define key directories and filenames
-DATA_DIR="$PROJECT_ROOT/data/unifill-datafetch"
+DATA_DIR="$PROJECT_ROOT/data/glyph-catcher"
 
 # Check if the data files exist
 if [ ! -f "$DATA_DIR/unicode_data.lua" ]; then

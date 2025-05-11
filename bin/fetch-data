@@ -10,10 +10,8 @@ SCRIPT_DIR="${0:a:h}"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
 # Define key directories and filenames
-GLYPH_CATCHER_DIR="$PROJECT_ROOT/unifill-datafetch"  # Directory name will be changed later
-DESTINATION_PARENT_DIR="$PROJECT_ROOT/data"
-DESTINATION_SUBDIR_NAME="unifill-datafetch"  # Keep this for backward compatibility
-FULL_DESTINATION_DIR="$DESTINATION_PARENT_DIR/$DESTINATION_SUBDIR_NAME"
+GLYPH_CATCHER_DIR="$PROJECT_ROOT/glyph-catcher"
+DESTINATION_DIR="$PROJECT_ROOT/data"
 
 # Define file formats and their corresponding filenames
 declare -A FORMAT_FILES
@@ -29,33 +27,33 @@ EXTRA_ARGS=""
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
   case $1 in
-    --format)
-      if [[ "$2" == "all" ]]; then
-        FORMATS=("lua" "csv" "txt")
-      else
-        FORMATS=("$2")
-      fi
-      shift 2
-      ;;
-    --)
-      # Everything after -- is passed to glyph-catcher
-      shift
-      # Store all remaining arguments in an array to preserve spaces
-      EXTRA_ARGS=("$@")
-      break
-      ;;
-    *)
-      echo "Unknown option: $1"
-      echo "Usage: $0 [--format FORMAT] [-- EXTRA_ARGS]"
-      echo "FORMAT can be: lua, csv, txt, or all"
-      echo "EXTRA_ARGS are passed directly to glyph-catcher (e.g., --unicode-blocks \"Basic Latin\")"
-      exit 1
-      ;;
+  --format)
+    if [[ "$2" == "all" ]]; then
+      FORMATS=("lua" "csv" "txt")
+    else
+      FORMATS=("$2")
+    fi
+    shift 2
+    ;;
+  --)
+    # Everything after -- is passed to glyph-catcher
+    shift
+    # Store all remaining arguments in an array to preserve spaces
+    EXTRA_ARGS=("$@")
+    break
+    ;;
+  *)
+    echo "Unknown option: $1"
+    echo "Usage: $0 [--format FORMAT] [-- EXTRA_ARGS]"
+    echo "FORMAT can be: lua, csv, txt, or all"
+    echo "EXTRA_ARGS are passed directly to glyph-catcher (e.g., --unicode-blocks \"Basic Latin\")"
+    exit 1
+    ;;
   esac
 done
 
 # Ensure the destination directory exists
-mkdir -p "$FULL_DESTINATION_DIR"
+mkdir -p "$DESTINATION_DIR"
 
 # Navigate to the glyph-catcher directory
 cd "$GLYPH_CATCHER_DIR"
@@ -67,12 +65,12 @@ poetry install --no-interaction --no-ansi >/dev/null 2>&1
 # Generate each requested format
 for format in "${FORMATS[@]}"; do
   echo "Generating $format format..."
-  
+
   # Get the filename for this format
   GENERATED_FILE_NAME="${FORMAT_FILES[$format]}"
   SOURCE_FILE_IN_DATAFETCH_DIR="$GENERATED_FILE_NAME"
-  DESTINATION_FILE_PATH="$FULL_DESTINATION_DIR/$GENERATED_FILE_NAME"
-  
+  DESTINATION_FILE_PATH="$DESTINATION_DIR/$GENERATED_FILE_NAME"
+
   # Run the data fetching script using Poetry with the specified format
   if [[ ${#EXTRA_ARGS[@]} -gt 0 ]]; then
     echo "Using additional arguments: ${EXTRA_ARGS[*]}"
@@ -80,16 +78,16 @@ for format in "${FORMATS[@]}"; do
   else
     poetry run glyph-catcher generate --format "$format"
   fi
-  
+
   # Check if the file was generated
   if [ ! -f "$SOURCE_FILE_IN_DATAFETCH_DIR" ]; then
     echo "Error: $SOURCE_FILE_IN_DATAFETCH_DIR not found in $PWD after running the script."
     exit 1
   fi
-  
-  # Move the generated file to the project's data/unifill-datafetch/ directory
+
+  # Move the generated file to the project's data/glyph-catcher/ directory
   mv "$SOURCE_FILE_IN_DATAFETCH_DIR" "$DESTINATION_FILE_PATH"
-  
+
   printf "Generated: \e[32m%s\e[0m\n" "$DESTINATION_FILE_PATH"
 done
 
