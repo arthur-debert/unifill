@@ -148,31 +148,33 @@ describe("unifill", function()
         local unifill = require("unifill")
         local score_match = unifill._test.score_match
 
-        -- it("scores matches by location priority", function()
-        --     -- Test entry with match in name (highest priority)
-        --     local name_match = score_match({
-        --         name = "RIGHTWARDS ARROW",
-        --         category = "Other Symbol",
-        --         aliases = {"FORWARD"}
-        --     }, {"right"})
+        -- this still is not working, we're skipping as we setup better logging
+        -- to debug this .
+        pending("scores matches by location priority", function()
+            -- Test entry with match in name (highest priority)
+            local name_match = score_match({
+                name = "RIGHTWARDS ARROW",
+                category = "Other Symbol",
+                aliases = {"FORWARD"}
+            }, {"right"})
 
-        --     -- Test entry with match in alias (medium priority)
-        --     local alias_match = score_match({
-        --         name = "ARROW POINTING RIGHT",
-        --         category = "Other Symbol",
-        --         aliases = {"RIGHTWARDS"}
-        --     }, {"right"})
+            -- Test entry with match in alias (medium priority)
+            local alias_match = score_match({
+                name = "ARROW POINTING RIGHT",
+                category = "Other Symbol",
+                aliases = {"RIGHTWARDS"}
+            }, {"right"})
 
-        --     -- Test entry with match in category (lowest priority)
-        --     local category_match = score_match({
-        --         name = "PLUS SIGN",
-        --         category = "Math Symbol",
-        --         aliases = {"ADD"}
-        --     }, {"math"})
+            -- Test entry with match in category (lowest priority)
+            local category_match = score_match({
+                name = "PLUS SIGN",
+                category = "Math Symbol",
+                aliases = {"ADD"}
+            }, {"math"})
 
-        --     assert(name_match > alias_match, "Name matches should score higher than alias matches")
-        --     assert(alias_match > category_match, "Alias matches should score higher than category matches")
-        -- end)
+            assert(name_match > alias_match, "Name matches should score higher than alias matches")
+            assert(alias_match > category_match, "Alias matches should score higher than category matches")
+        end)
 
         it("requires full term matches", function()
             local entry = {
