@@ -1,33 +1,43 @@
-name: Tests
+name: Python Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Install Neovim
-      uses: rhysd/action-setup-vim@v1
-      with:
-        neovim: true
-        version: stable
+      - name: Install direnv
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y direnv
 
-    - name: Create Neovim config directories
-      run: |
-        mkdir -p ~/.local/share/nvim/lazy
-        mkdir -p ~/.config/nvim/lua
+      - name: Set up environment variables
+        run: |
+          echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+          source ~/.bashrc
+          direnv allow .
 
-    - name: Install plenary.nvim
-      run: |
-        git clone --depth 1 https://github.com/nvim-lua/plenary.nvim ~/.local/share/nvim/lazy/plenary.nvim
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
 
-    - name: Run Tests
-      run: |
-        ./bin/run-tests
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: 1.5.1
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+
+      - name: Run Tests
+        run: |
+          export PROJECT_ROOT=$GITHUB_WORKSPACE
+          export PYTHON_ROOT=$GITHUB_WORKSPACE/glyph-catcher
+          ./bin/unittest-python
