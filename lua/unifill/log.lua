@@ -1,36 +1,62 @@
--- Logging functionality for unifill
+---@brief [[
+--- Logging functionality for unifill using plenary.nvim's logger
+---
+--- This module provides logging capabilities for the unifill plugin using
+--- plenary.nvim's logger. It supports different log levels (debug, info, warn, error)
+--- and can write logs to both the console and a log file.
+---
+--- The log level can be configured using the UNIFILL_LOG_LEVEL environment variable.
+--- Default log level is "info" if not specified.
+---
+--- Usage:
+---   local log = require("unifill.log")
+---   log.debug("Debug message")
+---   log.info("Info message")
+---   log.warn("Warning message")
+---   log.error("Error message")
+---@brief ]]
 
--- Create a no-op logger for when plenary isn't available
-local noop_logger = setmetatable({}, {
-    __index = function(_, _)
-        return function() end
-    end
-})
+-- Import plenary logger and path utilities
+local plenary_log = require("plenary.log")
+local Path = require("plenary.path")
 
--- Try to set up plenary logging
-local ok, plenary_log = pcall(require, 'plenary.log')
-if not ok then
-    return noop_logger
+-- Set up log directory
+local root_dir = vim.fn.fnamemodify(vim.fn.resolve(vim.fn.expand('%:p')), ':h:h:h')
+local log_dir = Path:new(root_dir, 'tmp', 'logs')
+local log_path = log_dir:joinpath('unifill.log').filename
+
+-- Create log directory if it doesn't exist
+log_dir:mkdir({ parents = true })
+
+-- Clear the log file before initializing the logger
+local f = io.open(log_path, "w")
+if f then
+    f:write("Unifill log started at " .. os.date() .. "\n")
+    f:close()
 end
 
--- Set up logging with plenary
-local cache_dir = vim.fn.stdpath('cache')
-local log_path = cache_dir..'/unifill.log'
-vim.fn.mkdir(cache_dir, 'p')
+-- Print log location for easy reference
+vim.api.nvim_echo({{"Unifill logs at: " .. log_path, "Normal"}}, true, {})
 
+-- Create the logger
 local log = plenary_log.new({
-    plugin = 'unifill',
-    level = vim.env.UNIFILL_LOG_LEVEL or "warn",
-    filename = log_path,
-    fmt_msg = function(_, level, msg)
-        local info = debug.getinfo(4, "Sl")
-        local fileinfo = info and string.format(" (%s:%s)", info.short_src, info.currentline) or ""
-        return string.format('[%s]%s %s', level, fileinfo, msg)
-    end,
+    -- Plugin name
+    plugin = "unifill",
+    
+    -- Log level from environment or default to info
+    level = vim.env.UNIFILL_LOG_LEVEL or "info",
+    
+    -- Show in console for debugging (can be true, false, or "sync")
+    use_console = true,
+    
+    -- Write to log file
+    use_file = true,
+    
+    -- Specify our log file path (use outfile, not filename)
+    outfile = log_path,
+    
+    -- Add highlights to console output
+    highlights = true,
 })
-
-if vim.env.PLENARY_TEST then
-    pcall(function() log:set_level("error") end)
-end
 
 return log

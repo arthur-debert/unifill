@@ -12,8 +12,12 @@ local function check_word_match(text, term)
     text = text:lower()
     term = term:lower()
     
+    -- First check for a direct substring match in the full text
+    if text:find(vim.pesc(term), 1, true) then
+        return 1  -- Substring match
+    end
+    
     -- Split text into words
-    local words = {}
     for word in text:gmatch("[%w_]+") do
         -- Check for exact word match (highest priority)
         if word == term then
@@ -51,7 +55,9 @@ end
 -- @param terms Array of search terms
 -- @return Score, or 0 if any term doesn't match
 local function score_match(entry, terms)
-    log.debug("Scoring match for terms:", vim.inspect(terms))
+    log.debug("=== START SCORING ===")
+    log.debug("Scoring entry: " .. (entry.name or "unknown"))
+    log.debug("Terms: " .. vim.inspect(terms))
     
     if not entry or not entry.name or not entry.category then
         log.debug("Invalid entry structure:", vim.inspect(entry))
@@ -93,20 +99,20 @@ local function score_match(entry, terms)
             for _, alias in ipairs(entry.aliases) do
                 local alias_match = check_word_match(alias, term)
                 if alias_match > 0 then
-                    -- Only count exact word matches in aliases
-                    if alias_match == 2 then
-                        total_score = total_score + 1  -- Much lower score for alias matches
-                        found = true
-                        location = "alias"
-                        match_details[term] = {
-                            location = "alias",
-                            match_type = "exact",
-                            text = alias
-                        }
-                        log.debug(string.format("Term '%s' matched in alias: %s (score: 1)",
-                            term, alias))
-                        break
-                    end
+                    -- Accept any match type for aliases, but score exact matches higher
+                    local alias_score = alias_match == 2 and 10 or 1
+                    total_score = total_score + alias_score
+                    found = true
+                    location = "alias"
+                    match_details[term] = {
+                        location = "alias",
+                        match_type = alias_match == 2 and "exact" or "partial",
+                        text = alias,
+                        score = alias_score
+                    }
+                    log.debug(string.format("Term '%s' matched in alias: %s (score: %s, match_type: %s)",
+                        term, alias, alias_score, alias_match == 2 and "exact" or "partial"))
+                    break
                 end
             end
         end
@@ -115,17 +121,19 @@ local function score_match(entry, terms)
         if not found then
             local friendly_category = format.friendly_category(entry.category)
             local category_match = check_word_match(friendly_category, term)
-            if category_match == 2 then  -- Only count exact word matches in category
-                total_score = total_score + 0.0001  -- Lowest score for category matches
+            if category_match > 0 then  -- Accept any match type for category
+                local category_score = category_match == 2 and 0.001 or 0.0001
+                total_score = total_score + category_score
                 found = true
                 location = "category"
                 match_details[term] = {
                     location = "category",
-                    match_type = "exact",
-                    text = friendly_category
+                    match_type = category_match == 2 and "exact" or "partial",
+                    text = friendly_category,
+                    score = category_score
                 }
-                log.debug(string.format("Term '%s' matched in category: %s (score: 0.0001)",
-                    term, friendly_category))
+                log.debug(string.format("Term '%s' matched in category: %s (score: %s, match_type: %s)",
+                    term, friendly_category, category_score, category_match == 2 and "exact" or "partial"))
             end
         end
 
@@ -139,7 +147,9 @@ local function score_match(entry, terms)
 
     -- Return 0 if not all terms matched
     if vim.tbl_count(matched_terms) < #terms then
-        log.debug("Not all terms matched. Matched terms:", vim.inspect(match_details))
+        log.debug("Not all terms matched. Matched terms: " .. vim.inspect(matched_terms))
+        log.debug("Match details: " .. vim.inspect(match_details))
+        log.debug("=== END SCORING (FILTERED) ===")
         return 0
     end
 
@@ -147,6 +157,7 @@ local function score_match(entry, terms)
     local final_score = total_score * vim.tbl_count(matched_terms)
     log.debug(string.format("Final score for '%s': %s (matched terms: %s)",
         entry.name, final_score, vim.tbl_count(matched_terms)))
+    log.debug("=== END SCORING (SCORE: " .. final_score .. ") ===")
     
     return final_score
 end

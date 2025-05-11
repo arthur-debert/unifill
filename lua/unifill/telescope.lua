@@ -14,27 +14,63 @@ local log = require("unifill.log")
 local function custom_sorter(opts)
     log.debug("Creating custom sorter with opts:", vim.inspect(opts))
     return require("telescope.sorters").Sorter:new {
-        scoring_function = function(_, prompt, line)
+        scoring_function = function(_, prompt, line, entry)
+            log.debug("=== TELESCOPE SCORING START ===")
+            log.debug("Prompt: '" .. prompt .. "'")
+            
+            -- Check if entry is nil
+            if not entry or not entry.value then
+                log.debug("ERROR: entry.value is nil")
+                return -1
+            end
+            
+            log.debug("Entry: " .. entry.value.name)
+            
             if prompt == "" then
                 log.debug("Empty prompt, returning default score")
+                log.debug("=== TELESCOPE SCORING END (DEFAULT) ===")
                 return 1
             end
 
             -- For telescope, convert our score to its convention (lower is better)
             local terms = vim.split(prompt, "%s+")
-            log.debug("Scoring entry for terms:", vim.inspect(terms))
-            log.debug("Entry being scored:", line.value.name)
+            log.debug("Raw split terms: " .. vim.inspect(terms))
             
-            local test_score = search.score_match(line.value, terms)
+            -- Skip empty terms
+            local filtered_terms = {}
+            for _, term in ipairs(terms) do
+                if term and term:gsub("%s", "") ~= "" then
+                    table.insert(filtered_terms, term)
+                    log.debug("Added valid term: '" .. term .. "'")
+                else
+                    log.debug("Skipped empty term")
+                end
+            end
+            
+            log.debug("Filtered terms for search: " .. vim.inspect(filtered_terms))
+            
+            if #filtered_terms == 0 then
+                log.debug("No valid search terms, showing all results")
+                log.debug("=== TELESCOPE SCORING END (NO TERMS) ===")
+                return 1
+            end
+            
+            log.debug("Calling search.score_match with terms: " .. vim.inspect(filtered_terms))
+            local test_score = search.score_match(entry.value, filtered_terms)
+            log.debug("Raw score returned from search.score_match: " .. tostring(test_score))
             
             -- Convert score: 0 becomes -1 (filtered), higher becomes lower (better match)
             if test_score == 0 then
-                log.debug("Entry filtered out:", line.value.name)
+                log.debug("Entry filtered out: " .. entry.value.name)
+                log.debug("=== TELESCOPE SCORING END (FILTERED) ===")
                 return -1
             end
-            local final_score = 1 / test_score
+            
+            -- Normalize the score for Telescope (lower is better)
+            local final_score = 1 / (test_score + 0.0001) -- Avoid division by zero
             log.debug(string.format("Final telescope score for '%s': %s (original: %s)",
-                line.value.name, final_score, test_score))
+                entry.value.name, final_score, test_score))
+            log.debug("=== TELESCOPE SCORING END (SCORE: " .. final_score .. ") ===")
             return final_score
         end,
 
@@ -87,7 +123,7 @@ local function entry_maker(entry)
     return {
         value = entry,
         display = display_text,
-        ordinal = entry.name
+        ordinal = entry.name .. " " .. (entry.aliases and table.concat(entry.aliases, " ") or "")
     }
 end
 

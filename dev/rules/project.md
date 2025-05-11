@@ -84,6 +84,59 @@ The plugin's code is organized into these logical components:
 - **format.lua**: Text formatting utilities for display
 - **search.lua**: Search algorithm implementation
 - **telescope.lua**: Telescope picker integration and UI
+- **log.lua**: Logging functionality for debugging
 
-Each module has a specific responsibility and exports only the necessary functions.
-This separation makes the code more maintainable and easier to test.
+Each module has a specific responsibility and exports only the necessary
+functions. This separation makes the code more maintainable and easier to test.
+
+## Logging
+
+The plugin uses plenary.nvim's logger for debugging:
+
+- Logs are stored in `<projectRoot>/tmp/logs/unifill.log`
+- The `tmp` directory is not under source control
+- Log levels include: DEBUG, INFO, WARN, ERROR
+- Each log entry includes:
+  - Log level
+  - Timestamp
+  - Source file and line number
+  - Message content
+
+### Log Level Configuration
+
+The log level can be configured using the `UNIFILL_LOG_LEVEL` environment variable:
+
+```bash
+# Set log level to debug to see all messages
+UNIFILL_LOG_LEVEL=debug nvim
+
+# Set log level to error to see only error messages
+UNIFILL_LOG_LEVEL=error nvim
+```
+
+Default log level is "info" if not specified.
+
+### Viewing Logs
+
+To view logs:
+
+```bash
+cat tmp/logs/unifill.log
+```
+
+To monitor logs in real-time:
+
+```bash
+tail -f tmp/logs/unifill.log
+```
+
+### Important Log Messages
+
+When debugging Telescope integration issues, pay special attention to:
+
+- Scoring function logs (prefixed with "TELESCOPE SCORING")
+- Search matching logs (prefixed with "START SCORING")
+- Entry creation logs
+
+The log file is cleared on each plugin initialization to prevent it from growing
+too large.
