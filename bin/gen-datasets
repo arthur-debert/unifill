@@ -30,7 +30,7 @@ FORMAT_FILES[csv]="unicode_data.csv"
 FORMAT_FILES[txt]="unicode_data.txt"
 
 # Default formats to generate
-FORMATS=("lua" "txt")
+FORMATS=("lua" "txt" "csv")
 # Additional arguments to pass to glyph-catcher
 EXTRA_ARGS=""
 

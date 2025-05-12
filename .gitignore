@@ -143,18 +143,7 @@ debian-build/
 local/**
 tests/smoke/*
 
-data/glyph-catcher/unicode_data.lua
-
-# Unicode data files that should not be in source control
-#NameAliases.txt
-#NamesList.txt
-#UnicodeData.txt
-#unicode_data.csv
-#unicode_data.txt
-#unicode_characters_table.csv
-
 # Temporary files
 tmp*
-
 # Cache directories
 cache/
