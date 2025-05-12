@@ -1,14 +1,15 @@
 -- Grep backend implementation for unifill
 -- This backend uses ripgrep (or another grep tool) to search through a text file
 local log = require("unifill.log")
-local interface = require("unifill.backends.interface")
 local constants = require("unifill.constants")
 
 -- Only require telescope modules when not in test environment
 local has_telescope, finders = pcall(require, "telescope.finders")
-local _, sorters = pcall(require, "telescope.sorters")
 
-local GrepBackend = {}
+local GrepBackend = {
+    -- This backend is inactive
+    active = false
+}
 GrepBackend.__index = GrepBackend
 
 -- Create a new GrepBackend instance
@@ -151,6 +152,12 @@ function GrepBackend:get_entry_structure()
         category = "string", -- Unicode category
         aliases = "table" -- Optional aliases (array of strings)
     }
+end
+
+-- Check if the backend is active
+-- @return Boolean indicating if the backend is active
+function GrepBackend:is_active()
+    return self.active
 end
 
 return GrepBackend

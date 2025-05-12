@@ -330,6 +330,14 @@ function DataManager.load_unicode_data()
         return {}
     end
 
+    -- Check if backend is active
+    if not backend:is_active() then
+        local err_msg = "Backend '" .. backend_name .. "' is not active. Please use an active backend."
+        log.error(err_msg)
+        vim.notify(err_msg, vim.log.levels.ERROR)
+        return {}
+    end
+
     -- Load data
     local data = backend:load_data()
 

@@ -12,7 +12,10 @@ local _, actions = pcall(require, "telescope.actions")
 local _, action_state = pcall(require, "telescope.actions.state")
 local _, entry_display = pcall(require, "telescope.pickers.entry_display")
 
-local FastGrepBackend = {}
+local FastGrepBackend = {
+    -- This backend is inactive
+    active = false
+}
 FastGrepBackend.__index = FastGrepBackend
 
 -- Create a new FastGrepBackend instance
@@ -154,6 +157,12 @@ function FastGrepBackend:get_entry_structure()
         category = "string", -- Unicode category
         aliases = "table" -- Optional aliases (array of strings)
     }
+end
+
+-- Check if the backend is active
+-- @return Boolean indicating if the backend is active
+function FastGrepBackend:is_active()
+    return self.active
 end
 
 return FastGrepBackend

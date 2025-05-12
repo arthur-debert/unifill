@@ -90,48 +90,48 @@ Hence, unifill takes a curated approach to what Unicode it includes, by using se
 
      It's the entire unicode set (what we currently have), around 600K characters.
 
-2. Implementation: 
+2. Implementation:
 
-    a. Store the full set as the reference
+    a. Dataset Distribution
 
-        We should keep the download and master char file (json ) cached with the
-    full set, and only  to filtering on export. The goal is to make the user's
-    plugin run fast, not the data generation process. It's easier to have a
-    unified flow that only filters the last step.
+        The datasets are now distributed as pre-generated release artifacts from the
+        https://github.com/arthur-debert/glyph-catcher/ project. This decouples the
+        plugin from the data generation code, making it more lightweight and easier
+        to maintain.
 
-    b. File names should contain the set name.
+        The datasets are downloaded using the bin/gen-datasets script, which fetches
+        the compressed files from GitHub releases. The plugin automatically handles
+        decompression when needed.
 
-        The file layout should become data/:
+    b. File names contain the set name
 
-            unicode.<set name>.<format>
+        The file layout in data/:
 
-        For example, unicode.every-day.csv
+            unicode.<set name>.<format>.gz
 
-    For example, unicode.every-day.csv. 
+        For example, unicode.every-day.lua.gz
 
-    c. Alter the lua code to load the right file
+    c. The lua code loads the right file
 
-        The plugin should have a user configurable setting, set-name whose
+        The plugin has a user configurable setting, set-name whose
         valid values are "every-day" and "complete", the former being the
         default.
 
-        When loading the data, it should use the variable's value.
+        When loading the data, it uses the variable's value to determine which
+        dataset file to load.
 
-    d. Point lua tests code to the every-day set
+    d. Tests use the every-day set
 
-        Tests do load datasets. Make sure tests load the smaller ones. 
+        Tests load the smaller every-day dataset to ensure fast test execution.
 
     e. Full blocks only
 
-        While it's a common case that blocks few characters of interest,  for
-        simplicity, we'll always include full blocks.
+        While it's a common case that blocks have few characters of interest, for
+        simplicity, we include full blocks in each dataset.
 
-    g. Alter the gen-dataset and the python source code to receive the --set
-    property (defaults to everyday), and work accordingly. Remember to alter
-    both scripts usage / doc-strings.
+    f. Backend Status
 
-    h. Alter the python test that use the dataset to rely on the every-day one.
-
-
+        Currently, only the Lua backend is active. The other backends (CSV, grep,
+        fast_grep) are maintained for future needs but are disabled.
 
 

@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# Get the directory containing this script
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-# Call the actual Python unittest script in the glyph-catcher directory
-"${PYTHON_ROOT}/unittest-python" "$@"

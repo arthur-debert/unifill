@@ -16,14 +16,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y direnv
 
-      - name: Set up environment variables
-        run: |
-          echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
-          source ~/.bashrc
-          direnv allow .
-          export PROJECT_ROOT=$GITHUB_WORKSPACE
-          export PYTHON_ROOT=$GITHUB_WORKSPACE/glyph-catcher
-
       - name: Install Neovim
         uses: rhysd/action-setup-vim@v1
         with:
@@ -38,6 +30,13 @@ jobs:
       - name: Install plenary.nvim
         run: |
           git clone --depth 1 https://github.com/nvim-lua/plenary.nvim ~/.local/share/nvim/lazy/plenary.nvim
+
+      - name: Set up environment variables
+        run: |
+          echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+          source ~/.bashrc
+          direnv allow .
+          export PROJECT_ROOT=$GITHUB_WORKSPACE
 
       - name: Run Tests
         run: |

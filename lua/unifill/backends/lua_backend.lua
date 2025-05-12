@@ -6,7 +6,10 @@ local Path = require("plenary.path")
 local Job = require("plenary.job")
 local vim = vim
 
-local LuaBackend = {}
+local LuaBackend = {
+    -- This is the only active backend
+    active = true
+}
 LuaBackend.__index = LuaBackend
 
 -- Create a new LuaBackend instance
@@ -146,6 +149,12 @@ function LuaBackend:get_entry_structure()
     }
 end
 
+-- Check if the backend is active
+-- @return Boolean indicating if the backend is active
+function LuaBackend:is_active()
+    return self.active
+end
+
 -- Decompress a gzip compressed file
 -- @param compressed_path String with the path to the compressed file
 -- @param output_path String with the path to the output file
@@ -167,11 +176,16 @@ function LuaBackend:decompress_file(compressed_path, output_path)
         return false
     end
     
+    -- Collect output from gzip command
+    local output_data = {}
+    
     -- Decompress the file using gzip
     local job = Job:new({
         command = "gzip",
         args = { "-d", "-c", compressed_path },
-        writer = output_path,
+        on_stdout = function(_, data)
+            table.insert(output_data, data)
+        end,
     })
     
     job:sync()
@@ -180,6 +194,19 @@ function LuaBackend:decompress_file(compressed_path, output_path)
         log.error("Failed to decompress file: " .. compressed_path)
         return false
     end
+    
+    -- Write the decompressed data to the output file
+    local file = io.open(output_path, "w")
+    if not file then
+        log.error("Failed to open output file for writing: " .. output_path)
+        return false
+    end
+    
+    for _, line in ipairs(output_data) do
+        file:write(line .. "\n")
+    end
+    
+    file:close()
     
     log.debug("File decompressed successfully")
     return true
