@@ -2,8 +2,10 @@
 
 # Get the directory containing this script
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 TMP_OUTPUT="/tmp/unifill_test_output.txt"
+# the lua tests expect the data set to tbe present.
+# this will only generate missing ones.
+"${SCRIPT_DIR}"/gen-datasets >/dev/null
 
 # Run plenary tests and capture output
 nvim --headless --noplugin \
