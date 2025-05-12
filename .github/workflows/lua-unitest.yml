@@ -2,9 +2,7 @@ name: Lua Tests
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    # No branch restriction - will run on all branches
 
 jobs:
   test:
