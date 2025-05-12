@@ -38,4 +38,4 @@ jobs:
         run: cd "${PYTHON_ROOT}" ; pwd ; ls
       - name: Run Tests
         run: |
-          ./unittest-python
+          ./bin/unittest-python
