@@ -359,6 +359,19 @@ def parse_cldr_annotations(filename: str) -> Dict[str, List[str]]:
         return {}
 
 
+def normalize_alias(alias: str) -> str:
+    """
+    Normalize an alias by converting to lowercase and stripping whitespace.
+    
+    Args:
+        alias: The alias to normalize
+        
+    Returns:
+        Normalized alias string
+    """
+    return alias.lower().strip()
+
+
 def process_data_files(file_paths: Dict[str, str]) -> Tuple[Dict[str, Dict[str, str]], Dict[str, List[str]]]:
     """
     Process Unicode data files.
@@ -381,21 +394,32 @@ def process_data_files(file_paths: Dict[str, str]) -> Tuple[Dict[str, Dict[str, 
     if 'cldr_annotations' in file_paths:
         cldr_annotations = parse_cldr_annotations(file_paths['cldr_annotations'])
     
-    # Merge all aliases
+    # Merge all aliases with deduplication
     aliases_data = defaultdict(list)
+    alias_sets = defaultdict(set)  # Use sets for deduplication
     
-    # Add formal aliases
+    # Process and add formal aliases
     for code_point, aliases in formal_aliases.items():
-        aliases_data[code_point].extend(aliases)
+        for alias in aliases:
+            normalized_alias = normalize_alias(alias)
+            alias_sets[code_point].add(normalized_alias)
     
-    # Add informative aliases
+    # Process and add informative aliases
     for code_point, aliases in informative_aliases.items():
         code_point_hex = code_point.upper()
-        aliases_data[code_point_hex].extend(aliases)
+        for alias in aliases:
+            normalized_alias = normalize_alias(alias)
+            alias_sets[code_point_hex].add(normalized_alias)
     
-    # Add CLDR annotations
+    # Process and add CLDR annotations
     for code_point, annotations in cldr_annotations.items():
-        aliases_data[code_point].extend(annotations)
+        for annotation in annotations:
+            normalized_alias = normalize_alias(annotation)
+            alias_sets[code_point].add(normalized_alias)
+    
+    # Convert sets back to lists for compatibility with the rest of the codebase
+    for code_point, alias_set in alias_sets.items():
+        aliases_data[code_point] = sorted(list(alias_set))
     
     return unicode_data, aliases_data
 
