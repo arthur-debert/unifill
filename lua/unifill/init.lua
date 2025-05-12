@@ -81,6 +81,7 @@ return {
     -- @param config Table with configuration options:
     -- {
     --   backend = "lua",  -- Data backend to use: "lua" (default) or "csv"
+    --   dataset = "every-day",  -- Dataset to use: "every-day" (default) or "complete"
     --   backends = {
     --     lua = {
     --       data_path = nil  -- Optional custom path to lua data file
@@ -99,6 +100,11 @@ return {
     --
     -- The CSV backend is provided for easier inspection and modification of the dataset.
     -- To generate both data formats, run: bin/gen-datasets --format all
+    --
+    -- Dataset options:
+    -- - every-day: Default dataset with common Unicode blocks (6618 characters)
+    -- - complete: Complete Unicode dataset with all blocks
+    -- To generate a specific dataset, run: bin/gen-datasets --dataset complete
     setup = function(config)
         return data.setup(config)
     end,

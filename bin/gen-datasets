@@ -39,9 +39,10 @@ DESTINATION_DIR="$PROJECT_ROOT/data"
 
 # Define file formats and their corresponding filenames
 declare -A FORMAT_FILES
-FORMAT_FILES[lua]="unicode_data.lua"
-FORMAT_FILES[csv]="unicode_data.csv"
-FORMAT_FILES[txt]="unicode_data.txt"
+# These will be updated with the dataset name
+FORMAT_FILES[lua]="unicode.{dataset}.lua"
+FORMAT_FILES[csv]="unicode.{dataset}.csv"
+FORMAT_FILES[txt]="unicode.{dataset}.txt"
 
 # Default formats to generate
 FORMATS=("lua" "txt" "csv")
@@ -49,6 +50,8 @@ FORMATS=("lua" "txt" "csv")
 EXTRA_ARGS=""
 # Force flag to regenerate all files
 FORCE=false
+# Default dataset to use
+DATASET="every-day"
 
 # Parse command line arguments
 # Parse command line arguments
@@ -66,6 +69,10 @@ while [[ $# -gt 0 ]]; do
     FORCE=true
     shift
     ;;
+  --dataset)
+    DATASET="$2"
+    shift 2
+    ;;
   --help | -h)
     cat <<EOF
 Usage: $(basename "$0") [OPTIONS] [-- EXTRA_ARGS]
@@ -73,18 +80,22 @@ Usage: $(basename "$0") [OPTIONS] [-- EXTRA_ARGS]
 Generate Unicode datasets for the unifill plugin.
 
 OPTIONS:
-  --format FORMAT   Specify which format(s) to generate
-                    FORMAT can be: lua, csv, txt, or all
-                    Default: lua, txt, csv
-
-  --force          Remove all existing files and regenerate them
-                   Without this flag, only missing files are generated
-
-  --help, -h       Display this help message and exit
-
-  -- EXTRA_ARGS    Additional arguments passed directly to glyph-catcher
-                   e.g., --unicode-blocks "Basic Latin"
-
+  OPTIONS:
+    --format FORMAT   Specify which format(s) to generate
+                      FORMAT can be: lua, csv, txt, or all
+                      Default: lua, txt, csv
+  
+    --force          Remove all existing files and regenerate them
+                     Without this flag, only missing files are generated
+  
+    --dataset SET    Specify which dataset to use
+                     SET can be: every-day, complete
+                     Default: every-day
+  
+    --help, -h       Display this help message and exit
+  
+    -- EXTRA_ARGS    Additional arguments passed directly to glyph-catcher
+                     e.g., --unicode-blocks "Basic Latin"
 BEHAVIOR:
   By default, this script only generates files that don't already exist in the
   data directory. This makes it efficient for incremental updates.
@@ -109,6 +120,9 @@ EXAMPLES:
 
   # Generate only specific Unicode blocks
   $(basename "$0") -- --unicode-blocks "Basic Latin,Latin-1 Supplement"
+
+  # Generate the complete dataset
+  $(basename "$0") --dataset complete
 EOF
     exit 0
     ;;
@@ -133,14 +147,19 @@ mkdir -p "$XDG_DATA_DIR"
 # If force flag is set, remove all existing files
 if [ "$FORCE" = true ]; then
   echo "Force flag set. Removing all existing files in $DESTINATION_DIR..."
-  rm -f "$DESTINATION_DIR"/*.*
+  # Create the destination directory if it doesn't exist
+  mkdir -p "$DESTINATION_DIR"
+  # Use find to remove files safely (avoids "no matches found" error)
+  find "$DESTINATION_DIR" -type f -delete
   echo "All files removed."
 fi
 
 # Function to check if a file needs to be generated
 needs_generation() {
   local format=$1
-  local file_path="$DESTINATION_DIR/${FORMAT_FILES[$format]}"
+  # Get the filename with dataset name
+  local generated_file_name="${FORMAT_FILES[$format]/\{dataset\}/$DATASET}"
+  local file_path="$DESTINATION_DIR/$generated_file_name"
 
   if [ ! -f "$file_path" ]; then
     return 0 # File doesn't exist, needs generation
@@ -154,6 +173,7 @@ needs_generation() {
 echo "Unicode dataset generator for unifill"
 echo "------------------------------------"
 echo "Formats to process: ${FORMATS[*]}"
+echo "Dataset to use: $DATASET"
 echo "Force regeneration: $([ "$FORCE" = true ] && echo "Yes" || echo "No (only generating missing files)")"
 echo ""
 
@@ -166,11 +186,14 @@ poetry install --no-interaction --no-ansi >/dev/null 2>&1
 
 # Track if any files were generated
 FILES_GENERATED=false
+# Track actual counts
+ACTUAL_GENERATED_COUNT=0
+ACTUAL_SKIPPED_COUNT=0
 
 # Generate each requested format
 for format in "${FORMATS[@]}"; do
-  # Get the filename for this format
-  GENERATED_FILE_NAME="${FORMAT_FILES[$format]}"
+  # Get the filename for this format with dataset name
+  GENERATED_FILE_NAME="${FORMAT_FILES[$format]/\{dataset\}/$DATASET}"
   SOURCE_FILE_IN_DATAFETCH_DIR="$GENERATED_FILE_NAME"
   DESTINATION_FILE_PATH="$DESTINATION_DIR/$GENERATED_FILE_NAME"
 
@@ -178,13 +201,14 @@ for format in "${FORMATS[@]}"; do
   if needs_generation "$format"; then
     echo "Generating $format format..."
     FILES_GENERATED=true
+    ACTUAL_GENERATED_COUNT=$((ACTUAL_GENERATED_COUNT + 1))
 
     # Run the data fetching script using Poetry with the specified format
     if [[ ${#EXTRA_ARGS[@]} -gt 0 ]]; then
       echo "Using additional arguments: ${EXTRA_ARGS[*]}"
-      poetry run glyph-catcher generate --format "$format" "${EXTRA_ARGS[@]}"
+      poetry run glyph-catcher generate --format "$format" --dataset "$DATASET" "${EXTRA_ARGS[@]}"
     else
-      poetry run glyph-catcher generate --format "$format"
+      poetry run glyph-catcher generate --format "$format" --dataset "$DATASET"
     fi
 
     # Check if the file was generated
@@ -204,6 +228,7 @@ for format in "${FORMATS[@]}"; do
     printf "Copied to: \e[32m%s\e[0m\n" "$XDG_FILE_PATH"
   else
     printf "Skipping \e[33m%s\e[0m format: File already exists\n" "$format"
+    ACTUAL_SKIPPED_COUNT=$((ACTUAL_SKIPPED_COUNT + 1))
   fi
 done
 # Navigate back to the project root
@@ -217,19 +242,9 @@ echo "------------------------------------"
 if [ "$FILES_GENERATED" = true ]; then
   echo "✓ Dataset generation completed successfully"
 
-  # Count generated and skipped formats
-  GENERATED_COUNT=0
-  SKIPPED_COUNT=0
-  for format in "${FORMATS[@]}"; do
-    if needs_generation "$format"; then
-      GENERATED_COUNT=$((GENERATED_COUNT + 1))
-    else
-      SKIPPED_COUNT=$((SKIPPED_COUNT + 1))
-    fi
-  done
-
-  echo "  Generated: $GENERATED_COUNT format(s)"
-  echo "  Skipped:   $SKIPPED_COUNT format(s)"
+  # Use the actual count of generated files from the loop
+  echo "  Generated: $ACTUAL_GENERATED_COUNT format(s)"
+  echo "  Skipped:   $ACTUAL_SKIPPED_COUNT format(s)"
   echo ""
   echo "Files are available in:"
   echo "  - Project directory: $DESTINATION_DIR/"

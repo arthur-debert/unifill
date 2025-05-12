@@ -8,6 +8,7 @@ local DataManager = {}
 -- Default configuration
 local default_config = {
     backend = "lua",
+    dataset = "every-day", -- Default dataset to use (every-day or complete)
     backends = {
         lua = {
             -- Will be set based on plugin root
@@ -76,16 +77,17 @@ function DataManager.setup(user_config)
     
     -- Check if data files exist in XDG data directory
     local Path = require("plenary.path")
-    local xdg_lua_path = Path:new(xdg_data_dir, "unicode_data.lua")
-    local xdg_csv_path = Path:new(xdg_data_dir, "unicode_data.csv")
-    local xdg_txt_path = Path:new(xdg_data_dir, "unicode_data.txt")
+    local dataset = config.dataset
+    local xdg_lua_path = Path:new(xdg_data_dir, "unicode." .. dataset .. ".lua")
+    local xdg_csv_path = Path:new(xdg_data_dir, "unicode." .. dataset .. ".csv")
+    local xdg_txt_path = Path:new(xdg_data_dir, "unicode." .. dataset .. ".txt")
     
     -- Set paths based on availability
     if not config.backends.lua.data_path then
         if xdg_lua_path:exists() then
             config.backends.lua.data_path = xdg_lua_path.filename
         else
-            config.backends.lua.data_path = plugin_root .. "/data/unicode_data.lua"
+            config.backends.lua.data_path = plugin_root .. "/data/unicode." .. dataset .. ".lua"
         end
     end
     
@@ -93,7 +95,7 @@ function DataManager.setup(user_config)
         if xdg_csv_path:exists() then
             config.backends.csv.data_path = xdg_csv_path.filename
         else
-            config.backends.csv.data_path = plugin_root .. "/data/unicode_data.csv"
+            config.backends.csv.data_path = plugin_root .. "/data/unicode." .. dataset .. ".csv"
         end
     end
     
@@ -101,7 +103,7 @@ function DataManager.setup(user_config)
         if xdg_txt_path:exists() then
             config.backends.grep.data_path = xdg_txt_path.filename
         else
-            config.backends.grep.data_path = plugin_root .. "/data/unicode_data.txt"
+            config.backends.grep.data_path = plugin_root .. "/data/unicode." .. dataset .. ".txt"
         end
     end
     
@@ -109,7 +111,7 @@ function DataManager.setup(user_config)
         if xdg_txt_path:exists() then
             config.backends.fast_grep.data_path = xdg_txt_path.filename
         else
-            config.backends.fast_grep.data_path = plugin_root .. "/data/unicode_data.txt"
+            config.backends.fast_grep.data_path = plugin_root .. "/data/unicode." .. dataset .. ".txt"
         end
     end
 
@@ -144,7 +146,7 @@ end
 -- @return Table with Unicode data entries
 function DataManager.load_unicode_data()
     local start_time = vim.loop.hrtime()
-    log.debug("Loading unicode data with backend: " .. config.backend)
+    log.debug("Loading unicode data with backend: " .. config.backend .. " and dataset: " .. config.dataset)
 
     -- Get backend configuration
     local backend_name = config.backend
@@ -204,10 +206,17 @@ function DataManager.get_config()
     return config
 end
 
+-- Get the current dataset name
+-- @return String with the current dataset name
+function DataManager.get_dataset()
+    return config.dataset
+end
+
 return {
     setup = DataManager.setup,
     get_plugin_root = get_plugin_root,
     load_unicode_data = DataManager.load_unicode_data,
     get_backend_name = DataManager.get_backend_name,
-    get_config = DataManager.get_config
+    get_config = DataManager.get_config,
+    get_dataset = DataManager.get_dataset
 }

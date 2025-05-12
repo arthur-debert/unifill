@@ -9,7 +9,8 @@ import shutil
 from typing import Dict, List, Any, Optional
 
 from .types import ExportOptions
-from .processor import filter_by_unicode_blocks, load_master_data_file
+from .processor import filter_by_unicode_blocks, filter_by_dataset, load_master_data_file
+from .config import get_output_filename
 
 
 def export_data(
@@ -43,8 +44,12 @@ def export_data(
             print(f"Error loading master file: {e}")
             print("Using provided data instead.")
     
-    # Filter data by Unicode blocks if specified
-    if options.unicode_blocks:
+    # Filter data by dataset or Unicode blocks if specified
+    if options.dataset:
+        print(f"Filtering data using dataset: {options.dataset}")
+        unicode_data, aliases_data = filter_by_dataset(unicode_data, aliases_data, options.dataset)
+        print(f"Dataset contains {len(unicode_data)} characters")
+    elif options.unicode_blocks:
         print(f"Filtering data to include only these Unicode blocks: {', '.join(options.unicode_blocks)}")
         unicode_data, aliases_data = filter_by_unicode_blocks(unicode_data, aliases_data, options.unicode_blocks)
         print(f"Filtered data contains {len(unicode_data)} characters")
@@ -59,7 +64,9 @@ def export_data(
     
     # Export to each format
     for fmt in formats:
-        output_filename = os.path.join(options.output_dir, f"unicode_data.{fmt}")
+        # Get the output filename based on format and dataset
+        filename = get_output_filename(fmt, options.dataset)
+        output_filename = os.path.join(options.output_dir, filename)
         
         if fmt == 'csv':
             write_csv_output(unicode_data, aliases_data, output_filename)
