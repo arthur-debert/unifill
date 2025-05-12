@@ -1,0 +1,144 @@
+#!/usr/bin/env bash
+
+# start-test-nvim - Start a Neovim instance configured for testing the unifill project
+# This script creates a temporary init.lua file and starts Neovim with it
+
+set -e
+
+# Get the project root directory
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Create a temporary directory for Neovim configuration
+TMP_DIR="$PROJECT_ROOT/tmp"
+mkdir -p "$TMP_DIR"
+mkdir -p "$TMP_DIR/logs"
+
+# Create a temporary init.lua file
+INIT_LUA="$TMP_DIR/test_init.lua"
+
+cat > "$INIT_LUA" << 'EOL'
+-- Set leader key to space
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- Set log level for unifill
+vim.env.UNIFILL_LOG_LEVEL = "debug"
+
+-- Create logs directory
+local log_dir = vim.fn.stdpath('cache') .. '/unifill/logs'
+vim.fn.mkdir(log_dir, 'p')
+
+-- Add the project directory to runtimepath
+local project_root = vim.fn.getcwd()
+vim.opt.runtimepath:append(project_root)
+
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.runtimepath:prepend(lazypath)
+
+-- Set up plugins with lazy.nvim
+require("lazy").setup({
+  -- Telescope
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      -- Set up Telescope
+      local telescope = require('telescope')
+      telescope.setup({
+        defaults = {
+          prompt_prefix = "🔍 ",
+          selection_caret = "❯ ",
+          layout_strategy = "horizontal",
+          layout_config = {
+            horizontal = {
+              width = 0.8,
+              height = 0.8,
+            },
+          },
+        },
+      })
+      
+      -- Set up Telescope keybindings
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = 'Find files' })
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live grep' })
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find buffers' })
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help tags' })
+    end,
+  },
+  
+  -- Plenary (required for testing)
+  {
+    "nvim-lua/plenary.nvim",
+  },
+  
+  -- Local unifill plugin
+  {
+    dir = vim.fn.getcwd(),
+    name = "unifill",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      -- Configure unifill
+      local unifill = require('unifill')
+      unifill.setup({
+        -- Use default configuration
+        backend = "lua",
+      })
+      
+      -- Set up unifill keybinding (Space+F+U)
+      vim.keymap.set('n', '<leader>fu', unifill.unifill, { desc = 'Insert Unicode character' })
+    end,
+  },
+})
+
+-- Set up some basic Neovim options for testing
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.termguicolors = true
+
+-- Create a welcome message
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd([[
+      echo "Welcome to the unifill test environment!"
+      echo "Press <Space>fu to open the unifill Unicode picker"
+      echo "Press <Space>f to access Telescope"
+    ]])
+  end,
+})
+EOL
+
+# Make the script executable
+chmod +x "$INIT_LUA"
+
+# Ensure we have a dataset
+if [ ! -f "$PROJECT_ROOT/data/unicode.every-day.lua.gz" ]; then
+  echo "Generating dataset..."
+  "$PROJECT_ROOT/bin/gen-datasets" --force --unicode-blocks "Basic Latin"
+fi
+
+# Start Neovim with the temporary init.lua
+echo "Starting Neovim with test configuration..."
+echo "Press <Space>fu to open the unifill Unicode picker"
+echo "Press <Space>f to access Telescope"
+nvim -u "$INIT_LUA"
