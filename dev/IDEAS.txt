@@ -30,10 +30,6 @@ This is what remains to be done on  unifill
         - is the file layout looking good? 
         - do we follow plugin design best practices? If not, what's to be
           changed? 
-        - what about the entire dataset generation thing? this shouldnt be
-          redistributed. also, should we have the dataset be in git or the
-          plugin load it from a zip at load time 
-
 
 [ ]  Install from github
 
