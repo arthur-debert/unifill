@@ -1,17 +1,17 @@
 #!/usr/bin/env zsh
 # shellcheck shell=bash
 #
-# gen-datasets - Unicode dataset generator for the unifill plugin
+# gen-datasets - Unicode dataset downloader for the unifill plugin
 #
-# This script generates Unicode datasets in various formats (lua, csv, txt) for use
-# with the unifill plugin. By default, it only generates files that don't already
-# exist in the data directory, making it efficient for incremental updates.
+# This script downloads pre-generated Unicode datasets from GitHub releases
+# for use with the unifill plugin. By default, it only downloads files that 
+# don't already exist in the data directory, making it efficient for 
+# incremental updates.
 #
-# When the --force flag is used, it removes all existing files and regenerates them,
-# which is useful for ensuring all data is up-to-date or when the dataset structure
-# has changed.
+# When the --force flag is used, it removes all existing files and downloads them again,
+# which is useful for ensuring all data is up-to-date.
 #
-# The generated files are placed in the project's data directory and also copied to
+# The downloaded files are placed in the project's data directory and also copied to
 # the XDG_DATA_HOME directory for system-wide access.
 
 # Exit immediately if a command exits with a non-zero status.
@@ -22,9 +22,6 @@ SCRIPT_DIR="${0:a:h}"
 
 # Project root is assumed to be one level up from the 'bin' directory
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-
-# Define key directories and filenames
-GLYPH_CATCHER_DIR="$PROJECT_ROOT/glyph-catcher"
 
 # Use XDG_DATA_HOME if available, otherwise use default location
 if [ -n "$XDG_DATA_HOME" ]; then
@@ -37,42 +34,20 @@ fi
 # But we'll also copy to XDG_DATA_HOME for system-wide access
 DESTINATION_DIR="$PROJECT_ROOT/data"
 
-# Define file formats and their corresponding filenames
-declare -A FORMAT_FILES
-# These will be updated with the dataset name
-FORMAT_FILES[lua]="unicode.{dataset}.lua"
-FORMAT_FILES[csv]="unicode.{dataset}.csv"
-FORMAT_FILES[txt]="unicode.{dataset}.txt"
+# GitHub release URL base
+GITHUB_RELEASE_URL="https://github.com/arthur-debert/glyph-catcher/releases/latest/download"
 
-# Default formats to generate
-FORMATS=("lua" "txt" "csv")
-# Additional arguments to pass to glyph-catcher
-EXTRA_ARGS=""
-# Force flag to regenerate all files
-FORCE=false
 # Default dataset to use
 DATASET="every-day"
-# Compress flag to compress output files
-COMPRESS=true
 
-# Parse command line arguments
+# Force flag to re-download all files
+FORCE=false
+
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
   case $1 in
-  --format)
-    if [[ "$2" == "all" ]]; then
-      FORMATS=("lua" "csv" "txt")
-    else
-      FORMATS=("$2")
-    fi
-    shift 2
-    ;;
   --force)
     FORCE=true
-    shift
-    ;;
-  --no-compress)
-    COMPRESS=false
     shift
     ;;
   --dataset)
@@ -81,66 +56,42 @@ while [[ $# -gt 0 ]]; do
     ;;
   --help | -h)
     cat <<EOF
-Usage: $(basename "$0") [OPTIONS] [-- EXTRA_ARGS]
+Usage: $(basename "$0") [OPTIONS]
 
-Generate Unicode datasets for the unifill plugin.
+Download Unicode datasets for the unifill plugin from GitHub releases.
 
 OPTIONS:
-  OPTIONS:
-    --format FORMAT   Specify which format(s) to generate
-                      FORMAT can be: lua, csv, txt, or all
-                      Default: lua, txt, csv
-  
-    --force          Remove all existing files and regenerate them
-                      Without this flag, only missing files are generated
-   
-    --dataset SET    Specify which dataset to use
-                      SET can be: every-day, complete
-                      Default: every-day
-   
-    --no-compress    Do not compress output files
-                      By default, files are compressed using zstandard
-   
-    --help, -h       Display this help message and exit
-   
-    -- EXTRA_ARGS    Additional arguments passed directly to glyph-catcher
-                      e.g., --unicode-blocks "Basic Latin"
+  --force          Remove all existing files and download them again
+                   Without this flag, only missing files are downloaded
+ 
+  --dataset SET    Specify which dataset to use
+                   SET can be: every-day, complete
+                   Default: every-day
+ 
+  --help, -h       Display this help message and exit
+
 BEHAVIOR:
-  By default, this script only generates files that don't already exist in the
+  By default, this script only downloads files that don't already exist in the
   data directory. This makes it efficient for incremental updates.
 
-  When --force is used, all existing files are removed before generating new ones.
-  This ensures all data is up-to-date and is useful when the dataset structure
-  has changed.
+  When --force is used, all existing files are removed before downloading new ones.
+  This ensures all data is up-to-date.
 
-  Generated files are placed in:
+  Downloaded files are placed in:
   - Project data directory: $PROJECT_ROOT/data/
   - System-wide directory: \$XDG_DATA_HOME/unifill/ or ~/.local/share/unifill/
 
 EXAMPLES:
-  # Generate only missing files
+  # Download only missing files
   $(basename "$0")
 
-  # Force regeneration of all files
+  # Force re-download of all files
   $(basename "$0") --force
 
-  # Generate only the Lua format
-  $(basename "$0") --format lua
-
-  # Generate only specific Unicode blocks
-  $(basename "$0") -- --unicode-blocks "Basic Latin,Latin-1 Supplement"
-
-  # Generate the complete dataset
+  # Download the complete dataset
   $(basename "$0") --dataset complete
 EOF
     exit 0
-    ;;
-  --)
-    # Everything after -- is passed to glyph-catcher
-    shift
-    # Store all remaining arguments in an array to preserve spaces
-    EXTRA_ARGS=("$@")
-    break
     ;;
   *)
     echo "Unknown option: $1"
@@ -149,6 +100,7 @@ EOF
     ;;
   esac
 done
+
 # Ensure the destination directories exist
 mkdir -p "$DESTINATION_DIR"
 mkdir -p "$XDG_DATA_DIR"
@@ -163,121 +115,75 @@ if [ "$FORCE" = true ]; then
   echo "All files removed."
 fi
 
-# Function to check if a file needs to be generated
-needs_generation() {
-  local format=$1
-  # Get the filename with dataset name
-  local generated_file_name="${FORMAT_FILES[$format]/\{dataset\}/$DATASET}"
-  local file_path="$DESTINATION_DIR/$generated_file_name"
+# Function to check if a file needs to be downloaded
+needs_download() {
+  local file_name="unicode.$DATASET.lua.gz"
+  local file_path="$DESTINATION_DIR/$file_name"
 
   if [ ! -f "$file_path" ]; then
-    return 0 # File doesn't exist, needs generation
+    return 0 # File doesn't exist, needs download
   elif [ "$FORCE" = true ]; then
-    return 0 # Force flag is set, regenerate regardless
+    return 0 # Force flag is set, re-download regardless
   else
-    return 1 # File exists and no force flag, skip generation
+    return 1 # File exists and no force flag, skip download
   fi
 }
 
-echo "Unicode dataset generator for unifill"
+# Function to download a file
+download_file() {
+  local file_name="unicode.$DATASET.lua.gz"
+  local url="$GITHUB_RELEASE_URL/$file_name"
+  local output_path="$DESTINATION_DIR/$file_name"
+  
+  echo "Downloading dataset for $DATASET..."
+  
+  # Use curl to download the file
+  if curl -L --fail --silent --show-error --output "$output_path" "$url"; then
+    echo "Download successful: $output_path"
+    return 0
+  else
+    echo "Error: Failed to download $url"
+    return 1
+  fi
+}
+
+echo "Unicode dataset downloader for unifill"
 echo "------------------------------------"
-echo "Formats to process: ${FORMATS[*]}"
 echo "Dataset to use: $DATASET"
-echo "Force regeneration: $([ "$FORCE" = true ] && echo "Yes" || echo "No (only generating missing files)")"
-echo "Compress output: $([ "$COMPRESS" = true ] && echo "Yes" || echo "No")"
+echo "Force re-download: $([ "$FORCE" = true ] && echo "Yes" || echo "No (only downloading missing files)")"
 echo ""
 
-# Navigate to the glyph-catcher directory
-cd "$GLYPH_CATCHER_DIR"
+# Track if any files were downloaded
+FILES_DOWNLOADED=false
 
-# Install dependencies using Poetry
-echo "Installing/updating dependencies with Poetry..."
-poetry install --no-interaction --no-ansi >/dev/null 2>&1
-
-# Track if any files were generated
-FILES_GENERATED=false
-# Track actual counts
-ACTUAL_GENERATED_COUNT=0
-ACTUAL_SKIPPED_COUNT=0
-
-# Generate each requested format
-for format in "${FORMATS[@]}"; do
-  # Get the filename for this format with dataset name
-  GENERATED_FILE_NAME="${FORMAT_FILES[$format]/\{dataset\}/$DATASET}"
-  SOURCE_FILE_IN_DATAFETCH_DIR="$GENERATED_FILE_NAME"
-  DESTINATION_FILE_PATH="$DESTINATION_DIR/$GENERATED_FILE_NAME"
-
-  # Check if we need to generate this format
-  if needs_generation "$format"; then
-    echo "Generating $format format..."
-    FILES_GENERATED=true
-    ACTUAL_GENERATED_COUNT=$((ACTUAL_GENERATED_COUNT + 1))
-
-    # Run the data fetching script using Poetry with the specified format
-    if [[ ${#EXTRA_ARGS[@]} -gt 0 ]]; then
-      echo "Using additional arguments: ${EXTRA_ARGS[*]}"
-      if [ "$COMPRESS" = true ]; then
-        poetry run glyph-catcher generate --format "$format" --dataset "$DATASET" --compress "${EXTRA_ARGS[@]}"
-      else
-        poetry run glyph-catcher generate --format "$format" --dataset "$DATASET" "${EXTRA_ARGS[@]}"
-      fi
-    else
-      if [ "$COMPRESS" = true ]; then
-        poetry run glyph-catcher generate --format "$format" --dataset "$DATASET" --compress
-      else
-        poetry run glyph-catcher generate --format "$format" --dataset "$DATASET"
-      fi
-    fi
-
-    # Check if the file was generated
-    # Check for both compressed and uncompressed files
-    if [ "$COMPRESS" = true ]; then
-      if [ ! -f "${SOURCE_FILE_IN_DATAFETCH_DIR}.gz" ]; then
-        echo "Error: ${SOURCE_FILE_IN_DATAFETCH_DIR}.gz not found in $PWD after running the script."
-        exit 1
-      fi
-      SOURCE_FILE_IN_DATAFETCH_DIR="${SOURCE_FILE_IN_DATAFETCH_DIR}.gz"
-    else
-      if [ ! -f "$SOURCE_FILE_IN_DATAFETCH_DIR" ]; then
-        echo "Error: $SOURCE_FILE_IN_DATAFETCH_DIR not found in $PWD after running the script."
-        exit 1
-      fi
-    fi
-
-    # Move the generated file to the project's data directory
-    if [ "$COMPRESS" = true ]; then
-      DESTINATION_FILE_PATH="${DESTINATION_FILE_PATH}.gz"
-    fi
-    mv "$SOURCE_FILE_IN_DATAFETCH_DIR" "$DESTINATION_FILE_PATH"
-
+# Check if we need to download the file
+if needs_download; then
+  echo "Downloading lua format..."
+  FILES_DOWNLOADED=true
+  
+  # Download the file
+  if download_file; then
     # Copy to XDG data directory for system-wide access
-    XDG_FILE_PATH="$XDG_DATA_DIR/$GENERATED_FILE_NAME"
-    if [ "$COMPRESS" = true ]; then
-      XDG_FILE_PATH="${XDG_FILE_PATH}.gz"
-    fi
-    cp "$DESTINATION_FILE_PATH" "$XDG_FILE_PATH"
-
-    printf "Generated: \e[32m%s\e[0m\n" "$DESTINATION_FILE_PATH"
+    XDG_FILE_PATH="$XDG_DATA_DIR/unicode.$DATASET.lua.gz"
+    cp "$DESTINATION_DIR/unicode.$DATASET.lua.gz" "$XDG_FILE_PATH"
+    
+    printf "Downloaded: \e[32m%s\e[0m\n" "$DESTINATION_DIR/unicode.$DATASET.lua.gz"
     printf "Copied to: \e[32m%s\e[0m\n" "$XDG_FILE_PATH"
   else
-    printf "Skipping \e[33m%s\e[0m format: File already exists\n" "$format"
-    ACTUAL_SKIPPED_COUNT=$((ACTUAL_SKIPPED_COUNT + 1))
+    echo "Error: Failed to download dataset."
+    exit 1
   fi
-done
-# Navigate back to the project root
-cd "$PROJECT_ROOT"
+else
+  printf "Skipping download: File already exists\n"
+fi
 
 echo ""
 echo ""
 echo "------------------------------------"
 echo "SUMMARY"
 echo "------------------------------------"
-if [ "$FILES_GENERATED" = true ]; then
-  echo "✓ Dataset generation completed successfully"
-
-  # Use the actual count of generated files from the loop
-  echo "  Generated: $ACTUAL_GENERATED_COUNT format(s)"
-  echo "  Skipped:   $ACTUAL_SKIPPED_COUNT format(s)"
+if [ "$FILES_DOWNLOADED" = true ]; then
+  echo "✓ Dataset download completed successfully"
   echo ""
   echo "Files are available in:"
   echo "  - Project directory: $DESTINATION_DIR/"
@@ -285,9 +191,9 @@ if [ "$FILES_GENERATED" = true ]; then
   echo ""
   echo "These files are used by the unifill plugin for Unicode character lookup."
 else
-  echo "✓ No files needed to be generated"
-  echo "  All requested formats already exist in $DESTINATION_DIR/"
+  echo "✓ No files needed to be downloaded"
+  echo "  All requested files already exist in $DESTINATION_DIR/"
   echo ""
-  echo "To regenerate all files (useful after dataset structure changes):"
+  echo "To re-download all files:"
   echo "  $0 --force"
 fi

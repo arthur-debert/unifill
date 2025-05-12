@@ -45,31 +45,33 @@ u#nifill
     As an optimization, we're saving the data as a lua file, which makes the plugin
     code much simpler. It's a lookup table, and should be faster to run.
 
-    The dataset can be generated automatically by running:
+    2.0.1 Dataset Download
+
+    The dataset files are now downloaded from GitHub releases instead of being
+    generated locally. This decouples the plugin from the data generation code,
+    making it more lightweight and easier to maintain.
+
+    To download the dataset, run:
 
         --
             bin/gen-datasets
 
         --  bash
 
-    This executes glyph-catcher/src/setup_dataset.py. It will create a .venv and
-    install deps in the glyph-catcher directory.
+    This will download the pre-generated dataset files from:
+    https://github.com/arthur-debert/glyph-catcher/releases/latest/
+
+    Available datasets:
+    - every-day (default): Common Unicode characters for everyday use
+    - complete: The full Unicode character set
     
-    2.0.1 Dataset Compression
+    2.0.2 Dataset Compression
     
-    By default, datasets are compressed using gzip compression to reduce
+    All datasets are compressed using gzip compression to reduce
     distribution size. The plugin automatically handles decompression when needed.
     
-    You can disable compression with:
-    
-        --
-            bin/gen-datasets --no-compress
-            
-        --  bash
-    
-    The compression uses the highest compression level available, which provides
-    good size reduction at the cost of slower compression time. However,
-    decompression is still fast, making this a good tradeoff for distribution.
+    The compression provides good size reduction while maintaining fast
+    decompression, making this a good tradeoff for distribution.
     
     Gzip was chosen for its universal availability across all modern operating
     systems (Linux, macOS, and Windows), ensuring maximum compatibility.

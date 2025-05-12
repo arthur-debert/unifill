@@ -176,11 +176,16 @@ function LuaBackend:decompress_file(compressed_path, output_path)
         return false
     end
     
+    -- Collect output from gzip command
+    local output_data = {}
+    
     -- Decompress the file using gzip
     local job = Job:new({
         command = "gzip",
         args = { "-d", "-c", compressed_path },
-        writer = output_path,
+        on_stdout = function(_, data)
+            table.insert(output_data, data)
+        end,
     })
     
     job:sync()
@@ -189,6 +194,19 @@ function LuaBackend:decompress_file(compressed_path, output_path)
         log.error("Failed to decompress file: " .. compressed_path)
         return false
     end
+    
+    -- Write the decompressed data to the output file
+    local file = io.open(output_path, "w")
+    if not file then
+        log.error("Failed to open output file for writing: " .. output_path)
+        return false
+    end
+    
+    for _, line in ipairs(output_data) do
+        file:write(line .. "\n")
+    end
+    
+    file:close()
     
     log.debug("File decompressed successfully")
     return true
