@@ -90,9 +90,9 @@ The fast grep backend works by:
 
 ## Configuration
 
-> **Note**: As mentioned in the README.txt section 2.1.2, only the Lua backend is
-> currently active. The configuration below is maintained for documentation purposes
-> but these backends are currently disabled.
+> **Note**: As mentioned in the README.txt section 2.1.2, only the Lua backend
+> is currently active. The configuration below is maintained for documentation
+> purposes but these backends are currently disabled.
 
 Both grep backends can be configured in your Neovim config:
 
@@ -139,9 +139,10 @@ situations where:
 
 ## Implementation Notes
 
-- Both grep backends require the text format of the Unicode data, which can be
-  generated using `bin/gen-datasets --format txt` or
-  `bin/gen-datasets --format all`.
+- Both grep backends require the text format of the Unicode data, which would be
+  downloaded from the GitHub releases of the
+  [glyph-catcher](https://github.com/arthur-debert/glyph-catcher/) project using
+  `bin/gen-datasets --dataset complete`.
 - When Telescope is not available (e.g., in test environments), the backends
   gracefully fall back to returning empty results.
 - Special characters in search queries are escaped to prevent grep syntax

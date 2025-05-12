@@ -39,7 +39,8 @@ maintained in the `tmp` directory (not under source control):
 3. **Dataset Management**
 
    - The Unicode dataset is stored as a Lua lookup table for performance
-   - Generate updated dataset using `bin/gen-datasets`
+   - Download datasets using `bin/gen-datasets` from the GitHub releases of the
+     [glyph-catcher](https://github.com/arthur-debert/glyph-catcher/) project
    - Dataset changes should be tested thoroughly
 
 4. **Documentation**
@@ -55,7 +56,7 @@ maintained in the `tmp` directory (not under source control):
 ```text
 ├── README.txt -> keep updated and read it. txxt, not markdown.
 ├── bin
-│   ├── gen-datasets -> calls the script to gen the dataset and places it in data.
+│   ├── gen-datasets -> downloads datasets from GitHub releases and places them in data.
 │   └── run-tests -> run tests, used all the timed, hopefully.
 ├── data
 │   └── glyph-catcher -> data set
