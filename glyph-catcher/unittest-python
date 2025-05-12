@@ -11,7 +11,7 @@ if [ -z "$PYTHON_ROOT" ]; then
 fi
 
 # Change to the Python project directory
-cd "$PYTHON_ROOT/glyph-catcher"
+cd "$PYTHON_ROOT"
 
 # Install dependencies
 echo "Installing dependencies..."
