@@ -7,6 +7,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      PYTHON_ROOT: ${{ github.workspace }}/glyph-catcher
 
     steps:
       - uses: actions/checkout@v4
@@ -36,6 +38,7 @@ jobs:
 
       - name: CD to python root
         run: cd "${PYTHON_ROOT}" ; pwd ; ls
+        
       - name: Run Tests
         run: |
           ./bin/unittest-python
