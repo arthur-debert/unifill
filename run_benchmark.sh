@@ -19,24 +19,24 @@ SCRIPT_DIR="${0:a:h}"
 PROJECT_ROOT="$(pwd)"
 
 # Define key directories and filenames
-DATA_DIR="$PROJECT_ROOT/data/unifill-datafetch"
+DATA_DIR="$PROJECT_ROOT/data/glyph-catcher"
 
 # Check if the data files exist
 if [ ! -f "$DATA_DIR/unicode_data.lua" ]; then
     echo "Error: Unicode data file not found at: $DATA_DIR/unicode_data.lua"
-    echo "Please run bin/fetch-data first to generate the data files."
+    echo "Please run bin/gen-datasets first to generate the data files."
     exit 1
 fi
 
 if [ ! -f "$DATA_DIR/unicode_data.csv" ]; then
     echo "Error: Unicode data file not found at: $DATA_DIR/unicode_data.csv"
-    echo "Please run bin/fetch-data --format all first to generate all data formats."
+    echo "Please run bin/gen-datasets --format all first to generate all data formats."
     exit 1
 fi
 
 if [ ! -f "$DATA_DIR/unicode_data.txt" ]; then
     echo "Error: Unicode data file not found at: $DATA_DIR/unicode_data.txt"
-    echo "Please run bin/fetch-data --format all first to generate all data formats."
+    echo "Please run bin/gen-datasets --format all first to generate all data formats."
     exit 1
 fi
 

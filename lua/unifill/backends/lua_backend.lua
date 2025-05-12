@@ -1,6 +1,5 @@
 -- Lua backend implementation for unifill
 -- This backend loads Unicode data from a Lua file
-
 local log = require("unifill.log")
 local interface = require("unifill.backends.interface")
 
@@ -13,13 +12,13 @@ LuaBackend.__index = LuaBackend
 function LuaBackend.new(config)
     local self = setmetatable({}, LuaBackend)
     self.config = config or {}
-    
+
     -- Set default data path if not provided
     if not self.config.data_path then
         local plugin_root = self:get_plugin_root()
-        self.config.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.lua"
+        self.config.data_path = plugin_root .. "/data/unicode_data.lua"
     end
-    
+
     return self
 end
 
@@ -67,7 +66,7 @@ function LuaBackend:load_data()
     log.debug("Starting Lua unicode data load")
     local data_path = self.config.data_path
     log.debug("Data path:", data_path)
-    
+
     -- Check if file exists
     local file = io.open(data_path, "r")
     if not file then
@@ -78,7 +77,7 @@ function LuaBackend:load_data()
     end
     file:close()
     log.debug("Unicode data file found")
-    
+
     -- Load the data
     local ok, data = pcall(dofile, data_path)
     if not ok then
@@ -88,7 +87,7 @@ function LuaBackend:load_data()
         return {}
     end
     log.debug("Unicode data file loaded successfully")
-    
+
     -- Validate data structure
     if type(data) ~= "table" or #data == 0 then
         local err_msg = "Invalid unicode data format"
@@ -97,7 +96,7 @@ function LuaBackend:load_data()
         return {}
     end
     log.debug("Unicode data validated, entries found:", #data)
-    
+
     -- Convert characters to proper UTF-8
     local converted_count = 0
     for _, entry in ipairs(data) do
@@ -107,12 +106,11 @@ function LuaBackend:load_data()
         end
     end
     log.debug("UTF-8 conversion completed. Converted entries:", converted_count)
-    
+
     local end_time = vim.loop.hrtime()
     local load_time_ms = (end_time - start_time) / 1000000
-    log.info(string.format("Lua unicode data loaded successfully in %.2f ms, entries found: %d",
-                          load_time_ms, #data))
-    
+    log.info(string.format("Lua unicode data loaded successfully in %.2f ms, entries found: %d", load_time_ms, #data))
+
     return data
 end
 
@@ -120,11 +118,11 @@ end
 -- @return Table with entry structure definition
 function LuaBackend:get_entry_structure()
     return {
-        name = "string",       -- Unicode character name
-        character = "string",  -- The actual Unicode character
+        name = "string", -- Unicode character name
+        character = "string", -- The actual Unicode character
         code_point = "string", -- Unicode code point
-        category = "string",   -- Unicode category
-        aliases = "table"      -- Optional aliases (array of strings)
+        category = "string", -- Unicode category
+        aliases = "table" -- Optional aliases (array of strings)
     }
 end
 

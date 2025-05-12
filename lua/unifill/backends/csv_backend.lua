@@ -1,6 +1,5 @@
 -- CSV backend implementation for unifill
 -- This backend loads Unicode data from a CSV file
-
 local log = require("unifill.log")
 local interface = require("unifill.backends.interface")
 
@@ -13,13 +12,13 @@ CSVBackend.__index = CSVBackend
 function CSVBackend.new(config)
     local self = setmetatable({}, CSVBackend)
     self.config = config or {}
-    
+
     -- Set default data path if not provided
     if not self.config.data_path then
         local plugin_root = self:get_plugin_root()
-        self.config.data_path = plugin_root .. "/data/unifill-datafetch/unicode_data.csv"
+        self.config.data_path = plugin_root .. "/data/unicode_data.csv"
     end
-    
+
     return self
 end
 
@@ -40,10 +39,10 @@ local function parse_csv_line(line)
     local field = ""
     local in_quotes = false
     local i = 1
-    
+
     while i <= #line do
         local c = line:sub(i, i)
-        
+
         if c == '"' then
             if in_quotes and line:sub(i + 1, i + 1) == '"' then
                 -- Double quotes inside quotes - add a single quote
@@ -61,13 +60,13 @@ local function parse_csv_line(line)
             -- Add character to field
             field = field .. c
         end
-        
+
         i = i + 1
     end
-    
+
     -- Add the last field
     table.insert(fields, field)
-    
+
     return fields
 end
 
@@ -78,7 +77,7 @@ function CSVBackend:load_data()
     log.debug("Starting CSV unicode data load")
     local data_path = self.config.data_path
     log.debug("Data path:", data_path)
-    
+
     -- Check if file exists
     local file = io.open(data_path, "r")
     if not file then
@@ -87,33 +86,33 @@ function CSVBackend:load_data()
         vim.notify(err_msg, vim.log.levels.ERROR)
         return {}
     end
-    
+
     -- Parse the CSV file
     local data = {}
     local header = nil
     local line_num = 0
-    
+
     for line in file:lines() do
         line_num = line_num + 1
-        
+
         -- Parse CSV line
         local fields = parse_csv_line(line)
-        
+
         if line_num == 1 then
             -- First line is header
             header = fields
         else
             -- Create entry from fields
             local entry = {}
-            
+
             -- Skip control characters in tests
             if fields[3] == "<control>" then
                 goto continue
             end
-            
+
             -- Map fields to entry structure
             for i, field_name in ipairs(header) do
-                if i <= #fields then  -- Make sure we have enough fields
+                if i <= #fields then -- Make sure we have enough fields
                     if field_name == "code_point" then
                         entry.code_point = fields[i]:gsub("U%+", "")
                     elseif field_name == "character" then
@@ -133,26 +132,25 @@ function CSVBackend:load_data()
                     end
                 end
             end
-            
+
             -- Skip entries with missing required fields
             if not entry.name or not entry.character or not entry.code_point or not entry.category then
                 log.debug("Skipping entry with missing required fields:", vim.inspect(entry))
                 goto continue
             end
-            
+
             table.insert(data, entry)
-            
+
             ::continue::
         end
     end
-    
+
     file:close()
-    
+
     local end_time = vim.loop.hrtime()
     local load_time_ms = (end_time - start_time) / 1000000
-    log.info(string.format("CSV unicode data loaded successfully in %.2f ms, entries found: %d", 
-                          load_time_ms, #data))
-    
+    log.info(string.format("CSV unicode data loaded successfully in %.2f ms, entries found: %d", load_time_ms, #data))
+
     return data
 end
 
@@ -160,11 +158,11 @@ end
 -- @return Table with entry structure definition
 function CSVBackend:get_entry_structure()
     return {
-        name = "string",       -- Unicode character name
-        character = "string",  -- The actual Unicode character
+        name = "string", -- Unicode character name
+        character = "string", -- The actual Unicode character
         code_point = "string", -- Unicode code point
-        category = "string",   -- Unicode category
-        aliases = "table"      -- Optional aliases (array of strings)
+        category = "string", -- Unicode category
+        aliases = "table" -- Optional aliases (array of strings)
     }
 end
 

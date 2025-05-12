@@ -20,13 +20,32 @@
 local plenary_log = require("plenary.log")
 local Path = require("plenary.path")
 
--- Set up log directory
-local root_dir = vim.fn.fnamemodify(vim.fn.resolve(vim.fn.expand('%:p')), ':h:h:h')
-local log_dir = Path:new(root_dir, 'tmp', 'logs')
+-- Set up log directory using XDG standards
+local function get_xdg_cache_home()
+    local xdg_cache = os.getenv("XDG_CACHE_HOME")
+    if xdg_cache then
+        return xdg_cache
+    else
+        return vim.fn.expand("~/.cache")
+    end
+end
+
+local log_dir = Path:new(get_xdg_cache_home(), 'unifill', 'logs')
 local log_path = log_dir:joinpath('unifill.log').filename
 
 -- Create log directory if it doesn't exist
-log_dir:mkdir({ parents = true })
+local ok, err = pcall(function()
+    log_dir:mkdir({ parents = true })
+end)
+
+if not ok then
+    -- Fall back to a temporary directory if we can't create the XDG directory
+    local tmp_dir = vim.fn.tempname():match("(.*)/[^/]*$")
+    log_dir = Path:new(tmp_dir, 'unifill', 'logs')
+    log_path = log_dir:joinpath('unifill.log').filename
+    log_dir:mkdir({ parents = true })
+    vim.notify("Could not create XDG cache directory. Falling back to: " .. log_path, vim.log.levels.WARN)
+end
 
 -- Clear the log file before initializing the logger
 local f = io.open(log_path, "w")
@@ -57,7 +76,10 @@ local log = plenary_log.new({
     outfile = log_path,
     
     -- Add highlights to console output
-    highlights = true,
-})
-
-return log
+        highlights = true,
+    })
+    
+    -- Export log path for testing
+    log._log_path = log_path
+    
+    return log

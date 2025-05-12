@@ -48,12 +48,35 @@ u#nifill
     The dataset can be generated automatically by running:
 
         --
-            bin/fetch-data
+            bin/gen-datasets
 
         --  bash
 
-    This executes unifill-datafetch/src/setup_dataset.py. It will create a .venv and
-    Install deps in the unifill-datafetch directory.
+    This executes glyph-catcher/src/setup_dataset.py. It will create a .venv and
+    install deps in the glyph-catcher directory.
+    
+2.1 File Locations
+
+    The plugin follows the XDG Base Directory Specification for storing files:
+    
+    - Dataset files:
+      - Primary: Plugin's data directory (for local development)
+      - System-wide: $XDG_DATA_HOME/unifill/ (typically ~/.local/share/unifill/)
+    
+    - Source Unicode files:
+      - $XDG_DATA_HOME/glyph-catcher/source-files/ (typically ~/.local/share/glyph-catcher/source-files/)
+    
+    - Master data file:
+      - $XDG_DATA_HOME/glyph-catcher/ (typically ~/.local/share/glyph-catcher/)
+    
+    - Cache files:
+      - $XDG_CACHE_HOME/glyph-catcher/ (typically ~/.cache/glyph-catcher/)
+    
+    - Log files:
+      - $XDG_CACHE_HOME/unifill/logs/ (typically ~/.cache/unifill/logs/)
+    
+    - Temporary files:
+      - System temporary directory (via tempfile.gettempdir())
 
 2.1 Data Backends
 
@@ -94,7 +117,7 @@ u#nifill
     You can generate all data formats by running:
     
         --
-            bin/fetch-data --format all
+            bin/gen-datasets --format all
         --  bash
     
     This will create the Lua, CSV, and TXT versions of the dataset.
@@ -134,6 +157,18 @@ u#nifill
             - Sets up Neovim
             - Installs required plugins
             - Runs the test suite
+            
+    3.3 File Locations
+    
+        The plugin follows XDG Base Directory Specification for storing files:
+        
+        - Log files: $XDG_CACHE_HOME/unifill/logs/unifill.log (typically ~/.cache/unifill/logs/)
+        - Data files: $XDG_DATA_HOME/unifill/ (typically ~/.local/share/unifill/)
+        - Cache files: $XDG_CACHE_HOME/unifill/ (typically ~/.cache/unifill/)
+        - Temporary files: System temporary directory (via os.tmpname())
+        
+        This ensures that the plugin respects system conventions and doesn't clutter
+        the user's home directory with temporary or cache files.
 
 4. UI Customization
 

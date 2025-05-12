@@ -143,5 +143,7 @@ debian-build/
 local/**
 tests/smoke/*
 
-
-data/unifill-datafetch/unicode_data.lua
+# Temporary files
+tmp*
+# Cache directories
+cache/

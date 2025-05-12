@@ -1,0 +1,44 @@
+name: Lua Tests
+
+on:
+  push:
+    # No branch restriction - will run on all branches
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install direnv
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y direnv
+
+      - name: Set up environment variables
+        run: |
+          echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+          source ~/.bashrc
+          direnv allow .
+          export PROJECT_ROOT=$GITHUB_WORKSPACE
+          export PYTHON_ROOT=$GITHUB_WORKSPACE/glyph-catcher
+
+      - name: Install Neovim
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: stable
+
+      - name: Create Neovim config directories
+        run: |
+          mkdir -p ~/.local/share/nvim/lazy
+          mkdir -p ~/.config/nvim/lua
+
+      - name: Install plenary.nvim
+        run: |
+          git clone --depth 1 https://github.com/nvim-lua/plenary.nvim ~/.local/share/nvim/lazy/plenary.nvim
+
+      - name: Run Tests
+        run: |
+          ./bin/unittest-lua
