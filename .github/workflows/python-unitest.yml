@@ -38,6 +38,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          export PROJECT_ROOT=$GITHUB_WORKSPACE
-          export PYTHON_ROOT=$GITHUB_WORKSPACE/glyph-catcher
           ./bin/unittest-python
