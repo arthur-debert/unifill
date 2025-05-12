@@ -1,11 +1,11 @@
 Datasets
 
-Unicode is cool but you know what's algo cool? Beig fast.
+Unicode is cool but you know what's algo cool? Being fast.
 With over 500k code points, fuzzy searching  through all of unicode is not
-instantenous, when it should.
+instantaneous, when it should.
 
-Unifil's goal is to make you look good, al least your text, with common unicode characers for things like arrows, math, greek symbols and above all, emojis.
-Hence, unifil takes a curated approach to what Unicode it includes, by using sets. Each set is a collection of unicode blocks included.
+Unifill's goal is to make you look good, al least your text, with common unicode characters for things like arrows, math, greek symbols and above all, emojis.
+Hence, unifill takes a curated approach to what Unicode it includes, by using sets. Each set is a collection of unicode blocks included.
 
 
 1.  The sets
@@ -13,21 +13,21 @@ Hence, unifil takes a curated approach to what Unicode it includes, by using set
     Here are the available sets: 
 
         - every-day: brings joy knowing that your substitutions are fast and there is no memory clutter.
-        - complete: for unormal people with unormal needs. if you regularly
-          used linear A gliphs or bizantine music symbol okseia left, this if for
+        - complete: for abnormal people with abnormal needs. if you regularly
+          used linear A glyphs or Byzantine music symbol Okseia left, this if for
           you.
 
 
     By default, the every day set is loaded. If you don't find the characters you
     expected to , you can configure this as `dataset`: `full-set`. 
 
-    In through, the marie-kondo has over 6k characters, which should be quite a
+    In through, the Marie Kondo has over 6k characters, which should be quite a
     bit. The complete set, is, pun intended, already very large and it definitely is
     more than enough for all of use. 
 
-    The nitty greatty
+    The nitty gritty
 
-    Bellow is the detailed compsition of each  set: 
+    Bellow is the detailed composition of each  set: 
 
 
     1. Every Day  6618 characters
@@ -45,7 +45,7 @@ Hence, unifil takes a curated approach to what Unicode it includes, by using set
         | Greek and Coptic                      | 135   |
         | Currency Symbols                      | 31    |
         | Combining Diacriticals for Symbols    | 33    |
-        | Letterlike Symbols                    | 80    |
+        | Letter-like Symbols                    | 80    |
         | Number Forms                          | 60    |
         | Arrows                                | 112   |
         | Mathematical Operators                | 256   |
@@ -126,9 +126,9 @@ Hence, unifil takes a curated approach to what Unicode it includes, by using set
         While it's a common case that blocks few characters of interest,  for
         simplicity, we'll always include full blocks.
 
-    g. Alter the gen-dataset and the python source code to recieve the --set
+    g. Alter the gen-dataset and the python source code to receive the --set
     property (defaults to everyday), and work accordingly. Remember to alter
-    both scripts usage / docstrings.
+    both scripts usage / doc-strings.
 
     h. Alter the python test that use the dataset to rely on the every-day one.
 
