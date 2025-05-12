@@ -53,7 +53,7 @@ This is what remains to be done on  unifill
         results, it should be bumped up)
 
 
-[ ] All Unicode, really? 
+[x ] All Unicode, really? 
 
     Currently we process all unicode chars, in their full glory. But do we need
     to?  The most obvious use case if people wanting a nice arrow, greek
