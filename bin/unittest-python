@@ -1,1 +1,8 @@
-/Users/adebert/h/unifill/glyph-catcher/unittest-python
+#!/usr/bin/env bash
+
+# Get the directory containing this script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+# Call the actual Python unittest script in the glyph-catcher directory
+"${PROJECT_ROOT}/glyph-catcher/unittest-python" "$@"
