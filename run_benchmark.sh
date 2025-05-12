@@ -1,57 +1,23 @@
 #!/bin/bash
 
-# Exit immediately if a command exits with a non-zero status.
-# Current results:
-# === Benchmark Results ===
+# Run the benchmark script with proper Neovim configuration
+# Latest results , for ref, (as of 2025-05-12): 2023-10-01):
+# === EVERY-DAY Dataset Results ===
 
-# Backend  Init Time   Entries  arrow           right arrow           mathematical symbol   latin letter small    Median Time
-# -------  ----------  -------  --------------  --------------------  --------------------  --------------------  -----------
-# lua       273.21 ms  40078    638 /  0.00 ms  224 /  0.09 ms        49 /  0.07 ms         903 /  0.07 ms         0.07 ms
-# csv       155.23 ms  40013    638 /  0.01 ms  224 /  0.06 ms        49 /  0.07 ms         903 /  0.06 ms         0.06 ms
-# grep        0.37 ms  N/A      1 / 20.31 ms    1 (exact) /  6.96 ms  0 (exact) /  8.62 ms  1 (exact) /  6.77 ms   7.79 ms
+# Backend    Init Time   Entries  arrow           right arrow           mathematical symbol   latin letter small    Median Time
+# ---------  ----------  -------  --------------  --------------------  --------------------  --------------------  -----------
+# lua          44.40 ms  6975     624 /  0.01 ms  222 /  0.05 ms        49 /  0.07 ms         408 /  0.06 ms         0.05 ms
+# csv          85.28 ms  6910     624 /  0.00 ms  222 /  0.05 ms        49 /  0.06 ms         408 /  0.06 ms         0.05 ms
+# grep          0.51 ms  N/A      1 / 15.35 ms    1 (exact) /  5.62 ms  1 (exact) /  5.75 ms  1 (exact) /  5.32 ms   5.69 ms
+# fast_grep     4.50 ms  N/A      1 /  4.81 ms    1 (exact) /  5.79 ms  1 (exact) /  6.35 ms  1 (exact) /  6.17 ms   5.98 ms
 
-set -e
+# === COMPLETE Dataset Results ===
 
-# Get the absolute path of the directory where the script is located
-SCRIPT_DIR="${0:a:h}"
+# Backend    Init Time   Entries  arrow           right arrow           mathematical symbol   latin letter small    Median Time
+# ---------  ----------  -------  --------------  --------------------  --------------------  --------------------  -----------
+# lua          79.94 ms  40078    657 /  0.00 ms  233 /  0.06 ms        52 /  0.06 ms         903 /  0.06 ms         0.06 ms
+# csv         483.78 ms  40013    657 /  0.00 ms  233 /  0.06 ms        52 /  0.07 ms         903 /  0.07 ms         0.06 ms
+# grep          0.00 ms  N/A      1 /  6.50 ms    1 (exact) /  5.25 ms  1 (exact) /  5.73 ms  1 (exact) /  4.88 ms   5.49 ms
+# fast_grep     0.00 ms  N/A      1 /  5.32 ms    1 (exact) /  5.01 ms  1 (exact) /  5.25 ms  1 (exact) /  5.59 ms   5.28 ms
 
-# Project root is assumed to be the current directory
-PROJECT_ROOT="$(pwd)"
-
-# Define key directories and filenames
-DATA_DIR="$PROJECT_ROOT/data/glyph-catcher"
-
-# Check if the data files exist
-if [ ! -f "$DATA_DIR/unicode_data.lua" ]; then
-    echo "Error: Unicode data file not found at: $DATA_DIR/unicode_data.lua"
-    echo "Please run bin/gen-datasets first to generate the data files."
-    exit 1
-fi
-
-if [ ! -f "$DATA_DIR/unicode_data.csv" ]; then
-    echo "Error: Unicode data file not found at: $DATA_DIR/unicode_data.csv"
-    echo "Please run bin/gen-datasets --format all first to generate all data formats."
-    exit 1
-fi
-
-if [ ! -f "$DATA_DIR/unicode_data.txt" ]; then
-    echo "Error: Unicode data file not found at: $DATA_DIR/unicode_data.txt"
-    echo "Please run bin/gen-datasets --format all first to generate all data formats."
-    exit 1
-fi
-
-# Run the benchmark script
-echo "Running benchmark..."
-nvim -c "lua dofile('benchmark.lua')" -c "q"
-
-# Check if the benchmark results file exists
-if [ -f "benchmark_results.txt" ]; then
-    echo "Benchmark completed successfully."
-    echo "Results saved to benchmark_results.txt"
-    echo ""
-    echo "=== Benchmark Results ==="
-    cat benchmark_results.txt
-else
-    echo "Error: Benchmark failed to generate results."
-    exit 1
-fi
+nvim --headless -c "luafile benchmark.lua" -c "qa!"
