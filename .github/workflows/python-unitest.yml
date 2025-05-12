@@ -35,7 +35,7 @@ jobs:
           virtualenvs-in-project: true
 
       - name: CD to python root
-        run: cd "${PYTHON_ROOT}"
+        run: cd "${PYTHON_ROOT}" ; pwd ; ls
       - name: Run Tests
         run: |
           ./unittest-python
