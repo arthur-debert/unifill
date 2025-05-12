@@ -147,3 +147,4 @@ tests/smoke/*
 tmp*
 # Cache directories
 cache/
+data/unicode.every-day.lua
