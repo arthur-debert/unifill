@@ -11,13 +11,15 @@ The grep backends are designed to leverage the speed of external grep tools
 csv backends that load all data into memory, the grep backends perform searches
 directly on the text file, which can be more efficient for large datasets.
 
+> **Note**: Currently, only the Lua backend is active. The grep backends are
+> maintained for future needs but are disabled. See the README.txt section 2.1.2
+> for more information on backend status.
+
 There are two grep backend implementations:
 
 1. **grep_backend**: The standard grep backend that performs more processing in
    Lua
 2. **fast_grep_backend**: An optimized version that minimizes Lua processing
-
-## Features
 
 ## Features
 
@@ -46,8 +48,6 @@ There are two grep backend implementations:
 
 ## Trade-offs
 
-## Trade-offs
-
 ### Standard Grep Backend
 
 - **Search Speed vs. Accuracy**: While initialization is faster, actual searches
@@ -68,7 +68,7 @@ There are two grep backend implementations:
 
 ## Implementation Details
 
-### Standard Grep Backend
+### Standard Grep Backend (Inactive)
 
 The standard grep backend works by:
 
@@ -79,7 +79,7 @@ The standard grep backend works by:
    Telescope.
 4. Processing multi-word searches with special handling.
 
-### Fast Grep Backend
+### Fast Grep Backend (Inactive)
 
 The fast grep backend works by:
 
@@ -90,13 +90,15 @@ The fast grep backend works by:
 
 ## Configuration
 
-## Configuration
+> **Note**: As mentioned in the README.txt section 2.1.2, only the Lua backend is
+> currently active. The configuration below is maintained for documentation purposes
+> but these backends are currently disabled.
 
 Both grep backends can be configured in your Neovim config:
 
 ```lua
 require('unifill').setup({
-    backend = "grep",  -- or "fast_grep"
+    backend = "grep",  -- or "fast_grep" (Note: Currently only "lua" is active)
     backends = {
         grep = {
             -- Path to the Unicode data text file

@@ -159,6 +159,13 @@ u#nifill
     between initialization speed and search performance. For more details on the
     grep backends, see dev/guides/grep-backend.md.
 
+    2.1.2 Backend Status
+
+    After extensive testing, we've gone for the lua backend. Not only it's the
+    simplest implementation but it also is the most feature-full and the fastest.
+    Hence we're disabling the other backends, but leaving the backend infrastructure
+    in place if future needs change.
+
 
 3. Development
     

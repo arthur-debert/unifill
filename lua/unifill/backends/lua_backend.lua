@@ -6,7 +6,10 @@ local Path = require("plenary.path")
 local Job = require("plenary.job")
 local vim = vim
 
-local LuaBackend = {}
+local LuaBackend = {
+    -- This is the only active backend
+    active = true
+}
 LuaBackend.__index = LuaBackend
 
 -- Create a new LuaBackend instance
@@ -144,6 +147,12 @@ function LuaBackend:get_entry_structure()
         category = "string", -- Unicode category
         aliases = "table" -- Optional aliases (array of strings)
     }
+end
+
+-- Check if the backend is active
+-- @return Boolean indicating if the backend is active
+function LuaBackend:is_active()
+    return self.active
 end
 
 -- Decompress a gzip compressed file

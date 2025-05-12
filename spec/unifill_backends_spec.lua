@@ -24,6 +24,7 @@ describe("unifill backends", function()
         it("implements the interface", function()
             eq(type(backend.load_data), "function", "load_data should be a function")
             eq(type(backend.get_entry_structure), "function", "get_entry_structure should be a function")
+            eq(type(backend.is_active), "function", "is_active should be a function")
         end)
 
         it("returns the expected entry structure", function()
@@ -35,22 +36,29 @@ describe("unifill backends", function()
             eq(structure.aliases, "table", "aliases should be a table")
         end)
 
-        it("can load data", function()
-            local data = backend:load_data()
-            assert.is_table(data, "data should be a table")
-            assert.is_true(#data > 0, "data should not be empty")
-
-            -- Check first entry structure
-            local entry = data[1]
-            assert.is_string(entry.name, "entry.name should be a string")
-            assert.is_string(entry.character, "entry.character should be a string")
-            assert.is_string(entry.code_point, "entry.code_point should be a string")
-            assert.is_string(entry.category, "entry.category should be a string")
-            -- aliases can be nil or a table
-            if entry.aliases then
-                assert.is_table(entry.aliases, "entry.aliases should be a table if present")
-            end
+        it("reports correct active status", function()
+            eq(backend:is_active(), true, "Lua backend should be active")
         end)
+
+        -- Only run data loading tests for active backends
+        if backend:is_active() then
+            it("can load data", function()
+                local data = backend:load_data()
+                assert.is_table(data, "data should be a table")
+                assert.is_true(#data > 0, "data should not be empty")
+
+                -- Check first entry structure
+                local entry = data[1]
+                assert.is_string(entry.name, "entry.name should be a string")
+                assert.is_string(entry.character, "entry.character should be a string")
+                assert.is_string(entry.code_point, "entry.code_point should be a string")
+                assert.is_string(entry.category, "entry.category should be a string")
+                -- aliases can be nil or a table
+                if entry.aliases then
+                    assert.is_table(entry.aliases, "entry.aliases should be a table if present")
+                end
+            end)
+        end
     end)
 
     describe("csv_backend", function()
@@ -64,6 +72,7 @@ describe("unifill backends", function()
         it("implements the interface", function()
             eq(type(backend.load_data), "function", "load_data should be a function")
             eq(type(backend.get_entry_structure), "function", "get_entry_structure should be a function")
+            eq(type(backend.is_active), "function", "is_active should be a function")
         end)
 
         it("returns the expected entry structure", function()
@@ -75,22 +84,29 @@ describe("unifill backends", function()
             eq(structure.aliases, "table", "aliases should be a table")
         end)
 
-        it("can load data", function()
-            local data = backend:load_data()
-            assert.is_table(data, "data should be a table")
-            assert.is_true(#data > 0, "data should not be empty")
-
-            -- Check first entry structure
-            local entry = data[1]
-            assert.is_string(entry.name, "entry.name should be a string")
-            assert.is_string(entry.character, "entry.character should be a string")
-            assert.is_string(entry.code_point, "entry.code_point should be a string")
-            assert.is_string(entry.category, "entry.category should be a string")
-            -- aliases can be nil or a table
-            if entry.aliases then
-                assert.is_table(entry.aliases, "entry.aliases should be a table if present")
-            end
+        it("reports correct active status", function()
+            eq(backend:is_active(), false, "CSV backend should be inactive")
         end)
+
+        -- Only run data loading tests for active backends
+        if backend:is_active() then
+            it("can load data", function()
+                local data = backend:load_data()
+                assert.is_table(data, "data should be a table")
+                assert.is_true(#data > 0, "data should not be empty")
+
+                -- Check first entry structure
+                local entry = data[1]
+                assert.is_string(entry.name, "entry.name should be a string")
+                assert.is_string(entry.character, "entry.character should be a string")
+                assert.is_string(entry.code_point, "entry.code_point should be a string")
+                assert.is_string(entry.category, "entry.category should be a string")
+                -- aliases can be nil or a table
+                if entry.aliases then
+                    assert.is_table(entry.aliases, "entry.aliases should be a table if present")
+                end
+            end)
+        end
     end)
 
     describe("data_manager", function()
@@ -153,44 +169,37 @@ describe("unifill backends", function()
             end
         end)
 
-        it("provides compatible data between backends", function()
-            -- Configure data manager to use Lua backend
+        it("checks backend active status", function()
+            -- Get all backend modules
+            local LuaBackend = require("unifill.backends.lua_backend")
+            local CSVBackend = require("unifill.backends.csv_backend")
+            local GrepBackend = require("unifill.backends.grep_backend")
+            local FastGrepBackend = require("unifill.backends.fast_grep_backend")
+            
+            -- Create instances
+            local lua_backend = LuaBackend.new()
+            local csv_backend = CSVBackend.new()
+            local grep_backend = GrepBackend.new()
+            local fast_grep_backend = FastGrepBackend.new()
+            
+            -- Check active status
+            eq(lua_backend:is_active(), true, "Lua backend should be active")
+            eq(csv_backend:is_active(), false, "CSV backend should be inactive")
+            eq(grep_backend:is_active(), false, "Grep backend should be inactive")
+            eq(fast_grep_backend:is_active(), false, "Fast grep backend should be inactive")
+        end)
+
+        it("only loads data from active backends", function()
+            -- Configure data manager to use Lua backend (active)
             data_manager.setup({
                 backend = "lua"
             })
             local lua_data = data_manager.load_unicode_data()
-
-            -- Configure data manager to use CSV backend
-            data_manager.setup({
-                backend = "csv"
-            })
-            local csv_data = data_manager.load_unicode_data()
-
-            -- Both should return data
+            
+            -- Lua backend should return data
             assert.is_table(lua_data, "lua_data should be a table")
             assert.is_true(#lua_data > 0, "lua_data should not be empty")
-            assert.is_table(csv_data, "csv_data should be a table")
-            assert.is_true(#csv_data > 0, "csv_data should not be empty")
-
-            -- Both should have similar number of entries
-            -- Note: They might not be exactly the same due to parsing differences
-            local entry_diff = math.abs(#lua_data - #csv_data)
-            assert.is_true(entry_diff < 100, "entry count should be similar between backends")
-
-            -- Sample a few entries to compare
-            local sample_size = math.min(10, #lua_data, #csv_data)
-            for i = 1, sample_size do
-                -- Check that required fields exist in both
-                assert.is_string(lua_data[i].name, "lua entry name should be a string")
-                assert.is_string(csv_data[i].name, "csv entry name should be a string")
-                assert.is_string(lua_data[i].character, "lua entry character should be a string")
-                assert.is_string(csv_data[i].character, "csv entry character should be a string")
-                assert.is_string(lua_data[i].code_point, "lua entry code_point should be a string")
-                assert.is_string(csv_data[i].code_point, "csv entry code_point should be a string")
-                assert.is_string(lua_data[i].category, "lua entry category should be a string")
-                assert.is_string(csv_data[i].category, "csv entry category should be a string")
-            end
-
+            
             -- Reset to default backend
             data_manager.setup()
         end)

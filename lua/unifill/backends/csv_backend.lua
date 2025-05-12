@@ -4,7 +4,10 @@ local log = require("unifill.log")
 local interface = require("unifill.backends.interface")
 local constants = require("unifill.constants")
 
-local CSVBackend = {}
+local CSVBackend = {
+    -- This backend is inactive
+    active = false
+}
 CSVBackend.__index = CSVBackend
 
 -- Create a new CSVBackend instance
@@ -156,7 +159,6 @@ function CSVBackend:load_data()
 
     return data
 end
-
 -- Get the entry structure for validation
 -- @return Table with entry structure definition
 function CSVBackend:get_entry_structure()
@@ -167,6 +169,12 @@ function CSVBackend:get_entry_structure()
         category = "string", -- Unicode category
         aliases = "table" -- Optional aliases (array of strings)
     }
+end
+
+-- Check if the backend is active
+-- @return Boolean indicating if the backend is active
+function CSVBackend:is_active()
+    return self.active
 end
 
 return CSVBackend
