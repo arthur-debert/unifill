@@ -1,5 +1,24 @@
 #! /usr/bin/env bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Run Lua tests and capture exit code
 "${SCRIPT_DIR}"/unittest-lua
+LUA_EXIT_CODE=${?}
+
+# Run Python tests regardless of Lua test result and capture exit code
 "${SCRIPT_DIR}"/unittest-python
+PYTHON_EXIT_CODE=${?}
+
+# Print summary
+echo "Lua tests exit code: ${LUA_EXIT_CODE}"
+echo "Python tests exit code: ${PYTHON_EXIT_CODE}"
+
+# Exit with 0 only if both test suites passed
+if [[ "${LUA_EXIT_CODE}" -eq 0 ]] && [[ "${PYTHON_EXIT_CODE}" -eq 0 ]]; then
+    echo "All tests passed successfully!"
+    exit 0
+else
+    echo "Some tests failed. Please check the output above."
+    exit 1
+fi
