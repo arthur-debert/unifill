@@ -113,6 +113,8 @@ u#nifill
         ---
         require('unifill').setup({
             backend = "lua",  -- Use "lua", "csv", or "grep"
+            dataset = "every-day",  -- Dataset to use: "every-day" (default) or "complete"
+            results_limit = 50,  -- Maximum number of results to display (default: 50, max: 200)
             backends = {
                 lua = {
                     data_path = "/path/to/your/unicode_data.lua"  -- Optional custom path
@@ -204,6 +206,23 @@ u#nifill
 
 4. UI Customization
 
+    4.0 Results Limit
+    
+        By default, the plugin displays a maximum of 50 results in the Telescope UI.
+        This limit helps improve performance and makes it easier to find the character
+        you're looking for.
+        
+        You can customize this limit in your configuration:
+        
+        ---
+        require('unifill').setup({
+            results_limit = 100  -- Show up to 100 results (max: 200)
+        })
+        ---  lua
+        
+        The maximum allowed value is 200 to ensure good performance. If you set a higher
+        value, it will be automatically capped at 200.
+        
     4.1 Theming
 
         The plugin now uses a centralized theme configuration for consistent UI styling.

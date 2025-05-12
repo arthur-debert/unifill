@@ -12,6 +12,7 @@ local DataManager = {}
 local default_config = {
     backend = "lua",
     dataset = constants.DEFAULT_DATASET, -- Default dataset to use (every-day or complete)
+    results_limit = constants.DEFAULT_RESULTS_LIMIT, -- Default number of results to display
     backends = {
         lua = {
             -- Will be set based on plugin root
@@ -203,6 +204,13 @@ end
 function DataManager.setup(user_config)
     -- Merge user config with defaults
     config = vim.tbl_deep_extend("force", default_config, user_config or {})
+    
+    -- Ensure results limit doesn't exceed maximum
+    if config.results_limit > constants.MAX_RESULTS_LIMIT then
+        log.warn(string.format("Config results limit %d exceeds maximum of %d, capping at maximum",
+            config.results_limit, constants.MAX_RESULTS_LIMIT))
+        config.results_limit = constants.MAX_RESULTS_LIMIT
+    end
 
     -- Set default paths based on XDG directories if available, otherwise use plugin root
     local plugin_root = get_plugin_root()

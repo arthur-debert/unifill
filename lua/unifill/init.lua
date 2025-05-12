@@ -13,6 +13,7 @@ local format = require("unifill.format")
 local telescope_utils = require("unifill.telescope")
 local theme = require("unifill.theme")
 local log = require("unifill.log")
+local constants = require("unifill.constants")
 
 -- Log initialization silently
 log.debug("Unifill plugin initialized")
@@ -24,10 +25,27 @@ theme.setup()
 local function unifill(opts)
     log.debug("Unifill picker called with opts:", opts)
     opts = opts or {}
+    
+    -- Get config for results limit
+    local config = data.get_config()
+    local results_limit = config.results_limit
 
     -- Apply dropdown theme with custom sizing
     opts = themes.get_dropdown(theme.ui.layout)
-
+    
+    -- Set results limit from config or default
+    opts.results_limit = results_limit or constants.DEFAULT_RESULTS_LIMIT
+    
+    -- Ensure results limit doesn't exceed maximum
+    if opts.results_limit > constants.MAX_RESULTS_LIMIT then
+        log.warn(string.format("Results limit %d exceeds maximum of %d, capping at maximum",
+            opts.results_limit, constants.MAX_RESULTS_LIMIT))
+        opts.results_limit = constants.MAX_RESULTS_LIMIT
+    end
+    
+    -- Log the results limit being used
+    log.info(string.format("Using results limit: %d", opts.results_limit))
+    
     local unicode_data = data.load_unicode_data()
     if not unicode_data then
         log.error("Failed to load Unicode data")
@@ -43,7 +61,8 @@ local function unifill(opts)
         prompt_title = "Unicode Characters",
         finder = finders.new_table {
             results = unicode_data,
-            entry_maker = telescope_utils.entry_maker
+            entry_maker = telescope_utils.entry_maker,
+            maximum_results = opts.results_limit
         },
         sorter = telescope_utils.custom_sorter(opts),
         attach_mappings = function(prompt_bufnr, map)
@@ -82,6 +101,7 @@ return {
     -- {
     --   backend = "lua",  -- Data backend to use: "lua" (default) or "csv"
     --   dataset = "every-day",  -- Dataset to use: "every-day" (default) or "complete"
+    --   results_limit = 50,  -- Maximum number of results to display (default: 50, max: 200)
     --   backends = {
     --     lua = {
     --       data_path = nil  -- Optional custom path to lua data file
