@@ -1,8 +1,10 @@
 -- Lua backend implementation for unifill
 -- This backend loads Unicode data from a Lua file
 local log = require("unifill.log")
-local interface = require("unifill.backends.interface")
 local constants = require("unifill.constants")
+local Path = require("plenary.path")
+local Job = require("plenary.job")
+local vim = vim
 
 local LuaBackend = {}
 LuaBackend.__index = LuaBackend
@@ -71,15 +73,30 @@ function LuaBackend:load_data()
     log.debug("Data path:", data_path)
 
     -- Check if file exists
-    local file = io.open(data_path, "r")
-    if not file then
-        local err_msg = "Unicode data file not found at: " .. data_path
+    local path = Path:new(data_path)
+    local compressed_path = Path:new(data_path .. ".gz")
+    
+    -- Check for compressed file first
+    if compressed_path:exists() then
+        log.debug("Compressed Unicode data file found: " .. compressed_path.filename)
+        -- Decompress the file
+        local decompressed_path = data_path
+        local success = self:decompress_file(compressed_path.filename, decompressed_path)
+        if not success then
+            local err_msg = "Failed to decompress Unicode data file: " .. compressed_path.filename
+            log.error(err_msg)
+            vim.notify(err_msg, vim.log.levels.ERROR)
+            return {}
+        end
+        log.debug("Unicode data file decompressed successfully")
+    elseif path:exists() then
+        log.debug("Unicode data file found: " .. path.filename)
+    else
+        local err_msg = "Unicode data file not found at: " .. data_path .. " or " .. compressed_path.filename
         log.error(err_msg)
         vim.notify(err_msg, vim.log.levels.ERROR)
         return {}
     end
-    file:close()
-    log.debug("Unicode data file found")
 
     -- Load the data
     local ok, data = pcall(dofile, data_path)
@@ -127,6 +144,45 @@ function LuaBackend:get_entry_structure()
         category = "string", -- Unicode category
         aliases = "table" -- Optional aliases (array of strings)
     }
+end
+
+-- Decompress a gzip compressed file
+-- @param compressed_path String with the path to the compressed file
+-- @param output_path String with the path to the output file
+-- @return Boolean indicating if decompression was successful
+function LuaBackend:decompress_file(compressed_path, output_path)
+    log.debug("Decompressing file: " .. compressed_path .. " to " .. output_path)
+    
+    -- Check if gzip is available
+    local gzip_check = Job:new({
+        command = "which",
+        args = { "gzip" },
+    })
+    
+    gzip_check:sync()
+    
+    if gzip_check.code ~= 0 then
+        log.error("gzip command not found. Please install gzip to decompress the dataset.")
+        vim.notify("gzip command not found. Please install gzip to decompress the dataset.", vim.log.levels.ERROR)
+        return false
+    end
+    
+    -- Decompress the file using gzip
+    local job = Job:new({
+        command = "gzip",
+        args = { "-d", "-c", compressed_path },
+        writer = output_path,
+    })
+    
+    job:sync()
+    
+    if job.code ~= 0 then
+        log.error("Failed to decompress file: " .. compressed_path)
+        return false
+    end
+    
+    log.debug("File decompressed successfully")
+    return true
 end
 
 return LuaBackend

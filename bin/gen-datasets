@@ -52,6 +52,8 @@ EXTRA_ARGS=""
 FORCE=false
 # Default dataset to use
 DATASET="every-day"
+# Compress flag to compress output files
+COMPRESS=true
 
 # Parse command line arguments
 # Parse command line arguments
@@ -67,6 +69,10 @@ while [[ $# -gt 0 ]]; do
     ;;
   --force)
     FORCE=true
+    shift
+    ;;
+  --no-compress)
+    COMPRESS=false
     shift
     ;;
   --dataset)
@@ -86,16 +92,19 @@ OPTIONS:
                       Default: lua, txt, csv
   
     --force          Remove all existing files and regenerate them
-                     Without this flag, only missing files are generated
-  
+                      Without this flag, only missing files are generated
+   
     --dataset SET    Specify which dataset to use
-                     SET can be: every-day, complete
-                     Default: every-day
-  
+                      SET can be: every-day, complete
+                      Default: every-day
+   
+    --no-compress    Do not compress output files
+                      By default, files are compressed using zstandard
+   
     --help, -h       Display this help message and exit
-  
+   
     -- EXTRA_ARGS    Additional arguments passed directly to glyph-catcher
-                     e.g., --unicode-blocks "Basic Latin"
+                      e.g., --unicode-blocks "Basic Latin"
 BEHAVIOR:
   By default, this script only generates files that don't already exist in the
   data directory. This makes it efficient for incremental updates.
@@ -175,6 +184,7 @@ echo "------------------------------------"
 echo "Formats to process: ${FORMATS[*]}"
 echo "Dataset to use: $DATASET"
 echo "Force regeneration: $([ "$FORCE" = true ] && echo "Yes" || echo "No (only generating missing files)")"
+echo "Compress output: $([ "$COMPRESS" = true ] && echo "Yes" || echo "No")"
 echo ""
 
 # Navigate to the glyph-catcher directory
@@ -206,22 +216,45 @@ for format in "${FORMATS[@]}"; do
     # Run the data fetching script using Poetry with the specified format
     if [[ ${#EXTRA_ARGS[@]} -gt 0 ]]; then
       echo "Using additional arguments: ${EXTRA_ARGS[*]}"
-      poetry run glyph-catcher generate --format "$format" --dataset "$DATASET" "${EXTRA_ARGS[@]}"
+      if [ "$COMPRESS" = true ]; then
+        poetry run glyph-catcher generate --format "$format" --dataset "$DATASET" --compress "${EXTRA_ARGS[@]}"
+      else
+        poetry run glyph-catcher generate --format "$format" --dataset "$DATASET" "${EXTRA_ARGS[@]}"
+      fi
     else
-      poetry run glyph-catcher generate --format "$format" --dataset "$DATASET"
+      if [ "$COMPRESS" = true ]; then
+        poetry run glyph-catcher generate --format "$format" --dataset "$DATASET" --compress
+      else
+        poetry run glyph-catcher generate --format "$format" --dataset "$DATASET"
+      fi
     fi
 
     # Check if the file was generated
-    if [ ! -f "$SOURCE_FILE_IN_DATAFETCH_DIR" ]; then
-      echo "Error: $SOURCE_FILE_IN_DATAFETCH_DIR not found in $PWD after running the script."
-      exit 1
+    # Check for both compressed and uncompressed files
+    if [ "$COMPRESS" = true ]; then
+      if [ ! -f "${SOURCE_FILE_IN_DATAFETCH_DIR}.gz" ]; then
+        echo "Error: ${SOURCE_FILE_IN_DATAFETCH_DIR}.gz not found in $PWD after running the script."
+        exit 1
+      fi
+      SOURCE_FILE_IN_DATAFETCH_DIR="${SOURCE_FILE_IN_DATAFETCH_DIR}.gz"
+    else
+      if [ ! -f "$SOURCE_FILE_IN_DATAFETCH_DIR" ]; then
+        echo "Error: $SOURCE_FILE_IN_DATAFETCH_DIR not found in $PWD after running the script."
+        exit 1
+      fi
     fi
 
     # Move the generated file to the project's data directory
+    if [ "$COMPRESS" = true ]; then
+      DESTINATION_FILE_PATH="${DESTINATION_FILE_PATH}.gz"
+    fi
     mv "$SOURCE_FILE_IN_DATAFETCH_DIR" "$DESTINATION_FILE_PATH"
 
     # Copy to XDG data directory for system-wide access
     XDG_FILE_PATH="$XDG_DATA_DIR/$GENERATED_FILE_NAME"
+    if [ "$COMPRESS" = true ]; then
+      XDG_FILE_PATH="${XDG_FILE_PATH}.gz"
+    fi
     cp "$DESTINATION_FILE_PATH" "$XDG_FILE_PATH"
 
     printf "Generated: \e[32m%s\e[0m\n" "$DESTINATION_FILE_PATH"

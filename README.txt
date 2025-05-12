@@ -55,6 +55,25 @@ u#nifill
     This executes glyph-catcher/src/setup_dataset.py. It will create a .venv and
     install deps in the glyph-catcher directory.
     
+    2.0.1 Dataset Compression
+    
+    By default, datasets are compressed using gzip compression to reduce
+    distribution size. The plugin automatically handles decompression when needed.
+    
+    You can disable compression with:
+    
+        --
+            bin/gen-datasets --no-compress
+            
+        --  bash
+    
+    The compression uses the highest compression level available, which provides
+    good size reduction at the cost of slower compression time. However,
+    decompression is still fast, making this a good tradeoff for distribution.
+    
+    Gzip was chosen for its universal availability across all modern operating
+    systems (Linux, macOS, and Windows), ensuring maximum compatibility.
+    
 2.1 File Locations
 
     The plugin follows the XDG Base Directory Specification for storing files:
@@ -121,6 +140,10 @@ u#nifill
         --  bash
     
     This will create the Lua, CSV, and TXT versions of the dataset.
+    
+    By default, all generated datasets are compressed using gzip compression
+    to reduce distribution size. The plugin automatically decompresses these files
+    when needed.
 |
     2.1.1 Backend Comparison
 |

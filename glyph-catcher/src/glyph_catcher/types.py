@@ -32,3 +32,4 @@ class ExportOptions:
     use_master_file: bool = True  # Whether to use the master data file for exporting
     master_file_path: Optional[str] = None  # Path to the master data file
     dataset: str = 'every-day'  # Dataset to use ('every-day' or 'complete')
+    compress: bool = False  # Whether to compress the output files

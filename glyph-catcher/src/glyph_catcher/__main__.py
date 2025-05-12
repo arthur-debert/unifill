@@ -128,7 +128,13 @@ def cli():
     default=DATASET_EVERYDAY,
     help=f"Dataset to use (default: {DATASET_EVERYDAY})",
 )
-def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_blocks, exit_on_error, data_dir, no_master_file, dataset):
+@click.option(
+    "--compress",
+    is_flag=True,
+    default=False,
+    help="Compress output files using gzip for maximum compression",
+)
+def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_blocks, exit_on_error, data_dir, no_master_file, dataset, compress):
     """
     Generate Unicode character dataset in the specified format.
     
@@ -165,7 +171,8 @@ def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_b
         unicode_blocks=blocks_list,
         use_master_file=not no_master_file,
         master_file_path=get_master_file_path(fetch_options) if not no_master_file else None,
-        dataset=dataset
+        dataset=dataset,
+        compress=compress
     )
     
     # Process the data

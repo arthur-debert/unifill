@@ -2,6 +2,8 @@
 -- This module manages the data backends and provides a unified interface
 local log = require("unifill.log")
 local constants = require("unifill.constants")
+local Job = require("plenary.job")
+local Path = require("plenary.path")
 
 -- Data Manager
 local DataManager = {}
@@ -65,6 +67,136 @@ local function get_xdg_cache_home()
     end
 end
 
+-- Check if a file exists or if a compressed version exists, and decompress if needed
+-- @param base_path String with the base path of the file (without extension)
+-- @param extension String with the file extension (e.g., ".lua")
+-- @return String with the path to the uncompressed file, or nil if not found
+local function ensure_uncompressed_file(base_path, extension)
+    local file_path = base_path .. extension
+    local path = Path:new(file_path)
+    
+    -- Check if uncompressed file exists
+    if path:exists() then
+        log.debug("Found uncompressed file: " .. file_path)
+        return file_path
+    end
+    
+    -- Check for compressed versions
+    local gz_path = Path:new(file_path .. ".gz")
+    local zst_path = Path:new(file_path .. ".zst")  -- For backward compatibility
+    
+    if gz_path:exists() then
+        log.debug("Found gzip compressed file: " .. gz_path.filename)
+        -- Decompress the file
+        local success = decompress_file(gz_path.filename, file_path, "gzip")
+        if success then
+            log.debug("Successfully decompressed file: " .. gz_path.filename)
+            return file_path
+        else
+            log.error("Failed to decompress file: " .. gz_path.filename)
+            return nil
+        end
+    elseif zst_path:exists() then
+        log.debug("Found zstd compressed file: " .. zst_path.filename)
+        -- Decompress the file
+        local success = decompress_file(zst_path.filename, file_path, "zstd")
+        if success then
+            log.debug("Successfully decompressed file: " .. zst_path.filename)
+            return file_path
+        else
+            log.error("Failed to decompress file: " .. zst_path.filename)
+            return nil
+        end
+    end
+    
+    -- No file found
+    log.debug("No file found at: " .. file_path .. " or compressed versions")
+    return nil
+end
+
+-- Decompress a file
+-- @param compressed_path String with the path to the compressed file
+-- @param output_path String with the path to the output file
+-- @param format String with the compression format ("gzip" or "zstd")
+-- @return Boolean indicating if decompression was successful
+local function decompress_file(compressed_path, output_path, format)
+    log.debug("Decompressing file: " .. compressed_path .. " to " .. output_path)
+    
+    local command, args
+    if format == "gzip" then
+        -- Check if gzip is available
+        local gzip_check = Job:new({
+            command = "which",
+            args = { "gzip" },
+        })
+        
+        gzip_check:sync()
+        
+        if gzip_check.code ~= 0 then
+            log.error("gzip command not found. Please install gzip to decompress the dataset.")
+            vim.notify("gzip command not found. Please install gzip to decompress the dataset.", vim.log.levels.ERROR)
+            return false
+        end
+        
+        command = "gzip"
+        args = { "-d", "-c", compressed_path }
+    elseif format == "zstd" then
+        -- Check if zstd is available
+        local zstd_check = Job:new({
+            command = "which",
+            args = { "zstd" },
+        })
+        
+        zstd_check:sync()
+        
+        if zstd_check.code ~= 0 then
+            log.error("zstd command not found. Please install zstd to decompress the dataset.")
+            vim.notify("zstd command not found. Please install zstd to decompress the dataset.", vim.log.levels.ERROR)
+            return false
+        end
+        
+        command = "zstd"
+        args = { "-d", compressed_path, "-f", "-o", output_path }
+        
+        -- Run the decompression command
+        local job = Job:new({
+            command = command,
+            args = args,
+        })
+        
+        job:sync()
+        
+        if job.code ~= 0 then
+            log.error("Failed to decompress file: " .. compressed_path)
+            return false
+        end
+        
+        return true
+    else
+        log.error("Unknown compression format: " .. format)
+        return false
+    end
+    
+    -- For gzip, we need to write the output to a file
+    if format == "gzip" then
+        local job = Job:new({
+            command = command,
+            args = args,
+            writer = output_path,
+        })
+        
+        job:sync()
+        
+        if job.code ~= 0 then
+            log.error("Failed to decompress file: " .. compressed_path)
+            return false
+        end
+    end
+    
+    log.debug("File decompressed successfully")
+    return true
+end
+
 -- Setup the data manager with configuration
 -- @param user_config Table with user configuration
 -- @return DataManager for chaining
@@ -75,45 +207,67 @@ function DataManager.setup(user_config)
     -- Set default paths based on XDG directories if available, otherwise use plugin root
     local plugin_root = get_plugin_root()
     local xdg_data_dir = get_xdg_data_home() .. "/unifill"
-    
-    -- Check if data files exist in XDG data directory
-    local Path = require("plenary.path")
     local dataset = config.dataset
-    local xdg_lua_path = Path:new(xdg_data_dir, "unicode." .. dataset .. ".lua")
-    local xdg_csv_path = Path:new(xdg_data_dir, "unicode." .. dataset .. ".csv")
-    local xdg_txt_path = Path:new(xdg_data_dir, "unicode." .. dataset .. ".txt")
     
-    -- Set paths based on availability
+    -- Base paths for dataset files
+    local xdg_base_path = xdg_data_dir .. "/unicode." .. dataset
+    local plugin_base_path = plugin_root .. "/data/unicode." .. dataset
+    
+    -- Set paths based on availability, checking for compressed versions if needed
     if not config.backends.lua.data_path then
-        if xdg_lua_path:exists() then
-            config.backends.lua.data_path = xdg_lua_path.filename
+        -- Try XDG path first
+        local xdg_lua_path = ensure_uncompressed_file(xdg_base_path, ".lua")
+        if xdg_lua_path then
+            config.backends.lua.data_path = xdg_lua_path
         else
-            config.backends.lua.data_path = plugin_root .. "/data/unicode." .. dataset .. ".lua"
+            -- Try plugin path
+            local plugin_lua_path = ensure_uncompressed_file(plugin_base_path, ".lua")
+            if plugin_lua_path then
+                config.backends.lua.data_path = plugin_lua_path
+            else
+                -- Fall back to default path (may not exist)
+                config.backends.lua.data_path = plugin_base_path .. ".lua"
+            end
         end
     end
     
     if not config.backends.csv.data_path then
-        if xdg_csv_path:exists() then
-            config.backends.csv.data_path = xdg_csv_path.filename
+        -- Try XDG path first
+        local xdg_csv_path = ensure_uncompressed_file(xdg_base_path, ".csv")
+        if xdg_csv_path then
+            config.backends.csv.data_path = xdg_csv_path
         else
-            config.backends.csv.data_path = plugin_root .. "/data/unicode." .. dataset .. ".csv"
+            -- Try plugin path
+            local plugin_csv_path = ensure_uncompressed_file(plugin_base_path, ".csv")
+            if plugin_csv_path then
+                config.backends.csv.data_path = plugin_csv_path
+            else
+                -- Fall back to default path (may not exist)
+                config.backends.csv.data_path = plugin_base_path .. ".csv"
+            end
         end
     end
     
     if not config.backends.grep.data_path then
-        if xdg_txt_path:exists() then
-            config.backends.grep.data_path = xdg_txt_path.filename
+        -- Try XDG path first
+        local xdg_txt_path = ensure_uncompressed_file(xdg_base_path, ".txt")
+        if xdg_txt_path then
+            config.backends.grep.data_path = xdg_txt_path
         else
-            config.backends.grep.data_path = plugin_root .. "/data/unicode." .. dataset .. ".txt"
+            -- Try plugin path
+            local plugin_txt_path = ensure_uncompressed_file(plugin_base_path, ".txt")
+            if plugin_txt_path then
+                config.backends.grep.data_path = plugin_txt_path
+            else
+                -- Fall back to default path (may not exist)
+                config.backends.grep.data_path = plugin_base_path .. ".txt"
+            end
         end
     end
     
     if not config.backends.fast_grep.data_path then
-        if xdg_txt_path:exists() then
-            config.backends.fast_grep.data_path = xdg_txt_path.filename
-        else
-            config.backends.fast_grep.data_path = plugin_root .. "/data/unicode." .. dataset .. ".txt"
-        end
+        -- Use the same path as grep backend
+        config.backends.fast_grep.data_path = config.backends.grep.data_path
     end
 
     log.debug("DataManager setup complete with backend: " .. config.backend)
@@ -219,5 +373,8 @@ return {
     load_unicode_data = DataManager.load_unicode_data,
     get_backend_name = DataManager.get_backend_name,
     get_config = DataManager.get_config,
-    get_dataset = DataManager.get_dataset
+    get_dataset = DataManager.get_dataset,
+    -- Export for testing
+    _ensure_uncompressed_file = ensure_uncompressed_file,
+    _decompress_file = decompress_file
 }
