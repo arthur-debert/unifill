@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # start-test-nvim - Start a Neovim instance configured for testing the unifill project
-# This script creates a temporary init.lua file and starts Neovim with it
+# This script uses the init.lua file in the bin directory and starts Neovim with it
 
 set -e
 
@@ -13,8 +13,8 @@ TMP_DIR="$PROJECT_ROOT/tmp"
 mkdir -p "$TMP_DIR"
 mkdir -p "$TMP_DIR/logs"
 
-# Use the externalized init.lua file
-INIT_LUA="$PROJECT_ROOT/tmp/init.lua"
+# Use the new init.lua file in bin directory
+INIT_LUA="$PROJECT_ROOT/bin/init.lua"
 
 # Ensure we have a dataset
 if [ ! -f "$PROJECT_ROOT/data/unicode.every-day.lua.gz" ]; then
@@ -22,7 +22,7 @@ if [ ! -f "$PROJECT_ROOT/data/unicode.every-day.lua.gz" ]; then
   "$PROJECT_ROOT/bin/gen-datasets" --force --unicode-blocks "Basic Latin"
 fi
 
-# Start Neovim with the external init.lua
+# Start Neovim with the init.lua from bin directory
 echo "Starting Neovim with test configuration..."
 echo "Press <Space>fu to open the unifill Unicode picker"
 echo "Press <Space>f to access Telescope"
