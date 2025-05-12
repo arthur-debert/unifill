@@ -21,3 +21,4 @@ end
 local function get_plugin_root()
     -- Get the directory containing this file
     local source = debug.getinfo(1, "S").source
+end
