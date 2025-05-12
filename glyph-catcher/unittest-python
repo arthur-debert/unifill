@@ -4,14 +4,14 @@
 set -e
 
 # Check if PYTHON_ROOT is set
-if [ -z "$PYTHON_ROOT" ]; then
+if [[ -z "${PYTHON_ROOT}" ]]; then
   echo "Error: PYTHON_ROOT environment variable is not set."
   echo "Please run 'direnv allow' in the project root directory."
   exit 1
 fi
 
 # Change to the Python project directory
-cd "$PYTHON_ROOT"
+cd "${PYTHON_ROOT}"
 
 # Install dependencies
 echo "Installing dependencies..."
