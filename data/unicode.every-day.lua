@@ -8,9 +8,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "NULL",
-      "NUL",
-      "NULL",
+      "nul",
+      "null",
     },
   },
   {
@@ -20,9 +19,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "START OF HEADING",
-      "SOH",
-      "START OF HEADING",
+      "soh",
+      "start of heading",
     },
   },
   {
@@ -32,9 +30,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "START OF TEXT",
-      "STX",
-      "START OF TEXT",
+      "start of text",
+      "stx",
     },
   },
   {
@@ -44,9 +41,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "END OF TEXT",
-      "ETX",
-      "END OF TEXT",
+      "end of text",
+      "etx",
     },
   },
   {
@@ -56,9 +52,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "END OF TRANSMISSION",
-      "EOT",
-      "END OF TRANSMISSION",
+      "end of transmission",
+      "eot",
     },
   },
   {
@@ -68,9 +63,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "ENQUIRY",
-      "ENQ",
-      "ENQUIRY",
+      "enq",
+      "enquiry",
     },
   },
   {
@@ -80,9 +74,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "ACKNOWLEDGE",
-      "ACK",
-      "ACKNOWLEDGE",
+      "ack",
+      "acknowledge",
     },
   },
   {
@@ -92,9 +85,9 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "ALERT",
-      "BEL",
-      "BELL",
+      "alert",
+      "bel",
+      "bell",
     },
   },
   {
@@ -104,9 +97,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "BACKSPACE",
-      "BS",
-      "BACKSPACE",
+      "backspace",
+      "bs",
     },
   },
   {
@@ -116,12 +108,10 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "CHARACTER TABULATION",
-      "HORIZONTAL TABULATION",
-      "HT",
-      "TAB",
-      "CHARACTER TABULATION",
-      "horizontal tabulation (HT)",
+      "character tabulation",
+      "horizontal tabulation",
+      "horizontal tabulation (ht)",
+      "ht",
       "tab",
     },
   },
@@ -132,15 +122,15 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "LINE FEED",
-      "NEW LINE",
-      "END OF LINE",
-      "LF",
-      "NL",
-      "EOL",
-      "LINE FEED (LF)",
-      "new line (NL)",
-      "end of line (EOL)",
+      "end of line",
+      "end of line (eol)",
+      "eol",
+      "lf",
+      "line feed",
+      "line feed (lf)",
+      "new line",
+      "new line (nl)",
+      "nl",
     },
   },
   {
@@ -150,11 +140,10 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "LINE TABULATION",
-      "VERTICAL TABULATION",
-      "VT",
-      "LINE TABULATION",
-      "vertical tabulation (VT)",
+      "line tabulation",
+      "vertical tabulation",
+      "vertical tabulation (vt)",
+      "vt",
     },
   },
   {
@@ -164,9 +153,9 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "FORM FEED",
-      "FF",
-      "FORM FEED (FF)",
+      "ff",
+      "form feed",
+      "form feed (ff)",
     },
   },
   {
@@ -176,9 +165,9 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "CARRIAGE RETURN",
-      "CR",
-      "CARRIAGE RETURN (CR)",
+      "carriage return",
+      "carriage return (cr)",
+      "cr",
     },
   },
   {
@@ -188,11 +177,10 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "SHIFT OUT",
-      "LOCKING-SHIFT ONE",
-      "SO",
-      "SHIFT OUT",
-      "known as LOCKING-SHIFT ONE in 8-bit environments",
+      "known as locking-shift one in 8-bit environments",
+      "locking-shift one",
+      "shift out",
+      "so",
     },
   },
   {
@@ -202,11 +190,10 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "SHIFT IN",
-      "LOCKING-SHIFT ZERO",
-      "SI",
-      "SHIFT IN",
-      "known as LOCKING-SHIFT ZERO in 8-bit environments",
+      "known as locking-shift zero in 8-bit environments",
+      "locking-shift zero",
+      "shift in",
+      "si",
     },
   },
   {
@@ -216,9 +203,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "DATA LINK ESCAPE",
-      "DLE",
-      "DATA LINK ESCAPE",
+      "data link escape",
+      "dle",
     },
   },
   {
@@ -228,9 +214,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "DEVICE CONTROL ONE",
-      "DC1",
-      "DEVICE CONTROL ONE",
+      "dc1",
+      "device control one",
     },
   },
   {
@@ -240,9 +225,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "DEVICE CONTROL TWO",
-      "DC2",
-      "DEVICE CONTROL TWO",
+      "dc2",
+      "device control two",
     },
   },
   {
@@ -252,9 +236,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "DEVICE CONTROL THREE",
-      "DC3",
-      "DEVICE CONTROL THREE",
+      "dc3",
+      "device control three",
     },
   },
   {
@@ -264,9 +247,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "DEVICE CONTROL FOUR",
-      "DC4",
-      "DEVICE CONTROL FOUR",
+      "dc4",
+      "device control four",
     },
   },
   {
@@ -276,9 +258,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "NEGATIVE ACKNOWLEDGE",
-      "NAK",
-      "NEGATIVE ACKNOWLEDGE",
+      "nak",
+      "negative acknowledge",
     },
   },
   {
@@ -288,9 +269,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "SYNCHRONOUS IDLE",
-      "SYN",
-      "SYNCHRONOUS IDLE",
+      "syn",
+      "synchronous idle",
     },
   },
   {
@@ -300,9 +280,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "END OF TRANSMISSION BLOCK",
-      "ETB",
-      "END OF TRANSMISSION BLOCK",
+      "end of transmission block",
+      "etb",
     },
   },
   {
@@ -312,9 +291,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "CANCEL",
-      "CAN",
-      "CANCEL",
+      "can",
+      "cancel",
     },
   },
   {
@@ -324,10 +302,9 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "END OF MEDIUM",
-      "EOM",
-      "EM",
-      "END OF MEDIUM",
+      "em",
+      "end of medium",
+      "eom",
     },
   },
   {
@@ -337,9 +314,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "SUBSTITUTE",
-      "SUB",
-      "SUBSTITUTE",
+      "sub",
+      "substitute",
     },
   },
   {
@@ -349,9 +325,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "ESCAPE",
-      "ESC",
-      "ESCAPE",
+      "esc",
+      "escape",
     },
   },
   {
@@ -361,11 +336,10 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "INFORMATION SEPARATOR FOUR",
-      "FILE SEPARATOR",
-      "FS",
-      "INFORMATION SEPARATOR FOUR",
-      "file separator (FS)",
+      "file separator",
+      "file separator (fs)",
+      "fs",
+      "information separator four",
     },
   },
   {
@@ -375,11 +349,10 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "INFORMATION SEPARATOR THREE",
-      "GROUP SEPARATOR",
-      "GS",
-      "INFORMATION SEPARATOR THREE",
-      "group separator (GS)",
+      "group separator",
+      "group separator (gs)",
+      "gs",
+      "information separator three",
     },
   },
   {
@@ -389,11 +362,10 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "INFORMATION SEPARATOR TWO",
-      "RECORD SEPARATOR",
-      "RS",
-      "INFORMATION SEPARATOR TWO",
-      "record separator (RS)",
+      "information separator two",
+      "record separator",
+      "record separator (rs)",
+      "rs",
     },
   },
   {
@@ -403,11 +375,10 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "INFORMATION SEPARATOR ONE",
-      "UNIT SEPARATOR",
-      "US",
-      "INFORMATION SEPARATOR ONE",
-      "unit separator (US)",
+      "information separator one",
+      "unit separator",
+      "unit separator (us)",
+      "us",
     },
   },
   {
@@ -417,9 +388,9 @@ return {
     category = "Zs",
     block = "Basic Latin",
     aliases = {
-      "SP",
+      "other space characters: 2000-200a",
       "sometimes considered a control code",
-      "other space characters: 2000-200A",
+      "sp",
     },
   },
   {
@@ -429,8 +400,8 @@ return {
     category = "Po",
     block = "Basic Latin",
     aliases = {
-      "factorial",
       "bang",
+      "factorial",
     },
   },
   {
@@ -450,10 +421,10 @@ return {
     category = "Po",
     block = "Basic Latin",
     aliases = {
-      "pound sign (weight)",
-      "hashtag, hash",
       "crosshatch, octothorpe",
-      "for denoting musical sharp 266F is preferred",
+      "for denoting musical sharp 266f is preferred",
+      "hashtag, hash",
+      "pound sign (weight)",
     },
   },
   {
@@ -463,9 +434,9 @@ return {
     category = "Sc",
     block = "Basic Latin",
     aliases = {
-      "milréis, escudo",
       "glyph may have one or two vertical bars",
-      "other currency symbol characters start at 20A0",
+      "milréis, escudo",
+      "other currency symbol characters start at 20a0",
     },
   },
   {
@@ -494,11 +465,11 @@ return {
     category = "Po",
     block = "Basic Latin",
     aliases = {
+      "05f3 is preferred for geresh when writing hebrew",
+      "2019 is preferred for apostrophe",
+      "apl quote",
       "apostrophe-quote (1.0)",
       "single quote",
-      "APL quote",
-      "2019 is preferred for apostrophe",
-      "05F3 is preferred for geresh when writing Hebrew",
     },
   },
   {
@@ -528,8 +499,8 @@ return {
     category = "Po",
     block = "Basic Latin",
     aliases = {
-      "star",
       "can have five or six spokes",
+      "star",
     },
   },
   {
@@ -719,8 +690,8 @@ return {
     category = "Po",
     block = "Basic Latin",
     aliases = {
+      "arroba (old spanish unit of weight)",
       "at sign",
-      "arroba (old Spanish unit of weight)",
     },
   },
   {
@@ -794,7 +765,7 @@ return {
     category = "Lu",
     block = "Basic Latin",
     aliases = {
-      "Turkish and Azerbaijani use 0131 for lowercase",
+      "turkish and azerbaijani use 0131 for lowercase",
     },
   },
   {
@@ -980,9 +951,9 @@ return {
     category = "Pc",
     block = "Basic Latin",
     aliases = {
+      "joins with adjacent instances of itself",
       "spacing underscore (1.0)",
       "this is a spacing character",
-      "joins with adjacent instances of itself",
     },
   },
   {
@@ -1067,7 +1038,7 @@ return {
     category = "Ll",
     block = "Basic Latin",
     aliases = {
-      "Turkish and Azerbaijani use 0130 for uppercase",
+      "turkish and azerbaijani use 0130 for uppercase",
     },
   },
   {
@@ -1213,8 +1184,8 @@ return {
     category = "Ps",
     block = "Basic Latin",
     aliases = {
-      "opening curly bracket (1.0)",
       "left brace",
+      "opening curly bracket (1.0)",
     },
   },
   {
@@ -1224,9 +1195,9 @@ return {
     category = "Sm",
     block = "Basic Latin",
     aliases = {
-      "vertical bar, pipe",
-      "used in pairs to indicate absolute value",
       "also used as an unpaired separator or as a fence",
+      "used in pairs to indicate absolute value",
+      "vertical bar, pipe",
     },
   },
   {
@@ -1257,9 +1228,8 @@ return {
     category = "Cc",
     block = "Basic Latin",
     aliases = {
-      "DELETE",
-      "DEL",
-      "DELETE",
+      "del",
+      "delete",
     },
   },
   {
@@ -1269,8 +1239,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "PADDING CHARACTER",
-      "PAD",
+      "pad",
+      "padding character",
     },
   },
   {
@@ -1280,8 +1250,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "HIGH OCTET PRESET",
-      "HOP",
+      "high octet preset",
+      "hop",
     },
   },
   {
@@ -1291,9 +1261,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "BREAK PERMITTED HERE",
-      "BPH",
-      "BREAK PERMITTED HERE",
+      "bph",
+      "break permitted here",
     },
   },
   {
@@ -1303,9 +1272,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "NO BREAK HERE",
-      "NBH",
-      "NO BREAK HERE",
+      "nbh",
+      "no break here",
     },
   },
   {
@@ -1315,9 +1283,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "INDEX",
-      "IND",
-      "formerly known as INDEX",
+      "formerly known as index",
+      "ind",
+      "index",
     },
   },
   {
@@ -1327,9 +1295,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "NEXT LINE",
-      "NEL",
-      "NEXT LINE (NEL)",
+      "nel",
+      "next line",
+      "next line (nel)",
     },
   },
   {
@@ -1339,9 +1307,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "START OF SELECTED AREA",
-      "SSA",
-      "START OF SELECTED AREA",
+      "ssa",
+      "start of selected area",
     },
   },
   {
@@ -1351,9 +1318,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "END OF SELECTED AREA",
-      "ESA",
-      "END OF SELECTED AREA",
+      "end of selected area",
+      "esa",
     },
   },
   {
@@ -1363,10 +1329,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "CHARACTER TABULATION SET",
-      "HORIZONTAL TABULATION SET",
-      "HTS",
-      "CHARACTER TABULATION SET",
+      "character tabulation set",
+      "horizontal tabulation set",
+      "hts",
     },
   },
   {
@@ -1376,10 +1341,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "CHARACTER TABULATION WITH JUSTIFICATION",
-      "HORIZONTAL TABULATION WITH JUSTIFICATION",
-      "HTJ",
-      "CHARACTER TABULATION WITH JUSTIFICATION",
+      "character tabulation with justification",
+      "horizontal tabulation with justification",
+      "htj",
     },
   },
   {
@@ -1389,10 +1353,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "LINE TABULATION SET",
-      "VERTICAL TABULATION SET",
-      "VTS",
-      "LINE TABULATION SET",
+      "line tabulation set",
+      "vertical tabulation set",
+      "vts",
     },
   },
   {
@@ -1402,10 +1365,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "PARTIAL LINE FORWARD",
-      "PARTIAL LINE DOWN",
-      "PLD",
-      "PARTIAL LINE FORWARD",
+      "partial line down",
+      "partial line forward",
+      "pld",
     },
   },
   {
@@ -1415,10 +1377,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "PARTIAL LINE BACKWARD",
-      "PARTIAL LINE UP",
-      "PLU",
-      "PARTIAL LINE BACKWARD",
+      "partial line backward",
+      "partial line up",
+      "plu",
     },
   },
   {
@@ -1428,10 +1389,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "REVERSE LINE FEED",
-      "REVERSE INDEX",
-      "RI",
-      "REVERSE LINE FEED",
+      "reverse index",
+      "reverse line feed",
+      "ri",
     },
   },
   {
@@ -1441,10 +1401,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "SINGLE SHIFT TWO",
-      "SINGLE-SHIFT-2",
-      "SS2",
-      "SINGLE SHIFT TWO",
+      "single shift two",
+      "single-shift-2",
+      "ss2",
     },
   },
   {
@@ -1454,10 +1413,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "SINGLE SHIFT THREE",
-      "SINGLE-SHIFT-3",
-      "SS3",
-      "SINGLE SHIFT THREE",
+      "single shift three",
+      "single-shift-3",
+      "ss3",
     },
   },
   {
@@ -1467,9 +1425,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "DEVICE CONTROL STRING",
-      "DCS",
-      "DEVICE CONTROL STRING",
+      "dcs",
+      "device control string",
     },
   },
   {
@@ -1479,10 +1436,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "PRIVATE USE ONE",
-      "PRIVATE USE-1",
-      "PU1",
-      "PRIVATE USE ONE",
+      "private use one",
+      "private use-1",
+      "pu1",
     },
   },
   {
@@ -1492,10 +1448,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "PRIVATE USE TWO",
-      "PRIVATE USE-2",
-      "PU2",
-      "PRIVATE USE TWO",
+      "private use two",
+      "private use-2",
+      "pu2",
     },
   },
   {
@@ -1505,9 +1460,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "SET TRANSMIT STATE",
-      "STS",
-      "SET TRANSMIT STATE",
+      "set transmit state",
+      "sts",
     },
   },
   {
@@ -1517,9 +1471,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "CANCEL CHARACTER",
-      "CCH",
-      "CANCEL CHARACTER",
+      "cancel character",
+      "cch",
     },
   },
   {
@@ -1529,9 +1482,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "MESSAGE WAITING",
-      "MW",
-      "MESSAGE WAITING",
+      "message waiting",
+      "mw",
     },
   },
   {
@@ -1541,10 +1493,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "START OF GUARDED AREA",
-      "START OF PROTECTED AREA",
-      "SPA",
-      "START OF GUARDED AREA",
+      "spa",
+      "start of guarded area",
+      "start of protected area",
     },
   },
   {
@@ -1554,10 +1505,9 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "END OF GUARDED AREA",
-      "END OF PROTECTED AREA",
-      "EPA",
-      "END OF GUARDED AREA",
+      "end of guarded area",
+      "end of protected area",
+      "epa",
     },
   },
   {
@@ -1567,9 +1517,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "START OF STRING",
-      "SOS",
-      "START OF STRING",
+      "sos",
+      "start of string",
     },
   },
   {
@@ -1579,8 +1528,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "SINGLE GRAPHIC CHARACTER INTRODUCER",
-      "SGC",
+      "sgc",
+      "single graphic character introducer",
     },
   },
   {
@@ -1590,9 +1539,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "SINGLE CHARACTER INTRODUCER",
-      "SCI",
-      "SINGLE CHARACTER INTRODUCER",
+      "sci",
+      "single character introducer",
     },
   },
   {
@@ -1602,9 +1550,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "CONTROL SEQUENCE INTRODUCER",
-      "CSI",
-      "CONTROL SEQUENCE INTRODUCER",
+      "control sequence introducer",
+      "csi",
     },
   },
   {
@@ -1614,9 +1561,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "STRING TERMINATOR",
-      "ST",
-      "STRING TERMINATOR",
+      "st",
+      "string terminator",
     },
   },
   {
@@ -1626,9 +1572,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "OPERATING SYSTEM COMMAND",
-      "OSC",
-      "OPERATING SYSTEM COMMAND",
+      "operating system command",
+      "osc",
     },
   },
   {
@@ -1638,9 +1583,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "PRIVACY MESSAGE",
-      "PM",
-      "PRIVACY MESSAGE",
+      "pm",
+      "privacy message",
     },
   },
   {
@@ -1650,9 +1594,8 @@ return {
     category = "Cc",
     block = "Latin-1 Supplement",
     aliases = {
-      "APPLICATION PROGRAM COMMAND",
-      "APC",
-      "APPLICATION PROGRAM COMMAND",
+      "apc",
+      "application program command",
     },
   },
   {
@@ -1662,8 +1605,8 @@ return {
     category = "Zs",
     block = "Latin-1 Supplement",
     aliases = {
-      "NBSP",
-      "commonly abbreviated as NBSP",
+      "commonly abbreviated as nbsp",
+      "nbsp",
     },
   },
   {
@@ -1673,7 +1616,7 @@ return {
     category = "Po",
     block = "Latin-1 Supplement",
     aliases = {
-      "Spanish, Asturian, Galician",
+      "spanish, asturian, galician",
     },
   },
   {
@@ -1691,8 +1634,8 @@ return {
     category = "Sc",
     block = "Latin-1 Supplement",
     aliases = {
-      "pound sterling, Irish punt, lira, etc.",
       "not to be confused with the unit of weight",
+      "pound sterling, irish punt, lira, etc.",
     },
   },
   {
@@ -1703,7 +1646,7 @@ return {
     block = "Latin-1 Supplement",
     aliases = {
       "generic or unknown currency",
-      "other currency symbol characters start at 20A0",
+      "other currency symbol characters start at 20a0",
     },
   },
   {
@@ -1760,7 +1703,7 @@ return {
     category = "Lo",
     block = "Latin-1 Supplement",
     aliases = {
-      "Spanish",
+      "spanish",
     },
   },
   {
@@ -1770,8 +1713,8 @@ return {
     category = "Pi",
     block = "Latin-1 Supplement",
     aliases = {
-      "left guillemet",
       "chevrons (in typography)",
+      "left guillemet",
       "usually opening, sometimes closing",
     },
   },
@@ -1792,9 +1735,9 @@ return {
     category = "Cf",
     block = "Latin-1 Supplement",
     aliases = {
-      "SHY",
+      "commonly abbreviated as shy",
       "discretionary hyphen",
-      "commonly abbreviated as SHY",
+      "shy",
     },
   },
   {
@@ -1814,7 +1757,7 @@ return {
     category = "Sk",
     block = "Latin-1 Supplement",
     aliases = {
-      "overline, APL overbar",
+      "overline, apl overbar",
       "this is a spacing character",
     },
   },
@@ -1845,8 +1788,8 @@ return {
     category = "No",
     block = "Latin-1 Supplement",
     aliases = {
-      "squared",
       "other superscript digit characters: 2070-2079",
+      "squared",
     },
   },
   {
@@ -1885,7 +1828,7 @@ return {
     block = "Latin-1 Supplement",
     aliases = {
       "paragraph sign",
-      "section sign in some European usage",
+      "section sign in some european usage",
     },
   },
   {
@@ -1895,9 +1838,9 @@ return {
     category = "Po",
     block = "Latin-1 Supplement",
     aliases = {
+      "georgian comma",
+      "greek middle dot (ano teleia)",
       "midpoint (in typography)",
-      "Georgian comma",
-      "Greek middle dot (ano teleia)",
     },
   },
   {
@@ -1907,8 +1850,8 @@ return {
     category = "Sk",
     block = "Latin-1 Supplement",
     aliases = {
+      "other spacing accent characters: 02d8-02db",
       "this is a spacing character",
-      "other spacing accent characters: 02D8-02DB",
     },
   },
   {
@@ -1926,7 +1869,7 @@ return {
     category = "Lo",
     block = "Latin-1 Supplement",
     aliases = {
-      "Spanish",
+      "spanish",
     },
   },
   {
@@ -1971,8 +1914,8 @@ return {
     category = "Po",
     block = "Latin-1 Supplement",
     aliases = {
+      "spanish",
       "turned question mark",
-      "Spanish",
     },
   },
   {
@@ -2112,7 +2055,7 @@ return {
     category = "Lu",
     block = "Latin-1 Supplement",
     aliases = {
-      "lowercase is 00F0",
+      "lowercase is 00f0",
     },
   },
   {
@@ -2170,7 +2113,7 @@ return {
     category = "Sm",
     block = "Latin-1 Supplement",
     aliases = {
-      "z notation Cartesian product",
+      "z notation cartesian product",
     },
   },
   {
@@ -2238,9 +2181,9 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
-      "Eszett",
-      "German",
-      "not used in Swiss High German",
+      "eszett",
+      "german",
+      "not used in swiss high german",
     },
   },
   {
@@ -2274,7 +2217,7 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
-      "Portuguese",
+      "portuguese",
     },
   },
   {
@@ -2292,7 +2235,7 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
-      "Danish, Norwegian, Swedish, Walloon",
+      "danish, norwegian, swedish, walloon",
     },
   },
   {
@@ -2302,8 +2245,8 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
+      "ash (from old english æsc)",
       "latin small ligature ae (1.1)",
-      "ash (from Old English æsc)",
     },
   },
   {
@@ -2353,7 +2296,7 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
-      "Italian, Malagasy",
+      "italian, malagasy",
     },
   },
   {
@@ -2387,8 +2330,8 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
-      "Icelandic, Faroese, Old English, IPA",
-      "uppercase is 00D0",
+      "icelandic, faroese, old english, ipa",
+      "uppercase is 00d0",
     },
   },
   {
@@ -2430,7 +2373,7 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
-      "Portuguese, Estonian, Livonian",
+      "portuguese, estonian, livonian",
     },
   },
   {
@@ -2458,8 +2401,8 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
+      "danish, norwegian, faroese, ipa",
       "o slash",
-      "Danish, Norwegian, Faroese, IPA",
     },
   },
   {
@@ -2469,7 +2412,7 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
-      "French, Italian",
+      "french, italian",
     },
   },
   {
@@ -2511,9 +2454,9 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
-      "Icelandic, Old English, phonetics",
-      "Runic letter borrowed into Latin script",
-      "replaced by \"th\" in modern English",
+      "icelandic, old english, phonetics",
+      "replaced by \"th\" in modern english",
+      "runic letter borrowed into latin script",
     },
   },
   {
@@ -2523,7 +2466,7 @@ return {
     category = "Ll",
     block = "Latin-1 Supplement",
     aliases = {
-      "French, medieval Hungarian orthography",
+      "french, medieval hungarian orthography",
       "uppercase is 0178",
     },
   },
@@ -2542,7 +2485,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latvian, Latin, ...",
+      "latvian, latin, ...",
     },
   },
   {
@@ -2560,7 +2503,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Romanian, Vietnamese, Latin, ...",
+      "romanian, vietnamese, latin, ...",
     },
   },
   {
@@ -2578,7 +2521,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Polish, Lithuanian, ...",
+      "polish, lithuanian, ...",
     },
   },
   {
@@ -2596,7 +2539,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Polish, Croatian, Serbian, ...",
+      "polish, croatian, serbian, ...",
     },
   },
   {
@@ -2614,7 +2557,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Esperanto",
+      "esperanto",
     },
   },
   {
@@ -2664,7 +2607,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Czech, Slovak",
+      "czech, slovak",
     },
   },
   {
@@ -2682,7 +2625,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Croatian, Serbian, Vietnamese, Sami, Moro",
+      "croatian, serbian, vietnamese, sami, moro",
     },
   },
   {
@@ -2700,7 +2643,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latvian, Latin, ...",
+      "latvian, latin, ...",
     },
   },
   {
@@ -2718,7 +2661,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Malay, Latin, ...",
+      "malay, latin, ...",
     },
   },
   {
@@ -2736,7 +2679,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Lithuanian",
+      "lithuanian",
     },
   },
   {
@@ -2754,7 +2697,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Polish, Lithuanian, ...",
+      "polish, lithuanian, ...",
     },
   },
   {
@@ -2772,7 +2715,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Czech, ...",
+      "czech, ...",
     },
   },
   {
@@ -2790,7 +2733,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Esperanto",
+      "esperanto",
     },
   },
   {
@@ -2808,7 +2751,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Turkish, Azerbaijani",
+      "turkish, azerbaijani",
     },
   },
   {
@@ -2842,7 +2785,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latvian",
+      "latvian",
       "there are three major glyph variants",
     },
   },
@@ -2853,7 +2796,7 @@ return {
     category = "Lu",
     block = "Latin Extended-A",
     aliases = {
-      "lowercase in Nawdm is 0266",
+      "lowercase in nawdm is 0266",
     },
   },
   {
@@ -2863,7 +2806,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Esperanto",
+      "esperanto",
     },
   },
   {
@@ -2881,7 +2824,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Maltese, IPA, ...",
+      "maltese, ipa, ...",
     },
   },
   {
@@ -2915,7 +2858,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latvian, Latin, ...",
+      "latvian, latin, ...",
     },
   },
   {
@@ -2933,7 +2876,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latin, ...",
+      "latin, ...",
     },
   },
   {
@@ -2951,7 +2894,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Lithuanian, ...",
+      "lithuanian, ...",
     },
   },
   {
@@ -2962,8 +2905,8 @@ return {
     block = "Latin Extended-A",
     aliases = {
       "i dot",
-      "Turkish, Azerbaijani",
       "lowercase is 0069",
+      "turkish, azerbaijani",
     },
   },
   {
@@ -2973,7 +2916,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Turkish, Azerbaijani",
+      "turkish, azerbaijani",
       "uppercase is 0049",
     },
   },
@@ -2992,7 +2935,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Dutch",
+      "dutch",
     },
   },
   {
@@ -3010,7 +2953,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Esperanto",
+      "esperanto",
     },
   },
   {
@@ -3028,7 +2971,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latvian",
+      "latvian",
     },
   },
   {
@@ -3054,7 +2997,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Slovak",
+      "slovak",
     },
   },
   {
@@ -3072,7 +3015,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latvian",
+      "latvian",
     },
   },
   {
@@ -3090,7 +3033,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Slovak",
+      "slovak",
     },
   },
   {
@@ -3108,7 +3051,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "preferred representation for Catalan: 006C 00B7",
+      "preferred representation for catalan: 006c 00b7",
     },
   },
   {
@@ -3126,7 +3069,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Polish, Sorbian, Iñupiaq, ...",
+      "polish, sorbian, iñupiaq, ...",
     },
   },
   {
@@ -3144,7 +3087,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Polish, ...",
+      "polish, ...",
     },
   },
   {
@@ -3162,7 +3105,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latvian",
+      "latvian",
     },
   },
   {
@@ -3180,7 +3123,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Czech, Slovak",
+      "czech, slovak",
     },
   },
   {
@@ -3190,10 +3133,10 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
+      "afrikaans",
       "latin small letter apostrophe n (1.0)",
-      "Afrikaans",
-      "legacy compatibility character for ISO/IEC 6937",
-      "uppercase is 02BC 004E",
+      "legacy compatibility character for iso/iec 6937",
+      "uppercase is 02bc 004e",
     },
   },
   {
@@ -3212,7 +3155,7 @@ return {
     block = "Latin Extended-A",
     aliases = {
       "engma, angma",
-      "Sami, Mende, IPA, ...",
+      "sami, mende, ipa, ...",
       "velar nasal, nasalization",
     },
   },
@@ -3231,7 +3174,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latvian, Latin, ...",
+      "latvian, latin, ...",
     },
   },
   {
@@ -3249,7 +3192,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latin",
+      "latin",
     },
   },
   {
@@ -3267,7 +3210,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Hungarian",
+      "hungarian",
     },
   },
   {
@@ -3285,8 +3228,8 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "ethel (from Old English eðel)",
-      "French, IPA, Old Icelandic, Old English, ...",
+      "ethel (from old english eðel)",
+      "french, ipa, old icelandic, old english, ...",
     },
   },
   {
@@ -3304,7 +3247,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Slovak, ...",
+      "slovak, ...",
     },
   },
   {
@@ -3322,7 +3265,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Livonian",
+      "livonian",
     },
   },
   {
@@ -3340,7 +3283,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Czech, ...",
+      "czech, ...",
     },
   },
   {
@@ -3358,7 +3301,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Polish, Indic transliteration, ...",
+      "polish, indic transliteration, ...",
     },
   },
   {
@@ -3376,7 +3319,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Esperanto",
+      "esperanto",
     },
   },
   {
@@ -3394,7 +3337,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Turkish, Azerbaijani, ...",
+      "turkish, azerbaijani, ...",
     },
   },
   {
@@ -3428,7 +3371,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Semitic transliteration, ...",
+      "semitic transliteration, ...",
     },
   },
   {
@@ -3446,7 +3389,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Czech, Slovak",
+      "czech, slovak",
     },
   },
   {
@@ -3464,7 +3407,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Sami",
+      "sami",
     },
   },
   {
@@ -3498,7 +3441,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latvian, Lithuanian, Latin, ...",
+      "latvian, lithuanian, latin, ...",
     },
   },
   {
@@ -3516,7 +3459,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Latin, Esperanto, ...",
+      "latin, esperanto, ...",
     },
   },
   {
@@ -3534,7 +3477,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Czech, ...",
+      "czech, ...",
     },
   },
   {
@@ -3552,7 +3495,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Hungarian",
+      "hungarian",
     },
   },
   {
@@ -3570,7 +3513,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Lithuanian",
+      "lithuanian",
     },
   },
   {
@@ -3588,7 +3531,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Welsh",
+      "welsh",
     },
   },
   {
@@ -3606,7 +3549,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Welsh",
+      "welsh",
     },
   },
   {
@@ -3616,8 +3559,8 @@ return {
     category = "Lu",
     block = "Latin Extended-A",
     aliases = {
-      "French, Igbo",
-      "lowercase is 00FF",
+      "french, igbo",
+      "lowercase is 00ff",
     },
   },
   {
@@ -3635,7 +3578,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Polish, ...",
+      "polish, ...",
     },
   },
   {
@@ -3653,7 +3596,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "Polish, ...",
+      "polish, ...",
     },
   },
   {
@@ -3679,7 +3622,7 @@ return {
     category = "Ll",
     block = "Latin Extended-A",
     aliases = {
-      "in current use in Fraktur and Gaelic types",
+      "in current use in fraktur and gaelic types",
     },
   },
   {
@@ -3689,7 +3632,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "also used in Old Saxon manuscripts",
+      "also used in old saxon manuscripts",
       "uppercase is 0243",
     },
   },
@@ -3700,7 +3643,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African languages",
+      "african languages",
       "lowercase is 0253",
     },
   },
@@ -3719,7 +3662,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "former Soviet minority language scripts",
+      "former soviet minority language scripts",
     },
   },
   {
@@ -3737,8 +3680,8 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Zhuang tone three is Cyrillic ze",
-      "Zhuang tone four is Cyrillic che",
+      "zhuang tone four is cyrillic che",
+      "zhuang tone three is cyrillic ze",
     },
   },
   {
@@ -3748,9 +3691,9 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "typographically a turned C",
-      "African languages",
+      "african languages",
       "lowercase is 0254",
+      "typographically a turned c",
     },
   },
   {
@@ -3768,7 +3711,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "African",
+      "african",
     },
   },
   {
@@ -3778,7 +3721,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "Ewe",
+      "ewe",
       "lowercase is 0256",
     },
   },
@@ -3789,8 +3732,8 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "Pan-Nigerian alphabet",
       "lowercase is 0257",
+      "pan-nigerian alphabet",
     },
   },
   {
@@ -3808,7 +3751,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "former-Soviet minority language scripts",
+      "former-soviet minority language scripts",
     },
   },
   {
@@ -3818,8 +3761,8 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "reversed Polish-hook o",
-      "recommended spellings 007A 02B7 or 007A 032B",
+      "recommended spellings 007a 02b7 or 007a 032b",
+      "reversed polish-hook o",
     },
   },
   {
@@ -3829,9 +3772,9 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
+      "lowercase is 01dd",
+      "pan-nigerian alphabet",
       "turned capital e",
-      "Pan-Nigerian alphabet",
-      "lowercase is 01DD",
     },
   },
   {
@@ -3841,7 +3784,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "Azerbaijani, ...",
+      "azerbaijani, ...",
       "lowercase is 0259",
     },
   },
@@ -3852,9 +3795,9 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
+      "african languages",
       "capital epsilon",
-      "African languages",
-      "lowercase is 025B",
+      "lowercase is 025b",
     },
   },
   {
@@ -3864,7 +3807,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African",
+      "african",
     },
   },
   {
@@ -3874,9 +3817,9 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "script f",
-      "Florin currency symbol (Netherlands)",
+      "florin currency symbol (netherlands)",
       "function symbol",
+      "script f",
       "used as abbreviation convention for folder",
     },
   },
@@ -3887,7 +3830,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African",
+      "african",
       "lowercase is 0260",
     },
   },
@@ -3898,7 +3841,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African",
+      "african",
       "lowercase is 0263",
     },
   },
@@ -3909,9 +3852,9 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
+      "gothic transliteration",
       "hwair",
-      "Gothic transliteration",
-      "uppercase is 01F6",
+      "uppercase is 01f6",
     },
   },
   {
@@ -3921,7 +3864,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African languages",
+      "african languages",
       "lowercase is 0269",
     },
   },
@@ -3932,10 +3875,10 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
+      "african languages",
       "barred i, i bar",
-      "African languages",
+      "iso 6438 gives lowercase as 026a, not 0268",
       "lowercase is 0268",
-      "ISO 6438 gives lowercase as 026A, not 0268",
     },
   },
   {
@@ -3953,7 +3896,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Hausa, Pan-Nigerian alphabet",
+      "hausa, pan-nigerian alphabet",
     },
   },
   {
@@ -3963,9 +3906,9 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
+      "americanist phonetic usage for ipa ɬ",
       "barred l",
-      "Americanist phonetic usage for IPA ɬ",
-      "uppercase is 023D",
+      "uppercase is 023d",
     },
   },
   {
@@ -3975,9 +3918,9 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
+      "americanist phonetic usage for ipa tɬ",
       "barred lambda, lambda bar",
-      "Americanist phonetic usage for IPA tɬ",
-      "uppercase is A7DC",
+      "uppercase is a7dc",
     },
   },
   {
@@ -3987,7 +3930,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "lowercase is 026F",
+      "lowercase is 026f",
     },
   },
   {
@@ -3997,7 +3940,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African",
+      "african",
       "lowercase is 0272",
     },
   },
@@ -4008,8 +3951,8 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "archaic phonetic for Japanese 3093",
-      "recommended spelling for syllabic n is 006E 0329",
+      "archaic phonetic for japanese 3093",
+      "recommended spelling for syllabic n is 006e 0329",
       "uppercase is 0220",
     },
   },
@@ -4020,10 +3963,10 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
+      "african languages",
       "barred o, o bar",
-      "African languages",
-      "the formal name does not describe the glyph",
       "lowercase is 0275",
+      "the formal name does not describe the glyph",
     },
   },
   {
@@ -4041,7 +3984,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Vietnamese",
+      "vietnamese",
     },
   },
   {
@@ -4051,7 +3994,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "LATIN CAPITAL LETTER GHA",
+      "latin capital letter gha",
     },
   },
   {
@@ -4061,8 +4004,8 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "LATIN SMALL LETTER GHA",
-      "Pan-Turkic Latin alphabets",
+      "latin small letter gha",
+      "pan-turkic latin alphabets",
     },
   },
   {
@@ -4080,7 +4023,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "African",
+      "african",
     },
   },
   {
@@ -4090,9 +4033,9 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "Old Norse",
-      "from German Standard DIN 31624 and ISO 5426-2",
+      "from german standard din 31624 and iso 5426-2",
       "lowercase is 0280",
+      "old norse",
     },
   },
   {
@@ -4110,7 +4053,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "typographically a reversed S",
+      "typographically a reversed s",
     },
   },
   {
@@ -4120,7 +4063,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African languages",
+      "african languages",
       "lowercase is 0283",
     },
   },
@@ -4131,7 +4074,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Twi",
+      "twi",
     },
   },
   {
@@ -4141,7 +4084,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "recommended spelling 0074 02B2",
+      "recommended spelling 0074 02b2",
     },
   },
   {
@@ -4159,7 +4102,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "African languages",
+      "african languages",
     },
   },
   {
@@ -4169,7 +4112,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African languages",
+      "african languages",
       "lowercase is 0288",
     },
   },
@@ -4188,7 +4131,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Vietnamese",
+      "vietnamese",
     },
   },
   {
@@ -4198,9 +4141,9 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African languages",
-      "typographically, turned capital Greek omega 03A9",
-      "lowercase is 028A",
+      "african languages",
+      "lowercase is 028a",
+      "typographically, turned capital greek omega 03a9",
     },
   },
   {
@@ -4210,9 +4153,9 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
+      "african",
+      "lowercase is 028b",
       "script v",
-      "African",
-      "lowercase is 028B",
     },
   },
   {
@@ -4248,9 +4191,9 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
+      "also a handwritten variant of latin \"z\"",
       "barred z, z bar",
-      "Pan-Turkic Latin orthography",
-      "also a handwritten variant of Latin \"z\"",
+      "pan-turkic latin orthography",
     },
   },
   {
@@ -4260,7 +4203,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "African, Skolt Sami",
+      "african, skolt sami",
       "lowercase is 0292",
     },
   },
@@ -4290,8 +4233,8 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Twi",
-      "recommended spellings 0292 02B7 or 006A 02B7",
+      "recommended spellings 0292 02b7 or 006a 02b7",
+      "twi",
     },
   },
   {
@@ -4302,7 +4245,7 @@ return {
     block = "Latin Extended-B",
     aliases = {
       "archaic phonetic for [dz] affricate",
-      "recommended spellings 0292 or 0064 007A",
+      "recommended spellings 0292 or 0064 007a",
     },
   },
   {
@@ -4339,9 +4282,9 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
+      "runic letter borrowed into latin script",
+      "uppercase is 01f7",
       "wen",
-      "Runic letter borrowed into Latin script",
-      "uppercase is 01F7",
     },
   },
   {
@@ -4351,8 +4294,8 @@ return {
     category = "Lo",
     block = "Latin Extended-B",
     aliases = {
+      "\"c\" in zulu orthography",
       "pipe",
-      "\"c\" in Zulu orthography",
     },
   },
   {
@@ -4362,8 +4305,8 @@ return {
     category = "Lo",
     block = "Latin Extended-B",
     aliases = {
+      "\"x\" in zulu orthography",
       "double pipe",
-      "\"x\" in Zulu orthography",
     },
   },
   {
@@ -4383,8 +4326,8 @@ return {
     category = "Lo",
     block = "Latin Extended-B",
     aliases = {
+      "\"q\" in zulu orthography",
       "latin letter exclamation mark (1.0)",
-      "\"q\" in Zulu orthography",
     },
   },
   {
@@ -4474,7 +4417,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pinyin third tone",
+      "pinyin third tone",
     },
   },
   {
@@ -4492,7 +4435,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pinyin third tone",
+      "pinyin third tone",
     },
   },
   {
@@ -4510,7 +4453,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pinyin third tone",
+      "pinyin third tone",
     },
   },
   {
@@ -4528,7 +4471,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pinyin third tone",
+      "pinyin third tone",
     },
   },
   {
@@ -4546,7 +4489,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pinyin first tone",
+      "pinyin first tone",
     },
   },
   {
@@ -4564,7 +4507,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pinyin second tone",
+      "pinyin second tone",
     },
   },
   {
@@ -4582,7 +4525,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pinyin third tone",
+      "pinyin third tone",
     },
   },
   {
@@ -4600,7 +4543,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pinyin fourth tone",
+      "pinyin fourth tone",
     },
   },
   {
@@ -4610,9 +4553,9 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pan-Nigerian alphabet",
       "all other usages of schwa are 0259",
-      "uppercase is 018E",
+      "pan-nigerian alphabet",
+      "uppercase is 018e",
     },
   },
   {
@@ -4630,7 +4573,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Livonian, Uralicist usage",
+      "livonian, uralicist usage",
     },
   },
   {
@@ -4648,7 +4591,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Uralicist usage",
+      "uralicist usage",
     },
   },
   {
@@ -4666,7 +4609,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Old Norse, Old English",
+      "old norse, old english",
     },
   },
   {
@@ -4684,7 +4627,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Skolt Sami",
+      "skolt sami",
     },
   },
   {
@@ -4702,7 +4645,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Skolt Sami",
+      "skolt sami",
     },
   },
   {
@@ -4720,7 +4663,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Skolt Sami",
+      "skolt sami",
     },
   },
   {
@@ -4738,7 +4681,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Sami, Iroquoian, Old Icelandic",
+      "sami, iroquoian, old icelandic",
     },
   },
   {
@@ -4772,7 +4715,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Skolt Sami",
+      "skolt sami",
     },
   },
   {
@@ -4782,7 +4725,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "IPA and many languages",
+      "ipa and many languages",
     },
   },
   {
@@ -4824,7 +4767,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Macedonian and Serbian transliteration",
+      "macedonian and serbian transliteration",
     },
   },
   {
@@ -4844,8 +4787,8 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
+      "lowercase is 01bf",
       "wen",
-      "lowercase is 01BF",
     },
   },
   {
@@ -4863,7 +4806,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Pinyin",
+      "pinyin",
     },
   },
   {
@@ -5153,7 +5096,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Middle English, Scots",
+      "middle english, scots",
     },
   },
   {
@@ -5171,7 +5114,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Finnish Romany",
+      "finnish romany",
     },
   },
   {
@@ -5181,7 +5124,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "lowercase is 019E",
+      "lowercase is 019e",
     },
   },
   {
@@ -5191,7 +5134,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "phonetic use in Sinology",
+      "phonetic use in sinology",
     },
   },
   {
@@ -5209,7 +5152,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Algonquin, Huron",
+      "algonquin, huron",
     },
   },
   {
@@ -5227,7 +5170,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Middle High German",
+      "middle high german",
     },
   },
   {
@@ -5245,7 +5188,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "Uralicist usage",
+      "uralicist usage",
     },
   },
   {
@@ -5343,7 +5286,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "also Cornish",
+      "also cornish",
     },
   },
   {
@@ -5403,7 +5346,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "lowercase is 2C65",
+      "lowercase is 2c65",
     },
   },
   {
@@ -5421,7 +5364,7 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
-      "also used in Americanist linguistics",
+      "also used in americanist linguistics",
     },
   },
   {
@@ -5431,7 +5374,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "lowercase is 019A",
+      "lowercase is 019a",
     },
   },
   {
@@ -5441,7 +5384,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "lowercase is 2C66",
+      "lowercase is 2c66",
     },
   },
   {
@@ -5451,8 +5394,8 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
+      "uppercase is 2c7e",
       "voiceless labio-alveolar fricative",
-      "uppercase is 2C7E",
     },
   },
   {
@@ -5462,8 +5405,8 @@ return {
     category = "Ll",
     block = "Latin Extended-B",
     aliases = {
+      "uppercase is 2c7f",
       "voiced labio-alveolar fricative",
-      "uppercase is 2C7F",
     },
   },
   {
@@ -5509,7 +5452,7 @@ return {
     category = "Lu",
     block = "Latin Extended-B",
     aliases = {
-      "lowercase is 028C",
+      "lowercase is 028c",
     },
   },
   {
@@ -5600,7 +5543,7 @@ return {
     block = "IPA Extensions",
     aliases = {
       "low central unrounded vowel",
-      "uppercase is 2C6F",
+      "uppercase is 2c6f",
     },
   },
   {
@@ -5612,7 +5555,7 @@ return {
     aliases = {
       "latin small letter script a (1.0)",
       "low back unrounded vowel",
-      "uppercase is 2C6D",
+      "uppercase is 2c6d",
     },
   },
   {
@@ -5623,7 +5566,7 @@ return {
     block = "IPA Extensions",
     aliases = {
       "low back rounded vowel",
-      "uppercase is 2C70",
+      "uppercase is 2c70",
     },
   },
   {
@@ -5644,9 +5587,9 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
-      "typographically a turned c",
+      "in older danish usage \"ɔ:\" stands for \"that is\"",
       "lower-mid back rounded vowel",
-      "in older Danish usage \"ɔ:\" stands for \"that is\"",
+      "typographically a turned c",
       "uppercase is 0186",
     },
   },
@@ -5657,9 +5600,9 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "sound spelled with 015b in polish",
+      "used in transcription of mandarin chinese",
       "voiceless alveolo-palatal laminal fricative",
-      "used in transcription of Mandarin Chinese",
-      "sound spelled with 015B in Polish",
     },
   },
   {
@@ -5670,8 +5613,8 @@ return {
     block = "IPA Extensions",
     aliases = {
       "d retroflex hook",
-      "voiced retroflex stop",
       "uppercase is 0189",
+      "voiced retroflex stop",
     },
   },
   {
@@ -5681,9 +5624,9 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "ewe, pan-nigerian alphabet",
       "implosive dental or alveolar stop",
-      "Ewe, Pan-Nigerian alphabet",
-      "uppercase is 018A",
+      "uppercase is 018a",
     },
   },
   {
@@ -5704,7 +5647,7 @@ return {
     block = "IPA Extensions",
     aliases = {
       "mid-central unrounded vowel",
-      "uppercase is 018F",
+      "uppercase is 018f",
     },
   },
   {
@@ -5736,9 +5679,9 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
-      "reversed epsilon",
       "lower-mid central unrounded vowel",
-      "uppercase is A7AB",
+      "reversed epsilon",
+      "uppercase is a7ab",
     },
   },
   {
@@ -5769,8 +5712,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "\"gy\" in hungarian orthography",
       "voiced palatal stop",
-      "\"gy\" in Hungarian orthography",
     },
   },
   {
@@ -5791,8 +5734,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is a7ac",
       "voiced velar stop",
-      "uppercase is A7AC",
     },
   },
   {
@@ -5812,8 +5755,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
-      "voiced velar fricative",
       "uppercase is 0194",
+      "voiced velar fricative",
     },
   },
   {
@@ -5825,7 +5768,7 @@ return {
     aliases = {
       "latin small letter baby gamma (1.0)",
       "upper-mid back unrounded vowel",
-      "uppercase is A7CB",
+      "uppercase is a7cb",
     },
   },
   {
@@ -5835,8 +5778,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is a78d",
       "voiced rounded palatal approximant",
-      "uppercase is A78D",
     },
   },
   {
@@ -5847,8 +5790,8 @@ return {
     block = "IPA Extensions",
     aliases = {
       "breathy-voiced glottal fricative",
-      "uppercase is A7AA",
-      "uppercase in Nawdm is 0124",
+      "uppercase in nawdm is 0124",
+      "uppercase is a7aa",
     },
   },
   {
@@ -5858,7 +5801,7 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
-      "\"sj\" in some Swedish dialects",
+      "\"sj\" in some swedish dialects",
     },
   },
   {
@@ -5891,9 +5834,9 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "preferred ipa alternate for 0269",
       "semi-high front unrounded vowel",
-      "preferred IPA alternate for 0269",
-      "uppercase is A7AE",
+      "uppercase is a7ae",
     },
   },
   {
@@ -5903,8 +5846,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is 2c62",
       "velarized voiced alveolar lateral approximant",
-      "uppercase is 2C62",
     },
   },
   {
@@ -5914,8 +5857,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is a7ad",
       "voiceless alveolar lateral fricative",
-      "uppercase is A7AD",
     },
   },
   {
@@ -5935,8 +5878,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "\"dhl\" in zulu orthography",
       "voiced lateral fricative",
-      "\"dhl\" in Zulu orthography",
     },
   },
   {
@@ -5947,7 +5890,7 @@ return {
     block = "IPA Extensions",
     aliases = {
       "high back unrounded vowel",
-      "uppercase is 019C",
+      "uppercase is 019c",
     },
   },
   {
@@ -5967,8 +5910,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is 2c6e",
       "voiced labiodental nasal",
-      "uppercase is 2C6E",
     },
   },
   {
@@ -5978,8 +5921,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is 019d",
       "voiced palatal nasal",
-      "uppercase is 019D",
     },
   },
   {
@@ -6011,7 +5954,7 @@ return {
     aliases = {
       "o bar",
       "rounded mid-central vowel, i.e. rounded schwa",
-      "uppercase is 019F",
+      "uppercase is 019f",
     },
   },
   {
@@ -6032,7 +5975,7 @@ return {
     block = "IPA Extensions",
     aliases = {
       "near-close near-back rounded vowel",
-      "preferred use is 028A latin small letter upsilon",
+      "preferred use is 028a latin small letter upsilon",
     },
   },
   {
@@ -6042,8 +5985,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
-      "voiceless bilabial fricative",
       "this is a non-casing letter",
+      "voiceless bilabial fricative",
     },
   },
   {
@@ -6083,8 +6026,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "this sound is spelled with 0159 in czech",
       "voiced strident apico-alveolar trill",
-      "this sound is spelled with 0159 in Czech",
     },
   },
   {
@@ -6094,8 +6037,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is 2c64",
       "voiced retroflex flap",
-      "uppercase is 2C64",
     },
   },
   {
@@ -6115,9 +6058,9 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
-      "long leg turned iota (a misnomer)",
       "apical dental vowel",
-      "IPA spelling - 007A 0329",
+      "ipa spelling - 007a 0329",
+      "long leg turned iota (a misnomer)",
       "preferred presentation is with a descender",
     },
   },
@@ -6128,9 +6071,9 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "germanic, old norse",
+      "uppercase is 01a6",
       "voiced uvular trill",
-      "Germanic, Old Norse",
-      "uppercase is 01A6",
     },
   },
   {
@@ -6150,8 +6093,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is a7c5",
       "voiceless retroflex fricative",
-      "uppercase is A7C5",
     },
   },
   {
@@ -6161,8 +6104,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is 01a9",
       "voiceless postalveolar fricative",
-      "uppercase is 01A9",
     },
   },
   {
@@ -6173,7 +6116,7 @@ return {
     block = "IPA Extensions",
     aliases = {
       "implosive palatal stop",
-      "typographically based on 025F, not on 0283",
+      "typographically based on 025f, not on 0283",
     },
   },
   {
@@ -6184,7 +6127,7 @@ return {
     block = "IPA Extensions",
     aliases = {
       "apical retroflex vowel",
-      "IPA spelling - 0290 0329",
+      "ipa spelling - 0290 0329",
       "preferred presentation is with a descender",
     },
   },
@@ -6196,7 +6139,7 @@ return {
     block = "IPA Extensions",
     aliases = {
       "palatalized voiceless postalveolar fricative",
-      "suggested spelling - 0283 02B2",
+      "suggested spelling - 0283 02b2",
     },
   },
   {
@@ -6206,7 +6149,7 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
-      "uppercase is A7B1",
+      "uppercase is a7b1",
     },
   },
   {
@@ -6216,8 +6159,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is 01ae",
       "voiceless retroflex stop",
-      "uppercase is 01AE",
     },
   },
   {
@@ -6239,8 +6182,8 @@ return {
     block = "IPA Extensions",
     aliases = {
       "near-close near-back rounded vowel",
-      "preferred IPA alternate to 0277",
-      "uppercase is 01B1",
+      "preferred ipa alternate to 0277",
+      "uppercase is 01b1",
     },
   },
   {
@@ -6251,8 +6194,8 @@ return {
     block = "IPA Extensions",
     aliases = {
       "latin small letter script v (1.0)",
+      "uppercase is 01b2",
       "voiced labiodental approximant",
-      "uppercase is 01B2",
     },
   },
   {
@@ -6314,8 +6257,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "sound spelled with 017a in polish",
       "voiced alveolo-palatal laminal fricative",
-      "sound spelled with 017A in Polish",
     },
   },
   {
@@ -6326,10 +6269,10 @@ return {
     block = "IPA Extensions",
     aliases = {
       "dram sign",
+      "mistakenly named yogh in unicode 1.0",
+      "skolt sami",
+      "uppercase is 01b7",
       "voiced postalveolar fricative",
-      "mistakenly named yogh in Unicode 1.0",
-      "uppercase is 01B7",
-      "Skolt Sami",
     },
   },
   {
@@ -6359,9 +6302,9 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "ain",
       "reversed glottal stop",
       "voiced pharyngeal fricative",
-      "ain",
     },
   },
   {
@@ -6412,7 +6355,7 @@ return {
     aliases = {
       "closed epsilon",
       "lower-mid front rounded vowel",
-      "non-IPA alternate for the preferred 0153",
+      "non-ipa alternate for the preferred 0153",
     },
   },
   {
@@ -6442,8 +6385,8 @@ return {
     category = "Ll",
     block = "IPA Extensions",
     aliases = {
+      "uppercase is a7b2",
       "voiced palatal fricative",
-      "uppercase is A7B2",
     },
   },
   {
@@ -6454,7 +6397,7 @@ return {
     block = "IPA Extensions",
     aliases = {
       "proposed for velar click",
-      "uppercase is A7B0",
+      "uppercase is a7b0",
     },
   },
   {
@@ -6702,8 +6645,8 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
+      "common americanist usage for 02b2",
       "palatalization",
-      "common Americanist usage for 02B2",
     },
   },
   {
@@ -6714,7 +6657,7 @@ return {
     block = "Spacing Modifier Letters",
     aliases = {
       "stress, emphasis",
-      "transliteration of Hebrew geresh",
+      "transliteration of hebrew geresh",
     },
   },
   {
@@ -6734,9 +6677,9 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "typographical alternate for 02BD or 02BF",
-      "Hawaiʻian: ʻokina",
-      "Tongan: fakauʻa",
+      "hawaiʻian: ʻokina",
+      "tongan: fakauʻa",
+      "typographical alternate for 02bd or 02bf",
     },
   },
   {
@@ -6748,8 +6691,8 @@ return {
     aliases = {
       "apostrophe",
       "glottal stop, glottalization, ejective",
-      "used as a tone marker in Bodo and Dogri",
-      "used as a modifier letter in the Lisu script",
+      "used as a modifier letter in the lisu script",
+      "used as a tone marker in bodo and dogri",
     },
   },
   {
@@ -6769,7 +6712,7 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "transliteration of Hebrew alef",
+      "transliteration of hebrew alef",
     },
   },
   {
@@ -6779,7 +6722,7 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "transliteration of Hebrew ayin",
+      "transliteration of hebrew ayin",
     },
   },
   {
@@ -6790,7 +6733,7 @@ return {
     block = "Spacing Modifier Letters",
     aliases = {
       "ejective or glottalized",
-      "typographical alternate for 02BC or 02BE",
+      "typographical alternate for 02bc or 02be",
     },
   },
   {
@@ -6800,7 +6743,7 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "typographical alternate for 02BF",
+      "typographical alternate for 02bf",
     },
   },
   {
@@ -6858,9 +6801,9 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "hacek",
       "falling-rising tone",
-      "Mandarin Chinese third tone",
+      "hacek",
+      "mandarin chinese third tone",
     },
   },
   {
@@ -6870,8 +6813,8 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "primary stress, downstep",
       "precedes letter or syllable modified",
+      "primary stress, downstep",
     },
   },
   {
@@ -6882,8 +6825,8 @@ return {
     block = "Spacing Modifier Letters",
     aliases = {
       "high level tone",
+      "mandarin chinese first tone",
       "precedes or follows letter or syllable modified",
-      "Mandarin Chinese first tone",
     },
   },
   {
@@ -6893,7 +6836,7 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "Mandarin Chinese second tone",
+      "mandarin chinese second tone",
     },
   },
   {
@@ -6903,7 +6846,7 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "Mandarin Chinese fourth tone",
+      "mandarin chinese fourth tone",
     },
   },
   {
@@ -6913,8 +6856,8 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "secondary stress",
       "precedes letter or syllable modified",
+      "secondary stress",
     },
   },
   {
@@ -6925,7 +6868,7 @@ return {
     block = "Spacing Modifier Letters",
     aliases = {
       "low level tone",
-      "used as a modifier letter in the Lisu script",
+      "used as a modifier letter in the lisu script",
     },
   },
   {
@@ -7025,8 +6968,8 @@ return {
     category = "Sk",
     block = "Spacing Modifier Letters",
     aliases = {
-      "retracted or backed articulation",
       "glyph may have small end-serifs",
+      "retracted or backed articulation",
     },
   },
   {
@@ -7094,7 +7037,7 @@ return {
     category = "Sk",
     block = "Spacing Modifier Letters",
     aliases = {
-      "Swedish grave accent",
+      "swedish grave accent",
     },
   },
   {
@@ -7216,7 +7159,7 @@ return {
     category = "Lm",
     block = "Spacing Modifier Letters",
     aliases = {
-      "Nenets",
+      "nenets",
     },
   },
   {
@@ -7362,8 +7305,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Greek varia",
-      "Pinyin: marks Mandarin Chinese fourth tone",
+      "greek varia",
+      "pinyin: marks mandarin chinese fourth tone",
     },
   },
   {
@@ -7373,9 +7316,9 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
+      "greek oxia, tonos",
+      "pinyin: marks mandarin chinese second tone",
       "stress mark",
-      "Greek oxia, tonos",
-      "Pinyin: marks Mandarin Chinese second tone",
     },
   },
   {
@@ -7395,8 +7338,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: nasalization",
-      "Vietnamese tone mark",
+      "ipa: nasalization",
+      "vietnamese tone mark",
     },
   },
   {
@@ -7406,9 +7349,9 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "long",
-      "Pinyin: marks Mandarin Chinese first tone",
       "distinguish from the following",
+      "long",
+      "pinyin: marks mandarin chinese first tone",
     },
   },
   {
@@ -7418,8 +7361,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "overscore, vinculum",
       "connects on left and right",
+      "overscore, vinculum",
     },
   },
   {
@@ -7429,8 +7372,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
+      "greek vrachy",
       "short",
-      "Greek vrachy",
     },
   },
   {
@@ -7440,7 +7383,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "derivative (Newtonian notation)",
+      "derivative (newtonian notation)",
     },
   },
   {
@@ -7450,9 +7393,9 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "double dot above, umlaut",
-      "Greek dialytika",
       "double derivative",
+      "double dot above, umlaut",
+      "greek dialytika",
     },
   },
   {
@@ -7464,7 +7407,7 @@ return {
     aliases = {
       "hoi",
       "kerns left or right of circumflex over vowels",
-      "Vietnamese tone mark",
+      "vietnamese tone mark",
     },
   },
   {
@@ -7482,7 +7425,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Hungarian, Chuvash",
+      "hungarian, chuvash",
     },
   },
   {
@@ -7492,8 +7435,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "hacek, V above",
-      "Pinyin: marks Mandarin Chinese third tone",
+      "hacek, v above",
+      "pinyin: marks mandarin chinese third tone",
     },
   },
   {
@@ -7503,8 +7446,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "this is not the Greek tonos",
-      "Marshallese",
+      "marshallese",
+      "this is not the greek tonos",
     },
   },
   {
@@ -7514,7 +7457,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Marshallese",
+      "marshallese",
     },
   },
   {
@@ -7524,7 +7467,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Serbian and Croatian phonetics",
+      "serbian and croatian phonetics",
     },
   },
   {
@@ -7560,8 +7503,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Greek psili, smooth breathing mark",
-      "Americanist: ejective or glottalization",
+      "americanist: ejective or glottalization",
+      "greek psili, smooth breathing mark",
     },
   },
   {
@@ -7571,7 +7514,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Greek dasia, rough breathing mark",
+      "greek dasia, rough breathing mark",
     },
   },
   {
@@ -7621,7 +7564,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: unreleased stop",
+      "ipa: unreleased stop",
     },
   },
   {
@@ -7631,7 +7574,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Vietnamese",
+      "vietnamese",
     },
   },
   {
@@ -7641,7 +7584,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: open variety of vowel",
+      "ipa: open variety of vowel",
     },
   },
   {
@@ -7651,7 +7594,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: vowel raising or closing",
+      "ipa: vowel raising or closing",
     },
   },
   {
@@ -7661,7 +7604,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: vowel lowering or opening",
+      "ipa: vowel lowering or opening",
     },
   },
   {
@@ -7671,7 +7614,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: advanced or fronted articulation",
+      "ipa: advanced or fronted articulation",
     },
   },
   {
@@ -7681,8 +7624,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: retracted or backed articulation",
       "glyph may have small end-serifs",
+      "ipa: retracted or backed articulation",
     },
   },
   {
@@ -7692,7 +7635,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: palatalization",
+      "ipa: palatalization",
     },
   },
   {
@@ -7702,7 +7645,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: retroflexion",
+      "ipa: retroflexion",
     },
   },
   {
@@ -7712,10 +7655,10 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
+      "ipa: closer variety of vowel",
       "nang",
-      "IPA: closer variety of vowel",
-      "Semiticist: velarization or pharyngealization",
-      "Vietnamese tone mark",
+      "semiticist: velarization or pharyngealization",
+      "vietnamese tone mark",
     },
   },
   {
@@ -7725,7 +7668,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: breathy-voice or murmur",
+      "ipa: breathy-voice or murmur",
     },
   },
   {
@@ -7735,8 +7678,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: voiceless",
-      "Madurese",
+      "ipa: voiceless",
+      "madurese",
     },
   },
   {
@@ -7746,7 +7689,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Romanian, Latvian, Livonian",
+      "romanian, latvian, livonian",
     },
   },
   {
@@ -7756,7 +7699,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "French, Turkish, Azerbaijani",
+      "french, turkish, azerbaijani",
     },
   },
   {
@@ -7766,9 +7709,9 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
+      "americanist: nasalization",
       "nasal hook",
-      "Americanist: nasalization",
-      "Polish, Lithuanian",
+      "polish, lithuanian",
     },
   },
   {
@@ -7778,9 +7721,9 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: syllabic",
-      "Yoruba",
-      "German dialectology",
+      "german dialectology",
+      "ipa: syllabic",
+      "yoruba",
     },
   },
   {
@@ -7790,7 +7733,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: dental",
+      "ipa: dental",
     },
   },
   {
@@ -7800,7 +7743,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: labialization",
+      "ipa: labialization",
     },
   },
   {
@@ -7810,7 +7753,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: voiced",
+      "ipa: voiced",
     },
   },
   {
@@ -7820,7 +7763,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Americanist: fronted articulation",
+      "americanist: fronted articulation",
     },
   },
   {
@@ -7830,7 +7773,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Hittite transcription",
+      "hittite transcription",
     },
   },
   {
@@ -7840,7 +7783,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Indo-Europeanist: semivowel",
+      "indo-europeanist: semivowel",
     },
   },
   {
@@ -7850,7 +7793,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: creaky voice",
+      "ipa: creaky voice",
     },
   },
   {
@@ -7868,8 +7811,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "underline, underscore",
       "connects on left and right",
+      "underline, underscore",
     },
   },
   {
@@ -7879,8 +7822,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "double underline, double underscore",
       "connects on left and right",
+      "double underline, double underscore",
     },
   },
   {
@@ -7890,7 +7833,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: velarization or pharyngealization",
+      "ipa: velarization or pharyngealization",
     },
   },
   {
@@ -7908,8 +7851,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "strikethrough",
       "connects on left and right",
+      "strikethrough",
     },
   },
   {
@@ -7947,7 +7890,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: apical",
+      "ipa: apical",
     },
   },
   {
@@ -7957,7 +7900,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: laminal",
+      "ipa: laminal",
     },
   },
   {
@@ -7967,7 +7910,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: linguolabial",
+      "ipa: linguolabial",
     },
   },
   {
@@ -7985,9 +7928,9 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "yerik",
-      "used for Cyrillic yerik, indicates an omitted jer",
       "this is not a palatalization mark",
+      "used for cyrillic yerik, indicates an omitted jer",
+      "yerik",
     },
   },
   {
@@ -8063,7 +8006,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: dentolabial",
+      "ipa: dentolabial",
     },
   },
   {
@@ -8073,7 +8016,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: alveolar",
+      "ipa: alveolar",
     },
   },
   {
@@ -8083,7 +8026,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: strong articulation",
+      "ipa: strong articulation",
     },
   },
   {
@@ -8093,7 +8036,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: weak articulation",
+      "ipa: weak articulation",
     },
   },
   {
@@ -8103,7 +8046,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: denasal",
+      "ipa: denasal",
     },
   },
   {
@@ -8113,7 +8056,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: nasal escape",
+      "ipa: nasal escape",
     },
   },
   {
@@ -8123,7 +8066,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: velopharyngeal friction",
+      "ipa: velopharyngeal friction",
     },
   },
   {
@@ -8133,7 +8076,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: labial spreading",
+      "ipa: labial spreading",
     },
   },
   {
@@ -8143,7 +8086,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: whistled articulation",
+      "ipa: whistled articulation",
     },
   },
   {
@@ -8153,8 +8096,8 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "CGJ",
-      "commonly abbreviated as CGJ",
+      "cgj",
+      "commonly abbreviated as cgj",
       "has no visible glyph",
     },
   },
@@ -8245,7 +8188,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "Kharoshthi transliteration",
+      "kharoshthi transliteration",
     },
   },
   {
@@ -8315,7 +8258,7 @@ return {
     category = "Mn",
     block = "Combining Diacritical Marks",
     aliases = {
-      "IPA: sliding articulation",
+      "ipa: sliding articulation",
     },
   },
   {
@@ -8533,9 +8476,9 @@ return {
     category = "Po",
     block = "Greek and Coptic",
     aliases = {
+      "003b is the preferred character",
       "erotimatiko",
       "sentence-final punctuation",
-      "003B is the preferred character",
     },
   },
   {
@@ -8545,7 +8488,7 @@ return {
     category = "Lu",
     block = "Greek and Coptic",
     aliases = {
-      "lowercase is 03F3",
+      "lowercase is 03f3",
     },
   },
   {
@@ -8579,8 +8522,8 @@ return {
     category = "Po",
     block = "Greek and Coptic",
     aliases = {
-      "functions in Greek like a semicolon",
-      "00B7 is the preferred character",
+      "00b7 is the preferred character",
+      "functions in greek like a semicolon",
     },
   },
   {
@@ -9038,8 +8981,8 @@ return {
     category = "Ll",
     block = "Greek and Coptic",
     aliases = {
-      "stigma (the Modern Greek name for this letterform)",
       "not to be confused with the actual stigma letter",
+      "stigma (the modern greek name for this letterform)",
     },
   },
   {
@@ -9200,8 +9143,8 @@ return {
     category = "Ll",
     block = "Greek and Coptic",
     aliases = {
-      "used as a technical symbol, with a stroked glyph",
       "maps to \"phi1\" symbol entities",
+      "used as a technical symbol, with a stroked glyph",
     },
   },
   {
@@ -9211,9 +9154,9 @@ return {
     category = "Ll",
     block = "Greek and Coptic",
     aliases = {
+      "a variant of pi, looking like omega",
       "omega pi",
       "used as a technical symbol",
-      "a variant of pi, looking like omega",
     },
   },
   {
@@ -9464,7 +9407,7 @@ return {
     category = "Ll",
     block = "Greek and Coptic",
     aliases = {
-      "uppercase is 037F",
+      "uppercase is 037f",
     },
   },
   {
@@ -9542,7 +9485,7 @@ return {
     category = "Ll",
     block = "Greek and Coptic",
     aliases = {
-      "used with abbreviations containing 03C1",
+      "used with abbreviations containing 03c1",
     },
   },
   {
@@ -9582,8 +9525,8 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "intended for ECU, but not widely used",
-      "historical character; this is NOT the euro!",
+      "historical character; this is not the euro!",
+      "intended for ecu, but not widely used",
     },
   },
   {
@@ -9593,7 +9536,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Costa Rica, El Salvador",
+      "costa rica, el salvador",
     },
   },
   {
@@ -9603,10 +9546,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Brazil",
-      "BRB",
-      "cruzeiro",
-      "currency",
+      "brazil",
     },
   },
   {
@@ -9616,10 +9556,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "France",
-      "currency",
-      "franc",
-      "french",
+      "france",
     },
   },
   {
@@ -9630,9 +9567,7 @@ return {
     block = "Currency Symbols",
     aliases = {
       "intended for lira, but not widely used",
-      "preferred character for lira is 00A3",
-      "currency",
-      "lira",
+      "preferred character for lira is 00a3",
     },
   },
   {
@@ -9641,10 +9576,7 @@ return {
     name = "MILL SIGN",
     category = "Sc",
     block = "Currency Symbols",
-    aliases = {
-      "mil",
-      "mill",
-    },
+    aliases = {},
   },
   {
     code_point = "U+20A6",
@@ -9653,7 +9585,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Nigeria",
+      "nigeria",
     },
   },
   {
@@ -9663,7 +9595,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Spain",
+      "spain",
     },
   },
   {
@@ -9673,9 +9605,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "India, unofficial legacy practice",
-      "currency",
-      "rupee",
+      "india, unofficial legacy practice",
     },
   },
   {
@@ -9685,10 +9615,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Korea",
-      "KPW",
-      "KRW",
-      "won",
+      "korea",
     },
   },
   {
@@ -9698,8 +9625,8 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
+      "israel",
       "shekel",
-      "Israel",
     },
   },
   {
@@ -9709,7 +9636,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Vietnam",
+      "vietnam",
     },
   },
   {
@@ -9719,11 +9646,8 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "currency sign for the European Monetary Union",
+      "currency sign for the european monetary union",
       "euro, not ecu",
-      "currency",
-      "EUR",
-      "euro",
     },
   },
   {
@@ -9733,7 +9657,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Laos",
+      "laos",
     },
   },
   {
@@ -9743,7 +9667,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Mongolia",
+      "mongolia",
     },
   },
   {
@@ -9753,7 +9677,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Greece",
+      "greece",
     },
   },
   {
@@ -9762,12 +9686,7 @@ return {
     name = "GERMAN PENNY SIGN",
     category = "Sc",
     block = "Currency Symbols",
-    aliases = {
-      "currency",
-      "german",
-      "penny",
-      "pfennig",
-    },
+    aliases = {},
   },
   {
     code_point = "U+20B1",
@@ -9776,9 +9695,8 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Filipino peso sign",
-      "Philippines",
-      "peso",
+      "filipino peso sign",
+      "philippines",
     },
   },
   {
@@ -9788,8 +9706,8 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Paraguay",
-      "Often represented by G. or Gs.",
+      "often represented by g. or gs.",
+      "paraguay",
     },
   },
   {
@@ -9799,10 +9717,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "former Argentinian currency",
-      "ARA",
-      "austral",
-      "currency",
+      "former argentinian currency",
     },
   },
   {
@@ -9812,7 +9727,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Ukraine",
+      "ukraine",
     },
   },
   {
@@ -9822,7 +9737,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Ghana",
+      "ghana",
     },
   },
   {
@@ -9832,10 +9747,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "used in France from 13th-18th centuries",
-      "currency",
-      "livre",
-      "tournois",
+      "used in france from 13th-18th centuries",
     },
   },
   {
@@ -9844,10 +9756,7 @@ return {
     name = "SPESMILO SIGN",
     category = "Sc",
     block = "Currency Symbols",
-    aliases = {
-      "currency",
-      "spesmilo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+20B8",
@@ -9856,7 +9765,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Kazakhstan",
+      "kazakhstan",
     },
   },
   {
@@ -9866,10 +9775,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "official rupee currency sign for India",
-      "currency",
-      "indian",
-      "rupee",
+      "official rupee currency sign for india",
     },
   },
   {
@@ -9879,7 +9785,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "official lira currency sign for Turkey",
+      "official lira currency sign for turkey",
     },
   },
   {
@@ -9897,7 +9803,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Azerbaijan",
+      "azerbaijan",
     },
   },
   {
@@ -9907,9 +9813,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Russia",
-      "currency",
-      "ruble",
+      "russia",
     },
   },
   {
@@ -9919,7 +9823,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Georgia",
+      "georgia",
     },
   },
   {
@@ -9930,8 +9834,6 @@ return {
     block = "Currency Symbols",
     aliases = {
       "a cryptocurrency",
-      "bitcoin",
-      "BTC",
     },
   },
   {
@@ -9941,7 +9843,7 @@ return {
     category = "Sc",
     block = "Currency Symbols",
     aliases = {
-      "Kyrgyzstan",
+      "kyrgyzstan",
     },
   },
   {
@@ -10069,8 +9971,8 @@ return {
     category = "Me",
     block = "Combining Diacriticals for Symbols",
     aliases = {
-      "JIS composition circle",
-      "Cyrillic combining ten thousands sign",
+      "cyrillic combining ten thousands sign",
+      "jis composition circle",
     },
   },
   {
@@ -10301,7 +10203,7 @@ return {
     category = "So",
     block = "Letterlike Symbols",
     aliases = {
-      "Spanish for \"each one\"",
+      "spanish for \"each one\"",
     },
   },
   {
@@ -10345,7 +10247,7 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "Hamiltonian operator",
+      "hamiltonian operator",
     },
   },
   {
@@ -10355,7 +10257,7 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "Hilbert space",
+      "hilbert space",
     },
   },
   {
@@ -10383,7 +10285,7 @@ return {
     category = "Ll",
     block = "Letterlike Symbols",
     aliases = {
-      "reduced Planck constant, Dirac constant",
+      "reduced planck constant, dirac constant",
     },
   },
   {
@@ -10411,7 +10313,7 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "Laplace transform",
+      "laplace transform",
     },
   },
   {
@@ -10421,8 +10323,8 @@ return {
     category = "Ll",
     block = "Letterlike Symbols",
     aliases = {
-      "mathematical symbol 'ell'",
       "liter (traditional symbol)",
+      "mathematical symbol 'ell'",
     },
   },
   {
@@ -10460,11 +10362,8 @@ return {
     category = "So",
     block = "Letterlike Symbols",
     aliases = {
-      "published",
       "phonorecord sign",
-      "copyright",
-      "recording",
-      "sound",
+      "published",
     },
   },
   {
@@ -10474,7 +10373,7 @@ return {
     category = "Sm",
     block = "Letterlike Symbols",
     aliases = {
-      "WEIERSTRASS ELLIPTIC FUNCTION",
+      "weierstrass elliptic function",
     },
   },
   {
@@ -10502,7 +10401,7 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "Riemann Integral",
+      "riemann integral",
     },
   },
   {
@@ -10532,8 +10431,8 @@ return {
     category = "So",
     block = "Letterlike Symbols",
     aliases = {
-      "recipe",
       "cross ratio",
+      "recipe",
     },
   },
   {
@@ -10566,12 +10465,7 @@ return {
     name = "TRADE MARK SIGN",
     category = "So",
     block = "Letterlike Symbols",
-    aliases = {
-      "mark",
-      "TM",
-      "trade",
-      "trademark",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2123",
@@ -10606,7 +10500,7 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "preferred representation is 03A9",
+      "preferred representation is 03a9",
     },
   },
   {
@@ -10650,7 +10544,7 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "preferred representation is 00C5",
+      "preferred representation is 00c5",
     },
   },
   {
@@ -10660,7 +10554,7 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "Bernoulli function",
+      "bernoulli function",
     },
   },
   {
@@ -10678,7 +10572,7 @@ return {
     category = "So",
     block = "Letterlike Symbols",
     aliases = {
-      "used in European packaging",
+      "used in european packaging",
     },
   },
   {
@@ -10709,7 +10603,7 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "Fourier transform",
+      "fourier transform",
     },
   },
   {
@@ -10719,8 +10613,8 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "Claudian digamma inversum",
-      "lowercase is 214E",
+      "claudian digamma inversum",
+      "lowercase is 214e",
     },
   },
   {
@@ -10730,8 +10624,8 @@ return {
     category = "Lu",
     block = "Letterlike Symbols",
     aliases = {
-      "M-matrix (physics)",
-      "German Mark currency symbol, before WWII",
+      "german mark currency symbol, before wwii",
+      "m-matrix (physics)",
     },
   },
   {
@@ -10791,9 +10685,7 @@ return {
     category = "Ll",
     block = "Letterlike Symbols",
     aliases = {
-      "intended for use with 20DD",
-      "I",
-      "information",
+      "intended for use with 20dd",
     },
   },
   {
@@ -11407,8 +11299,8 @@ return {
     category = "Lu",
     block = "Number Forms",
     aliases = {
-      "apostrophic C",
-      "Claudian antisigma",
+      "apostrophic c",
+      "claudian antisigma",
       "lowercase is 2184",
     },
   },
@@ -11459,7 +11351,7 @@ return {
     category = "No",
     block = "Number Forms",
     aliases = {
-      "used in baseball scoring, from ARIB STD B24",
+      "used in baseball scoring, from arib std b24",
     },
   },
   {
@@ -11488,11 +11380,7 @@ return {
     name = "LEFTWARDS ARROW",
     category = "Sm",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "left",
-      "left-pointing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2191",
@@ -11501,10 +11389,7 @@ return {
     category = "Sm",
     block = "Arrows",
     aliases = {
-      "IPA: egressive airflow",
-      "arrow",
-      "up",
-      "up-pointing",
+      "ipa: egressive airflow",
     },
   },
   {
@@ -11515,9 +11400,6 @@ return {
     block = "Arrows",
     aliases = {
       "z notation total function",
-      "arrow",
-      "right",
-      "right-pointing",
     },
   },
   {
@@ -11527,10 +11409,7 @@ return {
     category = "Sm",
     block = "Arrows",
     aliases = {
-      "IPA: ingressive airflow",
-      "arrow",
-      "down",
-      "down-pointing",
+      "ipa: ingressive airflow",
     },
   },
   {
@@ -11541,8 +11420,6 @@ return {
     block = "Arrows",
     aliases = {
       "z notation relation",
-      "arrow",
-      "left-right",
     },
   },
   {
@@ -11551,10 +11428,7 @@ return {
     name = "UP DOWN ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "up-down",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2196",
@@ -11562,13 +11436,7 @@ return {
     name = "NORTH WEST ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "direction",
-      "intercardinal",
-      "northwest",
-      "up-left",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2197",
@@ -11576,13 +11444,7 @@ return {
     name = "NORTH EAST ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "direction",
-      "intercardinal",
-      "northeast",
-      "up-right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2198",
@@ -11590,13 +11452,7 @@ return {
     name = "SOUTH EAST ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "direction",
-      "down-right",
-      "intercardinal",
-      "southeast",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2199",
@@ -11604,13 +11460,7 @@ return {
     name = "SOUTH WEST ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "direction",
-      "down-left",
-      "intercardinal",
-      "southwest",
-    },
+    aliases = {},
   },
   {
     code_point = "U+219A",
@@ -11620,9 +11470,6 @@ return {
     block = "Arrows",
     aliases = {
       "negation of 2190",
-      "arrow",
-      "leftwards",
-      "stroke",
     },
   },
   {
@@ -11633,9 +11480,6 @@ return {
     block = "Arrows",
     aliases = {
       "negation of 2192",
-      "arrow",
-      "rightwards",
-      "stroke",
     },
   },
   {
@@ -11644,11 +11488,7 @@ return {
     name = "LEFTWARDS WAVE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "leftwards",
-      "wave",
-    },
+    aliases = {},
   },
   {
     code_point = "U+219D",
@@ -11656,11 +11496,7 @@ return {
     name = "RIGHTWARDS WAVE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "rightwards",
-      "wave",
-    },
+    aliases = {},
   },
   {
     code_point = "U+219E",
@@ -11670,10 +11506,6 @@ return {
     block = "Arrows",
     aliases = {
       "fast cursor left",
-      "arrow",
-      "headed",
-      "leftwards",
-      "two",
     },
   },
   {
@@ -11684,10 +11516,6 @@ return {
     block = "Arrows",
     aliases = {
       "fast cursor up",
-      "arrow",
-      "headed",
-      "two",
-      "upwards",
     },
   },
   {
@@ -11697,12 +11525,8 @@ return {
     category = "Sm",
     block = "Arrows",
     aliases = {
-      "z notation total surjection",
       "fast cursor right",
-      "arrow",
-      "headed",
-      "rightwards",
-      "two",
+      "z notation total surjection",
     },
   },
   {
@@ -11712,12 +11536,8 @@ return {
     category = "So",
     block = "Arrows",
     aliases = {
-      "form feed",
       "fast cursor down",
-      "arrow",
-      "downwards",
-      "headed",
-      "two",
+      "form feed",
     },
   },
   {
@@ -11726,11 +11546,7 @@ return {
     name = "LEFTWARDS ARROW WITH TAIL",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "leftwards",
-      "tail",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21A3",
@@ -11740,9 +11556,6 @@ return {
     block = "Arrows",
     aliases = {
       "z notation total injection",
-      "arrow",
-      "rightwards",
-      "tail",
     },
   },
   {
@@ -11751,12 +11564,7 @@ return {
     name = "LEFTWARDS ARROW FROM BAR",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "bar",
-      "from",
-      "leftwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21A5",
@@ -11764,12 +11572,7 @@ return {
     name = "UPWARDS ARROW FROM BAR",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "bar",
-      "from",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21A6",
@@ -11779,10 +11582,6 @@ return {
     block = "Arrows",
     aliases = {
       "z notation maplet",
-      "arrow",
-      "bar",
-      "from",
-      "rightwards",
     },
   },
   {
@@ -11793,10 +11592,6 @@ return {
     block = "Arrows",
     aliases = {
       "depth symbol",
-      "arrow",
-      "bar",
-      "downwards",
-      "from",
     },
   },
   {
@@ -11805,13 +11600,7 @@ return {
     name = "UP DOWN ARROW WITH BASE",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "base",
-      "down",
-      "up",
-      "with",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21A9",
@@ -11819,12 +11608,7 @@ return {
     name = "LEFTWARDS ARROW WITH HOOK",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "curving",
-      "left",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21AA",
@@ -11832,12 +11616,7 @@ return {
     name = "RIGHTWARDS ARROW WITH HOOK",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "curving",
-      "left",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21AB",
@@ -11845,11 +11624,7 @@ return {
     name = "LEFTWARDS ARROW WITH LOOP",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "leftwards",
-      "loop",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21AC",
@@ -11857,11 +11632,7 @@ return {
     name = "RIGHTWARDS ARROW WITH LOOP",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "loop",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21AD",
@@ -11869,12 +11640,7 @@ return {
     name = "LEFT RIGHT WAVE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "left",
-      "right",
-      "wave",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21AE",
@@ -11884,10 +11650,6 @@ return {
     block = "Arrows",
     aliases = {
       "negation of 2194",
-      "arrow",
-      "left",
-      "right",
-      "stroke",
     },
   },
   {
@@ -11898,9 +11660,6 @@ return {
     block = "Arrows",
     aliases = {
       "electrolysis",
-      "arrow",
-      "downwards",
-      "zigzag",
     },
   },
   {
@@ -11909,12 +11668,7 @@ return {
     name = "UPWARDS ARROW WITH TIP LEFTWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "leftwards",
-      "tip",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21B1",
@@ -11922,12 +11676,7 @@ return {
     name = "UPWARDS ARROW WITH TIP RIGHTWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "rightwards",
-      "tip",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21B2",
@@ -11935,12 +11684,7 @@ return {
     name = "DOWNWARDS ARROW WITH TIP LEFTWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "downwards",
-      "leftwards",
-      "tip",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21B3",
@@ -11948,12 +11692,7 @@ return {
     name = "DOWNWARDS ARROW WITH TIP RIGHTWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "downwards",
-      "rightwards",
-      "tip",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21B4",
@@ -11963,10 +11702,6 @@ return {
     block = "Arrows",
     aliases = {
       "line feed",
-      "arrow",
-      "corner",
-      "downwards",
-      "rightwards",
     },
   },
   {
@@ -11977,10 +11712,6 @@ return {
     block = "Arrows",
     aliases = {
       "may indicate a carriage return or new line",
-      "arrow",
-      "corner",
-      "downwards",
-      "leftwards",
     },
   },
   {
@@ -11989,12 +11720,7 @@ return {
     name = "ANTICLOCKWISE TOP SEMICIRCLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "anticlockwise",
-      "arrow",
-      "semicircle",
-      "top",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21B7",
@@ -12002,12 +11728,7 @@ return {
     name = "CLOCKWISE TOP SEMICIRCLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "clockwise",
-      "semicircle",
-      "top",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21B8",
@@ -12017,11 +11738,6 @@ return {
     block = "Arrows",
     aliases = {
       "home",
-      "arrow",
-      "bar",
-      "long",
-      "north",
-      "west",
     },
   },
   {
@@ -12032,12 +11748,6 @@ return {
     block = "Arrows",
     aliases = {
       "tab with shift tab",
-      "arrow",
-      "bar",
-      "bars",
-      "leftwards",
-      "over",
-      "rightwards",
     },
   },
   {
@@ -12046,12 +11756,7 @@ return {
     name = "ANTICLOCKWISE OPEN CIRCLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "anticlockwise",
-      "arrow",
-      "circle",
-      "open",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21BB",
@@ -12059,12 +11764,7 @@ return {
     name = "CLOCKWISE OPEN CIRCLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "circle",
-      "clockwise",
-      "open",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21BC",
@@ -12072,12 +11772,7 @@ return {
     name = "LEFTWARDS HARPOON WITH BARB UPWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "barb",
-      "harpoon",
-      "leftwards",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21BD",
@@ -12085,12 +11780,7 @@ return {
     name = "LEFTWARDS HARPOON WITH BARB DOWNWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "barb",
-      "downwards",
-      "harpoon",
-      "leftwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21BE",
@@ -12098,12 +11788,7 @@ return {
     name = "UPWARDS HARPOON WITH BARB RIGHTWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "barb",
-      "harpoon",
-      "rightwards",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21BF",
@@ -12111,12 +11796,7 @@ return {
     name = "UPWARDS HARPOON WITH BARB LEFTWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "barb",
-      "harpoon",
-      "leftwards",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C0",
@@ -12124,12 +11804,7 @@ return {
     name = "RIGHTWARDS HARPOON WITH BARB UPWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "barb",
-      "harpoon",
-      "rightwards",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C1",
@@ -12137,12 +11812,7 @@ return {
     name = "RIGHTWARDS HARPOON WITH BARB DOWNWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "barb",
-      "downwards",
-      "harpoon",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C2",
@@ -12150,12 +11820,7 @@ return {
     name = "DOWNWARDS HARPOON WITH BARB RIGHTWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "barb",
-      "downwards",
-      "harpoon",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C3",
@@ -12163,12 +11828,7 @@ return {
     name = "DOWNWARDS HARPOON WITH BARB LEFTWARDS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "barb",
-      "downwards",
-      "harpoon",
-      "leftwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C4",
@@ -12176,12 +11836,7 @@ return {
     name = "RIGHTWARDS ARROW OVER LEFTWARDS ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "leftwards",
-      "over",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C5",
@@ -12189,15 +11844,7 @@ return {
     name = "UPWARDS ARROW LEFTWARDS OF DOWNWARDS ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "and",
-      "arrow",
-      "arrows",
-      "down",
-      "down-pointing",
-      "up",
-      "up-pointing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C6",
@@ -12205,15 +11852,7 @@ return {
     name = "LEFTWARDS ARROW OVER RIGHTWARDS ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "arrows",
-      "left",
-      "left-pointing",
-      "over",
-      "right",
-      "right-pointing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C7",
@@ -12221,11 +11860,7 @@ return {
     name = "LEFTWARDS PAIRED ARROWS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrows",
-      "leftwards",
-      "paired",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C8",
@@ -12233,11 +11868,7 @@ return {
     name = "UPWARDS PAIRED ARROWS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrows",
-      "paired",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21C9",
@@ -12245,11 +11876,7 @@ return {
     name = "RIGHTWARDS PAIRED ARROWS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrows",
-      "paired",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21CA",
@@ -12257,11 +11884,7 @@ return {
     name = "DOWNWARDS PAIRED ARROWS",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrows",
-      "downwards",
-      "paired",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21CB",
@@ -12269,12 +11892,7 @@ return {
     name = "LEFTWARDS HARPOON OVER RIGHTWARDS HARPOON",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "harpoon",
-      "leftwards",
-      "over",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21CC",
@@ -12282,12 +11900,7 @@ return {
     name = "RIGHTWARDS HARPOON OVER LEFTWARDS HARPOON",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "harpoon",
-      "leftwards",
-      "over",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21CD",
@@ -12296,11 +11909,7 @@ return {
     category = "So",
     block = "Arrows",
     aliases = {
-      "negation of 21D0",
-      "arrow",
-      "double",
-      "leftwards",
-      "stroke",
+      "negation of 21d0",
     },
   },
   {
@@ -12310,12 +11919,7 @@ return {
     category = "Sm",
     block = "Arrows",
     aliases = {
-      "negation of 21D4",
-      "arrow",
-      "double",
-      "left",
-      "right",
-      "stroke",
+      "negation of 21d4",
     },
   },
   {
@@ -12325,11 +11929,7 @@ return {
     category = "Sm",
     block = "Arrows",
     aliases = {
-      "negation of 21D2",
-      "arrow",
-      "double",
-      "rightwards",
-      "stroke",
+      "negation of 21d2",
     },
   },
   {
@@ -12338,11 +11938,7 @@ return {
     name = "LEFTWARDS DOUBLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "double",
-      "leftwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21D1",
@@ -12350,11 +11946,7 @@ return {
     name = "UPWARDS DOUBLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "double",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21D2",
@@ -12362,11 +11954,7 @@ return {
     name = "RIGHTWARDS DOUBLE ARROW",
     category = "Sm",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "double",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21D3",
@@ -12374,11 +11962,7 @@ return {
     name = "DOWNWARDS DOUBLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "double",
-      "downwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21D4",
@@ -12386,12 +11970,7 @@ return {
     name = "LEFT RIGHT DOUBLE ARROW",
     category = "Sm",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "double",
-      "left",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21D5",
@@ -12407,12 +11986,7 @@ return {
     name = "NORTH WEST DOUBLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "double",
-      "north",
-      "west",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21D7",
@@ -12420,12 +11994,7 @@ return {
     name = "NORTH EAST DOUBLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "double",
-      "east",
-      "north",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21D8",
@@ -12433,12 +12002,7 @@ return {
     name = "SOUTH EAST DOUBLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "double",
-      "east",
-      "south",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21D9",
@@ -12446,12 +12010,7 @@ return {
     name = "SOUTH WEST DOUBLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "double",
-      "south",
-      "west",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21DA",
@@ -12459,11 +12018,7 @@ return {
     name = "LEFTWARDS TRIPLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "leftwards",
-      "triple",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21DB",
@@ -12471,11 +12026,7 @@ return {
     name = "RIGHTWARDS TRIPLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "rightwards",
-      "triple",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21DC",
@@ -12483,11 +12034,7 @@ return {
     name = "LEFTWARDS SQUIGGLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "leftwards",
-      "squiggle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21DD",
@@ -12495,11 +12042,7 @@ return {
     name = "RIGHTWARDS SQUIGGLE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "rightwards",
-      "squiggle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21DE",
@@ -12509,10 +12052,6 @@ return {
     block = "Arrows",
     aliases = {
       "page up",
-      "arrow",
-      "double",
-      "stroke",
-      "upwards",
     },
   },
   {
@@ -12523,10 +12062,6 @@ return {
     block = "Arrows",
     aliases = {
       "page down",
-      "arrow",
-      "double",
-      "downwards",
-      "stroke",
     },
   },
   {
@@ -12535,11 +12070,7 @@ return {
     name = "LEFTWARDS DASHED ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "dashed",
-      "leftwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21E1",
@@ -12547,11 +12078,7 @@ return {
     name = "UPWARDS DASHED ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "dashed",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21E2",
@@ -12559,11 +12086,7 @@ return {
     name = "RIGHTWARDS DASHED ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "dashed",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21E3",
@@ -12571,11 +12094,7 @@ return {
     name = "DOWNWARDS DASHED ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "dashed",
-      "downwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21E4",
@@ -12585,9 +12104,6 @@ return {
     block = "Arrows",
     aliases = {
       "leftward tab",
-      "arrow",
-      "bar",
-      "leftwards",
     },
   },
   {
@@ -12598,9 +12114,6 @@ return {
     block = "Arrows",
     aliases = {
       "rightward tab",
-      "arrow",
-      "bar",
-      "rightwards",
     },
   },
   {
@@ -12609,11 +12122,7 @@ return {
     name = "LEFTWARDS WHITE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "hollow",
-      "leftwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21E7",
@@ -12622,11 +12131,8 @@ return {
     category = "So",
     block = "Arrows",
     aliases = {
+      "level 2 select (iso 9995-7)",
       "shift",
-      "level 2 select (ISO 9995-7)",
-      "arrow",
-      "hollow",
-      "upwards",
     },
   },
   {
@@ -12636,10 +12142,7 @@ return {
     category = "So",
     block = "Arrows",
     aliases = {
-      "group select (ISO 9995-7)",
-      "arrow",
-      "hollow",
-      "rightwards",
+      "group select (iso 9995-7)",
     },
   },
   {
@@ -12648,11 +12151,7 @@ return {
     name = "DOWNWARDS WHITE ARROW",
     category = "So",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "downwards",
-      "hollow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21EA",
@@ -12662,11 +12161,6 @@ return {
     block = "Arrows",
     aliases = {
       "caps lock",
-      "arrow",
-      "bar",
-      "from",
-      "hollow",
-      "upwards",
     },
   },
   {
@@ -12773,12 +12267,7 @@ return {
     name = "DOWNWARDS ARROW LEFTWARDS OF UPWARDS ARROW",
     category = "Sm",
     block = "Arrows",
-    aliases = {
-      "arrow",
-      "downwards",
-      "leftwards",
-      "upwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+21F6",
@@ -12876,11 +12365,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "universal quantifier",
-      "all",
-      "any",
-      "for",
-      "given",
-      "universal",
     },
   },
   {
@@ -12897,10 +12381,7 @@ return {
     name = "PARTIAL DIFFERENTIAL",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "differential",
-      "partial",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2203",
@@ -12910,8 +12391,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "existential quantifier",
-      "exists",
-      "there",
     },
   },
   {
@@ -12930,10 +12409,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "null set",
-      "empty",
-      "mathematics",
-      "operator",
-      "set",
     },
   },
   {
@@ -12943,11 +12418,9 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "Laplace operator",
       "forward difference",
+      "laplace operator",
       "symmetric difference (in set theory)",
-      "increment",
-      "triangle",
     },
   },
   {
@@ -12959,8 +12432,6 @@ return {
     aliases = {
       "backward difference",
       "gradient, del",
-      "nabla",
-      "triangle",
     },
   },
   {
@@ -12969,13 +12440,7 @@ return {
     name = "ELEMENT OF",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "contains",
-      "element",
-      "membership",
-      "of",
-      "set",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2209",
@@ -12983,11 +12448,7 @@ return {
     name = "NOT AN ELEMENT OF",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "an",
-      "element",
-      "not",
-    },
+    aliases = {},
   },
   {
     code_point = "U+220A",
@@ -13005,10 +12466,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "such that",
-      "as",
-      "contains",
-      "element",
-      "member",
     },
   },
   {
@@ -13035,12 +12492,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "q.e.d.",
-      "end",
-      "halmos",
-      "proof",
-      "q.e.d.",
-      "qed",
-      "tombstone",
     },
   },
   {
@@ -13051,9 +12502,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "product sign",
-      "logic",
-      "n-ary",
-      "product",
     },
   },
   {
@@ -13074,9 +12522,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "summation sign",
-      "mathematics",
-      "n-ary",
-      "summation",
     },
   },
   {
@@ -13085,11 +12530,7 @@ return {
     name = "MINUS SIGN",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "minus",
-      "sign",
-      "subtract",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2213",
@@ -13097,10 +12538,7 @@ return {
     name = "MINUS-OR-PLUS SIGN",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "minus-or-plus",
-      "plus-minus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2214",
@@ -13118,10 +12556,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "generic division operator",
-      "division",
-      "slash",
-      "stroke",
-      "virgule",
     },
   },
   {
@@ -13138,11 +12572,7 @@ return {
     name = "ASTERISK OPERATOR",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "asterisk",
-      "operator",
-      "star",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2218",
@@ -13151,11 +12581,8 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
+      "apl jot",
       "composite function",
-      "APL jot",
-      "composition",
-      "operator",
-      "ring",
     },
   },
   {
@@ -13164,10 +12591,7 @@ return {
     name = "BULLET OPERATOR",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "bullet",
-      "operator",
-    },
+    aliases = {},
   },
   {
     code_point = "U+221A",
@@ -13177,11 +12601,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "radical sign",
-      "radical",
-      "radix",
-      "root",
-      "square",
-      "surd",
     },
   },
   {
@@ -13206,10 +12625,7 @@ return {
     name = "PROPORTIONAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "proportional",
-      "proportionality",
-    },
+    aliases = {},
   },
   {
     code_point = "U+221E",
@@ -13217,10 +12633,7 @@ return {
     name = "INFINITY",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "infinity",
-      "sign",
-    },
+    aliases = {},
   },
   {
     code_point = "U+221F",
@@ -13230,9 +12643,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "with (in chess notation)",
-      "angle",
-      "mathematics",
-      "right",
     },
   },
   {
@@ -13241,10 +12651,7 @@ return {
     name = "ANGLE",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "acute",
-      "angle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2221",
@@ -13271,10 +12678,8 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
+      "apl stile",
       "such that",
-      "APL stile",
-      "divides",
-      "divisor",
     },
   },
   {
@@ -13291,9 +12696,7 @@ return {
     name = "PARALLEL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "parallel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2226",
@@ -13311,11 +12714,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "wedge, conjunction",
-      "ac",
-      "and",
-      "atque",
-      "logical",
-      "wedge",
     },
   },
   {
@@ -13336,8 +12734,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "cap, hat",
-      "intersection",
-      "set",
     },
   },
   {
@@ -13348,9 +12744,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "cup",
-      "collection",
-      "set",
-      "union",
     },
   },
   {
@@ -13359,10 +12752,7 @@ return {
     name = "INTEGRAL",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "calculus",
-      "integral",
-    },
+    aliases = {},
   },
   {
     code_point = "U+222C",
@@ -13370,11 +12760,7 @@ return {
     name = "DOUBLE INTEGRAL",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "calculus",
-      "double",
-      "integral",
-    },
+    aliases = {},
   },
   {
     code_point = "U+222D",
@@ -13390,10 +12776,7 @@ return {
     name = "CONTOUR INTEGRAL",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "contour",
-      "integral",
-    },
+    aliases = {},
   },
   {
     code_point = "U+222F",
@@ -13441,10 +12824,7 @@ return {
     name = "THEREFORE",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "logic",
-      "therefore",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2235",
@@ -13452,10 +12832,7 @@ return {
     name = "BECAUSE",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "because",
-      "logic",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2236",
@@ -13463,9 +12840,7 @@ return {
     name = "RATIO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "ratio",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2237",
@@ -13473,10 +12848,7 @@ return {
     name = "PROPORTION",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "proportion",
-      "proportionality",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2238",
@@ -13519,14 +12891,12 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "varies with (proportional to)",
-      "difference between",
-      "similar to",
-      "not",
+      "apl tilde",
       "cycle",
-      "APL tilde",
-      "operator",
-      "tilde",
+      "difference between",
+      "not",
+      "similar to",
+      "varies with (proportional to)",
     },
   },
   {
@@ -13536,10 +12906,8 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "lazy S",
-      "reversed tilde and lazy S are glyph variants",
-      "reversed",
-      "tilde",
+      "lazy s",
+      "reversed tilde and lazy s are glyph variants",
     },
   },
   {
@@ -13550,9 +12918,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "most positive",
-      "inverted",
-      "lazy",
-      "s",
     },
   },
   {
@@ -13595,12 +12960,7 @@ return {
     name = "ASYMPTOTICALLY EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "asymptote",
-      "asymptotically",
-      "equal",
-      "mathematics",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2244",
@@ -13616,14 +12976,7 @@ return {
     name = "APPROXIMATELY EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "approximately",
-      "congruence",
-      "equal",
-      "equality",
-      "isomorphism",
-      "mathematics",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2246",
@@ -13649,10 +13002,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "asymptotic to",
-      "almost",
-      "approximate",
-      "approximation",
-      "equal",
     },
   },
   {
@@ -13686,11 +13035,7 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "reversed tilde and lazy S are glyph variants",
-      "all",
-      "equal",
-      "equality",
-      "mathematics",
+      "reversed tilde and lazy s are glyph variants",
     },
   },
   {
@@ -13741,10 +13086,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "nearly equals",
-      "approximately",
-      "equal",
-      "image",
-      "the",
     },
   },
   {
@@ -13777,13 +13118,7 @@ return {
     name = "RING IN EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equal",
-      "equality",
-      "in",
-      "mathematics",
-      "ring",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2257",
@@ -13836,8 +13171,8 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "equiangular",
       "equal to by definition",
+      "equiangular",
     },
   },
   {
@@ -13870,12 +13205,7 @@ return {
     name = "NOT EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equal",
-      "inequality",
-      "inequation",
-      "not",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2261",
@@ -13883,12 +13213,7 @@ return {
     name = "IDENTICAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "exact",
-      "identical",
-      "to",
-      "triple",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2262",
@@ -13904,12 +13229,7 @@ return {
     name = "STRICTLY EQUIVALENT TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equality",
-      "equivalent",
-      "mathematics",
-      "strictly",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2264",
@@ -13917,13 +13237,7 @@ return {
     name = "LESS-THAN OR EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equal",
-      "equals",
-      "inequality",
-      "less-than",
-      "or",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2265",
@@ -13931,13 +13245,7 @@ return {
     name = "GREATER-THAN OR EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equal",
-      "equals",
-      "greater-than",
-      "inequality",
-      "or",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2266",
@@ -13945,13 +13253,7 @@ return {
     name = "LESS-THAN OVER EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equal",
-      "inequality",
-      "less-than",
-      "mathematics",
-      "over",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2267",
@@ -13959,13 +13261,7 @@ return {
     name = "GREATER-THAN OVER EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equal",
-      "greater-than",
-      "inequality",
-      "mathematics",
-      "over",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2268",
@@ -13989,12 +13285,7 @@ return {
     name = "MUCH LESS-THAN",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "inequality",
-      "less-than",
-      "mathematics",
-      "much",
-    },
+    aliases = {},
   },
   {
     code_point = "U+226B",
@@ -14002,12 +13293,7 @@ return {
     name = "MUCH GREATER-THAN",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "greater-than",
-      "inequality",
-      "mathematics",
-      "much",
-    },
+    aliases = {},
   },
   {
     code_point = "U+226C",
@@ -14017,7 +13303,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "plaintiff, quantic",
-      "between",
     },
   },
   {
@@ -14034,12 +13319,7 @@ return {
     name = "NOT LESS-THAN",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "inequality",
-      "less-than",
-      "mathematics",
-      "not",
-    },
+    aliases = {},
   },
   {
     code_point = "U+226F",
@@ -14047,12 +13327,7 @@ return {
     name = "NOT GREATER-THAN",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "greater-than",
-      "inequality",
-      "mathematics",
-      "not",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2270",
@@ -14084,12 +13359,7 @@ return {
     name = "GREATER-THAN OR EQUIVALENT TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equivalent",
-      "greater-than",
-      "inequality",
-      "mathematics",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2274",
@@ -14147,10 +13417,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "lower rank than",
-      "mathematics",
-      "operator",
-      "precedes",
-      "set",
     },
   },
   {
@@ -14161,10 +13427,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "higher rank than",
-      "mathematics",
-      "operator",
-      "set",
-      "succeeds",
     },
   },
   {
@@ -14213,14 +13475,7 @@ return {
     name = "DOES NOT SUCCEED",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "does",
-      "mathematics",
-      "not",
-      "operator",
-      "set",
-      "succeed",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2282",
@@ -14230,9 +13485,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "included in set",
-      "of",
-      "set",
-      "subset",
     },
   },
   {
@@ -14243,10 +13495,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "includes in set",
-      "mathematics",
-      "operator",
-      "set",
-      "superset",
     },
   },
   {
@@ -14271,10 +13519,7 @@ return {
     name = "SUBSET OF OR EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equal",
-      "subset",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2287",
@@ -14282,12 +13527,7 @@ return {
     name = "SUPERSET OF OR EQUAL TO",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "equal",
-      "equality",
-      "mathematics",
-      "superset",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2288",
@@ -14404,8 +13644,6 @@ return {
     aliases = {
       "direct sum",
       "vector pointing into page",
-      "circled",
-      "plus",
     },
   },
   {
@@ -14416,11 +13654,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "symmetric difference",
-      "circled",
-      "difference",
-      "erosion",
-      "minus",
-      "symmetric",
     },
   },
   {
@@ -14432,10 +13665,6 @@ return {
     aliases = {
       "tensor product",
       "vector pointing into page",
-      "circled",
-      "product",
-      "tensor",
-      "times",
     },
   },
   {
@@ -14444,13 +13673,7 @@ return {
     name = "CIRCLED DIVISION SLASH",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "circled",
-      "division",
-      "division-like",
-      "mathematics",
-      "slash",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2299",
@@ -14461,10 +13684,6 @@ return {
     aliases = {
       "direct product",
       "vector pointing out of page",
-      "circled",
-      "dot",
-      "operator",
-      "XNOR",
     },
   },
   {
@@ -14473,11 +13692,7 @@ return {
     name = "CIRCLED RING OPERATOR",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "circled",
-      "operator",
-      "ring",
-    },
+    aliases = {},
   },
   {
     code_point = "U+229B",
@@ -14485,11 +13700,7 @@ return {
     name = "CIRCLED ASTERISK OPERATOR",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "asterisk",
-      "circled",
-      "operator",
-    },
+    aliases = {},
   },
   {
     code_point = "U+229C",
@@ -14498,7 +13709,7 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "NoDerivatives (symbol used for Creative Commons licenses)",
+      "noderivatives (symbol used for creative commons licenses)",
     },
   },
   {
@@ -14515,12 +13726,7 @@ return {
     name = "SQUARED PLUS",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "addition-like",
-      "mathematics",
-      "plus",
-      "squared",
-    },
+    aliases = {},
   },
   {
     code_point = "U+229F",
@@ -14528,12 +13734,7 @@ return {
     name = "SQUARED MINUS",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "mathematics",
-      "minus",
-      "squared",
-      "subtraction-like",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22A0",
@@ -14558,9 +13759,9 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "turnstile",
       "proves, implies, yields",
       "reducible",
+      "turnstile",
     },
   },
   {
@@ -14570,8 +13771,8 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "reverse turnstile",
       "non-theorem, does not yield",
+      "reverse turnstile",
     },
   },
   {
@@ -14592,10 +13793,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "base, bottom",
-      "eet",
-      "falsum",
-      "tack",
-      "up",
     },
   },
   {
@@ -14623,10 +13820,10 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "statement is true, valid",
       "is a tautology",
-      "satisfies",
       "results in",
+      "satisfies",
+      "statement is true, valid",
     },
   },
   {
@@ -14675,11 +13872,7 @@ return {
     name = "DOES NOT FORCE",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "does",
-      "force",
-      "not",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22AF",
@@ -14695,14 +13888,7 @@ return {
     name = "PRECEDES UNDER RELATION",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "mathematics",
-      "operator",
-      "precedes",
-      "relation",
-      "set",
-      "under",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22B1",
@@ -14710,14 +13896,7 @@ return {
     name = "SUCCEEDS UNDER RELATION",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "mathematics",
-      "operator",
-      "relation",
-      "set",
-      "succeeds",
-      "under",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22B2",
@@ -14757,9 +13936,7 @@ return {
     name = "ORIGINAL OF",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "original",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22B7",
@@ -14783,14 +13960,7 @@ return {
     name = "HERMITIAN CONJUGATE MATRIX",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "conjugate",
-      "hermitian",
-      "mathematics",
-      "matrix",
-      "self-adjoint",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22BA",
@@ -14838,12 +14008,7 @@ return {
     name = "RIGHT TRIANGLE",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "mathematics",
-      "right",
-      "right-angled",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22C0",
@@ -14863,11 +14028,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "also used to denote the existential quantifier",
-      "disjunction",
-      "logic",
-      "logical",
-      "n-ary",
-      "or",
     },
   },
   {
@@ -14878,11 +14038,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "z notation generalised intersection",
-      "intersection",
-      "mathematics",
-      "n-ary",
-      "operator",
-      "set",
     },
   },
   {
@@ -14893,11 +14048,6 @@ return {
     block = "Mathematical Operators",
     aliases = {
       "z notation generalised union",
-      "mathematics",
-      "n-ary",
-      "operator",
-      "set",
-      "union",
     },
   },
   {
@@ -14914,10 +14064,7 @@ return {
     name = "DOT OPERATOR",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "dot",
-      "operator",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22C6",
@@ -14926,9 +14073,7 @@ return {
     category = "Sm",
     block = "Mathematical Operators",
     aliases = {
-      "APL",
-      "operator",
-      "star",
+      "apl",
     },
   },
   {
@@ -14945,13 +14090,7 @@ return {
     name = "BOWTIE",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "binary",
-      "bowtie",
-      "join",
-      "natural",
-      "operator",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22C9",
@@ -15031,13 +14170,7 @@ return {
     name = "DOUBLE INTERSECTION",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "double",
-      "intersection",
-      "mathematics",
-      "operator",
-      "set",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22D3",
@@ -15087,13 +14220,7 @@ return {
     name = "VERY MUCH LESS-THAN",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "inequality",
-      "less-than",
-      "mathematics",
-      "much",
-      "very",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22D9",
@@ -15101,13 +14228,7 @@ return {
     name = "VERY MUCH GREATER-THAN",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "greater-than",
-      "inequality",
-      "mathematics",
-      "much",
-      "very",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22DA",
@@ -15267,18 +14388,7 @@ return {
     name = "DOES NOT CONTAIN AS NORMAL SUBGROUP OR EQUAL",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "as",
-      "contain",
-      "does",
-      "equal",
-      "group",
-      "mathematics",
-      "normal",
-      "not",
-      "subgroup",
-      "theory",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22EE",
@@ -15286,11 +14396,7 @@ return {
     name = "VERTICAL ELLIPSIS",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "ellipsis",
-      "mathematics",
-      "vertical",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22EF",
@@ -15298,11 +14404,7 @@ return {
     name = "MIDLINE HORIZONTAL ELLIPSIS",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "ellipsis",
-      "horizontal",
-      "midline",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22F0",
@@ -15310,13 +14412,7 @@ return {
     name = "UP RIGHT DIAGONAL ELLIPSIS",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "diagonal",
-      "ellipsis",
-      "mathematics",
-      "right",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22F1",
@@ -15324,13 +14420,7 @@ return {
     name = "DOWN RIGHT DIAGONAL ELLIPSIS",
     category = "Sm",
     block = "Mathematical Operators",
-    aliases = {
-      "diagonal",
-      "down",
-      "ellipsis",
-      "mathematics",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+22F2",
@@ -15459,8 +14549,8 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "from ISO 2047",
-      "symbol for End of Transmission",
+      "from iso 2047",
+      "symbol for end of transmission",
     },
   },
   {
@@ -15518,7 +14608,7 @@ return {
     category = "Ps",
     block = "Miscellaneous Technical",
     aliases = {
-      "APL upstile",
+      "apl upstile",
     },
   },
   {
@@ -15536,7 +14626,7 @@ return {
     category = "Ps",
     block = "Miscellaneous Technical",
     aliases = {
-      "APL downstile",
+      "apl downstile",
     },
   },
   {
@@ -15596,7 +14686,7 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "Kissen (pillow)",
+      "kissen (pillow)",
     },
   },
   {
@@ -15661,7 +14751,7 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "command key (1.0)",
-      "operating system key (ISO 9995-7)",
+      "operating system key (iso 9995-7)",
     },
   },
   {
@@ -15680,11 +14770,7 @@ return {
     name = "WATCH",
     category = "So",
     block = "Miscellaneous Technical",
-    aliases = {
-      "clock",
-      "time",
-      "watch",
-    },
+    aliases = {},
   },
   {
     code_point = "U+231B",
@@ -15694,11 +14780,6 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "alchemical symbol for hour",
-      "done",
-      "hourglass",
-      "sand",
-      "time",
-      "timer",
     },
   },
   {
@@ -15809,10 +14890,7 @@ return {
     name = "KEYBOARD",
     category = "So",
     block = "Miscellaneous Technical",
-    aliases = {
-      "computer",
-      "keyboard",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2329",
@@ -16495,8 +15573,8 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "from ISO 2047",
-      "symbol for Negative Acknowledge",
+      "from iso 2047",
+      "symbol for negative acknowledge",
     },
   },
   {
@@ -16514,8 +15592,8 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "from ISO 9995-7",
-      "keyboard symbol for No Break Space",
+      "from iso 9995-7",
+      "keyboard symbol for no break space",
     },
   },
   {
@@ -16525,7 +15603,7 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "from ISO 2047",
+      "from iso 2047",
     },
   },
   {
@@ -16535,8 +15613,8 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "from ISO 2047",
-      "symbol for End of Medium",
+      "from iso 2047",
+      "symbol for end of medium",
     },
   },
   {
@@ -17198,9 +16276,7 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "UI symbol to eject media",
-      "button",
-      "eject",
+      "ui symbol to eject media",
     },
   },
   {
@@ -17404,7 +16480,7 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "Algol-60 token for scientific notation literals",
+      "algol-60 token for scientific notation literals",
     },
   },
   {
@@ -17415,12 +16491,6 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "fast forward",
-      "arrow",
-      "button",
-      "double",
-      "fast",
-      "fast-forward",
-      "forward",
     },
   },
   {
@@ -17431,12 +16501,6 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "rewind, fast backwards",
-      "arrow",
-      "button",
-      "double",
-      "fast",
-      "reverse",
-      "rewind",
     },
   },
   {
@@ -17445,13 +16509,7 @@ return {
     name = "BLACK UP-POINTING DOUBLE TRIANGLE",
     category = "So",
     block = "Miscellaneous Technical",
-    aliases = {
-      "arrow",
-      "button",
-      "double",
-      "fast",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+23EC",
@@ -17459,13 +16517,7 @@ return {
     name = "BLACK DOWN-POINTING DOUBLE TRIANGLE",
     category = "So",
     block = "Miscellaneous Technical",
-    aliases = {
-      "arrow",
-      "button",
-      "double",
-      "down",
-      "fast",
-    },
+    aliases = {},
   },
   {
     code_point = "U+23ED",
@@ -17475,12 +16527,6 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "skip to the end or next file/track/chapter",
-      "arrow",
-      "button",
-      "next",
-      "scene",
-      "track",
-      "triangle",
     },
   },
   {
@@ -17491,13 +16537,6 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "skip to the start or previous file/track/chapter",
-      "arrow",
-      "button",
-      "last",
-      "previous",
-      "scene",
-      "track",
-      "triangle",
     },
   },
   {
@@ -17508,12 +16547,6 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "play/pause toggle",
-      "arrow",
-      "button",
-      "pause",
-      "play",
-      "right",
-      "triangle",
     },
   },
   {
@@ -17522,15 +16555,7 @@ return {
     name = "ALARM CLOCK",
     category = "So",
     block = "Miscellaneous Technical",
-    aliases = {
-      "alarm",
-      "clock",
-      "hours",
-      "hrs",
-      "late",
-      "time",
-      "waiting",
-    },
+    aliases = {},
   },
   {
     code_point = "U+23F1",
@@ -17538,11 +16563,7 @@ return {
     name = "STOPWATCH",
     category = "So",
     block = "Miscellaneous Technical",
-    aliases = {
-      "clock",
-      "stopwatch",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+23F2",
@@ -17550,10 +16571,7 @@ return {
     name = "TIMER CLOCK",
     category = "So",
     block = "Miscellaneous Technical",
-    aliases = {
-      "clock",
-      "timer",
-    },
+    aliases = {},
   },
   {
     code_point = "U+23F3",
@@ -17561,17 +16579,7 @@ return {
     name = "HOURGLASS WITH FLOWING SAND",
     category = "So",
     block = "Miscellaneous Technical",
-    aliases = {
-      "done",
-      "flowing",
-      "hourglass",
-      "hours",
-      "not",
-      "sand",
-      "timer",
-      "waiting",
-      "yolo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+23F4",
@@ -17580,8 +16588,8 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
+      "preferred to 25c0 black left-pointing triangle",
       "reverse, back",
-      "preferred to 25C0 black left-pointing triangle",
     },
   },
   {
@@ -17592,7 +16600,7 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "forward",
-      "preferred to 25B6 black right-pointing triangle",
+      "preferred to 25b6 black right-pointing triangle",
     },
   },
   {
@@ -17603,7 +16611,7 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "increase",
-      "preferred to 25B2 black up-pointing triangle",
+      "preferred to 25b2 black up-pointing triangle",
     },
   },
   {
@@ -17614,7 +16622,7 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "decrease",
-      "preferred to 25BC black down-pointing triangle",
+      "preferred to 25bc black down-pointing triangle",
     },
   },
   {
@@ -17625,11 +16633,6 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "pause",
-      "bar",
-      "button",
-      "double",
-      "pause",
-      "vertical",
     },
   },
   {
@@ -17639,9 +16642,6 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "stop",
-      "button",
-      "square",
       "stop",
     },
   },
@@ -17653,9 +16653,6 @@ return {
     block = "Miscellaneous Technical",
     aliases = {
       "record",
-      "button",
-      "circle",
-      "record",
     },
   },
   {
@@ -17665,8 +16662,8 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "IEC 5009 standby symbol",
-      "IEEE 1621 power symbol",
+      "iec 5009 standby symbol",
+      "ieee 1621 power symbol",
     },
   },
   {
@@ -17676,7 +16673,7 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "IEC 5010 power on-off symbol",
+      "iec 5010 power on-off symbol",
     },
   },
   {
@@ -17686,7 +16683,7 @@ return {
     category = "So",
     block = "Miscellaneous Technical",
     aliases = {
-      "use 2B58 for power off symbol",
+      "use 2b58 for power off symbol",
     },
   },
   {
@@ -18012,7 +17009,7 @@ return {
     category = "So",
     block = "Control Pictures",
     aliases = {
-      "from ISO 9995-7",
+      "from iso 9995-7",
       "keyboard symbol for undoable delete",
     },
   },
@@ -18023,7 +17020,7 @@ return {
     category = "So",
     block = "Control Pictures",
     aliases = {
-      "from ISO 2047",
+      "from iso 2047",
     },
   },
   {
@@ -18840,11 +17837,7 @@ return {
     name = "CIRCLED LATIN CAPITAL LETTER M",
     category = "So",
     block = "Enclosed Alphanumerics",
-    aliases = {
-      "circle",
-      "circled",
-      "M",
-    },
+    aliases = {},
   },
   {
     code_point = "U+24C3",
@@ -19341,7 +18334,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 15",
+      "videotex mosaic dg 15",
     },
   },
   {
@@ -19359,7 +18352,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 14",
+      "videotex mosaic dg 14",
     },
   },
   {
@@ -19441,7 +18434,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 16",
+      "videotex mosaic dg 16",
     },
   },
   {
@@ -19475,7 +18468,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 17",
+      "videotex mosaic dg 17",
     },
   },
   {
@@ -19509,7 +18502,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 18",
+      "videotex mosaic dg 18",
     },
   },
   {
@@ -19543,7 +18536,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 19",
+      "videotex mosaic dg 19",
     },
   },
   {
@@ -19577,7 +18570,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 20",
+      "videotex mosaic dg 20",
     },
   },
   {
@@ -19587,7 +18580,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 03",
+      "videotex mosaic dg 03",
     },
   },
   {
@@ -19645,7 +18638,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 21",
+      "videotex mosaic dg 21",
     },
   },
   {
@@ -19655,7 +18648,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 04",
+      "videotex mosaic dg 04",
     },
   },
   {
@@ -19713,7 +18706,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 22",
+      "videotex mosaic dg 22",
     },
   },
   {
@@ -19739,7 +18732,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 02",
+      "videotex mosaic dg 02",
     },
   },
   {
@@ -19781,7 +18774,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 23",
+      "videotex mosaic dg 23",
     },
   },
   {
@@ -19807,7 +18800,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 01",
+      "videotex mosaic dg 01",
     },
   },
   {
@@ -19849,7 +18842,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 24",
+      "videotex mosaic dg 24",
     },
   },
   {
@@ -19875,7 +18868,7 @@ return {
     category = "So",
     block = "Box Drawing",
     aliases = {
-      "Videotex Mosaic DG 13",
+      "videotex mosaic dg 13",
     },
   },
   {
@@ -20549,8 +19542,8 @@ return {
     category = "So",
     block = "Block Elements",
     aliases = {
-      "speckles fill, dotted fill",
       "50%",
+      "speckles fill, dotted fill",
       "used in mapping to cp949",
     },
   },
@@ -20668,8 +19661,6 @@ return {
     block = "Geometric Shapes",
     aliases = {
       "moding mark (in ideographic text)",
-      "filled",
-      "square",
     },
   },
   {
@@ -20679,12 +19670,10 @@ return {
     category = "So",
     block = "Geometric Shapes",
     aliases = {
-      "quadrature",
       "alchemical symbol for salt",
-      "used in astrological contexts for aspect square",
       "may be used to represent a missing ideograph",
-      "hollow",
-      "square",
+      "quadrature",
+      "used in astrological contexts for aspect square",
     },
   },
   {
@@ -20693,13 +19682,7 @@ return {
     name = "WHITE SQUARE WITH ROUNDED CORNERS",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "corners",
-      "hollow",
-      "rounded",
-      "square",
-      "with",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25A3",
@@ -20707,12 +19690,7 @@ return {
     name = "WHITE SQUARE CONTAINING BLACK SMALL SQUARE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "containing",
-      "filled",
-      "hollow",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25A4",
@@ -20720,12 +19698,7 @@ return {
     name = "SQUARE WITH HORIZONTAL FILL",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "fill",
-      "horizontal",
-      "square",
-      "with",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25A5",
@@ -20733,12 +19706,7 @@ return {
     name = "SQUARE WITH VERTICAL FILL",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "fill",
-      "square",
-      "vertical",
-      "with",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25A6",
@@ -20746,12 +19714,7 @@ return {
     name = "SQUARE WITH ORTHOGONAL CROSSHATCH FILL",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "crosshatch",
-      "fill",
-      "orthogonal",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25A7",
@@ -20759,14 +19722,7 @@ return {
     name = "SQUARE WITH UPPER LEFT TO LOWER RIGHT FILL",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "fill",
-      "left",
-      "lower",
-      "right",
-      "square",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25A8",
@@ -20774,14 +19730,7 @@ return {
     name = "SQUARE WITH UPPER RIGHT TO LOWER LEFT FILL",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "fill",
-      "left",
-      "lower",
-      "right",
-      "square",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25A9",
@@ -20789,12 +19738,7 @@ return {
     name = "SQUARE WITH DIAGONAL CROSSHATCH FILL",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "crosshatch",
-      "diagonal",
-      "fill",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25AA",
@@ -20804,10 +19748,6 @@ return {
     block = "Geometric Shapes",
     aliases = {
       "square bullet",
-      "black",
-      "geometric",
-      "small",
-      "square",
     },
   },
   {
@@ -20816,12 +19756,7 @@ return {
     name = "WHITE SMALL SQUARE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "geometric",
-      "small",
-      "square",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25AC",
@@ -20829,10 +19764,7 @@ return {
     name = "BLACK RECTANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "rectangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25AD",
@@ -20840,10 +19772,7 @@ return {
     name = "WHITE RECTANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "hollow",
-      "rectangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25AE",
@@ -20853,9 +19782,6 @@ return {
     block = "Geometric Shapes",
     aliases = {
       "histogram marker",
-      "filled",
-      "rectangle",
-      "vertical",
     },
   },
   {
@@ -20872,10 +19798,7 @@ return {
     name = "BLACK PARALLELOGRAM",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "parallelogram",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25B1",
@@ -20891,13 +19814,7 @@ return {
     name = "BLACK UP-POINTING TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "arrow",
-      "filled",
-      "triangle",
-      "up",
-      "up-pointing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25B3",
@@ -20907,9 +19824,6 @@ return {
     block = "Geometric Shapes",
     aliases = {
       "trine",
-      "hollow",
-      "triangle",
-      "up-pointing",
     },
   },
   {
@@ -20918,12 +19832,7 @@ return {
     name = "BLACK UP-POINTING SMALL TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "small",
-      "triangle",
-      "up-pointing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25B5",
@@ -20931,12 +19840,7 @@ return {
     name = "WHITE UP-POINTING SMALL TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "hollow",
-      "small",
-      "triangle",
-      "up-pointing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25B6",
@@ -20944,13 +19848,7 @@ return {
     name = "BLACK RIGHT-POINTING TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "arrow",
-      "button",
-      "play",
-      "right",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25B7",
@@ -20960,9 +19858,6 @@ return {
     block = "Geometric Shapes",
     aliases = {
       "z notation range restriction",
-      "hollow",
-      "right-pointing",
-      "triangle",
     },
   },
   {
@@ -20971,12 +19866,7 @@ return {
     name = "BLACK RIGHT-POINTING SMALL TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "right-pointing",
-      "small",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25B9",
@@ -20984,12 +19874,7 @@ return {
     name = "WHITE RIGHT-POINTING SMALL TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "hollow",
-      "right-pointing",
-      "small",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25BA",
@@ -20997,11 +19882,7 @@ return {
     name = "BLACK RIGHT-POINTING POINTER",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "pointer",
-      "right-pointing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25BB",
@@ -21011,9 +19892,6 @@ return {
     block = "Geometric Shapes",
     aliases = {
       "forward arrow indicator",
-      "hollow",
-      "pointer",
-      "right-pointing",
     },
   },
   {
@@ -21022,13 +19900,7 @@ return {
     name = "BLACK DOWN-POINTING TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "arrow",
-      "down",
-      "down-pointing",
-      "filled",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25BD",
@@ -21037,10 +19909,7 @@ return {
     category = "So",
     block = "Geometric Shapes",
     aliases = {
-      "Hamilton operator",
-      "down-pointing",
-      "hollow",
-      "triangle",
+      "hamilton operator",
     },
   },
   {
@@ -21049,12 +19918,7 @@ return {
     name = "BLACK DOWN-POINTING SMALL TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "down-pointing",
-      "filled",
-      "small",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25BF",
@@ -21062,12 +19926,7 @@ return {
     name = "WHITE DOWN-POINTING SMALL TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "down-pointing",
-      "hollow",
-      "small",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25C0",
@@ -21075,13 +19934,7 @@ return {
     name = "BLACK LEFT-POINTING TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "arrow",
-      "button",
-      "left",
-      "reverse",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25C1",
@@ -21091,9 +19944,6 @@ return {
     block = "Geometric Shapes",
     aliases = {
       "z notation domain restriction",
-      "hollow",
-      "left-pointing",
-      "triangle",
     },
   },
   {
@@ -21102,12 +19952,7 @@ return {
     name = "BLACK LEFT-POINTING SMALL TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "left-pointing",
-      "small",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25C3",
@@ -21115,12 +19960,7 @@ return {
     name = "WHITE LEFT-POINTING SMALL TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "hollow",
-      "left-pointing",
-      "small",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25C4",
@@ -21128,11 +19968,7 @@ return {
     name = "BLACK LEFT-POINTING POINTER",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "left-pointing",
-      "pointer",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25C5",
@@ -21142,9 +19978,6 @@ return {
     block = "Geometric Shapes",
     aliases = {
       "backward arrow indicator",
-      "hollow",
-      "left-pointing",
-      "pointer",
     },
   },
   {
@@ -21153,10 +19986,7 @@ return {
     name = "BLACK DIAMOND",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "diamond",
-      "filled",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25C7",
@@ -21164,10 +19994,7 @@ return {
     name = "WHITE DIAMOND",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "diamond",
-      "hollow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25C8",
@@ -21175,12 +20002,7 @@ return {
     name = "WHITE DIAMOND CONTAINING BLACK SMALL DIAMOND",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "containing",
-      "diamond",
-      "filled",
-      "hollow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25C9",
@@ -21189,17 +20011,7 @@ return {
     category = "So",
     block = "Geometric Shapes",
     aliases = {
-      "tainome (Japanese, a kind of bullet)",
-      "cicles",
-      "circle",
-      "circled",
-      "concentric",
-      "containing",
-      "dot",
-      "filled",
-      "fisheye",
-      "hollow",
-      "ward",
+      "tainome (japanese, a kind of bullet)",
     },
   },
   {
@@ -21208,11 +20020,7 @@ return {
     name = "LOZENGE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "diamond",
-      "lozenge",
-      "rhombus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25CB",
@@ -21220,11 +20028,7 @@ return {
     name = "WHITE CIRCLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "hollow",
-      "ring",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25CC",
@@ -21232,10 +20036,7 @@ return {
     name = "DOTTED CIRCLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "dotted",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25CD",
@@ -21243,12 +20044,7 @@ return {
     name = "CIRCLE WITH VERTICAL FILL",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "fill",
-      "vertical",
-      "with",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25CE",
@@ -21256,13 +20052,7 @@ return {
     name = "BULLSEYE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "circles",
-      "concentric",
-      "double",
-      "target",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25CF",
@@ -21270,10 +20060,7 @@ return {
     name = "BLACK CIRCLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "filled",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D0",
@@ -21281,12 +20068,7 @@ return {
     name = "CIRCLE WITH LEFT HALF BLACK",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "filled",
-      "half",
-      "left",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D1",
@@ -21294,12 +20076,7 @@ return {
     name = "CIRCLE WITH RIGHT HALF BLACK",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "filled",
-      "half",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D2",
@@ -21307,12 +20084,7 @@ return {
     name = "CIRCLE WITH LOWER HALF BLACK",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "filled",
-      "half",
-      "lower",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D3",
@@ -21320,12 +20092,7 @@ return {
     name = "CIRCLE WITH UPPER HALF BLACK",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "filled",
-      "half",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D4",
@@ -21333,13 +20100,7 @@ return {
     name = "CIRCLE WITH UPPER RIGHT QUADRANT BLACK",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "filled",
-      "quadrant",
-      "right",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D5",
@@ -21347,15 +20108,7 @@ return {
     name = "CIRCLE WITH ALL BUT UPPER LEFT QUADRANT BLACK",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "all",
-      "but",
-      "circle",
-      "filled",
-      "left",
-      "quadrant",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D6",
@@ -21363,12 +20116,7 @@ return {
     name = "LEFT HALF BLACK CIRCLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "filled",
-      "half",
-      "left",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D7",
@@ -21376,12 +20124,7 @@ return {
     name = "RIGHT HALF BLACK CIRCLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "filled",
-      "half",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D8",
@@ -21389,10 +20132,7 @@ return {
     name = "INVERSE BULLET",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "bullet",
-      "inverse",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25D9",
@@ -21400,14 +20140,7 @@ return {
     name = "INVERSE WHITE CIRCLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "containing",
-      "filled",
-      "hollow",
-      "inverse",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25DA",
@@ -21431,13 +20164,7 @@ return {
     name = "UPPER LEFT QUADRANT CIRCULAR ARC",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "arc",
-      "circular",
-      "left",
-      "quadrant",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25DD",
@@ -21445,13 +20172,7 @@ return {
     name = "UPPER RIGHT QUADRANT CIRCULAR ARC",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "arc",
-      "circular",
-      "quadrant",
-      "right",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25DE",
@@ -21459,13 +20180,7 @@ return {
     name = "LOWER RIGHT QUADRANT CIRCULAR ARC",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "arc",
-      "circular",
-      "lower",
-      "quadrant",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25DF",
@@ -21473,13 +20188,7 @@ return {
     name = "LOWER LEFT QUADRANT CIRCULAR ARC",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "arc",
-      "circular",
-      "left",
-      "lower",
-      "quadrant",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25E0",
@@ -21487,11 +20196,7 @@ return {
     name = "UPPER HALF CIRCLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "half",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25E1",
@@ -21499,11 +20204,7 @@ return {
     name = "LOWER HALF CIRCLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "half",
-      "lower",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25E2",
@@ -21511,12 +20212,7 @@ return {
     name = "BLACK LOWER RIGHT TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "lower",
-      "right",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25E3",
@@ -21524,12 +20220,7 @@ return {
     name = "BLACK LOWER LEFT TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "left",
-      "lower",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25E4",
@@ -21537,12 +20228,7 @@ return {
     name = "BLACK UPPER LEFT TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "left",
-      "triangle",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25E5",
@@ -21550,12 +20236,7 @@ return {
     name = "BLACK UPPER RIGHT TRIANGLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "filled",
-      "right",
-      "triangle",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25E6",
@@ -21563,10 +20244,7 @@ return {
     name = "WHITE BULLET",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "bullet",
-      "hollow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25E7",
@@ -21638,12 +20316,7 @@ return {
     name = "LARGE CIRCLE",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "hollow",
-      "large",
-      "ring",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25F0",
@@ -21675,13 +20348,7 @@ return {
     name = "WHITE SQUARE WITH UPPER RIGHT QUADRANT",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "hollow",
-      "quadrant",
-      "right",
-      "square",
-      "upper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25F4",
@@ -21713,14 +20380,7 @@ return {
     name = "WHITE CIRCLE WITH UPPER RIGHT QUADRANT",
     category = "So",
     block = "Geometric Shapes",
-    aliases = {
-      "circle",
-      "hollow",
-      "quadrant",
-      "right",
-      "upper",
-      "with",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25F8",
@@ -21754,10 +20414,6 @@ return {
     block = "Geometric Shapes",
     aliases = {
       "always (modal operator)",
-      "geometric",
-      "medium",
-      "square",
-      "white",
     },
   },
   {
@@ -21766,12 +20422,7 @@ return {
     name = "BLACK MEDIUM SQUARE",
     category = "Sm",
     block = "Geometric Shapes",
-    aliases = {
-      "black",
-      "geometric",
-      "medium",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25FD",
@@ -21779,12 +20430,7 @@ return {
     name = "WHITE MEDIUM SMALL SQUARE",
     category = "Sm",
     block = "Geometric Shapes",
-    aliases = {
-      "geometric",
-      "medium-small",
-      "square",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25FE",
@@ -21792,12 +20438,7 @@ return {
     name = "BLACK MEDIUM SMALL SQUARE",
     category = "Sm",
     block = "Geometric Shapes",
-    aliases = {
-      "black",
-      "geometric",
-      "medium-small",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+25FF",
@@ -21805,11 +20446,7 @@ return {
     name = "LOWER RIGHT TRIANGLE",
     category = "Sm",
     block = "Geometric Shapes",
-    aliases = {
-      "lower",
-      "right",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2600",
@@ -21819,12 +20456,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "clear weather",
-      "bright",
-      "rays",
-      "space",
-      "sun",
-      "sunny",
-      "weather",
     },
   },
   {
@@ -21835,8 +20466,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "cloudy weather",
-      "cloud",
-      "weather",
     },
   },
   {
@@ -21847,9 +20476,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "rainy weather",
-      "clothing",
-      "rain",
-      "umbrella",
     },
   },
   {
@@ -21860,10 +20486,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "snowy weather",
-      "cold",
-      "man",
-      "snow",
-      "snowman",
     },
   },
   {
@@ -21872,10 +20494,7 @@ return {
     name = "COMET",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "comet",
-      "space",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2605",
@@ -21963,10 +20582,7 @@ return {
     name = "BLACK TELEPHONE",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "phone",
-      "telephone",
-    },
+    aliases = {},
   },
   {
     code_point = "U+260F",
@@ -21990,16 +20606,7 @@ return {
     name = "BALLOT BOX WITH CHECK",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "✓",
-      "ballot",
-      "box",
-      "check",
-      "checked",
-      "done",
-      "off",
-      "tick",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2612",
@@ -22016,7 +20623,7 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "St. Andrew's Cross",
+      "st. andrew's cross",
     },
   },
   {
@@ -22027,12 +20634,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "showery weather",
-      "clothing",
-      "drop",
-      "drops",
-      "rain",
-      "umbrella",
-      "weather",
     },
   },
   {
@@ -22042,18 +20643,8 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "tea or coffee, depending on locale",
       "can be used to indicate a wait",
-      "beverage",
-      "cafe",
-      "caffeine",
-      "chai",
-      "coffee",
-      "drink",
-      "hot",
-      "morning",
-      "steaming",
-      "tea",
+      "tea or coffee, depending on locale",
     },
   },
   {
@@ -22078,11 +20669,7 @@ return {
     name = "SHAMROCK",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "irish",
-      "plant",
-      "shamrock",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2619",
@@ -22124,15 +20711,7 @@ return {
     name = "WHITE UP POINTING INDEX",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "finger",
-      "hand",
-      "index",
-      "point",
-      "pointing",
-      "this",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+261E",
@@ -22160,13 +20739,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "poison",
-      "bone",
-      "crossbones",
-      "dead",
-      "death",
-      "face",
-      "monster",
-      "skull",
     },
   },
   {
@@ -22183,10 +20755,7 @@ return {
     name = "RADIOACTIVE SIGN",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "radioactive",
-      "sign",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2623",
@@ -22194,10 +20763,7 @@ return {
     name = "BIOHAZARD SIGN",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "biohazard",
-      "sign",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2624",
@@ -22221,12 +20787,7 @@ return {
     name = "ORTHODOX CROSS",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "Christian",
-      "cross",
-      "orthodox",
-      "religion",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2627",
@@ -22235,7 +20796,7 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "Constantine's cross, Christogram",
+      "constantine's cross, christogram",
     },
   },
   {
@@ -22262,14 +20823,7 @@ return {
     name = "STAR AND CRESCENT",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "crescent",
-      "islam",
-      "Muslim",
-      "ramadan",
-      "religion",
-      "star",
-    },
+    aliases = {},
   },
   {
     code_point = "U+262B",
@@ -22289,7 +20843,7 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "khanda",
-      "Sikh religious symbol",
+      "sikh religious symbol",
     },
   },
   {
@@ -22306,12 +20860,7 @@ return {
     name = "PEACE SYMBOL",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "healing",
-      "peace",
-      "peaceful",
-      "symbol",
-    },
+    aliases = {},
   },
   {
     code_point = "U+262F",
@@ -22319,17 +20868,7 @@ return {
     name = "YIN YANG",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "difficult",
-      "lives",
-      "religion",
-      "tao",
-      "taoist",
-      "total",
-      "yang",
-      "yin",
-      "yinyang",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2630",
@@ -22417,12 +20956,7 @@ return {
     name = "WHEEL OF DHARMA",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "Buddhist",
-      "dharma",
-      "religion",
-      "wheel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2639",
@@ -22430,12 +20964,7 @@ return {
     name = "WHITE FROWNING FACE",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "face",
-      "frown",
-      "frowning",
-      "sad",
-    },
+    aliases = {},
   },
   {
     code_point = "U+263A",
@@ -22445,12 +20974,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "have a nice day!",
-      "face",
-      "happy",
-      "outlined",
-      "relaxed",
-      "smile",
-      "smiling",
     },
   },
   {
@@ -22509,11 +21032,8 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "Venus",
       "alchemical symbol for copper",
-      "female",
-      "sign",
-      "woman",
+      "venus",
     },
   },
   {
@@ -22533,11 +21053,8 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "Mars",
       "alchemical symbol for iron",
-      "male",
-      "man",
-      "sign",
+      "mars",
     },
   },
   {
@@ -22592,12 +21109,7 @@ return {
     name = "ARIES",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "Aries",
-      "horoscope",
-      "ram",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2649",
@@ -22605,13 +21117,7 @@ return {
     name = "TAURUS",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "bull",
-      "horoscope",
-      "ox",
-      "Taurus",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+264A",
@@ -22619,12 +21125,7 @@ return {
     name = "GEMINI",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "Gemini",
-      "horoscope",
-      "twins",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+264B",
@@ -22632,12 +21133,7 @@ return {
     name = "CANCER",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "Cancer",
-      "crab",
-      "horoscope",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+264C",
@@ -22645,12 +21141,7 @@ return {
     name = "LEO",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "horoscope",
-      "Leo",
-      "lion",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+264D",
@@ -22660,9 +21151,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "minim (alternate glyph)",
-      "horoscope",
-      "Virgo",
-      "zodiac",
     },
   },
   {
@@ -22671,14 +21159,7 @@ return {
     name = "LIBRA",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "balance",
-      "horoscope",
-      "justice",
-      "Libra",
-      "scales",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+264F",
@@ -22687,13 +21168,8 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "Scorpio",
       "minim, drop",
-      "horoscope",
-      "Scorpio",
-      "scorpion",
-      "Scorpius",
-      "zodiac",
+      "scorpio",
     },
   },
   {
@@ -22702,12 +21178,7 @@ return {
     name = "SAGITTARIUS",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "archer",
-      "horoscope",
-      "Sagittarius",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2651",
@@ -22715,12 +21186,7 @@ return {
     name = "CAPRICORN",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "Capricorn",
-      "goat",
-      "horoscope",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2652",
@@ -22728,13 +21194,7 @@ return {
     name = "AQUARIUS",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "Aquarius",
-      "bearer",
-      "horoscope",
-      "water",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2653",
@@ -22742,12 +21202,7 @@ return {
     name = "PISCES",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "fish",
-      "horoscope",
-      "Pisces",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2654",
@@ -22843,12 +21298,7 @@ return {
     name = "BLACK CHESS PAWN",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "chess",
-      "dupe",
-      "expendable",
-      "pawn",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2660",
@@ -22856,12 +21306,7 @@ return {
     name = "BLACK SPADE SUIT",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "card",
-      "game",
-      "spade",
-      "suit",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2661",
@@ -22885,13 +21330,7 @@ return {
     name = "BLACK CLUB SUIT",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "card",
-      "club",
-      "clubs",
-      "game",
-      "suit",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2664",
@@ -22909,12 +21348,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "valentine",
-      "card",
-      "emotion",
-      "game",
-      "heart",
-      "hearts",
-      "suit",
     },
   },
   {
@@ -22923,12 +21356,7 @@ return {
     name = "BLACK DIAMOND SUIT",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "card",
-      "diamond",
-      "game",
-      "suit",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2667",
@@ -22944,12 +21372,7 @@ return {
     name = "HOT SPRINGS",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "hot",
-      "hotsprings",
-      "springs",
-      "steaming",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2669",
@@ -22969,9 +21392,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "quaver",
-      "eighth",
-      "music",
-      "note",
     },
   },
   {
@@ -23000,12 +21420,7 @@ return {
     name = "MUSIC FLAT SIGN",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "bemolle",
-      "flat",
-      "music",
-      "note",
-    },
+    aliases = {},
   },
   {
     code_point = "U+266E",
@@ -23023,11 +21438,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "z notation infix bag count",
-      "dièse",
-      "diesis",
-      "music",
-      "note",
-      "sharp",
     },
   },
   {
@@ -23138,11 +21548,7 @@ return {
     name = "BLACK UNIVERSAL RECYCLING SYMBOL",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "recycle",
-      "recycling",
-      "symbol",
-    },
+    aliases = {},
   },
   {
     code_point = "U+267C",
@@ -23170,10 +21576,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "non-acid paper",
-      "forever",
-      "infinity",
-      "unbounded",
-      "universal",
     },
   },
   {
@@ -23184,10 +21586,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "accessible place",
-      "access",
-      "handicap",
-      "symbol",
-      "wheelchair",
     },
   },
   {
@@ -23342,9 +21740,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "mining, working day (in timetables)",
-      "hammer",
-      "pick",
-      "tool",
     },
   },
   {
@@ -23355,9 +21750,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "nautical term, harbor (on maps)",
-      "anchor",
-      "ship",
-      "tool",
     },
   },
   {
@@ -23368,9 +21760,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "military term, battleground (on maps), killed in action",
-      "crossed",
-      "swords",
-      "weapon",
     },
   },
   {
@@ -23381,11 +21770,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "medical term",
-      "aesculapius",
-      "medical",
-      "medicine",
-      "staff",
-      "symbol",
     },
   },
   {
@@ -23396,14 +21780,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "legal term, jurisprudence",
-      "balance",
-      "justice",
-      "Libra",
-      "scale",
-      "scales",
-      "tool",
-      "weight",
-      "zodiac",
     },
   },
   {
@@ -23414,9 +21790,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "chemical term, chemistry",
-      "alembic",
-      "chemistry",
-      "tool",
     },
   },
   {
@@ -23437,10 +21810,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "technology, tools",
-      "cog",
-      "cogwheel",
-      "gear",
-      "tool",
     },
   },
   {
@@ -23450,8 +21819,8 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "signifies a commercial term or commerce",
       "glyph shows a heraldic staff with a winged wheel",
+      "signifies a commercial term or commerce",
     },
   },
   {
@@ -23462,9 +21831,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "nuclear installation (on maps)",
-      "atheist",
-      "atom",
-      "symbol",
     },
   },
   {
@@ -23473,10 +21839,7 @@ return {
     name = "FLEUR-DE-LIS",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "fleur-de-lis",
-      "knights",
-    },
+    aliases = {},
   },
   {
     code_point = "U+269D",
@@ -23512,10 +21875,7 @@ return {
     name = "WARNING SIGN",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "caution",
-      "warning",
-    },
+    aliases = {},
   },
   {
     code_point = "U+26A1",
@@ -23524,18 +21884,8 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "thunder",
       "lightning symbol",
-      "danger",
-      "electric",
-      "electricity",
-      "high",
-      "lightning",
-      "nature",
       "thunder",
-      "thunderbolt",
-      "voltage",
-      "zap",
     },
   },
   {
@@ -23575,8 +21925,8 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "intersex, androgynous",
       "hermaphroditic (in botany)",
+      "intersex, androgynous",
     },
   },
   {
@@ -23586,8 +21936,8 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "transgender",
       "alchemical symbol for iron or crocus of iron",
+      "transgender",
     },
   },
   {
@@ -23597,8 +21947,6 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "transgender",
-      "symbol",
       "transgender",
     },
   },
@@ -23630,11 +21978,8 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "asexuality, sexless, genderless",
-      "engaged, betrothed",
       "base for male or female sign",
-      "circle",
-      "geometric",
-      "white",
+      "engaged, betrothed",
     },
   },
   {
@@ -23644,10 +21989,7 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "UI symbol for record function",
-      "black",
-      "circle",
-      "geometric",
+      "ui symbol for record function",
     },
   },
   {
@@ -23657,8 +21999,8 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "engaged, betrothed (genealogy)",
       "can represent wedding ring",
+      "engaged, betrothed (genealogy)",
     },
   },
   {
@@ -23693,10 +22035,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "buried (genealogy)",
-      "coffin",
-      "dead",
-      "death",
-      "vampire",
     },
   },
   {
@@ -23707,10 +22045,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "cremated (genealogy)",
-      "ashes",
-      "death",
-      "funeral",
-      "urn",
     },
   },
   {
@@ -23815,13 +22149,7 @@ return {
     name = "SOCCER BALL",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "ball",
-      "football",
-      "futbol",
-      "soccer",
-      "sport",
-    },
+    aliases = {},
   },
   {
     code_point = "U+26BE",
@@ -23829,11 +22157,7 @@ return {
     name = "BASEBALL",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "ball",
-      "baseball",
-      "sport",
-    },
+    aliases = {},
   },
   {
     code_point = "U+26BF",
@@ -23885,10 +22209,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "light snow",
-      "cold",
-      "man",
-      "snow",
-      "snowman",
     },
   },
   {
@@ -23899,11 +22219,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "partly cloudy",
-      "behind",
-      "cloud",
-      "cloudy",
-      "sun",
-      "weather",
     },
   },
   {
@@ -23933,11 +22248,6 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "thunderstorm",
-      "cloud",
-      "lightning",
-      "rain",
-      "thunder",
       "thunderstorm",
     },
   },
@@ -23989,13 +22299,7 @@ return {
     name = "OPHIUCHUS",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "bearer",
-      "Ophiuchus",
-      "serpent",
-      "snake",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+26CF",
@@ -24005,10 +22309,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "under construction",
-      "hammer",
-      "mining",
-      "pick",
-      "tool",
     },
   },
   {
@@ -24029,13 +22329,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "maintenance",
-      "aid",
-      "cross",
-      "face",
-      "hat",
-      "helmet",
-      "rescue",
-      "worker’s",
     },
   },
   {
@@ -24056,14 +22349,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "tyre chains required",
-      "break",
-      "breaking",
-      "broken",
-      "chain",
-      "cuffs",
-      "freedom",
-      "chain",
-      "chains",
     },
   },
   {
@@ -24072,17 +22357,7 @@ return {
     name = "NO ENTRY",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "do",
-      "entry",
-      "fail",
-      "forbidden",
-      "no",
-      "not",
-      "pass",
-      "prohibited",
-      "traffic",
-    },
+    aliases = {},
   },
   {
     code_point = "U+26D5",
@@ -24242,7 +22517,7 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "symbol of various countries, including Morocco",
+      "symbol of various countries, including morocco",
     },
   },
   {
@@ -24252,7 +22527,7 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "symbol of various countries, including Ethiopia",
+      "symbol of various countries, including ethiopia",
     },
   },
   {
@@ -24281,9 +22556,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "torii",
-      "religion",
-      "shinto",
-      "shrine",
     },
   },
   {
@@ -24292,14 +22564,7 @@ return {
     name = "CHURCH",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "bless",
-      "chapel",
-      "Christian",
-      "church",
-      "cross",
-      "religion",
-    },
+    aliases = {},
   },
   {
     code_point = "U+26EB",
@@ -24351,9 +22616,7 @@ return {
     name = "MOUNTAIN",
     category = "So",
     block = "Miscellaneous Symbols",
-    aliases = {
-      "mountain",
-    },
+    aliases = {},
   },
   {
     code_point = "U+26F1",
@@ -24363,10 +22626,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "bathing beach",
-      "ground",
-      "rain",
-      "sun",
-      "umbrella",
     },
   },
   {
@@ -24377,7 +22636,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "park",
-      "fountain",
     },
   },
   {
@@ -24388,10 +22646,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "golf course",
-      "flag",
-      "golf",
-      "hole",
-      "sport",
     },
   },
   {
@@ -24402,9 +22656,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "ferry boat terminal",
-      "boat",
-      "ferry",
-      "passenger",
     },
   },
   {
@@ -24415,12 +22666,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "marina or yacht harbour",
-      "boat",
-      "resort",
-      "sailboat",
-      "sailing",
-      "sea",
-      "yacht",
     },
   },
   {
@@ -24441,9 +22686,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "ski resort",
-      "ski",
-      "skier",
-      "snow",
     },
   },
   {
@@ -24454,9 +22696,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "ice skating rink",
-      "ice",
-      "skate",
-      "skating",
     },
   },
   {
@@ -24467,36 +22706,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "track and field, gymnasium",
-      "athletic",
-      "ball",
-      "basketball",
-      "bouncing",
-      "championship",
-      "dribble",
-      "net",
-      "person",
-      "player",
-      "throw",
-      "athletic",
-      "ball",
-      "basketball",
-      "bouncing",
-      "championship",
-      "dribble",
-      "man",
-      "net",
-      "player",
-      "throw",
-      "athletic",
-      "ball",
-      "basketball",
-      "bouncing",
-      "championship",
-      "dribble",
-      "net",
-      "player",
-      "throw",
-      "woman",
     },
   },
   {
@@ -24507,8 +22716,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "camping site",
-      "camping",
-      "tent",
     },
   },
   {
@@ -24537,13 +22744,6 @@ return {
     block = "Miscellaneous Symbols",
     aliases = {
       "petrol station, gas station",
-      "diesel",
-      "fuel",
-      "fuelpump",
-      "gas",
-      "gasoline",
-      "pump",
-      "station",
     },
   },
   {
@@ -24563,7 +22763,7 @@ return {
     category = "So",
     block = "Miscellaneous Symbols",
     aliases = {
-      "Japanese self-defence force site",
+      "japanese self-defence force site",
     },
   },
   {
@@ -24590,13 +22790,7 @@ return {
     name = "BLACK SCISSORS",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "cut",
-      "cutting",
-      "paper",
-      "scissors",
-      "tool",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2703",
@@ -24620,19 +22814,7 @@ return {
     name = "WHITE HEAVY CHECK MARK",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "✓",
-      "button",
-      "check",
-      "checked",
-      "checkmark",
-      "complete",
-      "completed",
-      "done",
-      "fixed",
-      "mark",
-      "tick",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2706",
@@ -24656,15 +22838,7 @@ return {
     name = "AIRPLANE",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "aeroplane",
-      "airplane",
-      "fly",
-      "flying",
-      "jet",
-      "plane",
-      "travel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2709",
@@ -24674,10 +22848,6 @@ return {
     block = "Dingbats",
     aliases = {
       "sealed envelope",
-      "e-mail",
-      "email",
-      "envelope",
-      "letter",
     },
   },
   {
@@ -24687,13 +22857,7 @@ return {
     category = "So",
     block = "Dingbats",
     aliases = {
-      "rock in Rock, Paper, Scissors game",
-      "clenched",
-      "fist",
-      "hand",
-      "punch",
-      "raised",
-      "solidarity",
+      "rock in rock, paper, scissors game",
     },
   },
   {
@@ -24703,13 +22867,7 @@ return {
     category = "So",
     block = "Dingbats",
     aliases = {
-      "paper in Rock, Paper, Scissors game",
-      "5",
-      "five",
-      "hand",
-      "high",
-      "raised",
-      "stop",
+      "paper in rock, paper, scissors game",
     },
   },
   {
@@ -24719,11 +22877,7 @@ return {
     category = "So",
     block = "Dingbats",
     aliases = {
-      "scissors in Rock, Paper, Scissors game",
-      "hand",
-      "peace",
-      "v",
-      "victory",
+      "scissors in rock, paper, scissors game",
     },
   },
   {
@@ -24732,11 +22886,7 @@ return {
     name = "WRITING HAND",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "hand",
-      "write",
-      "writing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+270E",
@@ -24752,9 +22902,7 @@ return {
     name = "PENCIL",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "pencil",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2710",
@@ -24778,11 +22926,7 @@ return {
     name = "BLACK NIB",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "black",
-      "nib",
-      "pen",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2713",
@@ -24798,16 +22942,7 @@ return {
     name = "HEAVY CHECK MARK",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "✓",
-      "check",
-      "checked",
-      "checkmark",
-      "done",
-      "heavy",
-      "mark",
-      "tick",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2715",
@@ -24823,14 +22958,7 @@ return {
     name = "HEAVY MULTIPLICATION X",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "×",
-      "cancel",
-      "multiplication",
-      "multiply",
-      "sign",
-      "x",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2717",
@@ -24886,13 +23014,7 @@ return {
     name = "LATIN CROSS",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "christ",
-      "Christian",
-      "cross",
-      "latin",
-      "religion",
-    },
+    aliases = {},
   },
   {
     code_point = "U+271E",
@@ -24924,14 +23046,7 @@ return {
     name = "STAR OF DAVID",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "David",
-      "Jew",
-      "Jewish",
-      "judaism",
-      "religion",
-      "star",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2722",
@@ -24987,13 +23102,7 @@ return {
     name = "SPARKLES",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "*",
-      "magic",
-      "sparkle",
-      "sparkles",
-      "star",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2729",
@@ -25081,11 +23190,7 @@ return {
     name = "EIGHT SPOKED ASTERISK",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "*",
-      "asterisk",
-      "eight-spoked",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2734",
@@ -25093,11 +23198,7 @@ return {
     name = "EIGHT POINTED BLACK STAR",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "*",
-      "eight-pointed",
-      "star",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2735",
@@ -25227,12 +23328,7 @@ return {
     name = "SNOWFLAKE",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "cold",
-      "snow",
-      "snowflake",
-      "weather",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2745",
@@ -25256,10 +23352,7 @@ return {
     name = "SPARKLE",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "*",
-      "sparkle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2748",
@@ -25304,14 +23397,7 @@ return {
     category = "So",
     block = "Dingbats",
     aliases = {
-      "forms a game tally pair with 2B55",
-      "×",
-      "cancel",
-      "cross",
-      "mark",
-      "multiplication",
-      "multiply",
-      "x",
+      "forms a game tally pair with 2b55",
     },
   },
   {
@@ -25328,16 +23414,7 @@ return {
     name = "NEGATIVE SQUARED CROSS MARK",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "×",
-      "button",
-      "cross",
-      "mark",
-      "multiplication",
-      "multiply",
-      "square",
-      "x",
-    },
+    aliases = {},
   },
   {
     code_point = "U+274F",
@@ -25377,13 +23454,7 @@ return {
     name = "BLACK QUESTION MARK ORNAMENT",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "?",
-      "mark",
-      "punctuation",
-      "question",
-      "red",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2754",
@@ -25391,14 +23462,7 @@ return {
     name = "WHITE QUESTION MARK ORNAMENT",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "?",
-      "mark",
-      "outlined",
-      "punctuation",
-      "question",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2755",
@@ -25406,14 +23470,7 @@ return {
     name = "WHITE EXCLAMATION MARK ORNAMENT",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "!",
-      "exclamation",
-      "mark",
-      "outlined",
-      "punctuation",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2756",
@@ -25430,12 +23487,7 @@ return {
     category = "So",
     block = "Dingbats",
     aliases = {
-      "obstacles on the road, ARIB STD B24",
-      "!",
-      "exclamation",
-      "mark",
-      "punctuation",
-      "red",
+      "obstacles on the road, arib std b24",
     },
   },
   {
@@ -25532,13 +23584,7 @@ return {
     name = "HEAVY HEART EXCLAMATION MARK ORNAMENT",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "exclamation",
-      "heart",
-      "heavy",
-      "mark",
-      "punctuation",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2764",
@@ -25546,25 +23592,7 @@ return {
     name = "HEAVY BLACK HEART",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "burn",
-      "fire",
-      "heart",
-      "love",
-      "lust",
-      "sacred",
-      "healthier",
-      "heart",
-      "improving",
-      "mending",
-      "recovering",
-      "recuperating",
-      "well",
-      "emotion",
-      "heart",
-      "love",
-      "red",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2765",
@@ -25581,7 +23609,7 @@ return {
     category = "So",
     block = "Dingbats",
     aliases = {
-      "Aldus leaf",
+      "aldus leaf",
     },
   },
   {
@@ -25960,10 +23988,7 @@ return {
     name = "HEAVY PLUS SIGN",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "+",
-      "plus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2796",
@@ -25971,14 +23996,7 @@ return {
     name = "HEAVY MINUS SIGN",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "-",
-      "−",
-      "heavy",
-      "math",
-      "minus",
-      "sign",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2797",
@@ -25986,14 +24004,7 @@ return {
     name = "HEAVY DIVISION SIGN",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "÷",
-      "divide",
-      "division",
-      "heavy",
-      "math",
-      "sign",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2798",
@@ -26073,13 +24084,7 @@ return {
     name = "BLACK RIGHTWARDS ARROW",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "arrow",
-      "cardinal",
-      "direction",
-      "east",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+27A2",
@@ -26201,9 +24206,6 @@ return {
     block = "Dingbats",
     aliases = {
       "kururi",
-      "curl",
-      "curly",
-      "loop",
     },
   },
   {
@@ -26324,12 +24326,7 @@ return {
     name = "DOUBLE CURLY LOOP",
     category = "So",
     block = "Dingbats",
-    aliases = {
-      "curl",
-      "curly",
-      "double",
-      "loop",
-    },
+    aliases = {},
   },
   {
     code_point = "U+27C0",
@@ -26338,7 +24335,7 @@ return {
     category = "Sm",
     block = "Misc Mathematical Symbols-A",
     aliases = {
-      "used by Euclid",
+      "used by euclid",
     },
   },
   {
@@ -26348,7 +24345,7 @@ return {
     category = "Sm",
     block = "Misc Mathematical Symbols-A",
     aliases = {
-      "used by Euclid",
+      "used by euclid",
     },
   },
   {
@@ -26463,10 +24460,10 @@ return {
     category = "Sm",
     block = "Misc Mathematical Symbols-A",
     aliases = {
-      "box min",
-      "morphological min product operator",
-      "morphological erosion operator",
       "additive minimum operator",
+      "box min",
+      "morphological erosion operator",
+      "morphological min product operator",
     },
   },
   {
@@ -26476,10 +24473,10 @@ return {
     category = "Sm",
     block = "Misc Mathematical Symbols-A",
     aliases = {
-      "box max",
-      "morphological max product operator",
-      "morphological dilation operator",
       "additive maximum operator",
+      "box max",
+      "morphological dilation operator",
+      "morphological max product operator",
     },
   },
   {
@@ -27349,12 +25346,7 @@ return {
     name = "ARROW POINTING RIGHTWARDS THEN CURVING UPWARDS",
     category = "Sm",
     block = "Supplemental Arrows-B",
-    aliases = {
-      "arrow",
-      "curving",
-      "right",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2935",
@@ -27362,12 +25354,7 @@ return {
     name = "ARROW POINTING RIGHTWARDS THEN CURVING DOWNWARDS",
     category = "Sm",
     block = "Supplemental Arrows-B",
-    aliases = {
-      "arrow",
-      "curving",
-      "down",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2936",
@@ -28018,7 +26005,7 @@ return {
     category = "Pe",
     block = "Misc Mathematical Symbols-B",
     aliases = {
-      "used for Bourbakist intervals",
+      "used for bourbakist intervals",
     },
   },
   {
@@ -28713,7 +26700,7 @@ return {
     category = "Sm",
     block = "Misc Mathematical Symbols-B",
     aliases = {
-      "ISOtech entity &iinfin;",
+      "isotech entity &iinfin;",
     },
   },
   {
@@ -28747,7 +26734,7 @@ return {
     category = "Sm",
     block = "Misc Mathematical Symbols-B",
     aliases = {
-      "D'Alembertian",
+      "d'alembertian",
     },
   },
   {
@@ -29342,9 +27329,6 @@ return {
     block = "Supplemental Math Operators",
     aliases = {
       "nim-addition",
-      "plus",
-      "subscript",
-      "two",
     },
   },
   {
@@ -29409,11 +27393,7 @@ return {
     name = "VECTOR OR CROSS PRODUCT",
     category = "Sm",
     block = "Supplemental Math Operators",
-    aliases = {
-      "cross",
-      "product",
-      "vector",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2A30",
@@ -29517,10 +27497,7 @@ return {
     name = "INTERIOR PRODUCT",
     category = "Sm",
     block = "Supplemental Math Operators",
-    aliases = {
-      "interior",
-      "product",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2A3D",
@@ -29834,12 +27811,7 @@ return {
     name = "LOGICAL OR WITH DOUBLE UNDERBAR",
     category = "Sm",
     block = "Supplemental Math Operators",
-    aliases = {
-      "double",
-      "logical",
-      "or",
-      "underbar",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2A64",
@@ -30049,11 +28021,7 @@ return {
     name = "LESS-THAN OR SLANTED EQUAL TO",
     category = "Sm",
     block = "Supplemental Math Operators",
-    aliases = {
-      "equal",
-      "less-than",
-      "slanted",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2A7E",
@@ -30181,12 +28149,7 @@ return {
     name = "LESS-THAN ABOVE SIMILAR OR EQUAL",
     category = "Sm",
     block = "Supplemental Math Operators",
-    aliases = {
-      "above",
-      "equal",
-      "less-than",
-      "similar",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2A8E",
@@ -30290,13 +28253,7 @@ return {
     name = "DOUBLE-LINE EQUAL TO OR GREATER-THAN",
     category = "Sm",
     block = "Supplemental Math Operators",
-    aliases = {
-      "double-line",
-      "equal",
-      "greater-than",
-      "inequality",
-      "mathematics",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2A9B",
@@ -30554,13 +28511,7 @@ return {
     name = "SUCCEEDS ABOVE NOT ALMOST EQUAL TO",
     category = "Sm",
     block = "Supplemental Math Operators",
-    aliases = {
-      "above",
-      "almost",
-      "equal",
-      "not",
-      "succeeds",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2ABB",
@@ -31122,7 +29073,7 @@ return {
     category = "Sm",
     block = "Supplemental Math Operators",
     aliases = {
-      "Dijkstra choice",
+      "dijkstra choice",
     },
   },
   {
@@ -31132,7 +29083,7 @@ return {
     category = "Sm",
     block = "Supplemental Math Operators",
     aliases = {
-      "n-ary Dijkstra choice",
+      "n-ary dijkstra choice",
     },
   },
   {
@@ -31181,13 +29132,7 @@ return {
     name = "LEFTWARDS BLACK ARROW",
     category = "So",
     block = "Misc Symbols and Arrows",
-    aliases = {
-      "arrow",
-      "cardinal",
-      "direction",
-      "left",
-      "west",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2B06",
@@ -31195,13 +29140,7 @@ return {
     name = "UPWARDS BLACK ARROW",
     category = "So",
     block = "Misc Symbols and Arrows",
-    aliases = {
-      "arrow",
-      "cardinal",
-      "direction",
-      "north",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2B07",
@@ -31209,13 +29148,7 @@ return {
     name = "DOWNWARDS BLACK ARROW",
     category = "So",
     block = "Misc Symbols and Arrows",
-    aliases = {
-      "arrow",
-      "cardinal",
-      "direction",
-      "down",
-      "south",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2B08",
@@ -31375,12 +29308,7 @@ return {
     name = "BLACK LARGE SQUARE",
     category = "So",
     block = "Misc Symbols and Arrows",
-    aliases = {
-      "black",
-      "geometric",
-      "large",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2B1C",
@@ -31388,12 +29316,7 @@ return {
     name = "WHITE LARGE SQUARE",
     category = "So",
     block = "Misc Symbols and Arrows",
-    aliases = {
-      "geometric",
-      "large",
-      "square",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2B1D",
@@ -31720,7 +29643,7 @@ return {
     category = "Sm",
     block = "Misc Symbols and Arrows",
     aliases = {
-      "mirror image of \"297A\"",
+      "mirror image of \"297a\"",
     },
   },
   {
@@ -31823,13 +29746,7 @@ return {
     name = "WHITE MEDIUM STAR",
     category = "So",
     block = "Misc Symbols and Arrows",
-    aliases = {
-      "astronomy",
-      "medium",
-      "star",
-      "stars",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+2B51",
@@ -31871,13 +29788,7 @@ return {
     block = "Misc Symbols and Arrows",
     aliases = {
       "basic symbol for speed limit",
-      "forms a game tally pair with 274C",
-      "circle",
-      "heavy",
-      "hollow",
-      "large",
-      "o",
-      "red",
+      "forms a game tally pair with 274c",
     },
   },
   {
@@ -31907,8 +29818,8 @@ return {
     category = "So",
     block = "Misc Symbols and Arrows",
     aliases = {
-      "town or village office",
       "power off symbol",
+      "town or village office",
     },
   },
   {
@@ -32192,7 +30103,7 @@ return {
     category = "So",
     block = "Misc Symbols and Arrows",
     aliases = {
-      "LEFTWARDS TRIANGLE-HEADED ARROW WITH DOUBLE VERTICAL STROKE",
+      "leftwards triangle-headed arrow with double vertical stroke",
     },
   },
   {
@@ -32212,7 +30123,7 @@ return {
     category = "So",
     block = "Misc Symbols and Arrows",
     aliases = {
-      "RIGHTWARDS TRIANGLE-HEADED ARROW WITH DOUBLE VERTICAL STROKE",
+      "rightwards triangle-headed arrow with double vertical stroke",
     },
   },
   {
@@ -32426,7 +30337,7 @@ return {
     category = "So",
     block = "Misc Symbols and Arrows",
     aliases = {
-      "for type B electronics use 3036",
+      "for type b electronics use 3036",
     },
   },
   {
@@ -33008,7 +30919,7 @@ return {
     category = "So",
     block = "Misc Symbols and Arrows",
     aliases = {
-      "true black moon Lilith",
+      "true black moon lilith",
     },
   },
   {
@@ -33408,7 +31319,7 @@ return {
     category = "Mn",
     block = "Alphabetic Presentation Forms",
     aliases = {
-      "a glyph variant of 05BF",
+      "a glyph variant of 05bf",
     },
   },
   {
@@ -33770,8 +31681,8 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS1",
-      "these are abbreviated VS1, and so on",
+      "these are abbreviated vs1, and so on",
+      "vs1",
     },
   },
   {
@@ -33781,7 +31692,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS2",
+      "vs2",
     },
   },
   {
@@ -33791,7 +31702,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS3",
+      "vs3",
     },
   },
   {
@@ -33801,7 +31712,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS4",
+      "vs4",
     },
   },
   {
@@ -33811,7 +31722,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS5",
+      "vs5",
     },
   },
   {
@@ -33821,7 +31732,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS6",
+      "vs6",
     },
   },
   {
@@ -33831,7 +31742,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS7",
+      "vs7",
     },
   },
   {
@@ -33841,7 +31752,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS8",
+      "vs8",
     },
   },
   {
@@ -33851,7 +31762,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS9",
+      "vs9",
     },
   },
   {
@@ -33861,7 +31772,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS10",
+      "vs10",
     },
   },
   {
@@ -33871,7 +31782,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS11",
+      "vs11",
     },
   },
   {
@@ -33881,7 +31792,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS12",
+      "vs12",
     },
   },
   {
@@ -33891,7 +31802,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS13",
+      "vs13",
     },
   },
   {
@@ -33901,7 +31812,7 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS14",
+      "vs14",
     },
   },
   {
@@ -33911,8 +31822,8 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS15",
       "text variation selector",
+      "vs15",
     },
   },
   {
@@ -33922,8 +31833,8 @@ return {
     category = "Mn",
     block = "Variation Selectors",
     aliases = {
-      "VS16",
       "emoji variation selector",
+      "vs16",
     },
   },
   {
@@ -33997,7 +31908,7 @@ return {
     category = "Pe",
     block = "Vertical Forms",
     aliases = {
-      "PRESENTATION FORM FOR VERTICAL RIGHT WHITE LENTICULAR BRACKET",
+      "presentation form for vertical right white lenticular bracket",
     },
   },
   {
@@ -34231,7 +32142,7 @@ return {
     category = "Po",
     block = "Halfwidth and Fullwidth Forms",
     aliases = {
-      "in Chinese, indicates a pause",
+      "in chinese, indicates a pause",
     },
   },
   {
@@ -38607,7 +36518,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "vocal E",
+      "vocal e",
     },
   },
   {
@@ -38617,7 +36528,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "vocal first sharp of E",
+      "vocal first sharp of e",
     },
   },
   {
@@ -38627,8 +36538,8 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "Greek instrumental notation symbol-3",
-      "vocal or instrumental second sharp of E",
+      "greek instrumental notation symbol-3",
+      "vocal or instrumental second sharp of e",
     },
   },
   {
@@ -38638,7 +36549,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "vocal F",
+      "vocal f",
     },
   },
   {
@@ -38648,7 +36559,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "vocal first sharp of F",
+      "vocal first sharp of f",
     },
   },
   {
@@ -38658,9 +36569,9 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "Greek instrumental notation symbol-21",
-      "vocal second sharp of F",
+      "greek instrumental notation symbol-21",
       "instrumental second sharp of d",
+      "vocal second sharp of f",
     },
   },
   {
@@ -38670,9 +36581,9 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "Greek instrumental notation symbol-9",
-      "vocal G",
-      "instrumental second sharp of G",
+      "greek instrumental notation symbol-9",
+      "instrumental second sharp of g",
+      "vocal g",
     },
   },
   {
@@ -38682,7 +36593,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "vocal first sharp of G",
+      "vocal first sharp of g",
     },
   },
   {
@@ -38692,9 +36603,9 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "Greek instrumental notation symbol-44",
-      "vocal second sharp of G",
+      "greek instrumental notation symbol-44",
       "instrumental first sharp of e´",
+      "vocal second sharp of g",
     },
   },
   {
@@ -38704,7 +36615,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "vocal A",
+      "vocal a",
     },
   },
   {
@@ -38714,7 +36625,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "vocal first sharp of A",
+      "vocal first sharp of a",
     },
   },
   {
@@ -38724,7 +36635,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "vocal second sharp of A",
+      "vocal second sharp of a",
     },
   },
   {
@@ -38734,7 +36645,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "vocal B",
+      "vocal b",
     },
   },
   {
@@ -38744,9 +36655,9 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "Greek instrumental notation symbol-41",
-      "vocal first sharp of B",
+      "greek instrumental notation symbol-41",
       "instrumental first sharp of d´",
+      "vocal first sharp of b",
     },
   },
   {
@@ -38756,9 +36667,9 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "Greek instrumental notation symbol-35",
-      "vocal second sharp of B",
+      "greek instrumental notation symbol-35",
       "instrumental first sharp of b",
+      "vocal second sharp of b",
     },
   },
   {
@@ -38788,9 +36699,9 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "Greek instrumental notation symbol-15",
+      "greek instrumental notation symbol-15",
+      "instrumental second sharp of b",
       "vocal second sharp of c",
-      "instrumental second sharp of B",
     },
   },
   {
@@ -38810,9 +36721,9 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "Greek instrumental notation symbol-28",
-      "vocal first sharp of d",
+      "greek instrumental notation symbol-28",
       "instrumental g",
+      "vocal first sharp of d",
     },
   },
   {
@@ -38902,9 +36813,9 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "Greek instrumental notation symbol-20",
-      "vocal second sharp of a´",
+      "greek instrumental notation symbol-20",
       "instrumental first sharp of d",
+      "vocal second sharp of a´",
     },
   },
   {
@@ -38914,7 +36825,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental E",
+      "instrumental e",
     },
   },
   {
@@ -38924,7 +36835,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental first sharp of E",
+      "instrumental first sharp of e",
     },
   },
   {
@@ -38934,7 +36845,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental F",
+      "instrumental f",
     },
   },
   {
@@ -38944,7 +36855,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental first sharp of F",
+      "instrumental first sharp of f",
     },
   },
   {
@@ -38954,7 +36865,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental G",
+      "instrumental g",
     },
   },
   {
@@ -38964,7 +36875,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental first sharp of G",
+      "instrumental first sharp of g",
     },
   },
   {
@@ -38974,7 +36885,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental first sharp of A",
+      "instrumental first sharp of a",
     },
   },
   {
@@ -38984,7 +36895,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental second sharp of A",
+      "instrumental second sharp of a",
     },
   },
   {
@@ -38994,7 +36905,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental B",
+      "instrumental b",
     },
   },
   {
@@ -39004,7 +36915,7 @@ return {
     category = "So",
     block = "Ancient Greek Musical Notation",
     aliases = {
-      "instrumental first sharp of B",
+      "instrumental first sharp of b",
     },
   },
   {
@@ -39205,7 +37116,7 @@ return {
     block = "Ancient Greek Musical Notation",
     aliases = {
       "instrumental first sharp of f´",
-      "similar but not identical to 002F",
+      "similar but not identical to 002f",
     },
   },
   {
@@ -39216,7 +37127,7 @@ return {
     block = "Ancient Greek Musical Notation",
     aliases = {
       "instrumental second sharp of f´",
-      "similar but not identical to 005C",
+      "similar but not identical to 005c",
     },
   },
   {
@@ -41376,7 +39287,7 @@ return {
     category = "Lu",
     block = "Mathematical Alphanumeric Symbols",
     aliases = {
-      "New Testament majority text",
+      "new testament majority text",
     },
   },
   {
@@ -41418,7 +39329,7 @@ return {
     category = "Lu",
     block = "Mathematical Alphanumeric Symbols",
     aliases = {
-      "Septuagint, Greek Old Testament",
+      "septuagint, greek old testament",
     },
   },
   {
@@ -48424,8 +46335,8 @@ return {
     category = "Sm",
     block = "Arabic Mathematical Alphabetic Symbols",
     aliases = {
-      "used in Arabic mathematics to denote summation",
       "stretched at the tatweel",
+      "used in arabic mathematics to denote summation",
     },
   },
   {
@@ -48435,8 +46346,8 @@ return {
     category = "Sm",
     block = "Arabic Mathematical Alphabetic Symbols",
     aliases = {
-      "used in Persian mathematics to denote limits",
       "stretched between the hah and the dal",
+      "used in persian mathematics to denote limits",
     },
   },
   {
@@ -48447,12 +46358,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "typhoon, hurricane",
-      "cyclone",
-      "dizzy",
-      "hurricane",
-      "twister",
-      "typhoon",
-      "weather",
     },
   },
   {
@@ -48461,10 +46366,7 @@ return {
     name = "FOGGY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "fog",
-      "foggy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F302",
@@ -48472,12 +46374,7 @@ return {
     name = "CLOSED UMBRELLA",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "closed",
-      "clothing",
-      "rain",
-      "umbrella",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F303",
@@ -48485,11 +46382,7 @@ return {
     name = "NIGHT WITH STARS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "night",
-      "star",
-      "stars",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F304",
@@ -48497,13 +46390,7 @@ return {
     name = "SUNRISE OVER MOUNTAINS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "morning",
-      "mountains",
-      "over",
-      "sun",
-      "sunrise",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F305",
@@ -48511,12 +46398,7 @@ return {
     name = "SUNRISE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "morning",
-      "nature",
-      "sun",
-      "sunrise",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F306",
@@ -48524,17 +46406,7 @@ return {
     name = "CITYSCAPE AT DUSK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "at",
-      "building",
-      "city",
-      "cityscape",
-      "dusk",
-      "evening",
-      "landscape",
-      "sun",
-      "sunset",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F307",
@@ -48542,12 +46414,7 @@ return {
     name = "SUNSET OVER BUILDINGS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "dusk",
-      "sun",
-      "sunset",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F308",
@@ -48555,24 +46422,7 @@ return {
     name = "RAINBOW",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "gay",
-      "genderqueer",
-      "glbt",
-      "glbtq",
-      "lesbian",
-      "lgbt",
-      "lgbtq",
-      "lgbtqia",
-      "nature",
-      "pride",
-      "queer",
-      "rain",
-      "rainbow",
-      "trans",
-      "transgender",
-      "weather",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F309",
@@ -48580,11 +46430,7 @@ return {
     name = "BRIDGE AT NIGHT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "at",
-      "bridge",
-      "night",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F30A",
@@ -48594,13 +46440,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "tsunami, tidal wave",
-      "nature",
-      "ocean",
-      "surf",
-      "surfer",
-      "surfing",
-      "water",
-      "wave",
     },
   },
   {
@@ -48609,12 +46448,7 @@ return {
     name = "VOLCANO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "eruption",
-      "mountain",
-      "nature",
-      "volcano",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F30C",
@@ -48622,11 +46456,7 @@ return {
     name = "MILKY WAY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "milky",
-      "space",
-      "way",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F30D",
@@ -48634,15 +46464,7 @@ return {
     name = "EARTH GLOBE EUROPE-AFRICA",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "Africa",
-      "earth",
-      "Europe",
-      "Europe-Africa",
-      "globe",
-      "showing",
-      "world",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F30E",
@@ -48650,13 +46472,7 @@ return {
     name = "EARTH GLOBE AMERICAS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "Americas",
-      "earth",
-      "globe",
-      "showing",
-      "world",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F30F",
@@ -48664,15 +46480,7 @@ return {
     name = "EARTH GLOBE ASIA-AUSTRALIA",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "Asia",
-      "Asia-Australia",
-      "Australia",
-      "earth",
-      "globe",
-      "showing",
-      "world",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F310",
@@ -48680,15 +46488,7 @@ return {
     name = "GLOBE WITH MERIDIANS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "earth",
-      "globe",
-      "internet",
-      "meridians",
-      "web",
-      "world",
-      "worldwide",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F311",
@@ -48696,12 +46496,7 @@ return {
     name = "NEW MOON SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "dark",
-      "moon",
-      "new",
-      "space",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F312",
@@ -48709,13 +46504,7 @@ return {
     name = "WAXING CRESCENT MOON SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "crescent",
-      "dreams",
-      "moon",
-      "space",
-      "waxing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F313",
@@ -48725,10 +46514,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "half moon",
-      "first",
-      "moon",
-      "quarter",
-      "space",
     },
   },
   {
@@ -48739,10 +46524,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "waxing moon",
-      "gibbous",
-      "moon",
-      "space",
-      "waxing",
     },
   },
   {
@@ -48751,11 +46532,7 @@ return {
     name = "FULL MOON SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "full",
-      "moon",
-      "space",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F316",
@@ -48763,12 +46540,7 @@ return {
     name = "WANING GIBBOUS MOON SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "gibbous",
-      "moon",
-      "space",
-      "waning",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F317",
@@ -48776,12 +46548,7 @@ return {
     name = "LAST QUARTER MOON SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "last",
-      "moon",
-      "quarter",
-      "space",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F318",
@@ -48789,12 +46556,7 @@ return {
     name = "WANING CRESCENT MOON SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "crescent",
-      "moon",
-      "space",
-      "waning",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F319",
@@ -48802,12 +46564,7 @@ return {
     name = "CRESCENT MOON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "crescent",
-      "moon",
-      "ramadan",
-      "space",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F31A",
@@ -48815,12 +46572,7 @@ return {
     name = "NEW MOON WITH FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "face",
-      "moon",
-      "new",
-      "space",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F31B",
@@ -48828,13 +46580,7 @@ return {
     name = "FIRST QUARTER MOON WITH FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "face",
-      "first",
-      "moon",
-      "quarter",
-      "space",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F31C",
@@ -48842,13 +46588,7 @@ return {
     name = "LAST QUARTER MOON WITH FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "dreams",
-      "face",
-      "last",
-      "moon",
-      "quarter",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F31D",
@@ -48856,12 +46596,7 @@ return {
     name = "FULL MOON WITH FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bright",
-      "face",
-      "full",
-      "moon",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F31E",
@@ -48869,18 +46604,7 @@ return {
     name = "SUN WITH FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "beach",
-      "bright",
-      "day",
-      "face",
-      "heat",
-      "shine",
-      "sun",
-      "sunny",
-      "sunshine",
-      "weather",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F31F",
@@ -48888,16 +46612,7 @@ return {
     name = "GLOWING STAR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "glittery",
-      "glow",
-      "glowing",
-      "night",
-      "shining",
-      "sparkle",
-      "star",
-      "win",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F320",
@@ -48905,13 +46620,7 @@ return {
     name = "SHOOTING STAR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "falling",
-      "night",
-      "shooting",
-      "space",
-      "star",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F321",
@@ -48921,8 +46630,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "temperature, warm",
-      "thermometer",
-      "weather",
     },
   },
   {
@@ -48953,10 +46660,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "mostly sunny",
-      "behind",
-      "cloud",
-      "sun",
-      "weather",
     },
   },
   {
@@ -48967,10 +46670,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "mostly cloudy",
-      "behind",
-      "cloud",
-      "sun",
-      "weather",
     },
   },
   {
@@ -48981,11 +46680,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "showers",
-      "behind",
-      "cloud",
-      "rain",
-      "sun",
-      "weather",
     },
   },
   {
@@ -48996,9 +46690,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "rain",
-      "cloud",
-      "rain",
-      "weather",
     },
   },
   {
@@ -49009,10 +46700,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "snow, snow showers",
-      "cloud",
-      "cold",
-      "snow",
-      "weather",
     },
   },
   {
@@ -49023,9 +46710,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "lightning, thunderstorm",
-      "cloud",
-      "lightning",
-      "weather",
     },
   },
   {
@@ -49036,10 +46720,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "tornado, twister",
-      "cloud",
-      "tornado",
-      "weather",
-      "whirlwind",
     },
   },
   {
@@ -49048,11 +46728,7 @@ return {
     name = "FOG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cloud",
-      "fog",
-      "weather",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F32C",
@@ -49062,10 +46738,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "wind",
-      "blow",
-      "cloud",
-      "face",
-      "wind",
     },
   },
   {
@@ -49074,13 +46746,7 @@ return {
     name = "HOT DOG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "dog",
-      "frankfurter",
-      "hot",
-      "hotdog",
-      "sausage",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F32E",
@@ -49088,10 +46754,7 @@ return {
     name = "TACO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "mexican",
-      "taco",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F32F",
@@ -49099,11 +46762,7 @@ return {
     name = "BURRITO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "burrito",
-      "mexican",
-      "wrap",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F330",
@@ -49111,11 +46770,7 @@ return {
     name = "CHESTNUT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "almond",
-      "chestnut",
-      "plant",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F331",
@@ -49123,13 +46778,7 @@ return {
     name = "SEEDLING",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "plant",
-      "sapling",
-      "seedling",
-      "sprout",
-      "young",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F332",
@@ -49137,13 +46786,7 @@ return {
     name = "EVERGREEN TREE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "christmas",
-      "evergreen",
-      "forest",
-      "pine",
-      "tree",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F333",
@@ -49151,14 +46794,7 @@ return {
     name = "DECIDUOUS TREE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "deciduous",
-      "forest",
-      "green",
-      "habitat",
-      "shedding",
-      "tree",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F334",
@@ -49166,13 +46802,7 @@ return {
     name = "PALM TREE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "beach",
-      "palm",
-      "plant",
-      "tree",
-      "tropical",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F335",
@@ -49180,13 +46810,7 @@ return {
     name = "CACTUS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cactus",
-      "desert",
-      "drought",
-      "nature",
-      "plant",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F336",
@@ -49196,8 +46820,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "hot, spicy",
-      "hot",
-      "pepper",
     },
   },
   {
@@ -49206,13 +46828,7 @@ return {
     name = "TULIP",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blossom",
-      "flower",
-      "growth",
-      "plant",
-      "tulip",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F338",
@@ -49220,14 +46836,7 @@ return {
     name = "CHERRY BLOSSOM",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blossom",
-      "cherry",
-      "flower",
-      "plant",
-      "spring",
-      "springtime",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F339",
@@ -49235,16 +46844,7 @@ return {
     name = "ROSE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "beauty",
-      "elegant",
-      "flower",
-      "love",
-      "plant",
-      "red",
-      "rose",
-      "valentine",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F33A",
@@ -49252,11 +46852,7 @@ return {
     name = "HIBISCUS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "flower",
-      "hibiscus",
-      "plant",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F33B",
@@ -49264,13 +46860,7 @@ return {
     name = "SUNFLOWER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "flower",
-      "outdoors",
-      "plant",
-      "sun",
-      "sunflower",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F33C",
@@ -49280,11 +46870,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "daisy",
-      "blossom",
-      "buttercup",
-      "dandelion",
-      "flower",
-      "plant",
     },
   },
   {
@@ -49293,14 +46878,7 @@ return {
     name = "EAR OF MAIZE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "corn",
-      "crops",
-      "ear",
-      "farm",
-      "maize",
-      "maze",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F33E",
@@ -49308,14 +46886,7 @@ return {
     name = "EAR OF RICE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ear",
-      "grain",
-      "grains",
-      "plant",
-      "rice",
-      "sheaf",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F33F",
@@ -49323,11 +46894,7 @@ return {
     name = "HERB",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "herb",
-      "leaf",
-      "plant",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F340",
@@ -49335,16 +46902,7 @@ return {
     name = "FOUR LEAF CLOVER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "4",
-      "clover",
-      "four",
-      "four-leaf",
-      "irish",
-      "leaf",
-      "lucky",
-      "plant",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F341",
@@ -49352,11 +46910,7 @@ return {
     name = "MAPLE LEAF",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "falling",
-      "leaf",
-      "maple",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F342",
@@ -49364,13 +46918,7 @@ return {
     name = "FALLEN LEAF",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "autumn",
-      "fall",
-      "fallen",
-      "falling",
-      "leaf",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F343",
@@ -49378,13 +46926,7 @@ return {
     name = "LEAF FLUTTERING IN WIND",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blow",
-      "flutter",
-      "fluttering",
-      "leaf",
-      "wind",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F344",
@@ -49392,27 +46934,7 @@ return {
     name = "MUSHROOM",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "fungus",
-      "mushroom",
-      "toadstool",
-      "food",
-      "fungi",
-      "fungus",
-      "mushroom",
-      "nature",
-      "pizza",
-      "portobello",
-      "shiitake",
-      "shroom",
-      "spore",
-      "sprout",
-      "toppings",
-      "truffle",
-      "vegetable",
-      "vegetarian",
-      "veggie",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F345",
@@ -49420,12 +46942,7 @@ return {
     name = "TOMATO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "food",
-      "fruit",
-      "tomato",
-      "vegetable",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F346",
@@ -49435,9 +46952,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "eggplant",
-      "aubergine",
-      "eggplant",
-      "vegetable",
     },
   },
   {
@@ -49446,12 +46960,7 @@ return {
     name = "GRAPES",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "Dionysus",
-      "fruit",
-      "grape",
-      "grapes",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F348",
@@ -49459,11 +46968,7 @@ return {
     name = "MELON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cantaloupe",
-      "fruit",
-      "melon",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F349",
@@ -49471,10 +46976,7 @@ return {
     name = "WATERMELON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "fruit",
-      "watermelon",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F34A",
@@ -49482,15 +46984,7 @@ return {
     name = "TANGERINE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "c",
-      "citrus",
-      "fruit",
-      "nectarine",
-      "orange",
-      "tangerine",
-      "vitamin",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F34B",
@@ -49498,28 +46992,7 @@ return {
     name = "LEMON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "citrus",
-      "fruit",
-      "lemon",
-      "sour",
-      "acidity",
-      "citrus",
-      "cocktail",
-      "fruit",
-      "garnish",
-      "key",
-      "lime",
-      "margarita",
-      "mojito",
-      "refreshing",
-      "salsa",
-      "sour",
-      "tangy",
-      "tequila",
-      "tropical",
-      "zest",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F34C",
@@ -49527,11 +47000,7 @@ return {
     name = "BANANA",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "banana",
-      "fruit",
-      "potassium",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F34D",
@@ -49539,13 +47008,7 @@ return {
     name = "PINEAPPLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "colada",
-      "fruit",
-      "pina",
-      "pineapple",
-      "tropical",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F34E",
@@ -49553,15 +47016,7 @@ return {
     name = "RED APPLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "apple",
-      "diet",
-      "food",
-      "fruit",
-      "health",
-      "red",
-      "ripe",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F34F",
@@ -49569,11 +47024,7 @@ return {
     name = "GREEN APPLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "apple",
-      "fruit",
-      "green",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F350",
@@ -49581,10 +47032,7 @@ return {
     name = "PEAR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "fruit",
-      "pear",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F351",
@@ -49592,10 +47040,7 @@ return {
     name = "PEACH",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "fruit",
-      "peach",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F352",
@@ -49603,13 +47048,7 @@ return {
     name = "CHERRIES",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "berries",
-      "cherries",
-      "cherry",
-      "fruit",
-      "red",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F353",
@@ -49617,11 +47056,7 @@ return {
     name = "STRAWBERRY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "berry",
-      "fruit",
-      "strawberry",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F354",
@@ -49631,12 +47066,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "fast food place",
-      "burger",
-      "eat",
-      "fast",
-      "food",
-      "hamburger",
-      "hungry",
     },
   },
   {
@@ -49645,14 +47074,7 @@ return {
     name = "SLICE OF PIZZA",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cheese",
-      "food",
-      "hungry",
-      "pepperoni",
-      "pizza",
-      "slice",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F356",
@@ -49660,10 +47082,7 @@ return {
     name = "MEAT ON BONE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bone",
-      "meat",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F357",
@@ -49671,15 +47090,7 @@ return {
     name = "POULTRY LEG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bone",
-      "chicken",
-      "drumstick",
-      "hungry",
-      "leg",
-      "poultry",
-      "turkey",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F358",
@@ -49687,11 +47098,7 @@ return {
     name = "RICE CRACKER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cracker",
-      "food",
-      "rice",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F359",
@@ -49699,12 +47106,7 @@ return {
     name = "RICE BALL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "food",
-      "Japanese",
-      "rice",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F35A",
@@ -49714,9 +47116,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "bowl of rice",
-      "cooked",
-      "food",
-      "rice",
     },
   },
   {
@@ -49726,10 +47125,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Japanese style curry",
-      "curry",
-      "food",
-      "rice",
+      "japanese style curry",
     },
   },
   {
@@ -49740,14 +47136,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "ramen noodles",
-      "bowl",
-      "chopsticks",
-      "food",
-      "noodle",
-      "pho",
-      "ramen",
-      "soup",
-      "steaming",
     },
   },
   {
@@ -49756,13 +47144,7 @@ return {
     name = "SPAGHETTI",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "food",
-      "meatballs",
-      "pasta",
-      "restaurant",
-      "spaghetti",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F35E",
@@ -49770,16 +47152,7 @@ return {
     name = "BREAD",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bread",
-      "carbs",
-      "food",
-      "grain",
-      "loaf",
-      "restaurant",
-      "toast",
-      "wheat",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F35F",
@@ -49787,12 +47160,7 @@ return {
     name = "FRENCH FRIES",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "fast",
-      "food",
-      "french",
-      "fries",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F360",
@@ -49800,12 +47168,7 @@ return {
     name = "ROASTED SWEET POTATO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "food",
-      "potato",
-      "roasted",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F361",
@@ -49815,12 +47178,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "mochi balls on skewer",
-      "dango",
-      "dessert",
-      "Japanese",
-      "skewer",
-      "stick",
-      "sweet",
     },
   },
   {
@@ -49831,13 +47188,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "seafood on skewer",
-      "food",
-      "kebab",
-      "oden",
-      "restaurant",
-      "seafood",
-      "skewer",
-      "stick",
     },
   },
   {
@@ -49846,10 +47196,7 @@ return {
     name = "SUSHI",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "food",
-      "sushi",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F364",
@@ -49857,12 +47204,7 @@ return {
     name = "FRIED SHRIMP",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "fried",
-      "prawn",
-      "shrimp",
-      "tempura",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F365",
@@ -49870,14 +47212,7 @@ return {
     name = "FISH CAKE WITH SWIRL DESIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cake",
-      "fish",
-      "food",
-      "pastry",
-      "restaurant",
-      "swirl",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F366",
@@ -49885,17 +47220,7 @@ return {
     name = "SOFT ICE CREAM",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cream",
-      "dessert",
-      "food",
-      "ice",
-      "icecream",
-      "restaurant",
-      "serve",
-      "soft",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F367",
@@ -49903,13 +47228,7 @@ return {
     name = "SHAVED ICE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "dessert",
-      "ice",
-      "restaurant",
-      "shaved",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F368",
@@ -49917,14 +47236,7 @@ return {
     name = "ICE CREAM",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cream",
-      "dessert",
-      "food",
-      "ice",
-      "restaurant",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F369",
@@ -49932,14 +47244,7 @@ return {
     name = "DOUGHNUT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "breakfast",
-      "dessert",
-      "donut",
-      "doughnut",
-      "food",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F36A",
@@ -49949,11 +47254,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "biscuit",
-      "chip",
-      "chocolate",
-      "cookie",
-      "dessert",
-      "sweet",
     },
   },
   {
@@ -49962,15 +47262,7 @@ return {
     name = "CHOCOLATE BAR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bar",
-      "candy",
-      "chocolate",
-      "dessert",
-      "halloween",
-      "sweet",
-      "tooth",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F36C",
@@ -49978,16 +47270,7 @@ return {
     name = "CANDY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "candy",
-      "cavities",
-      "dessert",
-      "halloween",
-      "restaurant",
-      "sweet",
-      "tooth",
-      "wrapper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F36D",
@@ -49995,14 +47278,7 @@ return {
     name = "LOLLIPOP",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "candy",
-      "dessert",
-      "food",
-      "lollipop",
-      "restaurant",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F36E",
@@ -50010,12 +47286,7 @@ return {
     name = "CUSTARD",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "custard",
-      "dessert",
-      "pudding",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F36F",
@@ -50023,16 +47294,7 @@ return {
     name = "HONEY POT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "barrel",
-      "bear",
-      "food",
-      "honey",
-      "honeypot",
-      "jar",
-      "pot",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F370",
@@ -50040,14 +47302,7 @@ return {
     name = "SHORTCAKE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cake",
-      "dessert",
-      "pastry",
-      "shortcake",
-      "slice",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F371",
@@ -50055,11 +47310,7 @@ return {
     name = "BENTO BOX",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bento",
-      "box",
-      "food",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F372",
@@ -50067,12 +47318,7 @@ return {
     name = "POT OF FOOD",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "food",
-      "pot",
-      "soup",
-      "stew",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F373",
@@ -50082,18 +47328,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "frying pan, cooking utensil",
-      "breakfast",
-      "cooking",
-      "easy",
-      "egg",
-      "fry",
-      "frying",
-      "over",
-      "pan",
-      "restaurant",
-      "side",
-      "sunny",
-      "up",
     },
   },
   {
@@ -50103,25 +47337,9 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "restaurant, meal",
-      "glyph may show a fork and spoon",
       "glyph may show a crossed fork and knife",
-      "breakfast",
-      "breaky",
-      "cooking",
-      "cutlery",
-      "delicious",
-      "dinner",
-      "eat",
-      "feed",
-      "food",
-      "fork",
-      "hungry",
-      "knife",
-      "lunch",
-      "restaurant",
-      "yum",
-      "yummy",
+      "glyph may show a fork and spoon",
+      "restaurant, meal",
     },
   },
   {
@@ -50130,15 +47348,7 @@ return {
     name = "TEACUP WITHOUT HANDLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "beverage",
-      "cup",
-      "drink",
-      "handle",
-      "oolong",
-      "tea",
-      "teacup",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F376",
@@ -50146,15 +47356,7 @@ return {
     name = "SAKE BOTTLE AND CUP",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bar",
-      "beverage",
-      "bottle",
-      "cup",
-      "drink",
-      "restaurant",
-      "sake",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F377",
@@ -50162,19 +47364,7 @@ return {
     name = "WINE GLASS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "alcohol",
-      "bar",
-      "beverage",
-      "booze",
-      "club",
-      "drink",
-      "drinking",
-      "drinks",
-      "glass",
-      "restaurant",
-      "wine",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F378",
@@ -50184,18 +47374,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "lounge",
-      "alcohol",
-      "bar",
-      "booze",
-      "club",
-      "cocktail",
-      "drink",
-      "drinking",
-      "drinks",
-      "glass",
-      "mad",
-      "martini",
-      "men",
     },
   },
   {
@@ -50204,22 +47382,7 @@ return {
     name = "TROPICAL DRINK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "alcohol",
-      "bar",
-      "booze",
-      "club",
-      "cocktail",
-      "drink",
-      "drinking",
-      "drinks",
-      "drunk",
-      "mai",
-      "party",
-      "tai",
-      "tropical",
-      "tropics",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F37A",
@@ -50227,22 +47390,7 @@ return {
     name = "BEER MUG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "alcohol",
-      "ale",
-      "bar",
-      "beer",
-      "booze",
-      "drink",
-      "drinking",
-      "drinks",
-      "mug",
-      "octoberfest",
-      "oktoberfest",
-      "pint",
-      "stein",
-      "summer",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F37B",
@@ -50252,17 +47400,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "cheers",
-      "alcohol",
-      "bar",
-      "beer",
-      "booze",
-      "bottoms",
-      "cheers",
-      "clink",
-      "clinking",
-      "drinking",
-      "drinks",
-      "mugs",
     },
   },
   {
@@ -50271,17 +47408,7 @@ return {
     name = "BABY BOTTLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "babies",
-      "baby",
-      "birth",
-      "born",
-      "bottle",
-      "drink",
-      "infant",
-      "milk",
-      "newborn",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F37D",
@@ -50291,12 +47418,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "dining",
-      "cooking",
-      "dinner",
-      "eat",
-      "fork",
-      "knife",
-      "plate",
     },
   },
   {
@@ -50305,13 +47426,7 @@ return {
     name = "BOTTLE WITH POPPING CORK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bar",
-      "bottle",
-      "cork",
-      "drink",
-      "popping",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F37F",
@@ -50319,12 +47434,7 @@ return {
     name = "POPCORN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "corn",
-      "movie",
-      "pop",
-      "popcorn",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F380",
@@ -50332,10 +47442,7 @@ return {
     name = "RIBBON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "celebration",
-      "ribbon",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F381",
@@ -50343,17 +47450,7 @@ return {
     name = "WRAPPED PRESENT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "birthday",
-      "bow",
-      "box",
-      "celebration",
-      "christmas",
-      "gift",
-      "present",
-      "surprise",
-      "wrapped",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F382",
@@ -50361,16 +47458,7 @@ return {
     name = "BIRTHDAY CAKE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bday",
-      "birthday",
-      "cake",
-      "celebration",
-      "dessert",
-      "happy",
-      "pastry",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F383",
@@ -50379,13 +47467,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Hallowe'en",
-      "celebration",
-      "halloween",
-      "jack",
-      "jack-o-lantern",
-      "lantern",
-      "pumpkin",
+      "hallowe'en",
     },
   },
   {
@@ -50394,11 +47476,7 @@ return {
     name = "CHRISTMAS TREE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "celebration",
-      "Christmas",
-      "tree",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F385",
@@ -50407,18 +47485,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Santa Claus",
-      "celebration",
-      "Christmas",
-      "claus",
-      "fairy",
-      "fantasy",
-      "father",
-      "holiday",
-      "merry",
-      "santa",
-      "tale",
-      "xmas",
+      "santa claus",
     },
   },
   {
@@ -50427,13 +47494,7 @@ return {
     name = "FIREWORKS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "boom",
-      "celebration",
-      "entertainment",
-      "fireworks",
-      "yolo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F387",
@@ -50441,13 +47502,7 @@ return {
     name = "FIREWORK SPARKLER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "boom",
-      "celebration",
-      "fireworks",
-      "sparkle",
-      "sparkler",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F388",
@@ -50455,12 +47510,7 @@ return {
     name = "BALLOON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "balloon",
-      "birthday",
-      "celebrate",
-      "celebration",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F389",
@@ -50468,18 +47518,7 @@ return {
     name = "PARTY POPPER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "awesome",
-      "birthday",
-      "celebrate",
-      "celebration",
-      "excited",
-      "hooray",
-      "party",
-      "popper",
-      "tada",
-      "woohoo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F38A",
@@ -50489,12 +47528,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "congratulations",
-      "ball",
-      "celebrate",
-      "celebration",
-      "confetti",
-      "party",
-      "woohoo",
     },
   },
   {
@@ -50505,11 +47538,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "tanabata tree with wishing papers",
-      "banner",
-      "celebration",
-      "Japanese",
-      "tanabata",
-      "tree",
     },
   },
   {
@@ -50519,12 +47547,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Japanese national holiday",
-      "celebration",
-      "cross",
-      "crossed",
-      "flags",
-      "Japanese",
+      "japanese national holiday",
     },
   },
   {
@@ -50534,13 +47557,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Japanese new year's door decoration",
-      "bamboo",
-      "celebration",
-      "decoration",
-      "Japanese",
-      "pine",
-      "plant",
+      "japanese new year's door decoration",
     },
   },
   {
@@ -50550,12 +47567,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Japanese Hinamatsuri or girls' doll festival",
-      "celebration",
-      "doll",
-      "dolls",
-      "festival",
-      "Japanese",
+      "japanese hinamatsuri or girls' doll festival",
     },
   },
   {
@@ -50564,11 +47576,7 @@ return {
     name = "CARP STREAMER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "carp",
-      "celebration",
-      "streamer",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F390",
@@ -50576,12 +47584,7 @@ return {
     name = "WIND CHIME",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bell",
-      "celebration",
-      "chime",
-      "wind",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F391",
@@ -50590,11 +47593,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Japanese Otsukimi harvest celebration",
-      "celebration",
-      "ceremony",
-      "moon",
-      "viewing",
+      "japanese otsukimi harvest celebration",
     },
   },
   {
@@ -50604,15 +47603,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Japanese school entrance ceremony",
-      "backpack",
-      "backpacking",
-      "bag",
-      "bookbag",
-      "education",
-      "rucksack",
-      "satchel",
-      "school",
+      "japanese school entrance ceremony",
     },
   },
   {
@@ -50622,15 +47613,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "mortarboard, education",
       "graduation ceremony",
-      "cap",
-      "celebration",
-      "clothing",
-      "education",
-      "graduation",
-      "hat",
-      "scholar",
+      "mortarboard, education",
     },
   },
   {
@@ -50659,12 +47643,7 @@ return {
     name = "MILITARY MEDAL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "award",
-      "celebration",
-      "medal",
-      "military",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F397",
@@ -50672,11 +47651,7 @@ return {
     name = "REMINDER RIBBON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "celebration",
-      "reminder",
-      "ribbon",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F398",
@@ -50696,10 +47671,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "microphone",
-      "mic",
-      "microphone",
-      "music",
-      "studio",
     },
   },
   {
@@ -50710,9 +47681,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "level control",
-      "level",
-      "music",
-      "slider",
     },
   },
   {
@@ -50723,9 +47691,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "audio control",
-      "control",
-      "knobs",
-      "music",
     },
   },
   {
@@ -50735,9 +47700,9 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "musical performance",
+      "always ascending, unlike 266c",
       "music, musical background",
-      "always ascending, unlike 266C",
+      "musical performance",
     },
   },
   {
@@ -50747,7 +47712,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "always descending, unlike 266C",
+      "always descending, unlike 266c",
     },
   },
   {
@@ -50758,10 +47723,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "film clip",
-      "cinema",
-      "film",
-      "frames",
-      "movie",
     },
   },
   {
@@ -50772,9 +47733,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "ticket",
-      "admission",
-      "ticket",
-      "tickets",
     },
   },
   {
@@ -50785,9 +47743,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "amusement park",
-      "carousel",
-      "entertainment",
-      "horse",
     },
   },
   {
@@ -50798,11 +47753,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "amusement park",
-      "amusement",
-      "ferris",
-      "park",
-      "theme",
-      "wheel",
     },
   },
   {
@@ -50811,13 +47761,7 @@ return {
     name = "ROLLER COASTER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "amusement",
-      "coaster",
-      "park",
-      "roller",
-      "theme",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3A3",
@@ -50827,11 +47771,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "fishing",
-      "entertainment",
-      "fish",
-      "fishing",
-      "pole",
-      "sport",
     },
   },
   {
@@ -50842,12 +47781,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "karaoke",
-      "karaoke",
-      "mic",
-      "microphone",
-      "music",
-      "sing",
-      "sound",
     },
   },
   {
@@ -50858,13 +47791,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "film, movies",
-      "bollywood",
-      "camera",
-      "cinema",
-      "film",
-      "hollywood",
-      "movie",
-      "record",
     },
   },
   {
@@ -50875,10 +47801,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "movie theater, movie projector",
-      "camera",
-      "cinema",
-      "film",
-      "movie",
     },
   },
   {
@@ -50889,9 +47811,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "music",
-      "earbud",
-      "headphone",
-      "sound",
     },
   },
   {
@@ -50902,17 +47821,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "art",
-      "art",
-      "artist",
-      "artsy",
-      "arty",
-      "colorful",
-      "creative",
-      "entertainment",
-      "museum",
-      "painter",
-      "painting",
-      "palette",
     },
   },
   {
@@ -50923,14 +47831,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "drama, performing arts, theater",
-      "clothes",
-      "clothing",
-      "fancy",
-      "formal",
-      "hat",
-      "magic",
-      "top",
-      "tophat",
     },
   },
   {
@@ -50941,8 +47841,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "event",
-      "circus",
-      "tent",
     },
   },
   {
@@ -50953,9 +47851,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "indicates an event",
-      "admission",
-      "stub",
-      "ticket",
     },
   },
   {
@@ -50966,10 +47861,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "film",
-      "action",
-      "board",
-      "clapper",
-      "movie",
     },
   },
   {
@@ -50980,16 +47871,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "theater masks, theater",
-      "actor",
-      "actress",
-      "art",
-      "arts",
-      "entertainment",
-      "mask",
-      "performing",
-      "theater",
-      "theatre",
-      "thespian",
     },
   },
   {
@@ -51000,10 +47881,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "video game controller",
-      "controller",
-      "entertainment",
-      "game",
-      "video",
     },
   },
   {
@@ -51014,14 +47891,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "archery target, hitting the target",
-      "bull",
-      "bullseye",
-      "dart",
-      "direct",
-      "entertainment",
-      "game",
-      "hit",
-      "target",
     },
   },
   {
@@ -51030,15 +47899,7 @@ return {
     name = "SLOT MACHINE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "casino",
-      "gamble",
-      "gambling",
-      "game",
-      "machine",
-      "slot",
-      "slots",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3B1",
@@ -51048,13 +47909,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "magic 8-ball",
-      "8",
-      "8ball",
-      "ball",
-      "billiard",
-      "eight",
-      "game",
-      "pool",
     },
   },
   {
@@ -51063,12 +47917,7 @@ return {
     name = "GAME DIE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "dice",
-      "die",
-      "entertainment",
-      "game",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3B3",
@@ -51076,13 +47925,7 @@ return {
     name = "BOWLING",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "bowling",
-      "game",
-      "sport",
-      "strike",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3B4",
@@ -51092,12 +47935,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "flower cards",
-      "card",
-      "cards",
-      "flower",
-      "game",
-      "Japanese",
-      "playing",
     },
   },
   {
@@ -51108,10 +47945,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "music, being in good mood",
-      "music",
-      "musical",
-      "note",
-      "sound",
     },
   },
   {
@@ -51122,11 +47955,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "dancing notes, mood, melody",
-      "music",
-      "musical",
-      "note",
-      "notes",
-      "sound",
     },
   },
   {
@@ -51135,12 +47963,7 @@ return {
     name = "SAXOPHONE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "instrument",
-      "music",
-      "sax",
-      "saxophone",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3B8",
@@ -51148,12 +47971,7 @@ return {
     name = "GUITAR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "guitar",
-      "instrument",
-      "music",
-      "strat",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3B9",
@@ -51161,13 +47979,7 @@ return {
     name = "MUSICAL KEYBOARD",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "instrument",
-      "keyboard",
-      "music",
-      "musical",
-      "piano",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3BA",
@@ -51175,11 +47987,7 @@ return {
     name = "TRUMPET",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "instrument",
-      "music",
-      "trumpet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3BB",
@@ -51187,11 +47995,7 @@ return {
     name = "VIOLIN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "instrument",
-      "music",
-      "violin",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3BC",
@@ -51199,12 +48003,7 @@ return {
     name = "MUSICAL SCORE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "music",
-      "musical",
-      "note",
-      "score",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3BD",
@@ -51213,12 +48012,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "ekiden (Japanese)",
+      "ekiden (japanese)",
       "symbol is generalized to represent athletics",
-      "athletics",
-      "running",
-      "sash",
-      "shirt",
     },
   },
   {
@@ -51228,10 +48023,6 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "tennis",
-      "ball",
-      "racquet",
-      "sport",
       "tennis",
     },
   },
@@ -51243,10 +48034,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "skiing",
-      "ski",
-      "skis",
-      "snow",
-      "sport",
     },
   },
   {
@@ -51257,10 +48044,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "basketball",
-      "ball",
-      "basketball",
-      "hoop",
-      "sport",
     },
   },
   {
@@ -51271,16 +48054,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "motor sports",
-      "checkered",
-      "chequered",
-      "finish",
-      "flag",
-      "flags",
-      "game",
-      "race",
-      "racing",
-      "sport",
-      "win",
     },
   },
   {
@@ -51289,13 +48062,7 @@ return {
     name = "SNOWBOARDER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ski",
-      "snow",
-      "snowboard",
-      "snowboarder",
-      "sport",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3C3",
@@ -51305,39 +48072,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "running, marathon, track and fields",
-      "fast",
-      "hurry",
-      "marathon",
-      "move",
-      "person",
-      "quick",
-      "race",
-      "racing",
-      "run",
-      "rush",
-      "speed",
-      "fast",
-      "hurry",
-      "man",
-      "marathon",
-      "move",
-      "quick",
-      "race",
-      "racing",
-      "run",
-      "rush",
-      "speed",
-      "fast",
-      "hurry",
-      "marathon",
-      "move",
-      "quick",
-      "race",
-      "racing",
-      "run",
-      "rush",
-      "speed",
-      "woman",
     },
   },
   {
@@ -51348,33 +48082,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "surfing",
-      "beach",
-      "ocean",
-      "person",
-      "sport",
-      "surf",
-      "surfer",
-      "surfing",
-      "swell",
-      "waves",
-      "beach",
-      "man",
-      "ocean",
-      "sport",
-      "surf",
-      "surfer",
-      "surfing",
-      "swell",
-      "waves",
-      "beach",
-      "ocean",
-      "person",
-      "sport",
-      "surf",
-      "surfer",
-      "surfing",
-      "swell",
-      "waves",
     },
   },
   {
@@ -51383,13 +48090,7 @@ return {
     name = "SPORTS MEDAL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "award",
-      "gold",
-      "medal",
-      "sports",
-      "winner",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3C6",
@@ -51397,17 +48098,7 @@ return {
     name = "TROPHY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "champion",
-      "champs",
-      "prize",
-      "slay",
-      "sport",
-      "trophy",
-      "victory",
-      "win",
-      "winning",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3C7",
@@ -51415,14 +48106,7 @@ return {
     name = "HORSE RACING",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "horse",
-      "jockey",
-      "racehorse",
-      "racing",
-      "riding",
-      "sport",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3C8",
@@ -51430,14 +48114,7 @@ return {
     name = "AMERICAN FOOTBALL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "american",
-      "ball",
-      "bowl",
-      "football",
-      "sport",
-      "super",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3C9",
@@ -51445,12 +48122,7 @@ return {
     name = "RUGBY FOOTBALL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "football",
-      "rugby",
-      "sport",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3CA",
@@ -51458,29 +48130,7 @@ return {
     name = "SWIMMER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "freestyle",
-      "person",
-      "sport",
-      "swim",
-      "swimmer",
-      "swimming",
-      "triathlon",
-      "freestyle",
-      "man",
-      "sport",
-      "swim",
-      "swimmer",
-      "swimming",
-      "triathlon",
-      "freestyle",
-      "man",
-      "sport",
-      "swim",
-      "swimmer",
-      "swimming",
-      "triathlon",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3CB",
@@ -51490,39 +48140,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "health",
-      "barbell",
-      "bodybuilder",
-      "deadlift",
-      "lifter",
-      "lifting",
-      "person",
-      "powerlifting",
-      "weight",
-      "weightlifter",
-      "weights",
-      "workout",
-      "barbell",
-      "bodybuilder",
-      "deadlift",
-      "lifter",
-      "lifting",
-      "man",
-      "powerlifting",
-      "weight",
-      "weightlifter",
-      "weights",
-      "workout",
-      "barbell",
-      "bodybuilder",
-      "deadlift",
-      "lifter",
-      "lifting",
-      "powerlifting",
-      "weight",
-      "weightlifter",
-      "weights",
-      "woman",
-      "workout",
     },
   },
   {
@@ -51531,44 +48148,7 @@ return {
     name = "GOLFER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "birdie",
-      "caddy",
-      "driving",
-      "golf",
-      "golfing",
-      "green",
-      "person",
-      "pga",
-      "putt",
-      "range",
-      "tee",
-      "ball",
-      "birdie",
-      "caddy",
-      "driving",
-      "golf",
-      "golfing",
-      "green",
-      "man",
-      "pga",
-      "putt",
-      "range",
-      "tee",
-      "ball",
-      "birdie",
-      "caddy",
-      "driving",
-      "golf",
-      "golfing",
-      "green",
-      "pga",
-      "putt",
-      "range",
-      "tee",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3CD",
@@ -51578,8 +48158,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "motorcycle",
-      "motorcycle",
-      "racing",
     },
   },
   {
@@ -51590,9 +48168,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "race car",
-      "car",
-      "racing",
-      "zoom",
     },
   },
   {
@@ -51601,12 +48176,7 @@ return {
     name = "CRICKET BAT AND BALL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "bat",
-      "cricket",
-      "game",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3D0",
@@ -51614,11 +48184,7 @@ return {
     name = "VOLLEYBALL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "game",
-      "volleyball",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3D1",
@@ -51626,13 +48192,7 @@ return {
     name = "FIELD HOCKEY STICK AND BALL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "field",
-      "game",
-      "hockey",
-      "stick",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3D2",
@@ -51640,13 +48200,7 @@ return {
     name = "ICE HOCKEY STICK AND PUCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "game",
-      "hockey",
-      "ice",
-      "puck",
-      "stick",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3D3",
@@ -51654,17 +48208,7 @@ return {
     name = "TABLE TENNIS PADDLE AND BALL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "bat",
-      "game",
-      "paddle",
-      "ping",
-      "pingpong",
-      "pong",
-      "table",
-      "tennis",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3D4",
@@ -51672,12 +48216,7 @@ return {
     name = "SNOW CAPPED MOUNTAIN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cold",
-      "mountain",
-      "snow",
-      "snow-capped",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3D5",
@@ -51687,7 +48226,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "camping site",
-      "camping",
     },
   },
   {
@@ -51696,10 +48234,7 @@ return {
     name = "BEACH WITH UMBRELLA",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "beach",
-      "umbrella",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3D7",
@@ -51709,9 +48244,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "under construction",
-      "building",
-      "construction",
-      "crane",
     },
   },
   {
@@ -51722,8 +48254,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "town",
-      "house",
-      "houses",
     },
   },
   {
@@ -51734,8 +48264,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "skyline, city",
-      "city",
-      "cityscape",
     },
   },
   {
@@ -51746,9 +48274,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "derelict site",
-      "derelict",
-      "home",
-      "house",
     },
   },
   {
@@ -51759,8 +48284,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "public building",
-      "building",
-      "classical",
     },
   },
   {
@@ -51769,9 +48292,7 @@ return {
     name = "DESERT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "desert",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3DD",
@@ -51781,8 +48302,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "island",
-      "desert",
-      "island",
     },
   },
   {
@@ -51791,10 +48310,7 @@ return {
     name = "NATIONAL PARK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "national",
-      "park",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3DF",
@@ -51802,9 +48318,7 @@ return {
     name = "STADIUM",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "stadium",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3E0",
@@ -51812,19 +48326,7 @@ return {
     name = "HOUSE BUILDING",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "country",
-      "heart",
-      "home",
-      "house",
-      "ranch",
-      "settle",
-      "simple",
-      "suburban",
-      "suburbia",
-      "where",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3E1",
@@ -51834,18 +48336,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "home, house with yard",
-      "building",
-      "country",
-      "garden",
-      "heart",
-      "home",
-      "house",
-      "ranch",
-      "settle",
-      "simple",
-      "suburban",
-      "suburbia",
-      "where",
     },
   },
   {
@@ -51854,13 +48344,7 @@ return {
     name = "OFFICE BUILDING",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "city",
-      "cubical",
-      "job",
-      "office",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3E3",
@@ -51868,12 +48352,7 @@ return {
     name = "JAPANESE POST OFFICE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "Japanese",
-      "office",
-      "post",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3E4",
@@ -51881,12 +48360,7 @@ return {
     name = "EUROPEAN POST OFFICE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "European",
-      "office",
-      "post",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3E5",
@@ -51894,12 +48368,7 @@ return {
     name = "HOSPITAL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "doctor",
-      "hospital",
-      "medicine",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3E6",
@@ -51907,10 +48376,7 @@ return {
     name = "BANK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bank",
-      "building",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3E7",
@@ -51919,14 +48385,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "ATM",
-      "ATM",
-      "automated",
-      "bank",
-      "cash",
-      "money",
-      "sign",
-      "teller",
+      "atm",
     },
   },
   {
@@ -51935,10 +48394,7 @@ return {
     name = "HOTEL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "hotel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3E9",
@@ -51946,11 +48402,7 @@ return {
     name = "LOVE HOTEL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "hotel",
-      "love",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3EA",
@@ -51958,13 +48410,7 @@ return {
     name = "CONVENIENCE STORE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "24",
-      "building",
-      "convenience",
-      "hours",
-      "store",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3EB",
@@ -51972,10 +48418,7 @@ return {
     name = "SCHOOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "school",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3EC",
@@ -51983,11 +48426,7 @@ return {
     name = "DEPARTMENT STORE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "department",
-      "store",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3ED",
@@ -51996,10 +48435,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "industrial production site",
       "date of production",
-      "building",
-      "factory",
+      "industrial production site",
     },
   },
   {
@@ -52010,12 +48447,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "japanese izakaya restaurant",
-      "bar",
-      "lantern",
-      "light",
-      "paper",
-      "red",
-      "restaurant",
     },
   },
   {
@@ -52024,11 +48455,7 @@ return {
     name = "JAPANESE CASTLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "castle",
-      "Japanese",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3F0",
@@ -52036,11 +48463,7 @@ return {
     name = "EUROPEAN CASTLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "building",
-      "castle",
-      "European",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3F1",
@@ -52066,30 +48489,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "flag",
-      "flag",
-      "waving",
-      "white",
-      "bisexual",
-      "flag",
-      "gay",
-      "genderqueer",
-      "glbt",
-      "glbtq",
-      "lesbian",
-      "lgbt",
-      "lgbtq",
-      "lgbtqia",
-      "pride",
-      "queer",
-      "rainbow",
-      "trans",
-      "transgender",
-      "blue",
-      "flag",
-      "light",
-      "pink",
-      "transgender",
-      "white",
     },
   },
   {
@@ -52098,17 +48497,7 @@ return {
     name = "WAVING BLACK FLAG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "black",
-      "flag",
-      "waving",
-      "flag",
-      "Jolly",
-      "pirate",
-      "plunder",
-      "Roger",
-      "treasure",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3F5",
@@ -52116,10 +48505,7 @@ return {
     name = "ROSETTE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "plant",
-      "rosette",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3F6",
@@ -52137,8 +48523,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "price, price tag",
-      "label",
-      "tag",
     },
   },
   {
@@ -52147,13 +48531,7 @@ return {
     name = "BADMINTON RACQUET AND SHUTTLECOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "badminton",
-      "birdie",
-      "game",
-      "racquet",
-      "shuttlecock",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3F9",
@@ -52162,16 +48540,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
+      "also used for sagittarius",
       "archery",
-      "also used for Sagittarius",
-      "archer",
-      "archery",
-      "arrow",
-      "bow",
-      "Sagittarius",
-      "tool",
-      "weapon",
-      "zodiac",
     },
   },
   {
@@ -52181,15 +48551,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "used for Aquarius",
-      "amphora",
-      "Aquarius",
-      "cooking",
-      "drink",
-      "jug",
-      "tool",
-      "weapon",
-      "zodiac",
+      "used for aquarius",
     },
   },
   {
@@ -52198,13 +48560,7 @@ return {
     name = "EMOJI MODIFIER FITZPATRICK TYPE-1-2",
     category = "Sk",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "1–2",
-      "light",
-      "skin",
-      "tone",
-      "type",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3FC",
@@ -52212,13 +48568,7 @@ return {
     name = "EMOJI MODIFIER FITZPATRICK TYPE-3",
     category = "Sk",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "3",
-      "medium-light",
-      "skin",
-      "tone",
-      "type",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3FD",
@@ -52226,13 +48576,7 @@ return {
     name = "EMOJI MODIFIER FITZPATRICK TYPE-4",
     category = "Sk",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "4",
-      "medium",
-      "skin",
-      "tone",
-      "type",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3FE",
@@ -52240,13 +48584,7 @@ return {
     name = "EMOJI MODIFIER FITZPATRICK TYPE-5",
     category = "Sk",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "5",
-      "medium-dark",
-      "skin",
-      "tone",
-      "type",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F3FF",
@@ -52254,13 +48592,7 @@ return {
     name = "EMOJI MODIFIER FITZPATRICK TYPE-6",
     category = "Sk",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "6",
-      "dark",
-      "skin",
-      "tone",
-      "type",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F400",
@@ -52269,9 +48601,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "first of the signs of the Asian zodiac",
-      "animal",
-      "rat",
+      "first of the signs of the asian zodiac",
     },
   },
   {
@@ -52280,11 +48610,7 @@ return {
     name = "MOUSE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "animals",
-      "mouse",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F402",
@@ -52293,14 +48619,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "second of the signs of the Asian zodiac",
-      "animal",
-      "animals",
-      "bull",
-      "farm",
-      "ox",
-      "Taurus",
-      "zodiac",
+      "second of the signs of the asian zodiac",
     },
   },
   {
@@ -52309,12 +48628,7 @@ return {
     name = "WATER BUFFALO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "buffalo",
-      "water",
-      "zoo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F404",
@@ -52324,12 +48638,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "beef (on menus)",
-      "animal",
-      "animals",
-      "cow",
-      "farm",
-      "milk",
-      "moo",
     },
   },
   {
@@ -52339,13 +48647,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "third of the signs of the Asian zodiac",
-      "animal",
-      "big",
-      "cat",
-      "predator",
-      "tiger",
-      "zoo",
+      "third of the signs of the asian zodiac",
     },
   },
   {
@@ -52354,14 +48656,7 @@ return {
     name = "LEOPARD",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "big",
-      "cat",
-      "leopard",
-      "predator",
-      "zoo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F407",
@@ -52370,11 +48665,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "fourth of the signs of the Asian zodiac",
-      "animal",
-      "bunny",
-      "pet",
-      "rabbit",
+      "fourth of the signs of the asian zodiac",
     },
   },
   {
@@ -52383,21 +48674,7 @@ return {
     name = "CAT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "animals",
-      "cat",
-      "cats",
-      "kitten",
-      "pet",
-      "animal",
-      "black",
-      "cat",
-      "feline",
-      "halloween",
-      "meow",
-      "unlucky",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F409",
@@ -52406,13 +48683,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "fifth of the signs of the Asian zodiac",
-      "animal",
-      "dragon",
-      "fairy",
-      "fairytale",
-      "knights",
-      "tale",
+      "fifth of the signs of the asian zodiac",
     },
   },
   {
@@ -52421,11 +48692,7 @@ return {
     name = "CROCODILE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "crocodile",
-      "zoo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F40B",
@@ -52433,12 +48700,7 @@ return {
     name = "WHALE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "beach",
-      "ocean",
-      "whale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F40C",
@@ -52446,14 +48708,7 @@ return {
     name = "SNAIL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "escargot",
-      "garden",
-      "nature",
-      "slug",
-      "snail",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F40D",
@@ -52462,13 +48717,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "sixth of the signs of the Asian zodiac",
-      "animal",
-      "bearer",
-      "Ophiuchus",
-      "serpent",
-      "snake",
-      "zodiac",
+      "sixth of the signs of the asian zodiac",
     },
   },
   {
@@ -52479,13 +48728,7 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "equestrian sports",
-      "seventh of the signs of the Asian zodiac",
-      "animal",
-      "equestrian",
-      "farm",
-      "horse",
-      "racehorse",
-      "racing",
+      "seventh of the signs of the asian zodiac",
     },
   },
   {
@@ -52495,15 +48738,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "eighth of the signs of the Asian zodiac",
-      "animal",
-      "Aries",
-      "horns",
-      "male",
-      "ram",
-      "sheep",
-      "zodiac",
-      "zoo",
+      "eighth of the signs of the asian zodiac",
     },
   },
   {
@@ -52512,14 +48747,7 @@ return {
     name = "GOAT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "Capricorn",
-      "farm",
-      "goat",
-      "milk",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F411",
@@ -52527,17 +48755,7 @@ return {
     name = "SHEEP",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "baa",
-      "ewe",
-      "farm",
-      "female",
-      "fluffy",
-      "lamb",
-      "sheep",
-      "wool",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F412",
@@ -52546,10 +48764,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "ninth of the signs of the Asian zodiac",
-      "animal",
-      "banana",
-      "monkey",
+      "ninth of the signs of the asian zodiac",
     },
   },
   {
@@ -52559,12 +48774,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "tenth of the signs of the Asian zodiac",
       "cock",
-      "animal",
-      "bird",
-      "ornithology",
-      "rooster",
+      "tenth of the signs of the asian zodiac",
     },
   },
   {
@@ -52576,10 +48787,6 @@ return {
     aliases = {
       "hen",
       "poultry (on menus)",
-      "animal",
-      "bird",
-      "chicken",
-      "ornithology",
     },
   },
   {
@@ -52589,17 +48796,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "eleventh of the signs of the Asian zodiac",
-      "animal",
-      "animals",
-      "dog",
-      "dogs",
-      "pet",
-      "accessibility",
-      "animal",
-      "assistance",
-      "dog",
-      "service",
+      "eleventh of the signs of the asian zodiac",
     },
   },
   {
@@ -52609,14 +48806,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "twelfth of the signs of the Asian zodiac",
       "pork (on menus)",
-      "animal",
-      "bacon",
-      "farm",
-      "pig",
-      "pork",
-      "sow",
+      "twelfth of the signs of the asian zodiac",
     },
   },
   {
@@ -52625,11 +48816,7 @@ return {
     name = "BOAR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "boar",
-      "pig",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F418",
@@ -52637,10 +48824,7 @@ return {
     name = "ELEPHANT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "elephant",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F419",
@@ -52648,12 +48832,7 @@ return {
     name = "OCTOPUS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "creature",
-      "ocean",
-      "octopus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F41A",
@@ -52661,14 +48840,7 @@ return {
     name = "SPIRAL SHELL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "beach",
-      "conch",
-      "sea",
-      "shell",
-      "spiral",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F41B",
@@ -52676,12 +48848,7 @@ return {
     name = "BUG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bug",
-      "garden",
-      "insect",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F41C",
@@ -52689,12 +48856,7 @@ return {
     name = "ANT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "ant",
-      "garden",
-      "insect",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F41D",
@@ -52702,16 +48864,7 @@ return {
     name = "HONEYBEE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bee",
-      "bumblebee",
-      "honey",
-      "honeybee",
-      "insect",
-      "nature",
-      "spring",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F41E",
@@ -52721,14 +48874,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "ladybird, ladybug, coccinellids",
-      "animal",
-      "beetle",
-      "garden",
-      "insect",
-      "lady",
-      "ladybird",
-      "ladybug",
-      "nature",
     },
   },
   {
@@ -52737,15 +48882,7 @@ return {
     name = "FISH",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "dinner",
-      "fish",
-      "fishes",
-      "fishing",
-      "Pisces",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F420",
@@ -52753,12 +48890,7 @@ return {
     name = "TROPICAL FISH",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "fish",
-      "fishes",
-      "tropical",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F421",
@@ -52766,11 +48898,7 @@ return {
     name = "BLOWFISH",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "blowfish",
-      "fish",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F422",
@@ -52780,10 +48908,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "tortoise, terrapin",
-      "animal",
-      "terrapin",
-      "tortoise",
-      "turtle",
     },
   },
   {
@@ -52792,14 +48916,7 @@ return {
     name = "HATCHING CHICK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "baby",
-      "bird",
-      "chick",
-      "egg",
-      "hatching",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F424",
@@ -52807,13 +48924,7 @@ return {
     name = "BABY CHICK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "baby",
-      "bird",
-      "chick",
-      "ornithology",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F425",
@@ -52821,15 +48932,7 @@ return {
     name = "FRONT-FACING BABY CHICK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "baby",
-      "bird",
-      "chick",
-      "front-facing",
-      "newborn",
-      "ornithology",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F426",
@@ -52837,37 +48940,7 @@ return {
     name = "BIRD",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bird",
-      "ornithology",
-      "animal",
-      "beak",
-      "bird",
-      "black",
-      "caw",
-      "corvid",
-      "crow",
-      "ornithology",
-      "raven",
-      "rook",
-      "ascend",
-      "ascension",
-      "emerge",
-      "fantasy",
-      "firebird",
-      "glory",
-      "immortal",
-      "phoenix",
-      "rebirth",
-      "reincarnation",
-      "reinvent",
-      "renewal",
-      "revival",
-      "revive",
-      "rise",
-      "transform",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F427",
@@ -52875,13 +48948,7 @@ return {
     name = "PENGUIN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "antarctica",
-      "bird",
-      "ornithology",
-      "penguin",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F428",
@@ -52889,16 +48956,7 @@ return {
     name = "KOALA",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "australia",
-      "bear",
-      "down",
-      "face",
-      "koala",
-      "marsupial",
-      "under",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F429",
@@ -52906,12 +48964,7 @@ return {
     name = "POODLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "dog",
-      "fluffy",
-      "poodle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F42A",
@@ -52921,12 +48974,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "has a single hump",
-      "animal",
-      "camel",
-      "desert",
-      "dromedary",
-      "hump",
-      "one",
     },
   },
   {
@@ -52937,13 +48984,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "has two humps",
-      "animal",
-      "bactrian",
-      "camel",
-      "desert",
-      "hump",
-      "two",
-      "two-hump",
     },
   },
   {
@@ -52952,13 +48992,7 @@ return {
     name = "DOLPHIN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "beach",
-      "dolphin",
-      "flipper",
-      "ocean",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F42D",
@@ -52966,11 +49000,7 @@ return {
     name = "MOUSE FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "face",
-      "mouse",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F42E",
@@ -52978,14 +49008,7 @@ return {
     name = "COW FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "cow",
-      "face",
-      "farm",
-      "milk",
-      "moo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F42F",
@@ -52993,14 +49016,7 @@ return {
     name = "TIGER FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "big",
-      "cat",
-      "face",
-      "predator",
-      "tiger",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F430",
@@ -53008,13 +49024,7 @@ return {
     name = "RABBIT FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bunny",
-      "face",
-      "pet",
-      "rabbit",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F431",
@@ -53022,14 +49032,7 @@ return {
     name = "CAT FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "cat",
-      "face",
-      "kitten",
-      "kitty",
-      "pet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F432",
@@ -53037,14 +49040,7 @@ return {
     name = "DRAGON FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "dragon",
-      "face",
-      "fairy",
-      "fairytale",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F433",
@@ -53052,14 +49048,7 @@ return {
     name = "SPOUTING WHALE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "beach",
-      "face",
-      "ocean",
-      "spouting",
-      "whale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F434",
@@ -53067,15 +49056,7 @@ return {
     name = "HORSE FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "dressage",
-      "equine",
-      "face",
-      "farm",
-      "horse",
-      "horses",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F435",
@@ -53083,12 +49064,7 @@ return {
     name = "MONKEY FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "banana",
-      "face",
-      "monkey",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F436",
@@ -53096,15 +49072,7 @@ return {
     name = "DOG FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "adorbs",
-      "animal",
-      "dog",
-      "face",
-      "pet",
-      "puppies",
-      "puppy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F437",
@@ -53112,14 +49080,7 @@ return {
     name = "PIG FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bacon",
-      "face",
-      "farm",
-      "pig",
-      "pork",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F438",
@@ -53127,11 +49088,7 @@ return {
     name = "FROG FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "face",
-      "frog",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F439",
@@ -53139,12 +49096,7 @@ return {
     name = "HAMSTER FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "face",
-      "hamster",
-      "pet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F43A",
@@ -53152,11 +49104,7 @@ return {
     name = "WOLF FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "face",
-      "wolf",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F43B",
@@ -53164,19 +49112,7 @@ return {
     name = "BEAR FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bear",
-      "face",
-      "grizzly",
-      "growl",
-      "honey",
-      "animal",
-      "arctic",
-      "bear",
-      "polar",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F43C",
@@ -53184,12 +49120,7 @@ return {
     name = "PANDA FACE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bamboo",
-      "face",
-      "panda",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F43D",
@@ -53197,15 +49128,7 @@ return {
     name = "PIG NOSE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "face",
-      "farm",
-      "nose",
-      "pig",
-      "smell",
-      "snout",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F43E",
@@ -53213,13 +49136,7 @@ return {
     name = "PAW PRINTS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "feet",
-      "paw",
-      "paws",
-      "print",
-      "prints",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F43F",
@@ -53228,11 +49145,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "animal, critter",
       "also used to represent a squirrel",
-      "animal",
-      "chipmunk",
-      "squirrel",
+      "animal, critter",
     },
   },
   {
@@ -53241,19 +49155,7 @@ return {
     name = "EYES",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "body",
-      "eye",
-      "eyes",
-      "face",
-      "googly",
-      "look",
-      "looking",
-      "omg",
-      "peep",
-      "see",
-      "seeing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F441",
@@ -53263,15 +49165,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "sight",
-      "balloon",
-      "bubble",
-      "eye",
-      "speech",
-      "witness",
-      "1",
-      "body",
-      "eye",
-      "one",
     },
   },
   {
@@ -53280,16 +49173,7 @@ return {
     name = "EAR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "body",
-      "ear",
-      "ears",
-      "hear",
-      "hearing",
-      "listen",
-      "listening",
-      "sound",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F443",
@@ -53297,15 +49181,7 @@ return {
     name = "NOSE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "body",
-      "nose",
-      "noses",
-      "nosey",
-      "odor",
-      "smell",
-      "smells",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F444",
@@ -53313,15 +49189,7 @@ return {
     name = "MOUTH",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "beauty",
-      "body",
-      "kiss",
-      "kissing",
-      "lips",
-      "lipstick",
-      "mouth",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F445",
@@ -53329,12 +49197,7 @@ return {
     name = "TONGUE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "body",
-      "lick",
-      "slurp",
-      "tongue",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F446",
@@ -53342,15 +49205,7 @@ return {
     name = "WHITE UP POINTING BACKHAND INDEX",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "backhand",
-      "finger",
-      "hand",
-      "index",
-      "point",
-      "pointing",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F447",
@@ -53358,15 +49213,7 @@ return {
     name = "WHITE DOWN POINTING BACKHAND INDEX",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "backhand",
-      "down",
-      "finger",
-      "hand",
-      "index",
-      "point",
-      "pointing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F448",
@@ -53374,15 +49221,7 @@ return {
     name = "WHITE LEFT POINTING BACKHAND INDEX",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "backhand",
-      "finger",
-      "hand",
-      "index",
-      "left",
-      "point",
-      "pointing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F449",
@@ -53390,15 +49229,7 @@ return {
     name = "WHITE RIGHT POINTING BACKHAND INDEX",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "backhand",
-      "finger",
-      "hand",
-      "index",
-      "point",
-      "pointing",
-      "right",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F44A",
@@ -53408,22 +49239,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "punch",
-      "absolutely",
-      "agree",
-      "boom",
-      "bro",
-      "bruh",
-      "bump",
-      "clenched",
-      "correct",
-      "fist",
-      "hand",
-      "knuckle",
-      "oncoming",
-      "pound",
-      "punch",
-      "rock",
-      "ttyl",
     },
   },
   {
@@ -53432,24 +49247,7 @@ return {
     name = "WAVING HAND SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bye",
-      "cya",
-      "g2g",
-      "greetings",
-      "gtg",
-      "hand",
-      "hello",
-      "hey",
-      "hi",
-      "later",
-      "outtie",
-      "ttfn",
-      "ttyl",
-      "wave",
-      "yo",
-      "you",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F44C",
@@ -53457,24 +49255,7 @@ return {
     name = "OK HAND SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "awesome",
-      "bet",
-      "dope",
-      "fleek",
-      "fosho",
-      "got",
-      "gotcha",
-      "hand",
-      "legit",
-      "OK",
-      "okay",
-      "pinch",
-      "rad",
-      "sure",
-      "sweet",
-      "three",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F44D",
@@ -53482,15 +49263,7 @@ return {
     name = "THUMBS UP SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "+1",
-      "good",
-      "hand",
-      "like",
-      "thumb",
-      "up",
-      "yes",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F44E",
@@ -53498,18 +49271,7 @@ return {
     name = "THUMBS DOWN SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "-1",
-      "bad",
-      "dislike",
-      "down",
-      "good",
-      "hand",
-      "no",
-      "nope",
-      "thumb",
-      "thumbs",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F44F",
@@ -53517,24 +49279,7 @@ return {
     name = "CLAPPING HANDS SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "applause",
-      "approval",
-      "awesome",
-      "clap",
-      "congrats",
-      "congratulations",
-      "excited",
-      "good",
-      "great",
-      "hand",
-      "homie",
-      "job",
-      "nice",
-      "prayed",
-      "well",
-      "yay",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F450",
@@ -53542,14 +49287,7 @@ return {
     name = "OPEN HANDS SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "hand",
-      "hands",
-      "hug",
-      "jazz",
-      "open",
-      "swerve",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F451",
@@ -53557,17 +49295,7 @@ return {
     name = "CROWN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clothing",
-      "crown",
-      "family",
-      "king",
-      "medieval",
-      "queen",
-      "royal",
-      "royalty",
-      "win",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F452",
@@ -53575,16 +49303,7 @@ return {
     name = "WOMANS HAT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clothes",
-      "clothing",
-      "garden",
-      "hat",
-      "hats",
-      "party",
-      "woman",
-      "woman’s",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F453",
@@ -53592,13 +49311,7 @@ return {
     name = "EYEGLASSES",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clothing",
-      "eye",
-      "eyeglasses",
-      "eyewear",
-      "glasses",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F454",
@@ -53606,14 +49319,7 @@ return {
     name = "NECKTIE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clothing",
-      "employed",
-      "necktie",
-      "serious",
-      "shirt",
-      "tie",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F455",
@@ -53621,19 +49327,7 @@ return {
     name = "T-SHIRT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blue",
-      "casual",
-      "clothes",
-      "clothing",
-      "collar",
-      "dressed",
-      "shirt",
-      "shopping",
-      "t-shirt",
-      "tshirt",
-      "weekend",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F456",
@@ -53641,19 +49335,7 @@ return {
     name = "JEANS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blue",
-      "casual",
-      "clothes",
-      "clothing",
-      "denim",
-      "dressed",
-      "jeans",
-      "pants",
-      "shopping",
-      "trousers",
-      "weekend",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F457",
@@ -53661,14 +49343,7 @@ return {
     name = "DRESS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clothes",
-      "clothing",
-      "dress",
-      "dressed",
-      "fancy",
-      "shopping",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F458",
@@ -53676,11 +49351,7 @@ return {
     name = "KIMONO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clothing",
-      "comfortable",
-      "kimono",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F459",
@@ -53688,15 +49359,7 @@ return {
     name = "BIKINI",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bathing",
-      "beach",
-      "bikini",
-      "clothing",
-      "pool",
-      "suit",
-      "swim",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F45A",
@@ -53704,19 +49367,7 @@ return {
     name = "WOMANS CLOTHES",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blouse",
-      "clothes",
-      "clothing",
-      "collar",
-      "dress",
-      "dressed",
-      "lady",
-      "shirt",
-      "shopping",
-      "woman",
-      "woman’s",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F45B",
@@ -53724,16 +49375,7 @@ return {
     name = "PURSE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clothes",
-      "clothing",
-      "coin",
-      "dress",
-      "fancy",
-      "handbag",
-      "purse",
-      "shopping",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F45C",
@@ -53741,16 +49383,7 @@ return {
     name = "HANDBAG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bag",
-      "clothes",
-      "clothing",
-      "dress",
-      "handbag",
-      "lady",
-      "purse",
-      "shopping",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F45D",
@@ -53758,16 +49391,7 @@ return {
     name = "POUCH",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bag",
-      "clothes",
-      "clothing",
-      "clutch",
-      "dress",
-      "handbag",
-      "pouch",
-      "purse",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F45E",
@@ -53775,19 +49399,7 @@ return {
     name = "MANS SHOE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "brown",
-      "clothes",
-      "clothing",
-      "feet",
-      "foot",
-      "kick",
-      "man",
-      "man’s",
-      "shoe",
-      "shoes",
-      "shopping",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F45F",
@@ -53797,17 +49409,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "runner, sneaker, tennis shoe",
-      "athletic",
-      "clothes",
-      "clothing",
-      "fast",
-      "kick",
-      "running",
-      "shoe",
-      "shoes",
-      "shopping",
-      "sneaker",
-      "tennis",
     },
   },
   {
@@ -53816,20 +49417,7 @@ return {
     name = "HIGH-HEELED SHOE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clothes",
-      "clothing",
-      "dress",
-      "fashion",
-      "heel",
-      "heels",
-      "high-heeled",
-      "shoe",
-      "shoes",
-      "shopping",
-      "stiletto",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F461",
@@ -53837,13 +49425,7 @@ return {
     name = "WOMANS SANDAL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clothing",
-      "sandal",
-      "shoe",
-      "woman",
-      "woman’s",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F462",
@@ -53851,17 +49433,7 @@ return {
     name = "WOMANS BOOTS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "boot",
-      "clothes",
-      "clothing",
-      "dress",
-      "shoe",
-      "shoes",
-      "shopping",
-      "woman",
-      "woman’s",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F463",
@@ -53869,15 +49441,7 @@ return {
     name = "FOOTPRINTS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "barefoot",
-      "clothing",
-      "footprint",
-      "footprints",
-      "omw",
-      "print",
-      "walk",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F464",
@@ -53887,10 +49451,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "guest account",
-      "bust",
-      "mysterious",
-      "shadow",
-      "silhouette",
     },
   },
   {
@@ -53901,14 +49461,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "accounts",
-      "bff",
-      "bust",
-      "busts",
-      "everyone",
-      "friend",
-      "friends",
-      "people",
-      "silhouette",
     },
   },
   {
@@ -53917,16 +49469,7 @@ return {
     name = "BOY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "boy",
-      "bright-eyed",
-      "child",
-      "grandson",
-      "kid",
-      "son",
-      "young",
-      "younger",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F467",
@@ -53934,18 +49477,7 @@ return {
     name = "GIRL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bright-eyed",
-      "child",
-      "daughter",
-      "girl",
-      "granddaughter",
-      "kid",
-      "Virgo",
-      "young",
-      "younger",
-      "zodiac",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F468",
@@ -53953,113 +49485,7 @@ return {
     name = "MAN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "adult",
-      "bro",
-      "man",
-      "doctor",
-      "health",
-      "healthcare",
-      "man",
-      "nurse",
-      "therapist",
-      "worker",
-      "graduate",
-      "man",
-      "student",
-      "instructor",
-      "lecturer",
-      "man",
-      "professor",
-      "teacher",
-      "judge",
-      "justice",
-      "law",
-      "man",
-      "scales",
-      "farmer",
-      "gardener",
-      "man",
-      "rancher",
-      "chef",
-      "cook",
-      "man",
-      "electrician",
-      "man",
-      "mechanic",
-      "plumber",
-      "tradesperson",
-      "assembly",
-      "factory",
-      "industrial",
-      "man",
-      "worker",
-      "architect",
-      "business",
-      "man",
-      "manager",
-      "office",
-      "white-collar",
-      "worker",
-      "biologist",
-      "chemist",
-      "engineer",
-      "man",
-      "mathematician",
-      "physicist",
-      "scientist",
-      "coder",
-      "computer",
-      "developer",
-      "inventor",
-      "man",
-      "software",
-      "technologist",
-      "actor",
-      "entertainer",
-      "man",
-      "rock",
-      "rockstar",
-      "singer",
-      "star",
-      "artist",
-      "man",
-      "palette",
-      "man",
-      "pilot",
-      "plane",
-      "astronaut",
-      "man",
-      "rocket",
-      "space",
-      "fire",
-      "firefighter",
-      "firetruck",
-      "man",
-      "baby",
-      "dad",
-      "father",
-      "feed",
-      "feeding",
-      "man",
-      "nanny",
-      "newborn",
-      "nursing",
-      "accessibility",
-      "blind",
-      "cane",
-      "man",
-      "probing",
-      "white",
-      "accessibility",
-      "man",
-      "motorized",
-      "wheelchair",
-      "accessibility",
-      "man",
-      "manual",
-      "wheelchair",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F469",
@@ -54067,113 +49493,7 @@ return {
     name = "WOMAN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "adult",
-      "lady",
-      "woman",
-      "doctor",
-      "health",
-      "healthcare",
-      "nurse",
-      "therapist",
-      "woman",
-      "worker",
-      "graduate",
-      "student",
-      "woman",
-      "instructor",
-      "lecturer",
-      "professor",
-      "teacher",
-      "woman",
-      "judge",
-      "justice",
-      "law",
-      "scales",
-      "woman",
-      "farmer",
-      "gardener",
-      "rancher",
-      "woman",
-      "chef",
-      "cook",
-      "woman",
-      "electrician",
-      "mechanic",
-      "plumber",
-      "tradesperson",
-      "woman",
-      "assembly",
-      "factory",
-      "industrial",
-      "woman",
-      "worker",
-      "architect",
-      "business",
-      "manager",
-      "office",
-      "white-collar",
-      "woman",
-      "worker",
-      "biologist",
-      "chemist",
-      "engineer",
-      "mathematician",
-      "physicist",
-      "scientist",
-      "woman",
-      "coder",
-      "computer",
-      "developer",
-      "inventor",
-      "software",
-      "technologist",
-      "woman",
-      "actor",
-      "entertainer",
-      "rock",
-      "rockstar",
-      "singer",
-      "star",
-      "woman",
-      "artist",
-      "palette",
-      "woman",
-      "pilot",
-      "plane",
-      "woman",
-      "astronaut",
-      "rocket",
-      "space",
-      "woman",
-      "fire",
-      "firefighter",
-      "firetruck",
-      "woman",
-      "baby",
-      "feed",
-      "feeding",
-      "mom",
-      "mother",
-      "nanny",
-      "newborn",
-      "nursing",
-      "woman",
-      "accessibility",
-      "blind",
-      "cane",
-      "probing",
-      "white",
-      "woman",
-      "accessibility",
-      "motorized",
-      "wheelchair",
-      "woman",
-      "accessibility",
-      "manual",
-      "wheelchair",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F46A",
@@ -54183,8 +49503,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "rated for family",
-      "child",
-      "family",
     },
   },
   {
@@ -54193,20 +49511,7 @@ return {
     name = "MAN AND WOMAN HOLDING HANDS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bae",
-      "bestie",
-      "bff",
-      "couple",
-      "dating",
-      "flirt",
-      "friends",
-      "hand",
-      "hold",
-      "man",
-      "twins",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F46C",
@@ -54214,21 +49519,7 @@ return {
     name = "TWO MEN HOLDING HANDS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bae",
-      "bestie",
-      "bff",
-      "boys",
-      "brothers",
-      "couple",
-      "dating",
-      "flirt",
-      "friends",
-      "hand",
-      "hold",
-      "men",
-      "twins",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F46D",
@@ -54236,21 +49527,7 @@ return {
     name = "TWO WOMEN HOLDING HANDS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bae",
-      "bestie",
-      "bff",
-      "couple",
-      "dating",
-      "flirt",
-      "friends",
-      "girls",
-      "hand",
-      "hold",
-      "sisters",
-      "twins",
-      "women",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F46E",
@@ -54258,40 +49535,7 @@ return {
     name = "POLICE OFFICER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "apprehend",
-      "arrest",
-      "citation",
-      "cop",
-      "law",
-      "officer",
-      "over",
-      "police",
-      "pulled",
-      "undercover",
-      "apprehend",
-      "arrest",
-      "citation",
-      "cop",
-      "law",
-      "man",
-      "officer",
-      "over",
-      "police",
-      "pulled",
-      "undercover",
-      "apprehend",
-      "arrest",
-      "citation",
-      "cop",
-      "law",
-      "officer",
-      "over",
-      "police",
-      "pulled",
-      "undercover",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F46F",
@@ -54301,53 +49545,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "most popularly depicted as two women dancing",
-      "bestie",
-      "bff",
-      "bunny",
-      "counterpart",
-      "dancer",
-      "double",
-      "ear",
-      "identical",
-      "pair",
-      "party",
-      "partying",
-      "people",
-      "soulmate",
-      "twin",
-      "twinsies",
-      "bestie",
-      "bff",
-      "bunny",
-      "counterpart",
-      "dancer",
-      "double",
-      "ear",
-      "identical",
-      "men",
-      "pair",
-      "party",
-      "partying",
-      "people",
-      "soulmate",
-      "twin",
-      "twinsies",
-      "bestie",
-      "bff",
-      "bunny",
-      "counterpart",
-      "dancer",
-      "double",
-      "ear",
-      "identical",
-      "pair",
-      "party",
-      "partying",
-      "people",
-      "soulmate",
-      "twin",
-      "twinsies",
-      "women",
     },
   },
   {
@@ -54356,18 +49553,7 @@ return {
     name = "BRIDE WITH VEIL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "person",
-      "veil",
-      "wedding",
-      "man",
-      "veil",
-      "wedding",
-      "bride",
-      "veil",
-      "wedding",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F471",
@@ -54375,21 +49561,7 @@ return {
     name = "PERSON WITH BLOND HAIR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blond",
-      "blond-haired",
-      "human",
-      "person",
-      "blond",
-      "blond-haired",
-      "hair",
-      "man",
-      "blond",
-      "blond-haired",
-      "blonde",
-      "hair",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F472",
@@ -54397,17 +49569,7 @@ return {
     name = "MAN WITH GUA PI MAO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cap",
-      "Chinese",
-      "gua",
-      "guapi",
-      "hat",
-      "mao",
-      "person",
-      "pi",
-      "skullcap",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F473",
@@ -54417,15 +49579,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "may be shown with or without a beard",
-      "person",
-      "turban",
-      "wearing",
-      "man",
-      "turban",
-      "wearing",
-      "turban",
-      "wearing",
-      "woman",
     },
   },
   {
@@ -54434,17 +49587,7 @@ return {
     name = "OLDER MAN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "adult",
-      "bald",
-      "elderly",
-      "gramps",
-      "grandfather",
-      "grandpa",
-      "man",
-      "old",
-      "wise",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F475",
@@ -54452,17 +49595,7 @@ return {
     name = "OLDER WOMAN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "adult",
-      "elderly",
-      "grandma",
-      "grandmother",
-      "granny",
-      "lady",
-      "old",
-      "wise",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F476",
@@ -54470,16 +49603,7 @@ return {
     name = "BABY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "babies",
-      "baby",
-      "children",
-      "goo",
-      "infant",
-      "newborn",
-      "pregnant",
-      "young",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F477",
@@ -54487,43 +49611,7 @@ return {
     name = "CONSTRUCTION WORKER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "build",
-      "construction",
-      "fix",
-      "hardhat",
-      "hat",
-      "man",
-      "person",
-      "rebuild",
-      "remodel",
-      "repair",
-      "work",
-      "worker",
-      "build",
-      "construction",
-      "fix",
-      "hardhat",
-      "hat",
-      "man",
-      "rebuild",
-      "remodel",
-      "repair",
-      "work",
-      "worker",
-      "build",
-      "construction",
-      "fix",
-      "hardhat",
-      "hat",
-      "man",
-      "rebuild",
-      "remodel",
-      "repair",
-      "woman",
-      "work",
-      "worker",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F478",
@@ -54531,17 +49619,7 @@ return {
     name = "PRINCESS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "crown",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "princess",
-      "queen",
-      "royal",
-      "royalty",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F479",
@@ -54549,19 +49627,7 @@ return {
     name = "JAPANESE OGRE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "creature",
-      "devil",
-      "face",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "mask",
-      "monster",
-      "ogre",
-      "scary",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F47A",
@@ -54569,19 +49635,7 @@ return {
     name = "JAPANESE GOBLIN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "angry",
-      "creature",
-      "face",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "goblin",
-      "mask",
-      "mean",
-      "monster",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F47B",
@@ -54589,22 +49643,7 @@ return {
     name = "GHOST",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "boo",
-      "creature",
-      "excited",
-      "face",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "ghost",
-      "halloween",
-      "haunting",
-      "monster",
-      "scary",
-      "silly",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F47C",
@@ -54612,16 +49651,7 @@ return {
     name = "BABY ANGEL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "angel",
-      "baby",
-      "church",
-      "face",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F47D",
@@ -54629,19 +49659,7 @@ return {
     name = "EXTRATERRESTRIAL ALIEN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "alien",
-      "creature",
-      "extraterrestrial",
-      "face",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "monster",
-      "space",
-      "tale",
-      "ufo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F47E",
@@ -54649,23 +49667,7 @@ return {
     name = "ALIEN MONSTER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "alien",
-      "creature",
-      "extraterrestrial",
-      "face",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "game",
-      "gamer",
-      "games",
-      "monster",
-      "pixelated",
-      "space",
-      "tale",
-      "ufo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F47F",
@@ -54673,22 +49675,7 @@ return {
     name = "IMP",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "angry",
-      "demon",
-      "devil",
-      "evil",
-      "face",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "horns",
-      "imp",
-      "mischievous",
-      "purple",
-      "shade",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F480",
@@ -54696,20 +49683,7 @@ return {
     name = "SKULL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "body",
-      "dead",
-      "death",
-      "face",
-      "fairy",
-      "fairytale",
-      "i’m",
-      "lmao",
-      "monster",
-      "skull",
-      "tale",
-      "yolo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F481",
@@ -54719,42 +49693,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "often used to indicate \"sassy\" or \"carefree\"",
-      "fetch",
-      "flick",
-      "flip",
-      "gossip",
-      "hand",
-      "person",
-      "sarcasm",
-      "sarcastic",
-      "sassy",
-      "seriously",
-      "tipping",
-      "whatever",
-      "fetch",
-      "flick",
-      "flip",
-      "gossip",
-      "hand",
-      "man",
-      "sarcasm",
-      "sarcastic",
-      "sassy",
-      "seriously",
-      "tipping",
-      "whatever",
-      "fetch",
-      "flick",
-      "flip",
-      "gossip",
-      "hand",
-      "sarcasm",
-      "sarcastic",
-      "sassy",
-      "seriously",
-      "tipping",
-      "whatever",
-      "woman",
     },
   },
   {
@@ -54763,25 +49701,7 @@ return {
     name = "GUARDSMAN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "buckingham",
-      "guard",
-      "helmet",
-      "london",
-      "palace",
-      "buckingham",
-      "guard",
-      "helmet",
-      "london",
-      "man",
-      "palace",
-      "buckingham",
-      "guard",
-      "helmet",
-      "london",
-      "palace",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F483",
@@ -54791,18 +49711,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "also used for \"let's party\"",
-      "dance",
-      "dancer",
-      "dancing",
-      "elegant",
-      "festive",
-      "flair",
-      "flamenco",
-      "groove",
-      "let’s",
-      "salsa",
-      "tango",
-      "woman",
     },
   },
   {
@@ -54811,12 +49719,7 @@ return {
     name = "LIPSTICK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cosmetics",
-      "date",
-      "lipstick",
-      "makeup",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F485",
@@ -54826,15 +49729,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "manicure, nail care",
-      "bored",
-      "care",
-      "cosmetics",
-      "done",
-      "makeup",
-      "manicure",
-      "nail",
-      "polish",
-      "whatever",
     },
   },
   {
@@ -54843,47 +49737,7 @@ return {
     name = "FACE MASSAGE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "face",
-      "getting",
-      "headache",
-      "massage",
-      "person",
-      "relax",
-      "relaxing",
-      "salon",
-      "soothe",
-      "spa",
-      "tension",
-      "therapy",
-      "treatment",
-      "face",
-      "getting",
-      "headache",
-      "man",
-      "massage",
-      "relax",
-      "relaxing",
-      "salon",
-      "soothe",
-      "spa",
-      "tension",
-      "therapy",
-      "treatment",
-      "face",
-      "getting",
-      "headache",
-      "massage",
-      "relax",
-      "relaxing",
-      "salon",
-      "soothe",
-      "spa",
-      "tension",
-      "therapy",
-      "treatment",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F487",
@@ -54893,44 +49747,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "usually indicates a beauty parlor",
-      "barber",
-      "beauty",
-      "chop",
-      "cosmetology",
-      "cut",
-      "groom",
-      "hair",
-      "haircut",
-      "parlor",
-      "person",
-      "shears",
-      "style",
-      "barber",
-      "beauty",
-      "chop",
-      "cosmetology",
-      "cut",
-      "groom",
-      "hair",
-      "haircut",
-      "man",
-      "parlor",
-      "person",
-      "shears",
-      "style",
-      "barber",
-      "beauty",
-      "chop",
-      "cosmetology",
-      "cut",
-      "groom",
-      "hair",
-      "haircut",
-      "parlor",
-      "person",
-      "shears",
-      "style",
-      "woman",
     },
   },
   {
@@ -54939,14 +49755,7 @@ return {
     name = "BARBER POLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "barber",
-      "cut",
-      "fresh",
-      "haircut",
-      "pole",
-      "shave",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F489",
@@ -54954,17 +49763,7 @@ return {
     name = "SYRINGE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "doctor",
-      "flu",
-      "medicine",
-      "needle",
-      "shot",
-      "sick",
-      "syringe",
-      "tool",
-      "vaccination",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F48A",
@@ -54972,16 +49771,7 @@ return {
     name = "PILL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "doctor",
-      "drugs",
-      "medicated",
-      "medicine",
-      "pill",
-      "pills",
-      "sick",
-      "vitamin",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F48B",
@@ -54991,15 +49781,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "lips",
-      "dating",
-      "emotion",
-      "heart",
-      "kiss",
-      "kissing",
-      "lips",
-      "mark",
-      "romance",
-      "sexy",
     },
   },
   {
@@ -55008,14 +49789,7 @@ return {
     name = "LOVE LETTER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "heart",
-      "letter",
-      "love",
-      "mail",
-      "romance",
-      "valentine",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F48D",
@@ -55025,15 +49799,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "jewelry",
-      "diamond",
-      "engaged",
-      "engagement",
-      "married",
-      "ring",
-      "romance",
-      "shiny",
-      "sparkling",
-      "wedding",
     },
   },
   {
@@ -55042,16 +49807,7 @@ return {
     name = "GEM STONE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "diamond",
-      "engagement",
-      "gem",
-      "jewel",
-      "money",
-      "romance",
-      "stone",
-      "wedding",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F48F",
@@ -55061,20 +49817,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "two people kissing",
-      "anniversary",
-      "babe",
-      "bae",
-      "couple",
-      "date",
-      "dating",
-      "heart",
-      "kiss",
-      "love",
-      "mwah",
-      "person",
-      "romance",
-      "together",
-      "xoxo",
     },
   },
   {
@@ -55083,16 +49825,7 @@ return {
     name = "BOUQUET",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "anniversary",
-      "birthday",
-      "bouquet",
-      "date",
-      "flower",
-      "love",
-      "plant",
-      "romance",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F491",
@@ -55100,21 +49833,7 @@ return {
     name = "COUPLE WITH HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "anniversary",
-      "babe",
-      "bae",
-      "couple",
-      "dating",
-      "heart",
-      "kiss",
-      "love",
-      "person",
-      "relationship",
-      "romance",
-      "together",
-      "you",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F492",
@@ -55124,11 +49843,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "wedding chapel",
-      "chapel",
-      "hitched",
-      "nuptials",
-      "romance",
-      "wedding",
     },
   },
   {
@@ -55137,18 +49851,7 @@ return {
     name = "BEATING HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "beating",
-      "cardio",
-      "emotion",
-      "heart",
-      "heartbeat",
-      "ily",
-      "love",
-      "pulsating",
-      "pulse",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F494",
@@ -55156,16 +49859,7 @@ return {
     name = "BROKEN HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "break",
-      "broken",
-      "crushed",
-      "emotion",
-      "heart",
-      "heartbroken",
-      "lonely",
-      "sad",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F495",
@@ -55173,21 +49867,7 @@ return {
     name = "TWO HEARTS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "anniversary",
-      "date",
-      "dating",
-      "emotion",
-      "heart",
-      "hearts",
-      "ily",
-      "kisses",
-      "love",
-      "loving",
-      "two",
-      "xoxo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F496",
@@ -55195,20 +49875,7 @@ return {
     name = "SPARKLING HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "emotion",
-      "excited",
-      "good",
-      "heart",
-      "ily",
-      "kisses",
-      "morning",
-      "night",
-      "sparkle",
-      "sparkling",
-      "xoxo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F497",
@@ -55216,20 +49883,7 @@ return {
     name = "GROWING HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "emotion",
-      "excited",
-      "growing",
-      "heart",
-      "heartpulse",
-      "ily",
-      "kisses",
-      "muah",
-      "nervous",
-      "pulse",
-      "xoxo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F498",
@@ -55237,19 +49891,7 @@ return {
     name = "HEART WITH ARROW",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "adorbs",
-      "arrow",
-      "cupid",
-      "date",
-      "emotion",
-      "heart",
-      "ily",
-      "love",
-      "romance",
-      "valentine",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F499",
@@ -55257,15 +49899,7 @@ return {
     name = "BLUE HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "blue",
-      "emotion",
-      "heart",
-      "ily",
-      "love",
-      "romance",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F49A",
@@ -55273,15 +49907,7 @@ return {
     name = "GREEN HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "emotion",
-      "green",
-      "heart",
-      "ily",
-      "love",
-      "romantic",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F49B",
@@ -55289,15 +49915,7 @@ return {
     name = "YELLOW HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "cardiac",
-      "emotion",
-      "heart",
-      "ily",
-      "love",
-      "yellow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F49C",
@@ -55305,15 +49923,7 @@ return {
     name = "PURPLE HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "bestest",
-      "emotion",
-      "heart",
-      "ily",
-      "love",
-      "purple",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F49D",
@@ -55321,17 +49931,7 @@ return {
     name = "HEART WITH RIBBON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "anniversary",
-      "emotion",
-      "heart",
-      "ily",
-      "kisses",
-      "ribbon",
-      "valentine",
-      "xoxo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F49E",
@@ -55339,15 +49939,7 @@ return {
     name = "REVOLVING HEARTS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "adorbs",
-      "anniversary",
-      "emotion",
-      "heart",
-      "hearts",
-      "revolving",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F49F",
@@ -55355,15 +49947,7 @@ return {
     name = "HEART DECORATION",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "143",
-      "decoration",
-      "emotion",
-      "heart",
-      "hearth",
-      "purple",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4A0",
@@ -55373,10 +49957,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "kawaii, cute",
-      "comic",
-      "diamond",
-      "dot",
-      "geometric",
     },
   },
   {
@@ -55387,11 +49967,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "idea",
-      "bulb",
-      "comic",
-      "electric",
-      "idea",
-      "light",
     },
   },
   {
@@ -55400,14 +49975,7 @@ return {
     name = "ANGER SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "anger",
-      "angry",
-      "comic",
-      "mad",
-      "symbol",
-      "upset",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4A3",
@@ -55415,14 +49983,7 @@ return {
     name = "BOMB",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bomb",
-      "boom",
-      "comic",
-      "dangerous",
-      "explosion",
-      "hot",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4A4",
@@ -55430,17 +49991,7 @@ return {
     name = "SLEEPING SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "comic",
-      "good",
-      "goodnight",
-      "night",
-      "sleep",
-      "sleeping",
-      "sleepy",
-      "tired",
-      "zzz",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4A5",
@@ -55448,14 +49999,7 @@ return {
     name = "COLLISION SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bomb",
-      "boom",
-      "collide",
-      "collision",
-      "comic",
-      "explode",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4A6",
@@ -55465,18 +50009,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "plewds",
-      "comic",
-      "drip",
-      "droplet",
-      "droplets",
-      "drops",
-      "splashing",
-      "squirt",
-      "sweat",
-      "water",
-      "wet",
-      "work",
-      "workout",
     },
   },
   {
@@ -55487,16 +50019,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "represents a drop of sweat or drop of water",
-      "cold",
-      "comic",
-      "drop",
-      "droplet",
-      "nature",
-      "sad",
-      "sweat",
-      "tear",
-      "water",
-      "weather",
     },
   },
   {
@@ -55507,18 +50029,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "running dash, briffits",
-      "away",
-      "cloud",
-      "comic",
-      "dash",
-      "dashing",
-      "fart",
-      "fast",
-      "go",
-      "gone",
-      "gotta",
-      "running",
-      "smoke",
     },
   },
   {
@@ -55530,22 +50040,6 @@ return {
     aliases = {
       "dog dirt",
       "may be depicted with or without a friendly face",
-      "bs",
-      "comic",
-      "doo",
-      "dung",
-      "face",
-      "fml",
-      "monster",
-      "pile",
-      "poo",
-      "poop",
-      "smelly",
-      "smh",
-      "stink",
-      "stinks",
-      "stinky",
-      "turd",
     },
   },
   {
@@ -55556,22 +50050,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "strong, muscled",
-      "arm",
-      "beast",
-      "bench",
-      "biceps",
-      "bodybuilder",
-      "bro",
-      "curls",
-      "flex",
-      "gains",
-      "gym",
-      "jacked",
-      "muscle",
-      "press",
-      "ripped",
-      "strong",
-      "weightlift",
     },
   },
   {
@@ -55582,12 +50060,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "circling stars, squeans",
-      "comic",
-      "dizzy",
-      "shining",
-      "shooting",
-      "star",
-      "stars",
     },
   },
   {
@@ -55598,16 +50070,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "comic book conversation bubble",
-      "balloon",
-      "bubble",
-      "comic",
-      "dialog",
-      "message",
-      "sms",
-      "speech",
-      "talk",
-      "text",
-      "typing",
     },
   },
   {
@@ -55616,23 +50078,7 @@ return {
     name = "THOUGHT BALLOON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "balloon",
-      "bubble",
-      "cartoon",
-      "cloud",
-      "comic",
-      "daydream",
-      "decisions",
-      "dream",
-      "idea",
-      "invent",
-      "invention",
-      "realize",
-      "think",
-      "thoughts",
-      "wonder",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4AE",
@@ -55642,8 +50088,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "brilliant homework",
-      "flower",
-      "white",
     },
   },
   {
@@ -55654,22 +50098,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "perfect score",
-      "100",
-      "a+",
-      "agree",
-      "clearly",
-      "definitely",
-      "faithful",
-      "fleek",
-      "full",
-      "hundred",
-      "keep",
-      "perfect",
-      "point",
-      "score",
-      "TRUE",
-      "truth",
-      "yup",
     },
   },
   {
@@ -55678,24 +50106,7 @@ return {
     name = "MONEY BAG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bag",
-      "bank",
-      "bet",
-      "billion",
-      "cash",
-      "cost",
-      "dollar",
-      "gold",
-      "million",
-      "money",
-      "moneybag",
-      "paid",
-      "paying",
-      "pot",
-      "rich",
-      "win",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4B1",
@@ -55703,12 +50114,7 @@ return {
     name = "CURRENCY EXCHANGE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bank",
-      "currency",
-      "exchange",
-      "money",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4B2",
@@ -55716,18 +50122,7 @@ return {
     name = "HEAVY DOLLAR SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "billion",
-      "cash",
-      "charge",
-      "currency",
-      "dollar",
-      "heavy",
-      "million",
-      "money",
-      "pay",
-      "sign",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4B3",
@@ -55735,15 +50130,7 @@ return {
     name = "CREDIT CARD",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bank",
-      "card",
-      "cash",
-      "charge",
-      "credit",
-      "money",
-      "pay",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4B4",
@@ -55751,15 +50138,7 @@ return {
     name = "BANKNOTE WITH YEN SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bank",
-      "banknote",
-      "bill",
-      "currency",
-      "money",
-      "note",
-      "yen",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4B5",
@@ -55767,15 +50146,7 @@ return {
     name = "BANKNOTE WITH DOLLAR SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bank",
-      "banknote",
-      "bill",
-      "currency",
-      "dollar",
-      "money",
-      "note",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4B6",
@@ -55783,17 +50154,7 @@ return {
     name = "BANKNOTE WITH EURO SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "100",
-      "bank",
-      "banknote",
-      "bill",
-      "currency",
-      "euro",
-      "money",
-      "note",
-      "rich",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4B7",
@@ -55801,18 +50162,7 @@ return {
     name = "BANKNOTE WITH POUND SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bank",
-      "banknote",
-      "bill",
-      "billion",
-      "cash",
-      "currency",
-      "money",
-      "note",
-      "pound",
-      "pounds",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4B8",
@@ -55820,20 +50170,7 @@ return {
     name = "MONEY WITH WINGS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bank",
-      "banknote",
-      "bill",
-      "billion",
-      "cash",
-      "dollar",
-      "fly",
-      "million",
-      "money",
-      "note",
-      "pay",
-      "wings",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4B9",
@@ -55841,20 +50178,7 @@ return {
     name = "CHART WITH UPWARDS TREND AND YEN SIGN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bank",
-      "chart",
-      "currency",
-      "graph",
-      "growth",
-      "increasing",
-      "market",
-      "money",
-      "rise",
-      "trend",
-      "upward",
-      "yen",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4BA",
@@ -55862,10 +50186,7 @@ return {
     name = "SEAT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "chair",
-      "seat",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4BB",
@@ -55873,13 +50194,7 @@ return {
     name = "PERSONAL COMPUTER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "computer",
-      "laptop",
-      "office",
-      "pc",
-      "personal",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4BC",
@@ -55887,10 +50202,7 @@ return {
     name = "BRIEFCASE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "briefcase",
-      "office",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4BD",
@@ -55898,12 +50210,7 @@ return {
     name = "MINIDISC",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "computer",
-      "disk",
-      "minidisk",
-      "optical",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4BE",
@@ -55913,9 +50220,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "flexible disk cartridge, floppy disc, floppy, diskette",
-      "computer",
-      "disk",
-      "floppy",
     },
   },
   {
@@ -55924,14 +50228,7 @@ return {
     name = "OPTICAL DISC",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blu-ray",
-      "CD",
-      "computer",
-      "disk",
-      "dvd",
-      "optical",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4C0",
@@ -55941,12 +50238,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "digital video/versatile disc",
-      "Blu-ray",
-      "cd",
-      "computer",
-      "disk",
-      "DVD",
-      "optical",
     },
   },
   {
@@ -55955,10 +50246,7 @@ return {
     name = "FILE FOLDER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "file",
-      "folder",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4C2",
@@ -55966,11 +50254,7 @@ return {
     name = "OPEN FILE FOLDER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "file",
-      "folder",
-      "open",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4C3",
@@ -55978,12 +50262,7 @@ return {
     name = "PAGE WITH CURL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "curl",
-      "document",
-      "page",
-      "paper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4C4",
@@ -55991,13 +50270,7 @@ return {
     name = "PAGE FACING UP",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "document",
-      "facing",
-      "page",
-      "paper",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4C5",
@@ -56005,10 +50278,7 @@ return {
     name = "CALENDAR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "calendar",
-      "date",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4C6",
@@ -56016,10 +50286,7 @@ return {
     name = "TEAR-OFF CALENDAR",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "calendar",
-      "tear-off",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4C7",
@@ -56027,13 +50294,7 @@ return {
     name = "CARD INDEX",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "card",
-      "index",
-      "old",
-      "rolodex",
-      "school",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4C8",
@@ -56041,17 +50302,7 @@ return {
     name = "CHART WITH UPWARDS TREND",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "chart",
-      "data",
-      "graph",
-      "growth",
-      "increasing",
-      "right",
-      "trend",
-      "up",
-      "upward",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4C9",
@@ -56059,16 +50310,7 @@ return {
     name = "CHART WITH DOWNWARDS TREND",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "chart",
-      "data",
-      "decreasing",
-      "down",
-      "downward",
-      "graph",
-      "negative",
-      "trend",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4CA",
@@ -56076,12 +50318,7 @@ return {
     name = "BAR CHART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bar",
-      "chart",
-      "data",
-      "graph",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4CB",
@@ -56089,12 +50326,7 @@ return {
     name = "CLIPBOARD",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "clipboard",
-      "do",
-      "list",
-      "notes",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4CC",
@@ -56102,11 +50334,7 @@ return {
     name = "PUSHPIN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "collage",
-      "pin",
-      "pushpin",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4CD",
@@ -56114,13 +50342,7 @@ return {
     name = "ROUND PUSHPIN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "location",
-      "map",
-      "pin",
-      "pushpin",
-      "round",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4CE",
@@ -56128,9 +50350,7 @@ return {
     name = "PAPERCLIP",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "paperclip",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4CF",
@@ -56138,14 +50358,7 @@ return {
     name = "STRAIGHT RULER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "angle",
-      "edge",
-      "math",
-      "ruler",
-      "straight",
-      "straightedge",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4D0",
@@ -56153,16 +50366,7 @@ return {
     name = "TRIANGULAR RULER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "angle",
-      "math",
-      "rule",
-      "ruler",
-      "set",
-      "slide",
-      "triangle",
-      "triangular",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4D1",
@@ -56170,12 +50374,7 @@ return {
     name = "BOOKMARK TABS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bookmark",
-      "mark",
-      "marker",
-      "tabs",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4D2",
@@ -56183,10 +50382,7 @@ return {
     name = "LEDGER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ledger",
-      "notebook",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4D3",
@@ -56194,9 +50390,7 @@ return {
     name = "NOTEBOOK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "notebook",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4D4",
@@ -56204,16 +50398,7 @@ return {
     name = "NOTEBOOK WITH DECORATIVE COVER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "book",
-      "cover",
-      "decorated",
-      "decorative",
-      "education",
-      "notebook",
-      "school",
-      "writing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4D5",
@@ -56221,11 +50406,7 @@ return {
     name = "CLOSED BOOK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "book",
-      "closed",
-      "education",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4D6",
@@ -56235,14 +50416,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "read operator's manual",
-      "book",
-      "education",
-      "fantasy",
-      "knowledge",
-      "library",
-      "novels",
-      "open",
-      "reading",
     },
   },
   {
@@ -56251,14 +50424,7 @@ return {
     name = "GREEN BOOK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "book",
-      "education",
-      "fantasy",
-      "green",
-      "library",
-      "reading",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4D8",
@@ -56266,14 +50432,7 @@ return {
     name = "BLUE BOOK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blue",
-      "book",
-      "education",
-      "fantasy",
-      "library",
-      "reading",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4D9",
@@ -56281,14 +50440,7 @@ return {
     name = "ORANGE BOOK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "book",
-      "education",
-      "fantasy",
-      "library",
-      "orange",
-      "reading",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4DA",
@@ -56296,18 +50448,7 @@ return {
     name = "BOOKS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "book",
-      "books",
-      "education",
-      "fantasy",
-      "knowledge",
-      "library",
-      "novels",
-      "reading",
-      "school",
-      "study",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4DB",
@@ -56315,10 +50456,7 @@ return {
     name = "NAME BADGE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "badge",
-      "name",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4DC",
@@ -56326,10 +50464,7 @@ return {
     name = "SCROLL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "paper",
-      "scroll",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4DD",
@@ -56337,13 +50472,7 @@ return {
     name = "MEMO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "communication",
-      "media",
-      "memo",
-      "notes",
-      "pencil",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4DE",
@@ -56351,13 +50480,7 @@ return {
     name = "TELEPHONE RECEIVER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "communication",
-      "phone",
-      "receiver",
-      "telephone",
-      "voip",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4DF",
@@ -56365,10 +50488,7 @@ return {
     name = "PAGER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "communication",
-      "pager",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4E0",
@@ -56376,11 +50496,7 @@ return {
     name = "FAX MACHINE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "communication",
-      "fax",
-      "machine",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4E1",
@@ -56390,12 +50506,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "position indicator, news",
-      "aliens",
-      "antenna",
-      "contact",
-      "dish",
-      "satellite",
-      "science",
     },
   },
   {
@@ -56404,14 +50514,7 @@ return {
     name = "PUBLIC ADDRESS LOUDSPEAKER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "address",
-      "communication",
-      "loud",
-      "loudspeaker",
-      "public",
-      "sound",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4E3",
@@ -56419,11 +50522,7 @@ return {
     name = "CHEERING MEGAPHONE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cheering",
-      "megaphone",
-      "sound",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4E4",
@@ -56431,15 +50530,7 @@ return {
     name = "OUTBOX TRAY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "box",
-      "email",
-      "letter",
-      "mail",
-      "outbox",
-      "sent",
-      "tray",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4E5",
@@ -56447,16 +50538,7 @@ return {
     name = "INBOX TRAY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "box",
-      "email",
-      "inbox",
-      "letter",
-      "mail",
-      "receive",
-      "tray",
-      "zero",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4E6",
@@ -56464,14 +50546,7 @@ return {
     name = "PACKAGE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "box",
-      "communication",
-      "delivery",
-      "package",
-      "parcel",
-      "shipping",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4E7",
@@ -56480,11 +50555,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "glyph may show an E instead of an @-sign",
-      "e-mail",
-      "email",
-      "letter",
-      "mail",
+      "glyph may show an e instead of an @-sign",
     },
   },
   {
@@ -56493,17 +50564,7 @@ return {
     name = "INCOMING ENVELOPE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "delivering",
-      "e-mail",
-      "email",
-      "envelope",
-      "incoming",
-      "letter",
-      "mail",
-      "receive",
-      "sent",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4E9",
@@ -56513,17 +50574,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "sending mail",
-      "arrow",
-      "communication",
-      "down",
-      "e-mail",
-      "email",
-      "envelope",
-      "letter",
-      "mail",
-      "outgoing",
-      "send",
-      "sent",
     },
   },
   {
@@ -56533,14 +50583,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "letter box, mail reception",
       "empty mailbox",
-      "closed",
-      "flag",
-      "lowered",
-      "mail",
-      "mailbox",
-      "postbox",
+      "letter box, mail reception",
     },
   },
   {
@@ -56551,13 +50595,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "mailbox containing mail",
-      "closed",
-      "communication",
-      "flag",
-      "mail",
-      "mailbox",
-      "postbox",
-      "raised",
     },
   },
   {
@@ -56566,14 +50603,7 @@ return {
     name = "OPEN MAILBOX WITH RAISED FLAG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "flag",
-      "mail",
-      "mailbox",
-      "open",
-      "postbox",
-      "raised",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4ED",
@@ -56581,14 +50611,7 @@ return {
     name = "OPEN MAILBOX WITH LOWERED FLAG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "flag",
-      "lowered",
-      "mail",
-      "mailbox",
-      "open",
-      "postbox",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4EE",
@@ -56598,9 +50621,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "mailbox for sending mail",
-      "mail",
-      "mailbox",
-      "postbox",
     },
   },
   {
@@ -56609,11 +50629,7 @@ return {
     name = "POSTAL HORN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "horn",
-      "post",
-      "postal",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4F0",
@@ -56621,12 +50637,7 @@ return {
     name = "NEWSPAPER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "communication",
-      "news",
-      "newspaper",
-      "paper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4F1",
@@ -56634,13 +50645,7 @@ return {
     name = "MOBILE PHONE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cell",
-      "communication",
-      "mobile",
-      "phone",
-      "telephone",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4F2",
@@ -56650,15 +50655,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "making a phone call",
-      "arrow",
-      "build",
-      "call",
-      "cell",
-      "communication",
-      "mobile",
-      "phone",
-      "receive",
-      "telephone",
     },
   },
   {
@@ -56667,15 +50663,7 @@ return {
     name = "VIBRATION MODE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cell",
-      "communication",
-      "mobile",
-      "mode",
-      "phone",
-      "telephone",
-      "vibration",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4F4",
@@ -56683,13 +50671,7 @@ return {
     name = "MOBILE PHONE OFF",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cell",
-      "mobile",
-      "off",
-      "phone",
-      "telephone",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4F5",
@@ -56697,17 +50679,7 @@ return {
     name = "NO MOBILE PHONES",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cell",
-      "forbidden",
-      "mobile",
-      "no",
-      "not",
-      "phone",
-      "phones",
-      "prohibited",
-      "telephone",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4F6",
@@ -56717,15 +50689,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "cellular reception",
-      "antenna",
-      "bar",
-      "bars",
-      "cell",
-      "communication",
-      "mobile",
-      "phone",
-      "signal",
-      "telephone",
     },
   },
   {
@@ -56734,15 +50697,7 @@ return {
     name = "CAMERA",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "camera",
-      "photo",
-      "selfie",
-      "snap",
-      "tbt",
-      "trip",
-      "video",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4F8",
@@ -56750,11 +50705,7 @@ return {
     name = "CAMERA WITH FLASH",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "camera",
-      "flash",
-      "video",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4F9",
@@ -56764,10 +50715,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "video",
-      "camcorder",
-      "camera",
-      "tbt",
-      "video",
     },
   },
   {
@@ -56776,11 +50723,7 @@ return {
     name = "TELEVISION",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "television",
-      "tv",
-      "video",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4FB",
@@ -56788,12 +50731,7 @@ return {
     name = "RADIO",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "entertainment",
-      "radio",
-      "tbt",
-      "video",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4FC",
@@ -56801,15 +50739,7 @@ return {
     name = "VIDEOCASSETTE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "old",
-      "school",
-      "tape",
-      "vcr",
-      "vhs",
-      "video",
-      "videocassette",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F4FD",
@@ -56819,11 +50749,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "movies",
-      "cinema",
-      "film",
-      "movie",
-      "projector",
-      "video",
     },
   },
   {
@@ -56842,13 +50767,7 @@ return {
     name = "PRAYER BEADS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "beads",
-      "clothing",
-      "necklace",
-      "prayer",
-      "religion",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F500",
@@ -56858,11 +50777,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "shuffle",
-      "arrow",
-      "button",
-      "crossed",
-      "shuffle",
-      "tracks",
     },
   },
   {
@@ -56872,10 +50786,6 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "repeat",
-      "arrow",
-      "button",
-      "clockwise",
       "repeat",
     },
   },
@@ -56887,12 +50797,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "repeat one item over",
-      "arrow",
-      "button",
-      "clockwise",
-      "once",
-      "repeat",
-      "single",
     },
   },
   {
@@ -56903,12 +50807,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "reload",
-      "arrow",
-      "arrows",
-      "clockwise",
-      "refresh",
-      "reload",
-      "vertical",
     },
   },
   {
@@ -56919,16 +50817,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "reload",
-      "again",
-      "anticlockwise",
-      "arrow",
-      "arrows",
-      "button",
-      "counterclockwise",
-      "deja",
-      "refresh",
-      "rewindershins",
-      "vu",
     },
   },
   {
@@ -56937,12 +50825,7 @@ return {
     name = "LOW BRIGHTNESS SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "brightness",
-      "button",
-      "dim",
-      "low",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F506",
@@ -56950,12 +50833,7 @@ return {
     name = "HIGH BRIGHTNESS SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bright",
-      "brightness",
-      "button",
-      "light",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F507",
@@ -56963,14 +50841,7 @@ return {
     name = "SPEAKER WITH CANCELLATION STROKE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "mute",
-      "muted",
-      "quiet",
-      "silent",
-      "sound",
-      "speaker",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F508",
@@ -56980,11 +50851,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "left speaker",
-      "low",
-      "soft",
-      "sound",
-      "speaker",
-      "volume",
     },
   },
   {
@@ -56993,12 +50859,7 @@ return {
     name = "SPEAKER WITH ONE SOUND WAVE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "medium",
-      "sound",
-      "speaker",
-      "volume",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F50A",
@@ -57008,12 +50869,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "sound",
-      "high",
-      "loud",
-      "music",
-      "sound",
-      "speaker",
-      "volume",
     },
   },
   {
@@ -57022,9 +50877,7 @@ return {
     name = "BATTERY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "battery",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F50C",
@@ -57032,11 +50885,7 @@ return {
     name = "ELECTRIC PLUG",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "electric",
-      "electricity",
-      "plug",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F50D",
@@ -57046,15 +50895,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "search",
-      "glass",
-      "lab",
-      "left",
-      "left-pointing",
-      "magnifying",
-      "science",
-      "search",
-      "tilted",
-      "tool",
     },
   },
   {
@@ -57065,16 +50905,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "get more details",
-      "contact",
-      "glass",
-      "lab",
-      "magnifying",
-      "right",
-      "right-pointing",
-      "science",
-      "search",
-      "tilted",
-      "tool",
     },
   },
   {
@@ -57084,12 +50914,6 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "privacy",
-      "ink",
-      "lock",
-      "locked",
-      "nib",
-      "pen",
       "privacy",
     },
   },
@@ -57101,12 +50925,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "secure",
-      "bike",
-      "closed",
-      "key",
-      "lock",
-      "locked",
-      "secure",
     },
   },
   {
@@ -57115,14 +50933,7 @@ return {
     name = "KEY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "key",
-      "keys",
-      "lock",
-      "major",
-      "password",
-      "unlock",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F512",
@@ -57132,10 +50943,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "padlock in locked position",
-      "closed",
-      "lock",
-      "locked",
-      "private",
     },
   },
   {
@@ -57144,13 +50951,7 @@ return {
     name = "OPEN LOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cracked",
-      "lock",
-      "open",
-      "unlock",
-      "unlocked",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F514",
@@ -57158,12 +50959,7 @@ return {
     name = "BELL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bell",
-      "break",
-      "church",
-      "sound",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F515",
@@ -57171,18 +50967,7 @@ return {
     name = "BELL WITH CANCELLATION STROKE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bell",
-      "forbidden",
-      "mute",
-      "no",
-      "not",
-      "prohibited",
-      "quiet",
-      "silent",
-      "slash",
-      "sound",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F516",
@@ -57192,8 +50977,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "indicates a bookmark, not a price tag",
-      "bookmark",
-      "mark",
     },
   },
   {
@@ -57202,10 +50985,7 @@ return {
     name = "LINK SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "link",
-      "links",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F518",
@@ -57213,11 +50993,7 @@ return {
     name = "RADIO BUTTON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "button",
-      "geometric",
-      "radio",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F519",
@@ -57225,10 +51001,7 @@ return {
     name = "BACK WITH LEFTWARDS ARROW ABOVE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "arrow",
-      "BACK",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F51A",
@@ -57236,10 +51009,7 @@ return {
     name = "END WITH LEFTWARDS ARROW ABOVE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "arrow",
-      "END",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F51B",
@@ -57247,11 +51017,7 @@ return {
     name = "ON WITH EXCLAMATION MARK WITH LEFT RIGHT ARROW ABOVE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "arrow",
-      "mark",
-      "ON!",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F51C",
@@ -57259,12 +51025,7 @@ return {
     name = "SOON WITH RIGHTWARDS ARROW ABOVE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "arrow",
-      "brb",
-      "omw",
-      "SOON",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F51D",
@@ -57274,10 +51035,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "top of page",
-      "arrow",
-      "homie",
-      "TOP",
-      "up",
     },
   },
   {
@@ -57286,18 +51043,7 @@ return {
     name = "NO ONE UNDER EIGHTEEN SYMBOL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "18",
-      "age",
-      "eighteen",
-      "forbidden",
-      "no",
-      "not",
-      "one",
-      "prohibited",
-      "restriction",
-      "underage",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F51F",
@@ -57313,13 +51059,7 @@ return {
     name = "INPUT SYMBOL FOR LATIN CAPITAL LETTERS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ABCD",
-      "input",
-      "latin",
-      "letters",
-      "uppercase",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F521",
@@ -57327,13 +51067,7 @@ return {
     name = "INPUT SYMBOL FOR LATIN SMALL LETTERS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "abcd",
-      "input",
-      "latin",
-      "letters",
-      "lowercase",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F522",
@@ -57341,11 +51075,7 @@ return {
     name = "INPUT SYMBOL FOR NUMBERS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "1234",
-      "input",
-      "numbers",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F523",
@@ -57353,14 +51083,7 @@ return {
     name = "INPUT SYMBOL FOR SYMBOLS",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "&",
-      "%",
-      "♪",
-      "〒",
-      "input",
-      "symbols",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F524",
@@ -57369,12 +51092,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "English input (ABC)",
-      "abc",
-      "alphabet",
-      "input",
-      "latin",
-      "letters",
+      "english input (abc)",
     },
   },
   {
@@ -57383,16 +51101,7 @@ return {
     name = "FIRE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "af",
-      "burn",
-      "fire",
-      "flame",
-      "hot",
-      "lit",
-      "litaf",
-      "tool",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F526",
@@ -57402,11 +51111,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "flashlight",
-      "electric",
-      "flashlight",
-      "light",
-      "tool",
-      "torch",
     },
   },
   {
@@ -57415,13 +51119,7 @@ return {
     name = "WRENCH",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "home",
-      "improvement",
-      "spanner",
-      "tool",
-      "wrench",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F528",
@@ -57429,13 +51127,7 @@ return {
     name = "HAMMER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "hammer",
-      "home",
-      "improvement",
-      "repairs",
-      "tool",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F529",
@@ -57443,13 +51135,7 @@ return {
     name = "NUT AND BOLT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "bolt",
-      "home",
-      "improvement",
-      "nut",
-      "tool",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F52A",
@@ -57458,14 +51144,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Japanese kitchen knife",
-      "chef",
-      "cooking",
-      "hocho",
-      "kitchen",
-      "knife",
-      "tool",
-      "weapon",
+      "japanese kitchen knife",
     },
   },
   {
@@ -57476,13 +51155,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "handgun, revolver",
-      "gun",
-      "handgun",
-      "pistol",
-      "revolver",
-      "tool",
-      "water",
-      "weapon",
     },
   },
   {
@@ -57491,13 +51163,7 @@ return {
     name = "MICROSCOPE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "experiment",
-      "lab",
-      "microscope",
-      "science",
-      "tool",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F52D",
@@ -57505,13 +51171,7 @@ return {
     name = "TELESCOPE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "contact",
-      "extraterrestrial",
-      "science",
-      "telescope",
-      "tool",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F52E",
@@ -57519,18 +51179,7 @@ return {
     name = "CRYSTAL BALL",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "crystal",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "fortune",
-      "future",
-      "magic",
-      "tale",
-      "tool",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F52F",
@@ -57538,14 +51187,7 @@ return {
     name = "SIX POINTED STAR WITH MIDDLE DOT",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "dotted",
-      "fortune",
-      "jewish",
-      "judaism",
-      "six-pointed",
-      "star",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F530",
@@ -57553,16 +51195,7 @@ return {
     name = "JAPANESE SYMBOL FOR BEGINNER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "beginner",
-      "chevron",
-      "green",
-      "Japanese",
-      "leaf",
-      "symbol",
-      "tool",
-      "yellow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F531",
@@ -57570,14 +51203,7 @@ return {
     name = "TRIDENT EMBLEM",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "anchor",
-      "emblem",
-      "poseidon",
-      "ship",
-      "tool",
-      "trident",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F532",
@@ -57585,12 +51211,7 @@ return {
     name = "BLACK SQUARE BUTTON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "black",
-      "button",
-      "geometric",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F533",
@@ -57598,13 +51219,7 @@ return {
     name = "WHITE SQUARE BUTTON",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "button",
-      "geometric",
-      "outlined",
-      "square",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F534",
@@ -57612,11 +51227,7 @@ return {
     name = "LARGE RED CIRCLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "circle",
-      "geometric",
-      "red",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F535",
@@ -57624,11 +51235,7 @@ return {
     name = "LARGE BLUE CIRCLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blue",
-      "circle",
-      "geometric",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F536",
@@ -57636,12 +51243,7 @@ return {
     name = "LARGE ORANGE DIAMOND",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "diamond",
-      "geometric",
-      "large",
-      "orange",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F537",
@@ -57649,12 +51251,7 @@ return {
     name = "LARGE BLUE DIAMOND",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blue",
-      "diamond",
-      "geometric",
-      "large",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F538",
@@ -57662,12 +51259,7 @@ return {
     name = "SMALL ORANGE DIAMOND",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "diamond",
-      "geometric",
-      "orange",
-      "small",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F539",
@@ -57675,12 +51267,7 @@ return {
     name = "SMALL BLUE DIAMOND",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "blue",
-      "diamond",
-      "geometric",
-      "small",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F53A",
@@ -57688,13 +51275,7 @@ return {
     name = "UP-POINTING RED TRIANGLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "geometric",
-      "pointed",
-      "red",
-      "triangle",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F53B",
@@ -57702,13 +51283,7 @@ return {
     name = "DOWN-POINTING RED TRIANGLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "down",
-      "geometric",
-      "pointed",
-      "red",
-      "triangle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F53C",
@@ -57718,11 +51293,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "play arrow up",
-      "arrow",
-      "button",
-      "red",
-      "up",
-      "upwards",
     },
   },
   {
@@ -57733,11 +51303,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "play arrow down",
-      "arrow",
-      "button",
-      "down",
-      "downwards",
-      "red",
     },
   },
   {
@@ -57765,7 +51330,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Orthodox typicon symbol for great feast service",
+      "orthodox typicon symbol for great feast service",
     },
   },
   {
@@ -57775,7 +51340,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Orthodox typicon symbol for vigil service",
+      "orthodox typicon symbol for vigil service",
     },
   },
   {
@@ -57785,7 +51350,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Orthodox typicon symbol for Polyeleos",
+      "orthodox typicon symbol for polyeleos",
     },
   },
   {
@@ -57795,7 +51360,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Orthodox typicon symbol for lower rank feast",
+      "orthodox typicon symbol for lower rank feast",
     },
   },
   {
@@ -57805,7 +51370,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Orthodox typicon symbol for lower rank feast",
+      "orthodox typicon symbol for lower rank feast",
     },
   },
   {
@@ -57815,7 +51380,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Orthodox typicon symbol for difficult sections",
+      "orthodox typicon symbol for difficult sections",
     },
   },
   {
@@ -57851,10 +51416,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "generic symbol independent of Devanagari font",
-      "Hindu",
-      "om",
-      "religion",
+      "generic symbol independent of devanagari font",
     },
   },
   {
@@ -57865,11 +51427,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "peace",
-      "bird",
-      "dove",
-      "fly",
-      "ornithology",
-      "peace",
     },
   },
   {
@@ -57878,14 +51435,7 @@ return {
     name = "KAABA",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "hajj",
-      "islam",
-      "kaaba",
-      "Muslim",
-      "religion",
-      "umrah",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F54C",
@@ -57893,13 +51443,7 @@ return {
     name = "MOSQUE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "islam",
-      "masjid",
-      "mosque",
-      "Muslim",
-      "religion",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F54D",
@@ -57907,14 +51451,7 @@ return {
     name = "SYNAGOGUE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "Jew",
-      "Jewish",
-      "judaism",
-      "religion",
-      "synagogue",
-      "temple",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F54E",
@@ -57924,13 +51461,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "hanukiah",
-      "candelabrum",
-      "candlestick",
-      "hanukkah",
-      "jewish",
-      "judaism",
-      "menorah",
-      "religion",
     },
   },
   {
@@ -57947,14 +51477,7 @@ return {
     name = "CLOCK FACE ONE OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "1",
-      "1:00",
-      "clock",
-      "o’clock",
-      "one",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F551",
@@ -57962,14 +51485,7 @@ return {
     name = "CLOCK FACE TWO OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "2",
-      "2:00",
-      "clock",
-      "o’clock",
-      "time",
-      "two",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F552",
@@ -57977,14 +51493,7 @@ return {
     name = "CLOCK FACE THREE OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "3",
-      "3:00",
-      "clock",
-      "o’clock",
-      "three",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F553",
@@ -57992,14 +51501,7 @@ return {
     name = "CLOCK FACE FOUR OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "4",
-      "4:00",
-      "clock",
-      "four",
-      "o’clock",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F554",
@@ -58007,14 +51509,7 @@ return {
     name = "CLOCK FACE FIVE OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "5",
-      "5:00",
-      "clock",
-      "five",
-      "o’clock",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F555",
@@ -58022,14 +51517,7 @@ return {
     name = "CLOCK FACE SIX OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "6",
-      "6:00",
-      "clock",
-      "o’clock",
-      "six",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F556",
@@ -58037,14 +51525,7 @@ return {
     name = "CLOCK FACE SEVEN OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "0",
-      "7",
-      "7:00",
-      "clock",
-      "o’clock",
-      "seven",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F557",
@@ -58052,14 +51533,7 @@ return {
     name = "CLOCK FACE EIGHT OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "8",
-      "8:00",
-      "clock",
-      "eight",
-      "o’clock",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F558",
@@ -58067,14 +51541,7 @@ return {
     name = "CLOCK FACE NINE OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "9",
-      "9:00",
-      "clock",
-      "nine",
-      "o’clock",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F559",
@@ -58082,14 +51549,7 @@ return {
     name = "CLOCK FACE TEN OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "0",
-      "10",
-      "10:00",
-      "clock",
-      "o’clock",
-      "ten",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F55A",
@@ -58097,14 +51557,7 @@ return {
     name = "CLOCK FACE ELEVEN OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "11",
-      "11:00",
-      "clock",
-      "eleven",
-      "o’clock",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F55B",
@@ -58112,14 +51565,7 @@ return {
     name = "CLOCK FACE TWELVE OCLOCK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "12",
-      "12:00",
-      "clock",
-      "o’clock",
-      "time",
-      "twelve",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F55C",
@@ -58127,16 +51573,7 @@ return {
     name = "CLOCK FACE ONE-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "1",
-      "1:30",
-      "30",
-      "clock",
-      "one",
-      "one-thirty",
-      "thirty",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F55D",
@@ -58144,16 +51581,7 @@ return {
     name = "CLOCK FACE TWO-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "2",
-      "2:30",
-      "30",
-      "clock",
-      "thirty",
-      "time",
-      "two",
-      "two-thirty",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F55E",
@@ -58161,16 +51589,7 @@ return {
     name = "CLOCK FACE THREE-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "3",
-      "3:30",
-      "30",
-      "clock",
-      "thirty",
-      "three",
-      "three-thirty",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F55F",
@@ -58178,16 +51597,7 @@ return {
     name = "CLOCK FACE FOUR-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "30",
-      "4",
-      "4:30",
-      "clock",
-      "four",
-      "four-thirty",
-      "thirty",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F560",
@@ -58195,16 +51605,7 @@ return {
     name = "CLOCK FACE FIVE-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "30",
-      "5",
-      "5:30",
-      "clock",
-      "five",
-      "five-thirty",
-      "thirty",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F561",
@@ -58212,15 +51613,7 @@ return {
     name = "CLOCK FACE SIX-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "30",
-      "6",
-      "6:30",
-      "clock",
-      "six",
-      "six-thirty",
-      "thirty",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F562",
@@ -58228,15 +51621,7 @@ return {
     name = "CLOCK FACE SEVEN-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "30",
-      "7",
-      "7:30",
-      "clock",
-      "seven",
-      "seven-thirty",
-      "thirty",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F563",
@@ -58244,16 +51629,7 @@ return {
     name = "CLOCK FACE EIGHT-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "30",
-      "8",
-      "8:30",
-      "clock",
-      "eight",
-      "eight-thirty",
-      "thirty",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F564",
@@ -58261,16 +51637,7 @@ return {
     name = "CLOCK FACE NINE-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "30",
-      "9",
-      "9:30",
-      "clock",
-      "nine",
-      "nine-thirty",
-      "thirty",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F565",
@@ -58278,16 +51645,7 @@ return {
     name = "CLOCK FACE TEN-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "10",
-      "10:30",
-      "30",
-      "clock",
-      "ten",
-      "ten-thirty",
-      "thirty",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F566",
@@ -58295,16 +51653,7 @@ return {
     name = "CLOCK FACE ELEVEN-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "11",
-      "11:30",
-      "30",
-      "clock",
-      "eleven",
-      "eleven-thirty",
-      "thirty",
-      "time",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F567",
@@ -58312,16 +51661,7 @@ return {
     name = "CLOCK FACE TWELVE-THIRTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "12",
-      "12:30",
-      "30",
-      "clock",
-      "thirty",
-      "time",
-      "twelve",
-      "twelve-thirty",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F568",
@@ -58389,10 +51729,7 @@ return {
     name = "CANDLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "candle",
-      "light",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F570",
@@ -58402,9 +51739,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "clock",
-      "clock",
-      "mantelpiece",
-      "time",
     },
   },
   {
@@ -58431,7 +51765,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "portable hole",
-      "hole",
     },
   },
   {
@@ -58442,10 +51775,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "jump",
-      "business",
-      "levitating",
-      "person",
-      "suit",
     },
   },
   {
@@ -58456,17 +51785,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "investigate",
-      "detective",
-      "sleuth",
-      "spy",
-      "detective",
-      "man",
-      "sleuth",
-      "spy",
-      "detective",
-      "sleuth",
-      "spy",
-      "woman",
     },
   },
   {
@@ -58477,11 +51795,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "cool",
-      "dark",
-      "eye",
-      "eyewear",
-      "glasses",
-      "sunglasses",
     },
   },
   {
@@ -58490,11 +51803,7 @@ return {
     name = "SPIDER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "insect",
-      "spider",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F578",
@@ -58502,10 +51811,7 @@ return {
     name = "SPIDER WEB",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "spider",
-      "web",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F579",
@@ -58513,12 +51819,7 @@ return {
     name = "JOYSTICK",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "game",
-      "joystick",
-      "video",
-      "videogame",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F57A",
@@ -58527,19 +51828,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "forms a gender pair with 1F483",
-      "dance",
-      "dancer",
-      "dancing",
-      "elegant",
-      "festive",
-      "flair",
-      "flamenco",
-      "groove",
-      "let’s",
-      "man",
-      "salsa",
-      "tango",
+      "forms a gender pair with 1f483",
     },
   },
   {
@@ -58662,10 +51951,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "links",
-      "link",
-      "linked",
-      "paperclip",
-      "paperclips",
     },
   },
   {
@@ -58696,8 +51981,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "ballpoint pen",
-      "ballpoint",
-      "pen",
     },
   },
   {
@@ -58708,8 +51991,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "fountain pen",
-      "fountain",
-      "pen",
     },
   },
   {
@@ -58720,8 +52001,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "brush",
-      "paintbrush",
-      "painting",
     },
   },
   {
@@ -58731,7 +52010,6 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "crayon",
       "crayon",
     },
   },
@@ -58759,12 +52037,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "halt",
-      "finger",
-      "fingers",
-      "hand",
-      "raised",
-      "splayed",
-      "stop",
     },
   },
   {
@@ -58805,11 +52077,7 @@ return {
     name = "REVERSED HAND WITH MIDDLE FINGER EXTENDED",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "finger",
-      "hand",
-      "middle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F596",
@@ -58818,12 +52086,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Vulcan salute",
-      "finger",
-      "hand",
-      "hands",
-      "salute",
-      "Vulcan",
+      "vulcan salute",
     },
   },
   {
@@ -58936,12 +52199,7 @@ return {
     name = "BLACK HEART",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "black",
-      "evil",
-      "heart",
-      "wicked",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5A5",
@@ -58951,9 +52209,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "tower computer",
-      "computer",
-      "desktop",
-      "monitor",
     },
   },
   {
@@ -58980,10 +52235,7 @@ return {
     name = "PRINTER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "computer",
-      "printer",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5A9",
@@ -59061,10 +52313,7 @@ return {
     name = "THREE BUTTON MOUSE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "computer",
-      "mouse",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5B2",
@@ -59074,8 +52323,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "ballpoint",
-      "computer",
-      "trackball",
     },
   },
   {
@@ -59166,12 +52413,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "art",
-      "art",
-      "frame",
-      "framed",
-      "museum",
-      "painting",
-      "picture",
     },
   },
   {
@@ -59228,9 +52469,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "index",
-      "card",
-      "dividers",
-      "index",
     },
   },
   {
@@ -59241,9 +52479,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "archive",
-      "box",
-      "card",
-      "file",
     },
   },
   {
@@ -59252,12 +52487,7 @@ return {
     name = "FILE CABINET",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "cabinet",
-      "file",
-      "filing",
-      "paper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5C5",
@@ -59363,11 +52593,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "trashcan",
-      "can",
-      "garbage",
-      "trash",
-      "waste",
-      "wastebasket",
     },
   },
   {
@@ -59378,10 +52603,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "note, empty calendar",
-      "note",
-      "notepad",
-      "pad",
-      "spiral",
     },
   },
   {
@@ -59392,9 +52613,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "calendar, day 1",
-      "calendar",
-      "pad",
-      "spiral",
     },
   },
   {
@@ -59475,10 +52693,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "symbol depicts a hand press with a box inside",
-      "clamp",
-      "compress",
-      "tool",
-      "vice",
     },
   },
   {
@@ -59489,10 +52703,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "encryption",
-      "clue",
-      "key",
-      "lock",
-      "old",
     },
   },
   {
@@ -59503,11 +52713,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "news",
-      "news",
-      "newspaper",
-      "paper",
-      "rolled",
-      "rolled-up",
     },
   },
   {
@@ -59537,11 +52742,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "rated for violence",
       "hate",
-      "dagger",
-      "knife",
-      "weapon",
+      "rated for violence",
     },
   },
   {
@@ -59551,8 +52753,8 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "rated for sex",
       "kiss",
+      "rated for sex",
     },
   },
   {
@@ -59563,11 +52765,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "rated for strong language",
-      "face",
-      "head",
-      "silhouette",
-      "speak",
-      "speaking",
     },
   },
   {
@@ -59608,13 +52805,7 @@ return {
     name = "LEFT SPEECH BUBBLE",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "balloon",
-      "bubble",
-      "dialog",
-      "left",
-      "speech",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5E9",
@@ -59678,12 +52869,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "shout right",
-      "anger",
-      "angry",
-      "balloon",
-      "bubble",
-      "mad",
-      "right",
     },
   },
   {
@@ -59724,8 +52909,6 @@ return {
     block = "Misc Symbols and Pictographs",
     aliases = {
       "vote",
-      "ballot",
-      "box",
     },
   },
   {
@@ -59786,10 +52969,7 @@ return {
     name = "WORLD MAP",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "map",
-      "world",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5FB",
@@ -59797,12 +52977,7 @@ return {
     name = "MOUNT FUJI",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "fuji",
-      "mount",
-      "mountain",
-      "nature",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5FC",
@@ -59810,10 +52985,7 @@ return {
     name = "TOKYO TOWER",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "Tokyo",
-      "tower",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5FD",
@@ -59821,16 +52993,7 @@ return {
     name = "STATUE OF LIBERTY",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "liberty",
-      "Liberty",
-      "new",
-      "ny",
-      "nyc",
-      "statue",
-      "Statue",
-      "york",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5FE",
@@ -59838,10 +53001,7 @@ return {
     name = "SILHOUETTE OF JAPAN",
     category = "So",
     block = "Misc Symbols and Pictographs",
-    aliases = {
-      "Japan",
-      "map",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F5FF",
@@ -59850,13 +53010,7 @@ return {
     category = "So",
     block = "Misc Symbols and Pictographs",
     aliases = {
-      "Japanese stone statue like Moai on Easter Island",
-      "face",
-      "moai",
-      "moyai",
-      "statue",
-      "stoneface",
-      "travel",
+      "japanese stone statue like moai on easter island",
     },
   },
   {
@@ -59865,19 +53019,7 @@ return {
     name = "GRINNING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "cheerful",
-      "cheery",
-      "face",
-      "grin",
-      "grinning",
-      "happy",
-      "laugh",
-      "nice",
-      "smile",
-      "smiling",
-      "teeth",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F601",
@@ -59885,19 +53027,7 @@ return {
     name = "GRINNING FACE WITH SMILING EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "beaming",
-      "eye",
-      "eyes",
-      "face",
-      "grin",
-      "grinning",
-      "happy",
-      "nice",
-      "smile",
-      "smiling",
-      "teeth",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F602",
@@ -59905,23 +53035,7 @@ return {
     name = "FACE WITH TEARS OF JOY",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "crying",
-      "face",
-      "feels",
-      "funny",
-      "haha",
-      "happy",
-      "hehe",
-      "hilarious",
-      "joy",
-      "laugh",
-      "lmao",
-      "lol",
-      "rofl",
-      "roflmao",
-      "tear",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F603",
@@ -59929,21 +53043,7 @@ return {
     name = "SMILING FACE WITH OPEN MOUTH",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "awesome",
-      "big",
-      "eyes",
-      "face",
-      "grin",
-      "grinning",
-      "happy",
-      "mouth",
-      "open",
-      "smile",
-      "smiling",
-      "teeth",
-      "yay",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F604",
@@ -59951,20 +53051,7 @@ return {
     name = "SMILING FACE WITH OPEN MOUTH AND SMILING EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "eye",
-      "eyes",
-      "face",
-      "grin",
-      "grinning",
-      "happy",
-      "laugh",
-      "lol",
-      "mouth",
-      "open",
-      "smile",
-      "smiling",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F605",
@@ -59972,21 +53059,7 @@ return {
     name = "SMILING FACE WITH OPEN MOUTH AND COLD SWEAT",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "cold",
-      "dejected",
-      "excited",
-      "face",
-      "grinning",
-      "mouth",
-      "nervous",
-      "open",
-      "smile",
-      "smiling",
-      "stress",
-      "stressed",
-      "sweat",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F606",
@@ -59994,23 +53067,7 @@ return {
     name = "SMILING FACE WITH OPEN MOUTH AND TIGHTLY-CLOSED EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "closed",
-      "eyes",
-      "face",
-      "grinning",
-      "haha",
-      "hahaha",
-      "happy",
-      "laugh",
-      "lol",
-      "mouth",
-      "open",
-      "rofl",
-      "smile",
-      "smiling",
-      "squinting",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F607",
@@ -60018,24 +53075,7 @@ return {
     name = "SMILING FACE WITH HALO",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "angel",
-      "angelic",
-      "angels",
-      "blessed",
-      "face",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "halo",
-      "happy",
-      "innocent",
-      "peaceful",
-      "smile",
-      "smiling",
-      "spirit",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F608",
@@ -60043,21 +53083,7 @@ return {
     name = "SMILING FACE WITH HORNS",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "demon",
-      "devil",
-      "evil",
-      "face",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "horns",
-      "purple",
-      "shade",
-      "smile",
-      "smiling",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F609",
@@ -60065,17 +53091,7 @@ return {
     name = "WINKING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "face",
-      "flirt",
-      "heartbreaker",
-      "sexy",
-      "slide",
-      "tease",
-      "wink",
-      "winking",
-      "winks",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F60A",
@@ -60083,16 +53099,7 @@ return {
     name = "SMILING FACE WITH SMILING EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "blush",
-      "eye",
-      "eyes",
-      "face",
-      "glad",
-      "satisfied",
-      "smile",
-      "smiling",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F60B",
@@ -60100,21 +53107,7 @@ return {
     name = "FACE SAVOURING DELICIOUS FOOD",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "delicious",
-      "eat",
-      "face",
-      "food",
-      "full",
-      "hungry",
-      "savor",
-      "smile",
-      "smiling",
-      "tasty",
-      "um",
-      "yum",
-      "yummy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F60C",
@@ -60124,12 +53117,6 @@ return {
     block = "Emoticons",
     aliases = {
       "indicates relief, not sleeping",
-      "calm",
-      "face",
-      "peace",
-      "relief",
-      "relieved",
-      "zen",
     },
   },
   {
@@ -60138,22 +53125,7 @@ return {
     name = "SMILING FACE WITH HEART-SHAPED EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "143",
-      "bae",
-      "eye",
-      "face",
-      "feels",
-      "heart-eyes",
-      "hearts",
-      "ily",
-      "kisses",
-      "love",
-      "romance",
-      "romantic",
-      "smile",
-      "xoxo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F60E",
@@ -60161,24 +53133,7 @@ return {
     name = "SMILING FACE WITH SUNGLASSES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "awesome",
-      "beach",
-      "bright",
-      "bro",
-      "chilling",
-      "cool",
-      "face",
-      "rad",
-      "relaxed",
-      "shades",
-      "slay",
-      "smile",
-      "style",
-      "sunglasses",
-      "swag",
-      "win",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F60F",
@@ -60186,24 +53141,7 @@ return {
     name = "SMIRKING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "boss",
-      "dapper",
-      "face",
-      "flirt",
-      "homie",
-      "kidding",
-      "leer",
-      "shade",
-      "slick",
-      "sly",
-      "smirk",
-      "smug",
-      "snicker",
-      "suave",
-      "suspicious",
-      "swag",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F610",
@@ -60212,23 +53150,7 @@ return {
     category = "So",
     block = "Emoticons",
     aliases = {
-      "used for the West Wind in some Mahjong annotation",
-      "awkward",
-      "blank",
-      "deadpan",
-      "expressionless",
-      "face",
-      "fine",
-      "jealous",
-      "meh",
-      "neutral",
-      "oh",
-      "shade",
-      "straight",
-      "unamused",
-      "unhappy",
-      "unimpressed",
-      "whatever",
+      "used for the west wind in some mahjong annotation",
     },
   },
   {
@@ -60237,24 +53159,7 @@ return {
     name = "EXPRESSIONLESS FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "awkward",
-      "dead",
-      "expressionless",
-      "face",
-      "fine",
-      "inexpressive",
-      "jealous",
-      "meh",
-      "not",
-      "oh",
-      "omg",
-      "straight",
-      "uh",
-      "unhappy",
-      "unimpressed",
-      "whatever",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F612",
@@ -60262,23 +53167,7 @@ return {
     name = "UNAMUSED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "...",
-      "bored",
-      "face",
-      "fine",
-      "jealous",
-      "jel",
-      "jelly",
-      "pissed",
-      "smh",
-      "ugh",
-      "uhh",
-      "unamused",
-      "unhappy",
-      "weird",
-      "whatever",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F613",
@@ -60286,19 +53175,7 @@ return {
     name = "FACE WITH COLD SWEAT",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "close",
-      "cold",
-      "downcast",
-      "face",
-      "feels",
-      "headache",
-      "nervous",
-      "sad",
-      "scared",
-      "sweat",
-      "yikes",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F614",
@@ -60306,19 +53183,7 @@ return {
     name = "PENSIVE FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "awful",
-      "bored",
-      "dejected",
-      "died",
-      "disappointed",
-      "face",
-      "losing",
-      "lost",
-      "pensive",
-      "sad",
-      "sucks",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F615",
@@ -60326,20 +53191,7 @@ return {
     name = "CONFUSED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "befuddled",
-      "confused",
-      "confusing",
-      "dunno",
-      "face",
-      "frown",
-      "hm",
-      "meh",
-      "not",
-      "sad",
-      "sorry",
-      "sure",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F616",
@@ -60347,18 +53199,7 @@ return {
     name = "CONFOUNDED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "annoyed",
-      "confounded",
-      "confused",
-      "cringe",
-      "distraught",
-      "face",
-      "feels",
-      "frustrated",
-      "mad",
-      "sad",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F617",
@@ -60366,20 +53207,7 @@ return {
     name = "KISSING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "143",
-      "date",
-      "dating",
-      "face",
-      "flirt",
-      "ily",
-      "kiss",
-      "love",
-      "smooch",
-      "smooches",
-      "xoxo",
-      "you",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F618",
@@ -60387,24 +53215,7 @@ return {
     name = "FACE THROWING A KISS",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "adorbs",
-      "bae",
-      "blowing",
-      "face",
-      "flirt",
-      "heart",
-      "ily",
-      "kiss",
-      "love",
-      "lover",
-      "miss",
-      "muah",
-      "romantic",
-      "smooch",
-      "xoxo",
-      "you",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F619",
@@ -60412,24 +53223,7 @@ return {
     name = "KISSING FACE WITH SMILING EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "143",
-      "closed",
-      "date",
-      "dating",
-      "eye",
-      "eyes",
-      "face",
-      "flirt",
-      "ily",
-      "kiss",
-      "kisses",
-      "kissing",
-      "love",
-      "night",
-      "smile",
-      "smiling",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F61A",
@@ -60437,23 +53231,7 @@ return {
     name = "KISSING FACE WITH CLOSED EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "143",
-      "bae",
-      "blush",
-      "closed",
-      "date",
-      "dating",
-      "eye",
-      "eyes",
-      "face",
-      "flirt",
-      "ily",
-      "kisses",
-      "kissing",
-      "smooches",
-      "xoxo",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F61B",
@@ -60461,16 +53239,7 @@ return {
     name = "FACE WITH STUCK-OUT TONGUE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "awesome",
-      "cool",
-      "face",
-      "nice",
-      "party",
-      "stuck-out",
-      "sweet",
-      "tongue",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F61C",
@@ -60480,22 +53249,6 @@ return {
     block = "Emoticons",
     aliases = {
       "kidding, not serious",
-      "crazy",
-      "epic",
-      "eye",
-      "face",
-      "funny",
-      "joke",
-      "loopy",
-      "nutty",
-      "party",
-      "stuck-out",
-      "tongue",
-      "wacky",
-      "weirdo",
-      "wink",
-      "winking",
-      "yolo",
     },
   },
   {
@@ -60506,19 +53259,6 @@ return {
     block = "Emoticons",
     aliases = {
       "kidding, not serious",
-      "closed",
-      "eye",
-      "eyes",
-      "face",
-      "gross",
-      "horrible",
-      "omg",
-      "squinting",
-      "stuck-out",
-      "taste",
-      "tongue",
-      "whatever",
-      "yolo",
     },
   },
   {
@@ -60527,17 +53267,7 @@ return {
     name = "DISAPPOINTED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "awful",
-      "blame",
-      "dejected",
-      "disappointed",
-      "face",
-      "fail",
-      "losing",
-      "sad",
-      "unhappy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F61F",
@@ -60545,19 +53275,7 @@ return {
     name = "WORRIED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "anxious",
-      "butterflies",
-      "face",
-      "nerves",
-      "nervous",
-      "sad",
-      "stress",
-      "stressed",
-      "surprised",
-      "worried",
-      "worry",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F620",
@@ -60565,20 +53283,7 @@ return {
     name = "ANGRY FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "anger",
-      "angry",
-      "blame",
-      "face",
-      "feels",
-      "frustrated",
-      "mad",
-      "maddening",
-      "rage",
-      "shade",
-      "unhappy",
-      "upset",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F621",
@@ -60586,21 +53291,7 @@ return {
     name = "POUTING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "anger",
-      "angry",
-      "enraged",
-      "face",
-      "feels",
-      "mad",
-      "maddening",
-      "pouting",
-      "rage",
-      "red",
-      "shade",
-      "unhappy",
-      "upset",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F622",
@@ -60608,18 +53299,7 @@ return {
     name = "CRYING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "awful",
-      "cry",
-      "crying",
-      "face",
-      "feels",
-      "miss",
-      "sad",
-      "tear",
-      "triste",
-      "unhappy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F623",
@@ -60627,15 +53307,7 @@ return {
     name = "PERSEVERING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "concentrate",
-      "concentration",
-      "face",
-      "focus",
-      "headache",
-      "persevere",
-      "persevering",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F624",
@@ -60645,20 +53317,6 @@ return {
     block = "Emoticons",
     aliases = {
       "indicates triumph, not anger",
-      "anger",
-      "angry",
-      "face",
-      "feels",
-      "fume",
-      "fuming",
-      "furious",
-      "fury",
-      "mad",
-      "nose",
-      "steam",
-      "triumph",
-      "unhappy",
-      "won",
     },
   },
   {
@@ -60667,20 +53325,7 @@ return {
     name = "DISAPPOINTED BUT RELIEVED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "anxious",
-      "call",
-      "close",
-      "complicated",
-      "disappointed",
-      "face",
-      "not",
-      "relieved",
-      "sad",
-      "sweat",
-      "time",
-      "whew",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F626",
@@ -60690,18 +53335,6 @@ return {
     block = "Emoticons",
     aliases = {
       "frowning, not shocked or surprised",
-      "caught",
-      "face",
-      "frown",
-      "frowning",
-      "guard",
-      "mouth",
-      "open",
-      "scared",
-      "scary",
-      "surprise",
-      "what",
-      "wow",
     },
   },
   {
@@ -60710,18 +53343,7 @@ return {
     name = "ANGUISHED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "anguished",
-      "face",
-      "forgot",
-      "scared",
-      "scary",
-      "stressed",
-      "surprise",
-      "unhappy",
-      "what",
-      "wow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F628",
@@ -60729,16 +53351,7 @@ return {
     name = "FEARFUL FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "afraid",
-      "anxious",
-      "blame",
-      "face",
-      "fear",
-      "fearful",
-      "scared",
-      "worried",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F629",
@@ -60746,20 +53359,7 @@ return {
     name = "WEARY FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "crying",
-      "face",
-      "fail",
-      "feels",
-      "hungry",
-      "mad",
-      "nooo",
-      "sad",
-      "sleepy",
-      "tired",
-      "unhappy",
-      "weary",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F62A",
@@ -60767,17 +53367,7 @@ return {
     name = "SLEEPY FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "crying",
-      "face",
-      "good",
-      "night",
-      "sad",
-      "sleep",
-      "sleeping",
-      "sleepy",
-      "tired",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F62B",
@@ -60785,15 +53375,7 @@ return {
     name = "TIRED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "cost",
-      "face",
-      "feels",
-      "nap",
-      "sad",
-      "sneeze",
-      "tired",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F62C",
@@ -60803,15 +53385,6 @@ return {
     block = "Emoticons",
     aliases = {
       "should not be depicted with zipper mouth",
-      "awk",
-      "awkward",
-      "dentist",
-      "face",
-      "grimace",
-      "grimacing",
-      "grinning",
-      "smile",
-      "smiling",
     },
   },
   {
@@ -60820,18 +53393,7 @@ return {
     name = "LOUDLY CRYING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "bawling",
-      "cry",
-      "crying",
-      "face",
-      "loudly",
-      "sad",
-      "sob",
-      "tear",
-      "tears",
-      "unhappy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F62E",
@@ -60839,36 +53401,7 @@ return {
     name = "FACE WITH OPEN MOUTH",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "blow",
-      "blowing",
-      "exhale",
-      "exhaling",
-      "exhausted",
-      "face",
-      "gasp",
-      "groan",
-      "relief",
-      "sigh",
-      "smiley",
-      "smoke",
-      "whisper",
-      "whistle",
-      "believe",
-      "face",
-      "forgot",
-      "mouth",
-      "omg",
-      "open",
-      "shocked",
-      "surprised",
-      "sympathy",
-      "unbelievable",
-      "unreal",
-      "whoa",
-      "wow",
-      "you",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F62F",
@@ -60876,16 +53409,7 @@ return {
     name = "HUSHED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "epic",
-      "face",
-      "hushed",
-      "omg",
-      "stunned",
-      "surprised",
-      "whoa",
-      "woah",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F630",
@@ -60893,20 +53417,7 @@ return {
     name = "FACE WITH OPEN MOUTH AND COLD SWEAT",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "anxious",
-      "blue",
-      "cold",
-      "eek",
-      "face",
-      "mouth",
-      "nervous",
-      "open",
-      "rushed",
-      "scared",
-      "sweat",
-      "yikes",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F631",
@@ -60914,20 +53425,7 @@ return {
     name = "FACE SCREAMING IN FEAR",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "epic",
-      "face",
-      "fear",
-      "fearful",
-      "munch",
-      "scared",
-      "scream",
-      "screamer",
-      "screaming",
-      "shocked",
-      "surprised",
-      "woah",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F632",
@@ -60935,16 +53433,7 @@ return {
     name = "ASTONISHED FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "astonished",
-      "cost",
-      "face",
-      "no",
-      "omg",
-      "shocked",
-      "totally",
-      "way",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F633",
@@ -60954,22 +53443,6 @@ return {
     block = "Emoticons",
     aliases = {
       "embarrassed",
-      "amazed",
-      "awkward",
-      "crazy",
-      "dazed",
-      "dead",
-      "disbelief",
-      "embarrassed",
-      "face",
-      "flushed",
-      "geez",
-      "heat",
-      "hot",
-      "impressed",
-      "jeez",
-      "what",
-      "wow",
     },
   },
   {
@@ -60978,21 +53451,7 @@ return {
     name = "SLEEPING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "bed",
-      "bedtime",
-      "face",
-      "good",
-      "goodnight",
-      "nap",
-      "night",
-      "sleep",
-      "sleeping",
-      "tired",
-      "whatever",
-      "yawn",
-      "zzz",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F635",
@@ -61000,30 +53459,7 @@ return {
     name = "DIZZY FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "crossed-out",
-      "dead",
-      "dizzy",
-      "eyes",
-      "face",
-      "feels",
-      "knocked",
-      "out",
-      "sick",
-      "tired",
-      "confused",
-      "dizzy",
-      "eyes",
-      "face",
-      "hypnotized",
-      "omg",
-      "smiley",
-      "spiral",
-      "trouble",
-      "whoa",
-      "woah",
-      "woozy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F636",
@@ -61031,25 +53467,7 @@ return {
     name = "FACE WITHOUT MOUTH",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "awkward",
-      "blank",
-      "expressionless",
-      "face",
-      "mouth",
-      "mouthless",
-      "mute",
-      "quiet",
-      "secret",
-      "silence",
-      "silent",
-      "speechless",
-      "absentminded",
-      "clouds",
-      "face",
-      "fog",
-      "head",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F637",
@@ -61057,19 +53475,7 @@ return {
     name = "FACE WITH MEDICAL MASK",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "cold",
-      "dentist",
-      "dermatologist",
-      "doctor",
-      "dr",
-      "face",
-      "germs",
-      "mask",
-      "medical",
-      "medicine",
-      "sick",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F638",
@@ -61077,17 +53483,7 @@ return {
     name = "GRINNING CAT FACE WITH SMILING EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "cat",
-      "eye",
-      "eyes",
-      "face",
-      "grin",
-      "grinning",
-      "smile",
-      "smiling",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F639",
@@ -61095,17 +53491,7 @@ return {
     name = "CAT FACE WITH TEARS OF JOY",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "cat",
-      "face",
-      "joy",
-      "laugh",
-      "laughing",
-      "lol",
-      "tear",
-      "tears",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F63A",
@@ -61113,16 +53499,7 @@ return {
     name = "SMILING CAT FACE WITH OPEN MOUTH",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "cat",
-      "face",
-      "grinning",
-      "mouth",
-      "open",
-      "smile",
-      "smiling",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F63B",
@@ -61130,17 +53507,7 @@ return {
     name = "SMILING CAT FACE WITH HEART-SHAPED EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "cat",
-      "eye",
-      "face",
-      "heart",
-      "heart-eyes",
-      "love",
-      "smile",
-      "smiling",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F63C",
@@ -61148,14 +53515,7 @@ return {
     name = "CAT FACE WITH WRY SMILE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "cat",
-      "face",
-      "ironic",
-      "smile",
-      "wry",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F63D",
@@ -61163,16 +53523,7 @@ return {
     name = "KISSING CAT FACE WITH CLOSED EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "cat",
-      "closed",
-      "eye",
-      "eyes",
-      "face",
-      "kiss",
-      "kissing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F63E",
@@ -61180,12 +53531,7 @@ return {
     name = "POUTING CAT FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "cat",
-      "face",
-      "pouting",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F63F",
@@ -61193,15 +53539,7 @@ return {
     name = "CRYING CAT FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "cat",
-      "cry",
-      "crying",
-      "face",
-      "sad",
-      "tear",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F640",
@@ -61211,12 +53549,6 @@ return {
     block = "Emoticons",
     aliases = {
       "indicates tired, not horrified",
-      "animal",
-      "cat",
-      "face",
-      "oh",
-      "surprised",
-      "weary",
     },
   },
   {
@@ -61225,13 +53557,7 @@ return {
     name = "SLIGHTLY FROWNING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "face",
-      "frown",
-      "frowning",
-      "sad",
-      "slightly",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F642",
@@ -61239,23 +53565,7 @@ return {
     name = "SLIGHTLY SMILING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "face",
-      "happy",
-      "slightly",
-      "smile",
-      "smiling",
-      "head",
-      "horizontally",
-      "no",
-      "shake",
-      "shaking",
-      "head",
-      "nod",
-      "shaking",
-      "vertically",
-      "yes",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F643",
@@ -61263,12 +53573,7 @@ return {
     name = "UPSIDE-DOWN FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "face",
-      "hehe",
-      "smile",
-      "upside-down",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F644",
@@ -61276,15 +53581,7 @@ return {
     name = "FACE WITH ROLLING EYES",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "eyeroll",
-      "eyes",
-      "face",
-      "rolling",
-      "shade",
-      "ugh",
-      "whatever",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F645",
@@ -61292,29 +53589,7 @@ return {
     name = "FACE WITH NO GOOD GESTURE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "forbidden",
-      "gesture",
-      "hand",
-      "NO",
-      "not",
-      "person",
-      "prohibit",
-      "forbidden",
-      "gesture",
-      "hand",
-      "man",
-      "NO",
-      "not",
-      "prohibit",
-      "forbidden",
-      "gesture",
-      "hand",
-      "NO",
-      "not",
-      "prohibit",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F646",
@@ -61322,29 +53597,7 @@ return {
     name = "FACE WITH OK GESTURE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "exercise",
-      "gesture",
-      "gesturing",
-      "hand",
-      "OK",
-      "omg",
-      "person",
-      "exercise",
-      "gesture",
-      "gesturing",
-      "hand",
-      "man",
-      "OK",
-      "omg",
-      "exercise",
-      "gesture",
-      "gesturing",
-      "hand",
-      "OK",
-      "omg",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F647",
@@ -61352,50 +53605,7 @@ return {
     name = "PERSON BOWING DEEPLY",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "apology",
-      "ask",
-      "beg",
-      "bow",
-      "bowing",
-      "favor",
-      "forgive",
-      "gesture",
-      "meditate",
-      "meditation",
-      "person",
-      "pity",
-      "regret",
-      "sorry",
-      "apology",
-      "ask",
-      "beg",
-      "bow",
-      "bowing",
-      "favor",
-      "forgive",
-      "gesture",
-      "man",
-      "meditate",
-      "meditation",
-      "pity",
-      "regret",
-      "sorry",
-      "apology",
-      "ask",
-      "beg",
-      "bow",
-      "bowing",
-      "favor",
-      "forgive",
-      "gesture",
-      "meditate",
-      "meditation",
-      "pity",
-      "regret",
-      "sorry",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F648",
@@ -61403,23 +53613,7 @@ return {
     name = "SEE-NO-EVIL MONKEY",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "embarrassed",
-      "evil",
-      "face",
-      "forbidden",
-      "forgot",
-      "gesture",
-      "hide",
-      "monkey",
-      "no",
-      "omg",
-      "prohibited",
-      "scared",
-      "secret",
-      "smh",
-      "watch",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F649",
@@ -61427,23 +53621,7 @@ return {
     name = "HEAR-NO-EVIL MONKEY",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "ears",
-      "evil",
-      "face",
-      "forbidden",
-      "gesture",
-      "hear",
-      "listen",
-      "monkey",
-      "no",
-      "not",
-      "prohibited",
-      "secret",
-      "shh",
-      "tmi",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F64A",
@@ -61451,22 +53629,7 @@ return {
     name = "SPEAK-NO-EVIL MONKEY",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "animal",
-      "evil",
-      "face",
-      "forbidden",
-      "gesture",
-      "monkey",
-      "no",
-      "not",
-      "oops",
-      "prohibited",
-      "quiet",
-      "secret",
-      "speak",
-      "stealth",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F64B",
@@ -61474,38 +53637,7 @@ return {
     name = "HAPPY PERSON RAISING ONE HAND",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "gesture",
-      "hand",
-      "here",
-      "know",
-      "me",
-      "person",
-      "pick",
-      "question",
-      "raise",
-      "raising",
-      "gesture",
-      "hand",
-      "here",
-      "know",
-      "man",
-      "me",
-      "pick",
-      "question",
-      "raise",
-      "raising",
-      "gesture",
-      "hand",
-      "here",
-      "know",
-      "me",
-      "pick",
-      "question",
-      "raise",
-      "raising",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F64C",
@@ -61515,14 +53647,6 @@ return {
     block = "Emoticons",
     aliases = {
       "banzai!",
-      "celebration",
-      "gesture",
-      "hand",
-      "hands",
-      "hooray",
-      "praise",
-      "raised",
-      "raising",
     },
   },
   {
@@ -61531,41 +53655,7 @@ return {
     name = "PERSON FROWNING",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "annoyed",
-      "disappointed",
-      "disgruntled",
-      "disturbed",
-      "frown",
-      "frowning",
-      "frustrated",
-      "gesture",
-      "irritated",
-      "person",
-      "upset",
-      "annoyed",
-      "disappointed",
-      "disgruntled",
-      "disturbed",
-      "frown",
-      "frowning",
-      "frustrated",
-      "gesture",
-      "irritated",
-      "man",
-      "upset",
-      "annoyed",
-      "disappointed",
-      "disgruntled",
-      "disturbed",
-      "frown",
-      "frowning",
-      "frustrated",
-      "gesture",
-      "irritated",
-      "upset",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F64E",
@@ -61573,38 +53663,7 @@ return {
     name = "PERSON WITH POUTING FACE",
     category = "So",
     block = "Emoticons",
-    aliases = {
-      "disappointed",
-      "downtrodden",
-      "frown",
-      "grimace",
-      "person",
-      "pouting",
-      "scowl",
-      "sulk",
-      "upset",
-      "whine",
-      "disappointed",
-      "downtrodden",
-      "frown",
-      "grimace",
-      "man",
-      "pouting",
-      "scowl",
-      "sulk",
-      "upset",
-      "whine",
-      "disappointed",
-      "downtrodden",
-      "frown",
-      "grimace",
-      "pouting",
-      "scowl",
-      "sulk",
-      "upset",
-      "whine",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F64F",
@@ -61614,21 +53673,6 @@ return {
     block = "Emoticons",
     aliases = {
       "can indicate sorrow or regret",
-      "appreciate",
-      "ask",
-      "beg",
-      "blessed",
-      "bow",
-      "cmon",
-      "five",
-      "folded",
-      "gesture",
-      "hand",
-      "high",
-      "please",
-      "pray",
-      "thanks",
-      "thx",
     },
   },
   {
@@ -62029,13 +54073,7 @@ return {
     name = "ROCKET",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "launch",
-      "rocket",
-      "rockets",
-      "space",
-      "travel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F681",
@@ -62043,13 +54081,7 @@ return {
     name = "HELICOPTER",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "copter",
-      "helicopter",
-      "roflcopter",
-      "travel",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F682",
@@ -62057,16 +54089,7 @@ return {
     name = "STEAM LOCOMOTIVE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "caboose",
-      "engine",
-      "locomotive",
-      "railway",
-      "steam",
-      "train",
-      "trains",
-      "travel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F683",
@@ -62074,15 +54097,7 @@ return {
     name = "RAILWAY CAR",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "car",
-      "electric",
-      "railway",
-      "train",
-      "tram",
-      "travel",
-      "trolleybus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F684",
@@ -62090,13 +54105,7 @@ return {
     name = "HIGH-SPEED TRAIN",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "high-speed",
-      "railway",
-      "shinkansen",
-      "speed",
-      "train",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F685",
@@ -62104,16 +54113,7 @@ return {
     name = "HIGH-SPEED TRAIN WITH BULLET NOSE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bullet",
-      "high-speed",
-      "nose",
-      "railway",
-      "shinkansen",
-      "speed",
-      "train",
-      "travel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F686",
@@ -62123,10 +54123,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "intercity train",
-      "arrived",
-      "choo",
-      "railway",
-      "train",
     },
   },
   {
@@ -62137,9 +54133,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "subway, underground train",
-      "metro",
-      "subway",
-      "travel",
     },
   },
   {
@@ -62148,13 +54141,7 @@ return {
     name = "LIGHT RAIL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "arrived",
-      "light",
-      "monorail",
-      "rail",
-      "railway",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F689",
@@ -62164,9 +54151,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "train, subway station",
-      "railway",
-      "station",
-      "train",
     },
   },
   {
@@ -62175,10 +54159,7 @@ return {
     name = "TRAM",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "tram",
-      "trolleybus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F68B",
@@ -62186,13 +54167,7 @@ return {
     name = "TRAM CAR",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bus",
-      "car",
-      "tram",
-      "trolley",
-      "trolleybus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F68C",
@@ -62200,11 +54175,7 @@ return {
     name = "BUS",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bus",
-      "school",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F68D",
@@ -62212,11 +54183,7 @@ return {
     name = "ONCOMING BUS",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bus",
-      "cars",
-      "oncoming",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F68E",
@@ -62224,12 +54191,7 @@ return {
     name = "TROLLEYBUS",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bus",
-      "tram",
-      "trolley",
-      "trolleybus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F68F",
@@ -62237,11 +54199,7 @@ return {
     name = "BUS STOP",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bus",
-      "busstop",
-      "stop",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F690",
@@ -62249,13 +54207,7 @@ return {
     name = "MINIBUS",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bus",
-      "drive",
-      "minibus",
-      "van",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F691",
@@ -62263,11 +54215,7 @@ return {
     name = "AMBULANCE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "ambulance",
-      "emergency",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F692",
@@ -62275,11 +54223,7 @@ return {
     name = "FIRE ENGINE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "engine",
-      "fire",
-      "truck",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F693",
@@ -62287,13 +54231,7 @@ return {
     name = "POLICE CAR",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "5–0",
-      "car",
-      "cops",
-      "patrol",
-      "police",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F694",
@@ -62301,11 +54239,7 @@ return {
     name = "ONCOMING POLICE CAR",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "car",
-      "oncoming",
-      "police",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F695",
@@ -62313,15 +54247,7 @@ return {
     name = "TAXI",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "cab",
-      "cabbie",
-      "car",
-      "drive",
-      "taxi",
-      "vehicle",
-      "yellow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F696",
@@ -62329,16 +54255,7 @@ return {
     name = "ONCOMING TAXI",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "cab",
-      "cabbie",
-      "cars",
-      "drove",
-      "hail",
-      "oncoming",
-      "taxi",
-      "yellow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F697",
@@ -62346,12 +54263,7 @@ return {
     name = "AUTOMOBILE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "automobile",
-      "car",
-      "driving",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F698",
@@ -62359,14 +54271,7 @@ return {
     name = "ONCOMING AUTOMOBILE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "automobile",
-      "car",
-      "cars",
-      "drove",
-      "oncoming",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F699",
@@ -62374,15 +54279,7 @@ return {
     name = "RECREATIONAL VEHICLE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "car",
-      "drive",
-      "recreational",
-      "sport",
-      "sportutility",
-      "utility",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F69A",
@@ -62390,13 +54287,7 @@ return {
     name = "DELIVERY TRUCK",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "car",
-      "delivery",
-      "drive",
-      "truck",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F69B",
@@ -62404,16 +54295,7 @@ return {
     name = "ARTICULATED LORRY",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "articulated",
-      "car",
-      "drive",
-      "lorry",
-      "move",
-      "semi",
-      "truck",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F69C",
@@ -62421,10 +54303,7 @@ return {
     name = "TRACTOR",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "tractor",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F69D",
@@ -62432,10 +54311,7 @@ return {
     name = "MONORAIL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "monorail",
-      "vehicle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F69E",
@@ -62443,12 +54319,7 @@ return {
     name = "MOUNTAIN RAILWAY",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "car",
-      "mountain",
-      "railway",
-      "trip",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F69F",
@@ -62456,10 +54327,7 @@ return {
     name = "SUSPENSION RAILWAY",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "railway",
-      "suspension",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6A0",
@@ -62467,14 +54335,7 @@ return {
     name = "MOUNTAIN CABLEWAY",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "cable",
-      "cableway",
-      "gondola",
-      "lift",
-      "mountain",
-      "ski",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6A1",
@@ -62482,14 +54343,7 @@ return {
     name = "AERIAL TRAMWAY",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "aerial",
-      "cable",
-      "car",
-      "gondola",
-      "ropeway",
-      "tramway",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6A2",
@@ -62499,10 +54353,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "cruise line vacation",
-      "boat",
-      "passenger",
-      "ship",
-      "travel",
     },
   },
   {
@@ -62511,47 +54361,7 @@ return {
     name = "ROWBOAT",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "boat",
-      "canoe",
-      "cruise",
-      "fishing",
-      "lake",
-      "oar",
-      "paddle",
-      "person",
-      "raft",
-      "river",
-      "row",
-      "rowboat",
-      "rowing",
-      "boat",
-      "canoe",
-      "cruise",
-      "fishing",
-      "lake",
-      "man",
-      "oar",
-      "paddle",
-      "raft",
-      "river",
-      "row",
-      "rowboat",
-      "rowing",
-      "boat",
-      "canoe",
-      "cruise",
-      "fishing",
-      "lake",
-      "oar",
-      "paddle",
-      "raft",
-      "river",
-      "row",
-      "rowboat",
-      "rowing",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6A4",
@@ -62559,16 +54369,7 @@ return {
     name = "SPEEDBOAT",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "billionaire",
-      "boat",
-      "lake",
-      "luxury",
-      "millionaire",
-      "speedboat",
-      "summer",
-      "travel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6A5",
@@ -62576,15 +54377,7 @@ return {
     name = "HORIZONTAL TRAFFIC LIGHT",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "horizontal",
-      "intersection",
-      "light",
-      "signal",
-      "stop",
-      "stoplight",
-      "traffic",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6A6",
@@ -62592,16 +54385,7 @@ return {
     name = "VERTICAL TRAFFIC LIGHT",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "drove",
-      "intersection",
-      "light",
-      "signal",
-      "stop",
-      "stoplight",
-      "traffic",
-      "vertical",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6A7",
@@ -62609,10 +54393,7 @@ return {
     name = "CONSTRUCTION SIGN",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "barrier",
-      "construction",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6A8",
@@ -62622,15 +54403,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "rotating beacon",
-      "alarm",
-      "alert",
-      "beacon",
-      "car",
-      "emergency",
-      "light",
-      "police",
-      "revolving",
-      "siren",
     },
   },
   {
@@ -62641,11 +54413,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "location information",
-      "construction",
-      "flag",
-      "golf",
-      "post",
-      "triangular",
     },
   },
   {
@@ -62654,12 +54421,7 @@ return {
     name = "DOOR",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "back",
-      "closet",
-      "door",
-      "front",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6AB",
@@ -62667,14 +54429,7 @@ return {
     name = "NO ENTRY SIGN",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "entry",
-      "forbidden",
-      "no",
-      "not",
-      "prohibited",
-      "smoke",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6AC",
@@ -62682,10 +54437,7 @@ return {
     name = "SMOKING SYMBOL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "cigarette",
-      "smoking",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6AD",
@@ -62693,14 +54445,7 @@ return {
     name = "NO SMOKING SYMBOL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "forbidden",
-      "no",
-      "not",
-      "prohibited",
-      "smoke",
-      "smoking",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6AE",
@@ -62708,12 +54453,7 @@ return {
     name = "PUT LITTER IN ITS PLACE SYMBOL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bin",
-      "litter",
-      "litterbin",
-      "sign",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6AF",
@@ -62721,14 +54461,7 @@ return {
     name = "DO NOT LITTER SYMBOL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "forbidden",
-      "litter",
-      "littering",
-      "no",
-      "not",
-      "prohibited",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6B0",
@@ -62736,11 +54469,7 @@ return {
     name = "POTABLE WATER SYMBOL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "drinking",
-      "potable",
-      "water",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6B1",
@@ -62748,13 +54477,7 @@ return {
     name = "NON-POTABLE WATER SYMBOL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "dry",
-      "non-drinking",
-      "non-potable",
-      "prohibited",
-      "water",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6B2",
@@ -62762,18 +54485,7 @@ return {
     name = "BICYCLE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bicycle",
-      "bike",
-      "class",
-      "cycle",
-      "cycling",
-      "cyclist",
-      "gang",
-      "ride",
-      "spin",
-      "spinning",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6B3",
@@ -62781,15 +54493,7 @@ return {
     name = "NO BICYCLES",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bicycle",
-      "bicycles",
-      "bike",
-      "forbidden",
-      "no",
-      "not",
-      "prohibited",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6B4",
@@ -62797,35 +54501,7 @@ return {
     name = "BICYCLIST",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bicycle",
-      "bicyclist",
-      "bike",
-      "biking",
-      "cycle",
-      "cyclist",
-      "person",
-      "riding",
-      "sport",
-      "bicycle",
-      "bicyclist",
-      "bike",
-      "biking",
-      "cycle",
-      "cyclist",
-      "man",
-      "riding",
-      "sport",
-      "bicycle",
-      "bicyclist",
-      "bike",
-      "biking",
-      "cycle",
-      "cyclist",
-      "riding",
-      "sport",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6B5",
@@ -62833,38 +54509,7 @@ return {
     name = "MOUNTAIN BICYCLIST",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bicycle",
-      "bicyclist",
-      "bike",
-      "biking",
-      "cycle",
-      "cyclist",
-      "mountain",
-      "person",
-      "riding",
-      "sport",
-      "bicycle",
-      "bicyclist",
-      "bike",
-      "biking",
-      "cycle",
-      "cyclist",
-      "man",
-      "mountain",
-      "riding",
-      "sport",
-      "bicycle",
-      "bicyclist",
-      "bike",
-      "biking",
-      "cycle",
-      "cyclist",
-      "mountain",
-      "riding",
-      "sport",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6B6",
@@ -62874,38 +54519,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "walking",
-      "amble",
-      "gait",
-      "hike",
-      "man",
-      "pace",
-      "pedestrian",
-      "person",
-      "stride",
-      "stroll",
-      "walk",
-      "walking",
-      "amble",
-      "gait",
-      "hike",
-      "man",
-      "pace",
-      "pedestrian",
-      "stride",
-      "stroll",
-      "walk",
-      "walking",
-      "amble",
-      "gait",
-      "hike",
-      "man",
-      "pace",
-      "pedestrian",
-      "stride",
-      "stroll",
-      "walk",
-      "walking",
-      "woman",
     },
   },
   {
@@ -62914,14 +54527,7 @@ return {
     name = "NO PEDESTRIANS",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "forbidden",
-      "no",
-      "not",
-      "pedestrian",
-      "pedestrians",
-      "prohibited",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6B8",
@@ -62929,13 +54535,7 @@ return {
     name = "CHILDREN CROSSING",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "child",
-      "children",
-      "crossing",
-      "pedestrian",
-      "traffic",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6B9",
@@ -62946,14 +54546,6 @@ return {
     aliases = {
       "man symbol",
       "men's restroom",
-      "bathroom",
-      "lavatory",
-      "man",
-      "men’s",
-      "restroom",
-      "room",
-      "toilet",
-      "WC",
     },
   },
   {
@@ -62965,14 +54557,6 @@ return {
     aliases = {
       "woman symbol",
       "women's restroom",
-      "bathroom",
-      "lavatory",
-      "restroom",
-      "room",
-      "toilet",
-      "WC",
-      "woman",
-      "women’s",
     },
   },
   {
@@ -62984,11 +54568,6 @@ return {
     aliases = {
       "man and woman symbol with divider",
       "unisex restroom",
-      "bathroom",
-      "lavatory",
-      "restroom",
-      "toilet",
-      "WC",
     },
   },
   {
@@ -62999,9 +54578,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "baby on board, baby changing station",
-      "baby",
-      "changing",
-      "symbol",
     },
   },
   {
@@ -63010,10 +54586,7 @@ return {
     name = "TOILET",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bathroom",
-      "toilet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6BE",
@@ -63021,15 +54594,7 @@ return {
     name = "WATER CLOSET",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bathroom",
-      "closet",
-      "lavatory",
-      "restroom",
-      "toilet",
-      "water",
-      "WC",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6BF",
@@ -63037,10 +54602,7 @@ return {
     name = "SHOWER",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "shower",
-      "water",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6C0",
@@ -63048,13 +54610,7 @@ return {
     name = "BATH",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bath",
-      "bathtub",
-      "person",
-      "taking",
-      "tub",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6C1",
@@ -63062,10 +54618,7 @@ return {
     name = "BATHTUB",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bath",
-      "bathtub",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6C2",
@@ -63073,10 +54626,7 @@ return {
     name = "PASSPORT CONTROL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "control",
-      "passport",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6C3",
@@ -63084,10 +54634,7 @@ return {
     name = "CUSTOMS",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "customs",
-      "packing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6C4",
@@ -63095,20 +54642,7 @@ return {
     name = "BAGGAGE CLAIM",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "arrived",
-      "baggage",
-      "bags",
-      "case",
-      "checked",
-      "claim",
-      "journey",
-      "packing",
-      "plane",
-      "ready",
-      "travel",
-      "trip",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6C5",
@@ -63116,13 +54650,7 @@ return {
     name = "LEFT LUGGAGE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "baggage",
-      "case",
-      "left",
-      "locker",
-      "luggage",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6C6",
@@ -63176,9 +54704,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "furniture, lifestyles",
-      "couch",
-      "hotel",
-      "lamp",
     },
   },
   {
@@ -63189,17 +54714,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "hotel, guestrooms",
-      "bed",
-      "bedtime",
-      "good",
-      "goodnight",
-      "hotel",
-      "nap",
-      "night",
-      "person",
-      "sleep",
-      "tired",
-      "zzz",
     },
   },
   {
@@ -63209,10 +54723,6 @@ return {
     category = "So",
     block = "Transport and Map Symbols",
     aliases = {
-      "shopping",
-      "bag",
-      "bags",
-      "hotel",
       "shopping",
     },
   },
@@ -63224,9 +54734,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "reception, services",
-      "bell",
-      "bellhop",
-      "hotel",
     },
   },
   {
@@ -63235,11 +54742,7 @@ return {
     name = "BED",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "bed",
-      "hotel",
-      "sleep",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6D0",
@@ -63247,12 +54750,7 @@ return {
     name = "PLACE OF WORSHIP",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "place",
-      "pray",
-      "religion",
-      "worship",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6D1",
@@ -63261,11 +54759,8 @@ return {
     category = "So",
     block = "Transport and Map Symbols",
     aliases = {
-      "stop sign",
       "may contain text indicating stop",
-      "octagonal",
-      "sign",
-      "stop",
+      "stop sign",
     },
   },
   {
@@ -63276,9 +54771,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "shopping cart",
-      "cart",
-      "shopping",
-      "trolley",
     },
   },
   {
@@ -63303,10 +54795,7 @@ return {
     name = "HINDU TEMPLE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "hindu",
-      "temple",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6D6",
@@ -63314,14 +54803,7 @@ return {
     name = "HUT",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "home",
-      "house",
-      "hut",
-      "roundhouse",
-      "shelter",
-      "yurt",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6D7",
@@ -63329,12 +54811,7 @@ return {
     name = "ELEVATOR",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "accessibility",
-      "elevator",
-      "hoist",
-      "lift",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6DC",
@@ -63342,20 +54819,7 @@ return {
     name = "WIRELESS",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "broadband",
-      "computer",
-      "connectivity",
-      "hotspot",
-      "internet",
-      "network",
-      "router",
-      "smartphone",
-      "wi-fi",
-      "wifi",
-      "wireless",
-      "wlan",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6DD",
@@ -63363,16 +54827,7 @@ return {
     name = "PLAYGROUND SLIDE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "amusement",
-      "park",
-      "play",
-      "playground",
-      "playing",
-      "slide",
-      "sliding",
-      "theme",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6DE",
@@ -63380,14 +54835,7 @@ return {
     name = "WHEEL",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "car",
-      "circle",
-      "tire",
-      "turn",
-      "vehicle",
-      "wheel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6DF",
@@ -63395,19 +54843,7 @@ return {
     name = "RING BUOY",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "buoy",
-      "float",
-      "life",
-      "lifesaver",
-      "preserver",
-      "rescue",
-      "ring",
-      "safety",
-      "save",
-      "saver",
-      "swim",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6E0",
@@ -63417,10 +54853,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "tools, repair facility",
-      "hammer",
-      "spanner",
-      "tool",
-      "wrench",
     },
   },
   {
@@ -63430,9 +54862,7 @@ return {
     category = "So",
     block = "Transport and Map Symbols",
     aliases = {
-      "US road interstate highway",
-      "shield",
-      "weapon",
+      "us road interstate highway",
     },
   },
   {
@@ -63443,8 +54873,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "commodities",
-      "drum",
-      "oil",
     },
   },
   {
@@ -63453,11 +54881,7 @@ return {
     name = "MOTORWAY",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "highway",
-      "motorway",
-      "road",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6E4",
@@ -63467,9 +54891,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "railroad",
-      "railway",
-      "track",
-      "train",
     },
   },
   {
@@ -63480,9 +54901,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "boat",
-      "boat",
-      "motor",
-      "motorboat",
     },
   },
   {
@@ -63521,12 +54939,7 @@ return {
     name = "SMALL AIRPLANE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "aeroplane",
-      "airplane",
-      "plane",
-      "small",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6EA",
@@ -63544,12 +54957,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "departures",
-      "aeroplane",
-      "airplane",
-      "check-in",
-      "departure",
-      "departures",
-      "plane",
     },
   },
   {
@@ -63560,13 +54967,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "arrivals",
-      "aeroplane",
-      "airplane",
-      "arrival",
-      "arrivals",
-      "arriving",
-      "landing",
-      "plane",
     },
   },
   {
@@ -63575,10 +54975,7 @@ return {
     name = "SATELLITE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "satellite",
-      "space",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6F1",
@@ -63608,8 +55005,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "cruise line vacation",
-      "passenger",
-      "ship",
     },
   },
   {
@@ -63618,10 +55013,7 @@ return {
     name = "SCOOTER",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "kick",
-      "scooter",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6F5",
@@ -63629,10 +55021,7 @@ return {
     name = "MOTOR SCOOTER",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "motor",
-      "scooter",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6F6",
@@ -63640,10 +55029,7 @@ return {
     name = "CANOE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "boat",
-      "canoe",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6F7",
@@ -63653,12 +55039,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "sledge, toboggan",
-      "luge",
-      "sled",
-      "sledge",
-      "sleigh",
-      "snow",
-      "toboggan",
     },
   },
   {
@@ -63668,13 +55048,7 @@ return {
     category = "So",
     block = "Transport and Map Symbols",
     aliases = {
-      "UFO",
-      "aliens",
-      "extra",
-      "flying",
-      "saucer",
-      "terrestrial",
-      "UFO",
+      "ufo",
     },
   },
   {
@@ -63683,13 +55057,7 @@ return {
     name = "SKATEBOARD",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "board",
-      "skate",
-      "skateboard",
-      "skater",
-      "wheels",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6FA",
@@ -63699,9 +55067,6 @@ return {
     block = "Transport and Map Symbols",
     aliases = {
       "tuk-tuk, remorque",
-      "auto",
-      "rickshaw",
-      "tuk",
     },
   },
   {
@@ -63710,15 +55075,7 @@ return {
     name = "PICKUP TRUCK",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "automobile",
-      "car",
-      "flatbed",
-      "pick-up",
-      "pickup",
-      "transportation",
-      "truck",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F6FC",
@@ -63726,13 +55083,7 @@ return {
     name = "ROLLER SKATE",
     category = "So",
     block = "Transport and Map Symbols",
-    aliases = {
-      "blades",
-      "roller",
-      "skate",
-      "skates",
-      "sport",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F780",
@@ -64459,7 +55810,7 @@ return {
     category = "So",
     block = "Geometric Shapes Extended",
     aliases = {
-      "commonly used by members of the Bahá'í faith",
+      "commonly used by members of the bahá'í faith",
     },
   },
   {
@@ -64468,10 +55819,7 @@ return {
     name = "LARGE ORANGE CIRCLE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "circle",
-      "orange",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7E1",
@@ -64479,10 +55827,7 @@ return {
     name = "LARGE YELLOW CIRCLE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "circle",
-      "yellow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7E2",
@@ -64490,10 +55835,7 @@ return {
     name = "LARGE GREEN CIRCLE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "circle",
-      "green",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7E3",
@@ -64501,10 +55843,7 @@ return {
     name = "LARGE PURPLE CIRCLE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "circle",
-      "purple",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7E4",
@@ -64512,10 +55851,7 @@ return {
     name = "LARGE BROWN CIRCLE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "brown",
-      "circle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7E5",
@@ -64523,12 +55859,7 @@ return {
     name = "LARGE RED SQUARE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "card",
-      "penalty",
-      "red",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7E6",
@@ -64536,10 +55867,7 @@ return {
     name = "LARGE BLUE SQUARE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "blue",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7E7",
@@ -64547,10 +55875,7 @@ return {
     name = "LARGE ORANGE SQUARE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "orange",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7E8",
@@ -64558,12 +55883,7 @@ return {
     name = "LARGE YELLOW SQUARE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "card",
-      "penalty",
-      "square",
-      "yellow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7E9",
@@ -64571,10 +55891,7 @@ return {
     name = "LARGE GREEN SQUARE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "green",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7EA",
@@ -64582,10 +55899,7 @@ return {
     name = "LARGE PURPLE SQUARE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "purple",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7EB",
@@ -64593,10 +55907,7 @@ return {
     name = "LARGE BROWN SQUARE",
     category = "So",
     block = "Geometric Shapes Extended",
-    aliases = {
-      "brown",
-      "square",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F7F0",
@@ -64606,13 +55917,6 @@ return {
     block = "Geometric Shapes Extended",
     aliases = {
       "symbol of equality",
-      "answer",
-      "equal",
-      "equality",
-      "equals",
-      "heavy",
-      "math",
-      "sign",
     },
   },
   {
@@ -66013,21 +57317,7 @@ return {
     name = "PINCHED FINGERS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "fingers",
-      "gesture",
-      "hand",
-      "hold",
-      "huh",
-      "interrogation",
-      "patience",
-      "pinched",
-      "relax",
-      "sarcastic",
-      "ugh",
-      "what",
-      "zip",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F90D",
@@ -66035,11 +57325,7 @@ return {
     name = "WHITE HEART",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "143",
-      "heart",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F90E",
@@ -66047,11 +57333,7 @@ return {
     name = "BROWN HEART",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "143",
-      "brown",
-      "heart",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F90F",
@@ -66059,16 +57341,7 @@ return {
     name = "PINCHING HAND",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "amount",
-      "bit",
-      "fingers",
-      "hand",
-      "little",
-      "pinching",
-      "small",
-      "sort",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F910",
@@ -66076,17 +57349,7 @@ return {
     name = "ZIPPER-MOUTH FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "keep",
-      "mouth",
-      "quiet",
-      "secret",
-      "shut",
-      "zip",
-      "zipper",
-      "zipper-mouth",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F911",
@@ -66094,13 +57357,7 @@ return {
     name = "MONEY-MOUTH FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "money",
-      "money-mouth",
-      "mouth",
-      "paid",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F912",
@@ -66108,12 +57365,7 @@ return {
     name = "FACE WITH THERMOMETER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "ill",
-      "sick",
-      "thermometer",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F913",
@@ -66121,18 +57373,7 @@ return {
     name = "NERD FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "brainy",
-      "clever",
-      "expert",
-      "face",
-      "geek",
-      "gifted",
-      "glasses",
-      "intelligent",
-      "nerd",
-      "smart",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F914",
@@ -66140,16 +57381,7 @@ return {
     name = "THINKING FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "chin",
-      "consider",
-      "face",
-      "hmm",
-      "ponder",
-      "pondering",
-      "thinking",
-      "wondering",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F915",
@@ -66157,14 +57389,7 @@ return {
     name = "FACE WITH HEAD-BANDAGE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bandage",
-      "face",
-      "head-bandage",
-      "hurt",
-      "injury",
-      "ouch",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F916",
@@ -66172,11 +57397,7 @@ return {
     name = "ROBOT FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "monster",
-      "robot",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F917",
@@ -66184,14 +57405,7 @@ return {
     name = "HUGGING FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "hands",
-      "hug",
-      "hugging",
-      "open",
-      "smiling",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F918",
@@ -66199,13 +57413,7 @@ return {
     name = "SIGN OF THE HORNS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "finger",
-      "hand",
-      "horns",
-      "rock-on",
-      "sign",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F919",
@@ -66213,14 +57421,7 @@ return {
     name = "CALL ME HAND",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "call",
-      "hand",
-      "hang",
-      "loose",
-      "me",
-      "Shaka",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F91A",
@@ -66228,12 +57429,7 @@ return {
     name = "RAISED BACK OF HAND",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "back",
-      "backhand",
-      "hand",
-      "raised",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F91B",
@@ -66241,11 +57437,7 @@ return {
     name = "LEFT-FACING FIST",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "fist",
-      "left-facing",
-      "leftwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F91C",
@@ -66253,11 +57445,7 @@ return {
     name = "RIGHT-FACING FIST",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "fist",
-      "right-facing",
-      "rightwards",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F91D",
@@ -66265,14 +57453,7 @@ return {
     name = "HANDSHAKE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "agreement",
-      "deal",
-      "hand",
-      "handshake",
-      "meeting",
-      "shake",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F91E",
@@ -66280,14 +57461,7 @@ return {
     name = "HAND WITH INDEX AND MIDDLE FINGERS CROSSED",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "cross",
-      "crossed",
-      "finger",
-      "fingers",
-      "hand",
-      "luck",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F91F",
@@ -66296,15 +57470,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "can be abbreviated ILY",
-      "fingers",
-      "gesture",
-      "hand",
-      "ILY",
-      "love",
-      "love-you",
-      "three",
-      "you",
+      "can be abbreviated ily",
     },
   },
   {
@@ -66313,12 +57479,7 @@ return {
     name = "FACE WITH COWBOY HAT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "cowboy",
-      "cowgirl",
-      "face",
-      "hat",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F921",
@@ -66326,10 +57487,7 @@ return {
     name = "CLOWN FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "clown",
-      "face",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F922",
@@ -66337,14 +57495,7 @@ return {
     name = "NAUSEATED FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "gross",
-      "nasty",
-      "nauseated",
-      "sick",
-      "vomit",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F923",
@@ -66354,22 +57505,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "rofl, rotfl",
-      "crying",
-      "face",
-      "floor",
-      "funny",
-      "haha",
-      "happy",
-      "hehe",
-      "hilarious",
-      "joy",
-      "laugh",
-      "lmao",
-      "lol",
-      "rofl",
-      "roflmao",
-      "rolling",
-      "tear",
     },
   },
   {
@@ -66378,10 +57513,7 @@ return {
     name = "DROOLING FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "drooling",
-      "face",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F925",
@@ -66389,13 +57521,7 @@ return {
     name = "LYING FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "liar",
-      "lie",
-      "lying",
-      "pinocchio",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F926",
@@ -66405,42 +57531,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "frustration, disbelief",
-      "again",
-      "bewilder",
-      "disbelief",
-      "exasperation",
-      "facepalm",
-      "no",
-      "not",
-      "oh",
-      "omg",
-      "person",
-      "shock",
-      "smh",
-      "again",
-      "bewilder",
-      "disbelief",
-      "exasperation",
-      "facepalm",
-      "man",
-      "no",
-      "not",
-      "oh",
-      "omg",
-      "shock",
-      "smh",
-      "again",
-      "bewilder",
-      "disbelief",
-      "exasperation",
-      "facepalm",
-      "no",
-      "not",
-      "oh",
-      "omg",
-      "shock",
-      "smh",
-      "woman",
     },
   },
   {
@@ -66450,14 +57540,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "Gesundheit",
-      "face",
-      "fever",
-      "flu",
       "gesundheit",
-      "sick",
-      "sneeze",
-      "sneezing",
     },
   },
   {
@@ -66466,22 +57549,7 @@ return {
     name = "FACE WITH ONE EYEBROW RAISED",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "disapproval",
-      "disbelief",
-      "distrust",
-      "emoji",
-      "eyebrow",
-      "face",
-      "hmm",
-      "mild",
-      "raised",
-      "skeptic",
-      "skeptical",
-      "skepticism",
-      "surprise",
-      "what",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F929",
@@ -66489,17 +57557,7 @@ return {
     name = "GRINNING FACE WITH STAR EYES",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "excited",
-      "eyes",
-      "face",
-      "grinning",
-      "smile",
-      "star",
-      "star-struck",
-      "starry-eyed",
-      "wow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F92A",
@@ -66507,16 +57565,7 @@ return {
     name = "GRINNING FACE WITH ONE LARGE AND ONE SMALL EYE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "crazy",
-      "eye",
-      "eyes",
-      "face",
-      "goofy",
-      "large",
-      "small",
-      "zany",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F92B",
@@ -66524,13 +57573,7 @@ return {
     name = "FACE WITH FINGER COVERING CLOSED LIPS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "quiet",
-      "shh",
-      "shush",
-      "shushing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F92C",
@@ -66538,17 +57581,7 @@ return {
     name = "SERIOUS FACE WITH SYMBOLS COVERING MOUTH",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "censor",
-      "cursing",
-      "cussing",
-      "face",
-      "mad",
-      "mouth",
-      "pissed",
-      "swearing",
-      "symbols",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F92D",
@@ -66556,20 +57589,7 @@ return {
     name = "SMILING FACE WITH SMILING EYES AND HAND COVERING MOUTH",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "giggle",
-      "giggling",
-      "hand",
-      "mouth",
-      "oops",
-      "realization",
-      "secret",
-      "shock",
-      "sudden",
-      "surprise",
-      "whoops",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F92E",
@@ -66577,19 +57597,7 @@ return {
     name = "FACE WITH OPEN MOUTH VOMITING",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "barf",
-      "ew",
-      "face",
-      "gross",
-      "puke",
-      "sick",
-      "spew",
-      "throw",
-      "up",
-      "vomit",
-      "vomiting",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F92F",
@@ -66597,17 +57605,7 @@ return {
     name = "SHOCKED FACE WITH EXPLODING HEAD",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "blown",
-      "explode",
-      "exploding",
-      "head",
-      "mind",
-      "mindblown",
-      "no",
-      "shocked",
-      "way",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F930",
@@ -66615,10 +57613,7 @@ return {
     name = "PREGNANT WOMAN",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "pregnant",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F931",
@@ -66626,16 +57621,7 @@ return {
     name = "BREAST-FEEDING",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "baby",
-      "breast",
-      "breast-feeding",
-      "feeding",
-      "mom",
-      "mother",
-      "nursing",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F932",
@@ -66645,15 +57631,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "used for prayer in some cultures",
-      "cupped",
-      "dua",
-      "hands",
-      "palms",
-      "pray",
-      "prayer",
-      "together",
-      "up",
-      "wish",
     },
   },
   {
@@ -66662,11 +57639,7 @@ return {
     name = "SELFIE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "camera",
-      "phone",
-      "selfie",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F934",
@@ -66674,17 +57647,7 @@ return {
     name = "PRINCE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "crown",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "king",
-      "prince",
-      "royal",
-      "royalty",
-      "tale",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F935",
@@ -66693,20 +57656,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "appearance for groom, may be paired with 1F470",
-      "formal",
-      "person",
-      "tuxedo",
-      "wedding",
-      "formal",
-      "groom",
-      "man",
-      "tuxedo",
-      "wedding",
-      "formal",
-      "tuxedo",
-      "wedding",
-      "woman",
+      "appearance for groom, may be paired with 1f470",
     },
   },
   {
@@ -66716,19 +57666,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "Mrs. Claus",
-      "celebration",
-      "Christmas",
-      "claus",
-      "fairy",
-      "fantasy",
-      "holiday",
-      "merry",
-      "mother",
-      "Mrs",
-      "santa",
-      "tale",
-      "xmas",
+      "mrs. claus",
     },
   },
   {
@@ -66737,47 +57675,7 @@ return {
     name = "SHRUG",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "doubt",
-      "dunno",
-      "guess",
-      "idk",
-      "ignorance",
-      "indifference",
-      "knows",
-      "maybe",
-      "person",
-      "shrug",
-      "shrugging",
-      "whatever",
-      "who",
-      "doubt",
-      "dunno",
-      "guess",
-      "idk",
-      "ignorance",
-      "indifference",
-      "knows",
-      "man",
-      "maybe",
-      "shrug",
-      "shrugging",
-      "whatever",
-      "who",
-      "doubt",
-      "dunno",
-      "guess",
-      "idk",
-      "ignorance",
-      "indifference",
-      "knows",
-      "maybe",
-      "shrug",
-      "shrugging",
-      "whatever",
-      "who",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F938",
@@ -66787,33 +57685,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "gymnastics",
-      "active",
-      "cartwheel",
-      "cartwheeling",
-      "excited",
-      "flip",
-      "gymnastics",
-      "happy",
-      "person",
-      "somersault",
-      "active",
-      "cartwheel",
-      "cartwheeling",
-      "excited",
-      "flip",
-      "gymnastics",
-      "happy",
-      "man",
-      "somersault",
-      "active",
-      "cartwheel",
-      "cartwheeling",
-      "excited",
-      "flip",
-      "gymnastics",
-      "happy",
-      "somersault",
-      "woman",
     },
   },
   {
@@ -66822,38 +57693,7 @@ return {
     name = "JUGGLING",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "act",
-      "balance",
-      "balancing",
-      "handle",
-      "juggle",
-      "juggling",
-      "manage",
-      "multitask",
-      "person",
-      "skill",
-      "act",
-      "balance",
-      "balancing",
-      "handle",
-      "juggle",
-      "juggling",
-      "man",
-      "manage",
-      "multitask",
-      "skill",
-      "act",
-      "balance",
-      "balancing",
-      "handle",
-      "juggle",
-      "juggling",
-      "manage",
-      "multitask",
-      "skill",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F93A",
@@ -66863,10 +57703,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "fencing",
-      "fencer",
-      "fencing",
-      "person",
-      "sword",
     },
   },
   {
@@ -66885,30 +57721,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "wrestling",
-      "combat",
-      "duel",
-      "grapple",
-      "people",
-      "ring",
-      "tournament",
-      "wrestle",
-      "wrestling",
-      "combat",
-      "duel",
-      "grapple",
-      "men",
-      "ring",
-      "tournament",
-      "wrestle",
-      "wrestling",
-      "combat",
-      "duel",
-      "grapple",
-      "ring",
-      "tournament",
-      "women",
-      "wrestle",
-      "wrestling",
     },
   },
   {
@@ -66917,29 +57729,7 @@ return {
     name = "WATER POLO",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "person",
-      "playing",
-      "polo",
-      "sport",
-      "swimming",
-      "water",
-      "waterpolo",
-      "man",
-      "playing",
-      "polo",
-      "sport",
-      "swimming",
-      "water",
-      "waterpolo",
-      "playing",
-      "polo",
-      "sport",
-      "swimming",
-      "water",
-      "waterpolo",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F93E",
@@ -66947,47 +57737,7 @@ return {
     name = "HANDBALL",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "athletics",
-      "ball",
-      "catch",
-      "chuck",
-      "handball",
-      "hurl",
-      "lob",
-      "person",
-      "pitch",
-      "playing",
-      "sport",
-      "throw",
-      "toss",
-      "athletics",
-      "ball",
-      "catch",
-      "chuck",
-      "handball",
-      "hurl",
-      "lob",
-      "man",
-      "pitch",
-      "playing",
-      "sport",
-      "throw",
-      "toss",
-      "athletics",
-      "ball",
-      "catch",
-      "chuck",
-      "handball",
-      "hurl",
-      "lob",
-      "pitch",
-      "playing",
-      "sport",
-      "throw",
-      "toss",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F93F",
@@ -66995,12 +57745,7 @@ return {
     name = "DIVING MASK",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "diving",
-      "mask",
-      "scuba",
-      "snorkeling",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F940",
@@ -67008,11 +57753,7 @@ return {
     name = "WILTED FLOWER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "dying",
-      "flower",
-      "wilted",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F941",
@@ -67020,11 +57761,7 @@ return {
     name = "DRUM WITH DRUMSTICKS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "drum",
-      "drumsticks",
-      "music",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F942",
@@ -67034,12 +57771,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "celebration, formal toasting",
-      "celebrate",
-      "clink",
-      "clinking",
-      "drink",
-      "glass",
-      "glasses",
     },
   },
   {
@@ -67049,14 +57780,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "whisky",
       "typically shown with ice",
-      "glass",
-      "liquor",
-      "scotch",
-      "shot",
-      "tumbler",
-      "whiskey",
       "whisky",
     },
   },
@@ -67066,11 +57790,7 @@ return {
     name = "SPOON",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "eat",
-      "spoon",
-      "tableware",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F945",
@@ -67078,10 +57798,7 @@ return {
     name = "GOAL NET",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "goal",
-      "net",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F946",
@@ -67101,11 +57818,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "gold medal",
-      "1st",
-      "first",
-      "gold",
-      "medal",
-      "place",
     },
   },
   {
@@ -67116,11 +57828,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "silver medal",
-      "2nd",
-      "medal",
-      "place",
-      "second",
-      "silver",
     },
   },
   {
@@ -67131,11 +57838,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "bronze medal",
-      "3rd",
-      "bronze",
-      "medal",
-      "place",
-      "third",
     },
   },
   {
@@ -67146,8 +57848,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "boxing",
-      "boxing",
-      "glove",
     },
   },
   {
@@ -67158,12 +57858,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "judo, karate, taekwondo",
-      "arts",
-      "judo",
-      "karate",
-      "martial",
-      "taekwondo",
-      "uniform",
     },
   },
   {
@@ -67172,12 +57866,7 @@ return {
     name = "CURLING STONE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "curling",
-      "game",
-      "rock",
-      "stone",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F94D",
@@ -67185,13 +57874,7 @@ return {
     name = "LACROSSE STICK AND BALL",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "goal",
-      "lacrosse",
-      "sports",
-      "stick",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F94E",
@@ -67199,13 +57882,7 @@ return {
     name = "SOFTBALL",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "glove",
-      "softball",
-      "sports",
-      "underarm",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F94F",
@@ -67213,11 +57890,7 @@ return {
     name = "FLYING DISC",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "disc",
-      "flying",
-      "ultimate",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F950",
@@ -67225,15 +57898,7 @@ return {
     name = "CROISSANT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bread",
-      "breakfast",
-      "crescent",
-      "croissant",
-      "food",
-      "french",
-      "roll",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F951",
@@ -67241,11 +57906,7 @@ return {
     name = "AVOCADO",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "avocado",
-      "food",
-      "fruit",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F952",
@@ -67255,10 +57916,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "pickle",
-      "cucumber",
-      "food",
-      "pickle",
-      "vegetable",
     },
   },
   {
@@ -67267,12 +57924,7 @@ return {
     name = "BACON",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bacon",
-      "breakfast",
-      "food",
-      "meat",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F954",
@@ -67280,11 +57932,7 @@ return {
     name = "POTATO",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "food",
-      "potato",
-      "vegetable",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F955",
@@ -67292,11 +57940,7 @@ return {
     name = "CARROT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "carrot",
-      "food",
-      "vegetable",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F956",
@@ -67305,11 +57949,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "French bread",
-      "baguette",
-      "bread",
-      "food",
-      "french",
+      "french bread",
     },
   },
   {
@@ -67318,11 +57958,7 @@ return {
     name = "GREEN SALAD",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "food",
-      "green",
-      "salad",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F958",
@@ -67332,11 +57968,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "paella, casserole",
-      "casserole",
-      "food",
-      "paella",
-      "pan",
-      "shallow",
     },
   },
   {
@@ -67347,12 +57978,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "döner kebab, falafel, gyro, shawarma",
-      "falafel",
-      "flatbread",
-      "food",
-      "gyro",
-      "kebab",
-      "stuffed",
     },
   },
   {
@@ -67363,9 +57988,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "chicken egg",
-      "breakfast",
-      "egg",
-      "food",
     },
   },
   {
@@ -67376,9 +57998,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "milk",
-      "drink",
-      "glass",
-      "milk",
     },
   },
   {
@@ -67387,13 +58006,7 @@ return {
     name = "PEANUTS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "food",
-      "nut",
-      "peanut",
-      "peanuts",
-      "vegetable",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F95D",
@@ -67401,11 +58014,7 @@ return {
     name = "KIWIFRUIT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "food",
-      "fruit",
-      "kiwi",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F95E",
@@ -67416,12 +58025,6 @@ return {
     aliases = {
       "hotcakes, crêpes, blini",
       "sweet or savory",
-      "breakfast",
-      "crêpe",
-      "food",
-      "hotcake",
-      "pancake",
-      "pancakes",
     },
   },
   {
@@ -67432,12 +58035,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "potsticker, gyooza, jiaozi, pierogi, empanada",
-      "dumpling",
-      "empanada",
-      "gyōza",
-      "jiaozi",
-      "pierogi",
-      "potsticker",
     },
   },
   {
@@ -67446,11 +58043,7 @@ return {
     name = "FORTUNE COOKIE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "cookie",
-      "fortune",
-      "prophecy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F961",
@@ -67460,13 +58053,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "take-away box, oyster pail",
-      "box",
-      "chopsticks",
-      "delivery",
-      "food",
-      "oyster",
-      "pail",
-      "takeout",
     },
   },
   {
@@ -67477,10 +58063,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "kuaizi, hashi, jeotgarak",
-      "chopsticks",
-      "hashi",
-      "jeotgarak",
-      "kuaizi",
     },
   },
   {
@@ -67491,13 +58073,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "can indicate breakfast, cereal, congee, etc.",
-      "bowl",
-      "breakfast",
-      "cereal",
-      "congee",
-      "oatmeal",
-      "porridge",
-      "spoon",
     },
   },
   {
@@ -67508,14 +58083,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "can indicate soda, juice, etc.",
-      "cup",
-      "drink",
-      "juice",
-      "malt",
-      "soda",
-      "soft",
-      "straw",
-      "water",
     },
   },
   {
@@ -67524,12 +58091,7 @@ return {
     name = "COCONUT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "coconut",
-      "colada",
-      "palm",
-      "piña",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F966",
@@ -67537,11 +58099,7 @@ return {
     name = "BROCCOLI",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "broccoli",
-      "cabbage",
-      "wild",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F967",
@@ -67551,14 +58109,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "may be sweet or savory",
-      "apple",
-      "filling",
-      "fruit",
-      "meat",
-      "pastry",
-      "pie",
-      "pumpkin",
-      "slice",
     },
   },
   {
@@ -67569,9 +58119,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "can indicate twistiness, intricacy",
-      "convoluted",
-      "pretzel",
-      "twisted",
     },
   },
   {
@@ -67582,13 +58129,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "porkchop, chop, steak",
-      "chop",
-      "cut",
-      "lambchop",
-      "meat",
-      "porkchop",
-      "red",
-      "steak",
     },
   },
   {
@@ -67597,10 +58137,7 @@ return {
     name = "SANDWICH",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bread",
-      "sandwich",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F96B",
@@ -67608,11 +58145,7 @@ return {
     name = "CANNED FOOD",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "can",
-      "canned",
-      "food",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F96C",
@@ -67620,17 +58153,7 @@ return {
     name = "LEAFY GREEN",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bok",
-      "burgers",
-      "cabbage",
-      "choy",
-      "green",
-      "kale",
-      "leafy",
-      "lettuce",
-      "salad",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F96D",
@@ -67638,12 +58161,7 @@ return {
     name = "MANGO",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "food",
-      "fruit",
-      "mango",
-      "tropical",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F96E",
@@ -67651,13 +58169,7 @@ return {
     name = "MOON CAKE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "autumn",
-      "cake",
-      "festival",
-      "moon",
-      "yuèbǐng",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F96F",
@@ -67665,13 +58177,7 @@ return {
     name = "BAGEL",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bagel",
-      "bakery",
-      "bread",
-      "breakfast",
-      "schmear",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F970",
@@ -67679,20 +58185,7 @@ return {
     name = "SMILING FACE WITH SMILING EYES AND THREE HEARTS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "3",
-      "adore",
-      "crush",
-      "face",
-      "heart",
-      "hearts",
-      "ily",
-      "love",
-      "romance",
-      "smile",
-      "smiling",
-      "you",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F971",
@@ -67700,21 +58193,7 @@ return {
     name = "YAWNING FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bedtime",
-      "bored",
-      "face",
-      "goodnight",
-      "nap",
-      "night",
-      "sleep",
-      "sleepy",
-      "tired",
-      "whatever",
-      "yawn",
-      "yawning",
-      "zzz",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F972",
@@ -67722,21 +58201,7 @@ return {
     name = "SMILING FACE WITH TEAR",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "glad",
-      "grateful",
-      "happy",
-      "joy",
-      "pain",
-      "proud",
-      "relieved",
-      "smile",
-      "smiley",
-      "smiling",
-      "tear",
-      "touched",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F973",
@@ -67744,20 +58209,7 @@ return {
     name = "FACE WITH PARTY HORN AND PARTY HAT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bday",
-      "birthday",
-      "celebrate",
-      "celebration",
-      "excited",
-      "face",
-      "happy",
-      "hat",
-      "hooray",
-      "horn",
-      "party",
-      "partying",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F974",
@@ -67765,18 +58217,7 @@ return {
     name = "FACE WITH UNEVEN EYES AND WAVY MOUTH",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "dizzy",
-      "drunk",
-      "eyes",
-      "face",
-      "intoxicated",
-      "mouth",
-      "tipsy",
-      "uneven",
-      "wavy",
-      "woozy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F975",
@@ -67784,18 +58225,7 @@ return {
     name = "OVERHEATED FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "dying",
-      "face",
-      "feverish",
-      "heat",
-      "hot",
-      "panting",
-      "red-faced",
-      "stroke",
-      "sweating",
-      "tongue",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F976",
@@ -67803,17 +58233,7 @@ return {
     name = "FREEZING FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "blue",
-      "blue-faced",
-      "cold",
-      "face",
-      "freezing",
-      "frostbite",
-      "icicles",
-      "subzero",
-      "teeth",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F977",
@@ -67821,20 +58241,7 @@ return {
     name = "NINJA",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "assassin",
-      "fight",
-      "fighter",
-      "hidden",
-      "ninja",
-      "person",
-      "secret",
-      "skills",
-      "sly",
-      "soldier",
-      "stealth",
-      "war",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F978",
@@ -67842,20 +58249,7 @@ return {
     name = "DISGUISED FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "disguise",
-      "eyebrow",
-      "face",
-      "glasses",
-      "incognito",
-      "moustache",
-      "mustache",
-      "nose",
-      "person",
-      "spy",
-      "tache",
-      "tash",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F979",
@@ -67863,24 +58257,7 @@ return {
     name = "FACE HOLDING BACK TEARS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "admiration",
-      "aww",
-      "back",
-      "cry",
-      "embarrassed",
-      "face",
-      "feelings",
-      "grateful",
-      "gratitude",
-      "holding",
-      "joy",
-      "please",
-      "proud",
-      "resist",
-      "sad",
-      "tears",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F97A",
@@ -67888,20 +58265,7 @@ return {
     name = "FACE WITH PLEADING EYES",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "begging",
-      "big",
-      "eyes",
-      "face",
-      "mercy",
-      "not",
-      "pleading",
-      "please",
-      "pretty",
-      "puppy",
-      "sad",
-      "why",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F97B",
@@ -67909,11 +58273,7 @@ return {
     name = "SARI",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "clothing",
-      "dress",
-      "sari",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F97C",
@@ -67921,17 +58281,7 @@ return {
     name = "LAB COAT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "clothes",
-      "coat",
-      "doctor",
-      "dr",
-      "experiment",
-      "jacket",
-      "lab",
-      "scientist",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F97D",
@@ -67939,15 +58289,7 @@ return {
     name = "GOGGLES",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "dive",
-      "eye",
-      "goggles",
-      "protection",
-      "scuba",
-      "swimming",
-      "welding",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F97E",
@@ -67955,15 +58297,7 @@ return {
     name = "HIKING BOOT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "backpacking",
-      "boot",
-      "brown",
-      "camping",
-      "hiking",
-      "outdoors",
-      "shoe",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F97F",
@@ -67971,15 +58305,7 @@ return {
     name = "FLAT SHOE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "ballet",
-      "comfy",
-      "flat",
-      "flats",
-      "shoe",
-      "slip-on",
-      "slipper",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F980",
@@ -67988,10 +58314,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "used for Cancer",
-      "Cancer",
-      "crab",
-      "zodiac",
+      "used for cancer",
     },
   },
   {
@@ -68001,19 +58324,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "used for Leo",
-      "alpha",
-      "animal",
-      "face",
-      "Leo",
-      "lion",
-      "mane",
-      "order",
-      "rawr",
-      "roar",
-      "safari",
-      "strong",
-      "zodiac",
+      "used for leo",
     },
   },
   {
@@ -68023,11 +58334,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "used for Scorpio",
-      "Scorpio",
-      "scorpion",
-      "Scorpius",
-      "zodiac",
+      "used for scorpio",
     },
   },
   {
@@ -68036,12 +58343,7 @@ return {
     name = "TURKEY",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bird",
-      "gobble",
-      "thanksgiving",
-      "turkey",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F984",
@@ -68049,10 +58351,7 @@ return {
     name = "UNICORN FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "face",
-      "unicorn",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F985",
@@ -68060,12 +58359,7 @@ return {
     name = "EAGLE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bird",
-      "eagle",
-      "ornithology",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F986",
@@ -68073,12 +58367,7 @@ return {
     name = "DUCK",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bird",
-      "duck",
-      "ornithology",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F987",
@@ -68086,11 +58375,7 @@ return {
     name = "BAT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bat",
-      "vampire",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F988",
@@ -68098,11 +58383,7 @@ return {
     name = "SHARK",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "fish",
-      "shark",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F989",
@@ -68110,13 +58391,7 @@ return {
     name = "OWL",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bird",
-      "ornithology",
-      "owl",
-      "wise",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F98A",
@@ -68124,11 +58399,7 @@ return {
     name = "FOX FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "face",
-      "fox",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F98B",
@@ -68136,11 +58407,7 @@ return {
     name = "BUTTERFLY",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "butterfly",
-      "insect",
-      "pretty",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F98C",
@@ -68148,10 +58415,7 @@ return {
     name = "DEER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "deer",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F98D",
@@ -68159,10 +58423,7 @@ return {
     name = "GORILLA",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "gorilla",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F98E",
@@ -68170,11 +58431,7 @@ return {
     name = "LIZARD",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "lizard",
-      "reptile",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F98F",
@@ -68182,10 +58439,7 @@ return {
     name = "RHINOCEROS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "rhinoceros",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F990",
@@ -68193,12 +58447,7 @@ return {
     name = "SHRIMP",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "food",
-      "shellfish",
-      "shrimp",
-      "small",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F991",
@@ -68206,12 +58455,7 @@ return {
     name = "SQUID",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "food",
-      "mollusk",
-      "squid",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F992",
@@ -68219,11 +58463,7 @@ return {
     name = "GIRAFFE FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "giraffe",
-      "spots",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F993",
@@ -68231,11 +58471,7 @@ return {
     name = "ZEBRA FACE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "stripe",
-      "zebra",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F994",
@@ -68243,11 +58479,7 @@ return {
     name = "HEDGEHOG",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "hedgehog",
-      "spiny",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F995",
@@ -68256,12 +58488,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "includes Brontosaurus, Diplodocus, Brachiosaurus",
-      "brachiosaurus",
-      "brontosaurus",
-      "dinosaur",
-      "diplodocus",
-      "sauropod",
+      "includes brontosaurus, diplodocus, brachiosaurus",
     },
   },
   {
@@ -68271,12 +58498,7 @@ return {
     category = "So",
     block = "Supplemental Symbols and Pictographs",
     aliases = {
-      "Tyrannosaurus rex",
-      "dinosaur",
-      "Rex",
-      "T",
-      "T-Rex",
-      "Tyrannosaurus",
+      "tyrannosaurus rex",
     },
   },
   {
@@ -68285,14 +58507,7 @@ return {
     name = "CRICKET",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bug",
-      "cricket",
-      "grasshopper",
-      "insect",
-      "Orthoptera",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F998",
@@ -68300,13 +58515,7 @@ return {
     name = "KANGAROO",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "joey",
-      "jump",
-      "kangaroo",
-      "marsupial",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F999",
@@ -68314,14 +58523,7 @@ return {
     name = "LLAMA",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "alpaca",
-      "animal",
-      "guanaco",
-      "llama",
-      "vicuña",
-      "wool",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F99A",
@@ -68329,17 +58531,7 @@ return {
     name = "PEACOCK",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bird",
-      "colorful",
-      "ornithology",
-      "ostentatious",
-      "peacock",
-      "peahen",
-      "pretty",
-      "proud",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F99B",
@@ -68347,11 +58539,7 @@ return {
     name = "HIPPOPOTAMUS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "hippo",
-      "hippopotamus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F99C",
@@ -68359,14 +58547,7 @@ return {
     name = "PARROT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bird",
-      "ornithology",
-      "parrot",
-      "pirate",
-      "talk",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F99D",
@@ -68374,12 +58555,7 @@ return {
     name = "RACCOON",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "curious",
-      "raccoon",
-      "sly",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F99E",
@@ -68387,13 +58563,7 @@ return {
     name = "LOBSTER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bisque",
-      "claws",
-      "lobster",
-      "seafood",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F99F",
@@ -68401,16 +58571,7 @@ return {
     name = "MOSQUITO",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bite",
-      "disease",
-      "fever",
-      "insect",
-      "malaria",
-      "mosquito",
-      "pest",
-      "virus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9A0",
@@ -68418,13 +58579,7 @@ return {
     name = "MICROBE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "amoeba",
-      "bacteria",
-      "microbe",
-      "science",
-      "virus",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9A1",
@@ -68432,12 +58587,7 @@ return {
     name = "BADGER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "badger",
-      "honey",
-      "pester",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9A2",
@@ -68445,15 +58595,7 @@ return {
     name = "SWAN",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bird",
-      "cygnet",
-      "duckling",
-      "ornithology",
-      "swan",
-      "ugly",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9A3",
@@ -68463,12 +58605,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "indicates great size",
-      "animal",
-      "extinction",
-      "large",
-      "mammoth",
-      "tusk",
-      "wooly",
     },
   },
   {
@@ -68479,12 +58615,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "indicates extinction",
-      "animal",
-      "bird",
-      "dodo",
-      "extinction",
-      "large",
-      "ornithology",
     },
   },
   {
@@ -68493,11 +58623,7 @@ return {
     name = "SLOTH",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "lazy",
-      "sloth",
-      "slow",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9A6",
@@ -68505,12 +58631,7 @@ return {
     name = "OTTER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "fishing",
-      "otter",
-      "playful",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9A7",
@@ -68518,12 +58639,7 @@ return {
     name = "ORANGUTAN",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "ape",
-      "monkey",
-      "orangutan",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9A8",
@@ -68531,11 +58647,7 @@ return {
     name = "SKUNK",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "skunk",
-      "stink",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9A9",
@@ -68543,14 +58655,7 @@ return {
     name = "FLAMINGO",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bird",
-      "flamboyant",
-      "flamingo",
-      "ornithology",
-      "tropical",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9AA",
@@ -68558,11 +58663,7 @@ return {
     name = "OYSTER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "diving",
-      "oyster",
-      "pearl",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9AB",
@@ -68570,12 +58671,7 @@ return {
     name = "BEAVER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "beaver",
-      "dam",
-      "teeth",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9AC",
@@ -68583,13 +58679,7 @@ return {
     name = "BISON",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "bison",
-      "buffalo",
-      "herd",
-      "wisent",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9AD",
@@ -68597,13 +58687,7 @@ return {
     name = "SEAL",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "animal",
-      "lion",
-      "ocean",
-      "sea",
-      "seal",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9AE",
@@ -68611,13 +58695,7 @@ return {
     name = "GUIDE DOG",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "accessibility",
-      "animal",
-      "blind",
-      "dog",
-      "guide",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9AF",
@@ -68625,13 +58703,7 @@ return {
     name = "PROBING CANE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "accessibility",
-      "blind",
-      "cane",
-      "probing",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B0",
@@ -68639,12 +58711,7 @@ return {
     name = "EMOJI COMPONENT RED HAIR",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "ginger",
-      "hair",
-      "red",
-      "redhead",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B1",
@@ -68652,12 +58719,7 @@ return {
     name = "EMOJI COMPONENT CURLY HAIR",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "afro",
-      "curly",
-      "hair",
-      "ringlets",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B2",
@@ -68665,14 +58727,7 @@ return {
     name = "EMOJI COMPONENT BALD",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bald",
-      "chemotherapy",
-      "hair",
-      "hairless",
-      "no",
-      "shaven",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B3",
@@ -68680,12 +58735,7 @@ return {
     name = "EMOJI COMPONENT WHITE HAIR",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "gray",
-      "hair",
-      "old",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B4",
@@ -68693,13 +58743,7 @@ return {
     name = "BONE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bone",
-      "bones",
-      "dog",
-      "skeleton",
-      "wishbone",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B5",
@@ -68707,14 +58751,7 @@ return {
     name = "LEG",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bent",
-      "foot",
-      "kick",
-      "knee",
-      "leg",
-      "limb",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B6",
@@ -68722,13 +58759,7 @@ return {
     name = "FOOT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "ankle",
-      "feet",
-      "foot",
-      "kick",
-      "stomp",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B7",
@@ -68736,13 +58767,7 @@ return {
     name = "TOOTH",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "dentist",
-      "pearly",
-      "teeth",
-      "tooth",
-      "white",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B8",
@@ -68750,23 +58775,7 @@ return {
     name = "SUPERHERO",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "good",
-      "hero",
-      "superhero",
-      "superpower",
-      "good",
-      "hero",
-      "man",
-      "superhero",
-      "superpower",
-      "good",
-      "hero",
-      "heroine",
-      "superhero",
-      "superpower",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9B9",
@@ -68774,28 +58783,7 @@ return {
     name = "SUPERVILLAIN",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bad",
-      "criminal",
-      "evil",
-      "superpower",
-      "supervillain",
-      "villain",
-      "bad",
-      "criminal",
-      "evil",
-      "man",
-      "superpower",
-      "supervillain",
-      "villain",
-      "bad",
-      "criminal",
-      "evil",
-      "superpower",
-      "supervillain",
-      "villain",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9BA",
@@ -68803,11 +58791,7 @@ return {
     name = "SAFETY VEST",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "emergency",
-      "safety",
-      "vest",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9BB",
@@ -68815,13 +58799,7 @@ return {
     name = "EAR WITH HEARING AID",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "accessibility",
-      "aid",
-      "ear",
-      "hard",
-      "hearing",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9BC",
@@ -68829,11 +58807,7 @@ return {
     name = "MOTORIZED WHEELCHAIR",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "accessibility",
-      "motorized",
-      "wheelchair",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9BD",
@@ -68841,11 +58815,7 @@ return {
     name = "MANUAL WHEELCHAIR",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "accessibility",
-      "manual",
-      "wheelchair",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9BE",
@@ -68853,12 +58823,7 @@ return {
     name = "MECHANICAL ARM",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "accessibility",
-      "arm",
-      "mechanical",
-      "prosthetic",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9BF",
@@ -68866,12 +58831,7 @@ return {
     name = "MECHANICAL LEG",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "accessibility",
-      "leg",
-      "mechanical",
-      "prosthetic",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C0",
@@ -68879,10 +58839,7 @@ return {
     name = "CHEESE WEDGE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "cheese",
-      "wedge",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C1",
@@ -68890,15 +58847,7 @@ return {
     name = "CUPCAKE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bakery",
-      "cupcake",
-      "dessert",
-      "sprinkles",
-      "sugar",
-      "sweet",
-      "treat",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C2",
@@ -68906,16 +58855,7 @@ return {
     name = "SALT SHAKER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "condiment",
-      "flavor",
-      "mad",
-      "salt",
-      "salty",
-      "shaker",
-      "taste",
-      "upset",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C3",
@@ -68923,13 +58863,7 @@ return {
     name = "BEVERAGE BOX",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "beverage",
-      "box",
-      "juice",
-      "straw",
-      "sweet",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C4",
@@ -68937,10 +58871,7 @@ return {
     name = "GARLIC",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "flavoring",
-      "garlic",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C5",
@@ -68948,10 +58879,7 @@ return {
     name = "ONION",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "flavoring",
-      "onion",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C6",
@@ -68959,11 +58887,7 @@ return {
     name = "FALAFEL",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "chickpea",
-      "falafel",
-      "meatball",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C7",
@@ -68971,12 +58895,7 @@ return {
     name = "WAFFLE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "breakfast",
-      "indecisive",
-      "iron",
-      "waffle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C8",
@@ -68984,10 +58903,7 @@ return {
     name = "BUTTER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "butter",
-      "dairy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9C9",
@@ -68995,10 +58911,7 @@ return {
     name = "MATE DRINK",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "drink",
-      "mate",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9CA",
@@ -69006,12 +58919,7 @@ return {
     name = "ICE CUBE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "cold",
-      "cube",
-      "ice",
-      "iceberg",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9CB",
@@ -69019,14 +58927,7 @@ return {
     name = "BUBBLE TEA",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "boba",
-      "bubble",
-      "food",
-      "milk",
-      "pearl",
-      "tea",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9CC",
@@ -69034,14 +58935,7 @@ return {
     name = "TROLL",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "fairy",
-      "fantasy",
-      "monster",
-      "tale",
-      "troll",
-      "trolling",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9CD",
@@ -69049,17 +58943,7 @@ return {
     name = "STANDING PERSON",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "person",
-      "stand",
-      "standing",
-      "man",
-      "stand",
-      "standing",
-      "stand",
-      "standing",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9CE",
@@ -69067,20 +58951,7 @@ return {
     name = "KNEELING PERSON",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "kneel",
-      "kneeling",
-      "knees",
-      "person",
-      "kneel",
-      "kneeling",
-      "knees",
-      "man",
-      "kneel",
-      "kneeling",
-      "knees",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9CF",
@@ -69088,26 +58959,7 @@ return {
     name = "DEAF PERSON",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "accessibility",
-      "deaf",
-      "ear",
-      "gesture",
-      "hear",
-      "person",
-      "accessibility",
-      "deaf",
-      "ear",
-      "gesture",
-      "hear",
-      "man",
-      "accessibility",
-      "deaf",
-      "ear",
-      "gesture",
-      "hear",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9D0",
@@ -69115,15 +58967,7 @@ return {
     name = "FACE WITH MONOCLE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "classy",
-      "face",
-      "fancy",
-      "monocle",
-      "rich",
-      "stuffy",
-      "wealthy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9D1",
@@ -69133,128 +58977,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "no specified gender",
-      "adult",
-      "person",
-      "doctor",
-      "health",
-      "healthcare",
-      "nurse",
-      "therapist",
-      "worker",
-      "graduate",
-      "student",
-      "instructor",
-      "lecturer",
-      "professor",
-      "teacher",
-      "judge",
-      "justice",
-      "law",
-      "scales",
-      "farmer",
-      "gardener",
-      "rancher",
-      "chef",
-      "cook",
-      "electrician",
-      "mechanic",
-      "plumber",
-      "tradesperson",
-      "assembly",
-      "factory",
-      "industrial",
-      "worker",
-      "architect",
-      "business",
-      "manager",
-      "office",
-      "white-collar",
-      "worker",
-      "biologist",
-      "chemist",
-      "engineer",
-      "mathematician",
-      "physicist",
-      "scientist",
-      "coder",
-      "computer",
-      "developer",
-      "inventor",
-      "software",
-      "technologist",
-      "actor",
-      "entertainer",
-      "rock",
-      "rockstar",
-      "singer",
-      "star",
-      "artist",
-      "palette",
-      "pilot",
-      "plane",
-      "astronaut",
-      "rocket",
-      "space",
-      "fire",
-      "firefighter",
-      "firetruck",
-      "baby",
-      "feed",
-      "feeding",
-      "nanny",
-      "newborn",
-      "nursing",
-      "parent",
-      "celebration",
-      "Christmas",
-      "claus",
-      "fairy",
-      "fantasy",
-      "holiday",
-      "merry",
-      "Mx",
-      "santa",
-      "tale",
-      "xmas",
-      "accessibility",
-      "blind",
-      "cane",
-      "person",
-      "probing",
-      "white",
-      "accessibility",
-      "motorized",
-      "person",
-      "wheelchair",
-      "accessibility",
-      "manual",
-      "person",
-      "wheelchair",
-      "bae",
-      "bestie",
-      "bff",
-      "couple",
-      "dating",
-      "flirt",
-      "friends",
-      "hand",
-      "hold",
-      "people",
-      "twins",
-      "adult",
-      "child",
-      "family",
-      "adult",
-      "child",
-      "family",
-      "adult",
-      "child",
-      "family",
-      "adult",
-      "child",
-      "family",
-      "ballet",
-      "dancer",
     },
   },
   {
@@ -69265,12 +58987,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "no specified gender",
-      "bright-eyed",
-      "child",
-      "grandchild",
-      "kid",
-      "young",
-      "younger",
     },
   },
   {
@@ -69281,12 +58997,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "no specified gender",
-      "adult",
-      "elderly",
-      "grandparent",
-      "old",
-      "person",
-      "wise",
     },
   },
   {
@@ -69295,20 +59005,7 @@ return {
     name = "BEARDED PERSON",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "beard",
-      "bearded",
-      "person",
-      "whiskers",
-      "beard",
-      "bearded",
-      "man",
-      "whiskers",
-      "beard",
-      "bearded",
-      "whiskers",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9D5",
@@ -69318,14 +59015,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "woman's headscarf, hijab",
-      "bandana",
-      "head",
-      "headscarf",
-      "hijab",
-      "kerchief",
-      "mantilla",
-      "tichel",
-      "woman",
     },
   },
   {
@@ -69336,39 +59025,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "sauna, steam room",
-      "day",
-      "luxurious",
-      "pamper",
-      "person",
-      "relax",
-      "room",
-      "sauna",
-      "spa",
-      "steam",
-      "steambath",
-      "unwind",
-      "day",
-      "luxurious",
-      "man",
-      "pamper",
-      "relax",
-      "room",
-      "sauna",
-      "spa",
-      "steam",
-      "steambath",
-      "unwind",
-      "day",
-      "luxurious",
-      "pamper",
-      "relax",
-      "room",
-      "sauna",
-      "spa",
-      "steam",
-      "steambath",
-      "unwind",
-      "woman",
     },
   },
   {
@@ -69377,32 +59033,7 @@ return {
     name = "PERSON CLIMBING",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "climb",
-      "climber",
-      "climbing",
-      "mountain",
-      "person",
-      "rock",
-      "scale",
-      "up",
-      "climb",
-      "climber",
-      "climbing",
-      "man",
-      "mountain",
-      "rock",
-      "scale",
-      "up",
-      "climb",
-      "climber",
-      "climbing",
-      "mountain",
-      "rock",
-      "scale",
-      "up",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9D8",
@@ -69412,45 +59043,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "yoga, meditation",
-      "cross",
-      "legged",
-      "legs",
-      "lotus",
-      "meditation",
-      "peace",
-      "person",
-      "position",
-      "relax",
-      "serenity",
-      "yoga",
-      "yogi",
-      "zen",
-      "cross",
-      "legged",
-      "legs",
-      "lotus",
-      "man",
-      "meditation",
-      "peace",
-      "position",
-      "relax",
-      "serenity",
-      "yoga",
-      "yogi",
-      "zen",
-      "cross",
-      "legged",
-      "legs",
-      "lotus",
-      "meditation",
-      "peace",
-      "position",
-      "relax",
-      "serenity",
-      "woman",
-      "yoga",
-      "yogi",
-      "zen",
     },
   },
   {
@@ -69461,41 +59053,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "wizard, witch, sorcerer, sorceress",
-      "fantasy",
-      "mage",
-      "magic",
-      "play",
-      "sorcerer",
-      "sorceress",
-      "sorcery",
-      "spell",
-      "summon",
-      "witch",
-      "wizard",
-      "fantasy",
-      "mage",
-      "magic",
-      "man",
-      "play",
-      "sorcerer",
-      "sorceress",
-      "sorcery",
-      "spell",
-      "summon",
-      "witch",
-      "wizard",
-      "fantasy",
-      "mage",
-      "magic",
-      "play",
-      "sorcerer",
-      "sorceress",
-      "sorcery",
-      "spell",
-      "summon",
-      "witch",
-      "wizard",
-      "woman",
     },
   },
   {
@@ -69504,37 +59061,7 @@ return {
     name = "FAIRY",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "myth",
-      "person",
-      "pixie",
-      "tale",
-      "wings",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "man",
-      "myth",
-      "Oberon",
-      "person",
-      "pixie",
-      "Puck",
-      "tale",
-      "wings",
-      "fairy",
-      "fairytale",
-      "fantasy",
-      "myth",
-      "person",
-      "pixie",
-      "tale",
-      "Titania",
-      "wings",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9DB",
@@ -69542,35 +59069,7 @@ return {
     name = "VAMPIRE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "blood",
-      "Dracula",
-      "fangs",
-      "halloween",
-      "scary",
-      "supernatural",
-      "teeth",
-      "undead",
-      "vampire",
-      "blood",
-      "fangs",
-      "halloween",
-      "man",
-      "scary",
-      "supernatural",
-      "teeth",
-      "undead",
-      "vampire",
-      "blood",
-      "fangs",
-      "halloween",
-      "scary",
-      "supernatural",
-      "teeth",
-      "undead",
-      "vampire",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9DC",
@@ -69580,34 +59079,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "mermaid, merman",
-      "creature",
-      "fairytale",
-      "folklore",
-      "merperson",
-      "ocean",
-      "sea",
-      "siren",
-      "trident",
-      "creature",
-      "fairytale",
-      "folklore",
-      "merman",
-      "Neptune",
-      "ocean",
-      "Poseidon",
-      "sea",
-      "siren",
-      "trident",
-      "Triton",
-      "creature",
-      "fairytale",
-      "folklore",
-      "mermaid",
-      "merwoman",
-      "ocean",
-      "sea",
-      "siren",
-      "trident",
     },
   },
   {
@@ -69616,34 +59087,7 @@ return {
     name = "ELF",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "elf",
-      "elves",
-      "enchantment",
-      "fantasy",
-      "folklore",
-      "magic",
-      "magical",
-      "myth",
-      "elf",
-      "elves",
-      "enchantment",
-      "fantasy",
-      "folklore",
-      "magic",
-      "magical",
-      "man",
-      "myth",
-      "elf",
-      "elves",
-      "enchantment",
-      "fantasy",
-      "folklore",
-      "magic",
-      "magical",
-      "myth",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9DE",
@@ -69651,34 +59095,7 @@ return {
     name = "GENIE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "djinn",
-      "fantasy",
-      "genie",
-      "jinn",
-      "lamp",
-      "myth",
-      "rub",
-      "wishes",
-      "djinn",
-      "fantasy",
-      "genie",
-      "jinn",
-      "lamp",
-      "man",
-      "myth",
-      "rub",
-      "wishes",
-      "djinn",
-      "fantasy",
-      "genie",
-      "jinn",
-      "lamp",
-      "myth",
-      "rub",
-      "wishes",
-      "woman",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9DF",
@@ -69686,34 +59103,7 @@ return {
     name = "ZOMBIE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "apocalypse",
-      "dead",
-      "halloween",
-      "horror",
-      "scary",
-      "undead",
-      "walking",
-      "zombie",
-      "apocalypse",
-      "dead",
-      "halloween",
-      "horror",
-      "man",
-      "scary",
-      "undead",
-      "walking",
-      "zombie",
-      "apocalypse",
-      "dead",
-      "halloween",
-      "horror",
-      "scary",
-      "undead",
-      "walking",
-      "woman",
-      "zombie",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9E0",
@@ -69721,11 +59111,7 @@ return {
     name = "BRAIN",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "brain",
-      "intelligent",
-      "smart",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9E1",
@@ -69733,11 +59119,7 @@ return {
     name = "ORANGE HEART",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "143",
-      "heart",
-      "orange",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9E2",
@@ -69747,12 +59129,6 @@ return {
     block = "Supplemental Symbols and Pictographs",
     aliases = {
       "baseball cap",
-      "baseball",
-      "bent",
-      "billed",
-      "cap",
-      "dad",
-      "hat",
     },
   },
   {
@@ -69761,13 +59137,7 @@ return {
     name = "SCARF",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bundle",
-      "cold",
-      "neck",
-      "scarf",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9E4",
@@ -69775,10 +59145,7 @@ return {
     name = "GLOVES",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "gloves",
-      "hand",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9E5",
@@ -69786,14 +59153,7 @@ return {
     name = "COAT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "brr",
-      "bundle",
-      "coat",
-      "cold",
-      "jacket",
-      "up",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9E6",
@@ -69801,10 +59161,7 @@ return {
     name = "SOCKS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "socks",
-      "stocking",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9E7",
@@ -69812,17 +59169,7 @@ return {
     name = "RED GIFT ENVELOPE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "envelope",
-      "gift",
-      "good",
-      "hóngbāo",
-      "lai",
-      "luck",
-      "money",
-      "red",
-      "see",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9E8",
@@ -69830,17 +59177,7 @@ return {
     name = "FIRECRACKER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "dynamite",
-      "explosive",
-      "fire",
-      "firecracker",
-      "fireworks",
-      "light",
-      "pop",
-      "popping",
-      "spark",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9E9",
@@ -69848,13 +59185,7 @@ return {
     name = "JIGSAW PUZZLE PIECE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "clue",
-      "interlocking",
-      "jigsaw",
-      "piece",
-      "puzzle",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9EA",
@@ -69862,15 +59193,7 @@ return {
     name = "TEST TUBE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "chemist",
-      "chemistry",
-      "experiment",
-      "lab",
-      "science",
-      "test",
-      "tube",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9EB",
@@ -69878,15 +59201,7 @@ return {
     name = "PETRI DISH",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bacteria",
-      "biologist",
-      "biology",
-      "culture",
-      "dish",
-      "lab",
-      "petri",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9EC",
@@ -69894,14 +59209,7 @@ return {
     name = "DNA DOUBLE HELIX",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "biologist",
-      "dna",
-      "evolution",
-      "gene",
-      "genetics",
-      "life",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9ED",
@@ -69909,13 +59217,7 @@ return {
     name = "COMPASS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "compass",
-      "direction",
-      "magnetic",
-      "navigation",
-      "orienteering",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9EE",
@@ -69923,11 +59225,7 @@ return {
     name = "ABACUS",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "abacus",
-      "calculation",
-      "calculator",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9EF",
@@ -69935,12 +59233,7 @@ return {
     name = "FIRE EXTINGUISHER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "extinguish",
-      "extinguisher",
-      "fire",
-      "quench",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F0",
@@ -69948,14 +59241,7 @@ return {
     name = "TOOLBOX",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "box",
-      "chest",
-      "mechanic",
-      "red",
-      "tool",
-      "toolbox",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F1",
@@ -69963,13 +59249,7 @@ return {
     name = "BRICK",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "brick",
-      "bricks",
-      "clay",
-      "mortar",
-      "wall",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F2",
@@ -69977,16 +59257,7 @@ return {
     name = "MAGNET",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "attraction",
-      "horseshoe",
-      "magnet",
-      "magnetic",
-      "negative",
-      "positive",
-      "shape",
-      "u",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F3",
@@ -69994,14 +59265,7 @@ return {
     name = "LUGGAGE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bag",
-      "luggage",
-      "packing",
-      "roller",
-      "suitcase",
-      "travel",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F4",
@@ -70009,13 +59273,7 @@ return {
     name = "LOTION BOTTLE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bottle",
-      "lotion",
-      "moisturizer",
-      "shampoo",
-      "sunscreen",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F5",
@@ -70023,13 +59281,7 @@ return {
     name = "SPOOL OF THREAD",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "needle",
-      "sewing",
-      "spool",
-      "string",
-      "thread",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F6",
@@ -70037,12 +59289,7 @@ return {
     name = "BALL OF YARN",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "ball",
-      "crochet",
-      "knit",
-      "yarn",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F7",
@@ -70050,13 +59297,7 @@ return {
     name = "SAFETY PIN",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "diaper",
-      "pin",
-      "punk",
-      "rock",
-      "safety",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F8",
@@ -70064,14 +59305,7 @@ return {
     name = "TEDDY BEAR",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bear",
-      "plaything",
-      "plush",
-      "stuffed",
-      "teddy",
-      "toy",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9F9",
@@ -70079,12 +59313,7 @@ return {
     name = "BROOM",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "broom",
-      "cleaning",
-      "sweeping",
-      "witch",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9FA",
@@ -70092,12 +59321,7 @@ return {
     name = "BASKET",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "basket",
-      "farming",
-      "laundry",
-      "picnic",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9FB",
@@ -70105,12 +59329,7 @@ return {
     name = "ROLL OF PAPER",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "paper",
-      "roll",
-      "toilet",
-      "towels",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9FC",
@@ -70118,15 +59337,7 @@ return {
     name = "BAR OF SOAP",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "bar",
-      "bathing",
-      "clean",
-      "cleaning",
-      "lather",
-      "soap",
-      "soapdish",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9FD",
@@ -70134,13 +59345,7 @@ return {
     name = "SPONGE",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "absorbing",
-      "cleaning",
-      "porous",
-      "soak",
-      "sponge",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9FE",
@@ -70148,14 +59353,7 @@ return {
     name = "RECEIPT",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "accounting",
-      "bookkeeping",
-      "evidence",
-      "invoice",
-      "proof",
-      "receipt",
-    },
+    aliases = {},
   },
   {
     code_point = "U+1F9FF",
@@ -70163,14 +59361,6 @@ return {
     name = "NAZAR AMULET",
     category = "So",
     block = "Supplemental Symbols and Pictographs",
-    aliases = {
-      "amulet",
-      "bead",
-      "blue",
-      "charm",
-      "evil-eye",
-      "nazar",
-      "talisman",
-    },
+    aliases = {},
   },
 }
