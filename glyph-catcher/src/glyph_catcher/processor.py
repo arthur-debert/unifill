@@ -9,7 +9,14 @@ from collections import defaultdict
 from typing import Dict, Tuple, List, Any, Optional
 from pathlib import Path
 
-from .config import get_dataset_blocks, DATASET_COMPLETE
+from .config import (
+    get_dataset_blocks,
+    get_alias_sources,
+    DATASET_COMPLETE,
+    ALIAS_SOURCE_FORMAL,
+    ALIAS_SOURCE_INFORMATIVE,
+    ALIAS_SOURCE_CLDR
+)
 
 # Dictionary mapping Unicode code points to their block names
 # Complete mapping for all blocks in the every-day dataset
@@ -386,36 +393,48 @@ def process_data_files(file_paths: Dict[str, str]) -> Tuple[Dict[str, Dict[str, 
     """
     # Parse the Unicode data files
     unicode_data = parse_unicode_data(file_paths['unicode_data'])
-    formal_aliases = parse_name_aliases(file_paths['name_aliases'])
-    informative_aliases = parse_names_list(file_paths['names_list'])
     
-    # Parse CLDR annotations if available
+    # Get the configured alias sources
+    alias_sources = get_alias_sources()
+    
+    # Parse the alias sources based on configuration
+    formal_aliases = {}
+    if ALIAS_SOURCE_FORMAL in alias_sources:
+        formal_aliases = parse_name_aliases(file_paths['name_aliases'])
+    
+    informative_aliases = {}
+    if ALIAS_SOURCE_INFORMATIVE in alias_sources:
+        informative_aliases = parse_names_list(file_paths['names_list'])
+    
     cldr_annotations = {}
-    if 'cldr_annotations' in file_paths:
+    if ALIAS_SOURCE_CLDR in alias_sources and 'cldr_annotations' in file_paths:
         cldr_annotations = parse_cldr_annotations(file_paths['cldr_annotations'])
     
-    # Merge all aliases with deduplication
+    # Merge aliases with deduplication
     aliases_data = defaultdict(list)
     alias_sets = defaultdict(set)  # Use sets for deduplication
     
-    # Process and add formal aliases
-    for code_point, aliases in formal_aliases.items():
-        for alias in aliases:
-            normalized_alias = normalize_alias(alias)
-            alias_sets[code_point].add(normalized_alias)
+    # Process and add formal aliases if configured
+    if ALIAS_SOURCE_FORMAL in alias_sources:
+        for code_point, aliases in formal_aliases.items():
+            for alias in aliases:
+                normalized_alias = normalize_alias(alias)
+                alias_sets[code_point].add(normalized_alias)
     
-    # Process and add informative aliases
-    for code_point, aliases in informative_aliases.items():
-        code_point_hex = code_point.upper()
-        for alias in aliases:
-            normalized_alias = normalize_alias(alias)
-            alias_sets[code_point_hex].add(normalized_alias)
+    # Process and add informative aliases if configured
+    if ALIAS_SOURCE_INFORMATIVE in alias_sources:
+        for code_point, aliases in informative_aliases.items():
+            code_point_hex = code_point.upper()
+            for alias in aliases:
+                normalized_alias = normalize_alias(alias)
+                alias_sets[code_point_hex].add(normalized_alias)
     
-    # Process and add CLDR annotations
-    for code_point, annotations in cldr_annotations.items():
-        for annotation in annotations:
-            normalized_alias = normalize_alias(annotation)
-            alias_sets[code_point].add(normalized_alias)
+    # Process and add CLDR annotations if configured
+    if ALIAS_SOURCE_CLDR in alias_sources:
+        for code_point, annotations in cldr_annotations.items():
+            for annotation in annotations:
+                normalized_alias = normalize_alias(annotation)
+                alias_sets[code_point].add(normalized_alias)
     
     # Convert sets back to lists for compatibility with the rest of the codebase
     for code_point, alias_set in alias_sets.items():
@@ -599,3 +618,65 @@ def get_master_file_path(fetch_options) -> str:
     
     # Return the path to the master data file
     return os.path.join(data_dir, MASTER_DATA_FILE)
+
+
+def calculate_alias_statistics(aliases_data: Dict[str, List[str]]) -> Dict[str, Any]:
+    """
+    Calculate statistics about aliases.
+    
+    Args:
+        aliases_data: Dictionary mapping code points to lists of aliases
+        
+    Returns:
+        Dictionary with statistics:
+        - total_characters: Total number of characters with aliases
+        - total_aliases: Total number of aliases across all characters
+        - avg_aliases_per_char: Average number of aliases per character
+        - median_aliases_per_char: Median number of aliases per character
+        - max_aliases: Maximum number of aliases for any character
+        - min_aliases: Minimum number of aliases for any character
+        - chars_with_no_aliases: Number of characters with no aliases
+    """
+    if not aliases_data:
+        return {
+            "total_characters": 0,
+            "total_aliases": 0,
+            "avg_aliases_per_char": 0,
+            "median_aliases_per_char": 0,
+            "max_aliases": 0,
+            "min_aliases": 0,
+            "chars_with_no_aliases": 0
+        }
+    
+    # Count aliases per character
+    alias_counts = [len(aliases) for aliases in aliases_data.values()]
+    
+    # Calculate statistics
+    total_characters = len(aliases_data)
+    total_aliases = sum(alias_counts)
+    avg_aliases_per_char = total_aliases / total_characters if total_characters > 0 else 0
+    
+    # Calculate median
+    sorted_counts = sorted(alias_counts)
+    mid = len(sorted_counts) // 2
+    if len(sorted_counts) % 2 == 0:
+        median_aliases_per_char = (sorted_counts[mid - 1] + sorted_counts[mid]) / 2
+    else:
+        median_aliases_per_char = sorted_counts[mid]
+    
+    # Find min and max
+    max_aliases = max(alias_counts) if alias_counts else 0
+    min_aliases = min(alias_counts) if alias_counts else 0
+    
+    # Count characters with no aliases
+    chars_with_no_aliases = sum(1 for count in alias_counts if count == 0)
+    
+    return {
+        "total_characters": total_characters,
+        "total_aliases": total_aliases,
+        "avg_aliases_per_char": avg_aliases_per_char,
+        "median_aliases_per_char": median_aliases_per_char,
+        "max_aliases": max_aliases,
+        "min_aliases": min_aliases,
+        "chars_with_no_aliases": chars_with_no_aliases
+    }

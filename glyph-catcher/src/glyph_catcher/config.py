@@ -20,6 +20,12 @@ DATASET_COMPLETE = "complete"
 DATASETS = [DATASET_EVERYDAY, DATASET_COMPLETE]
 CONFIG_YAML_PATH = os.path.join(os.path.dirname(__file__), "config.yaml")
 
+# Alias source constants
+ALIAS_SOURCE_FORMAL = "formal_aliases"
+ALIAS_SOURCE_INFORMATIVE = "informative_aliases"
+ALIAS_SOURCE_CLDR = "cldr_annotations"
+ALIAS_SOURCES = [ALIAS_SOURCE_FORMAL, ALIAS_SOURCE_INFORMATIVE, ALIAS_SOURCE_CLDR]
+
 # URLs for data sources
 UCD_LATEST_URL = "https://www.unicode.org/Public/UCD/latest/ucd/"
 UNICODE_DATA_FILE_URL = UCD_LATEST_URL + "UnicodeData.txt"
@@ -113,3 +119,41 @@ def get_output_filename(format_type: str, dataset: str) -> str:
     if format_type in OUTPUT_FILES:
         return OUTPUT_FILES[format_type].format(dataset=dataset)
     return f"unicode.{dataset}.{format_type}"
+
+
+def get_alias_sources() -> List[str]:
+    """
+    Get the list of alias sources to use when processing Unicode data.
+    
+    Returns:
+        List of alias source names (e.g., 'formal_aliases', 'informative_aliases', 'cldr_annotations')
+    """
+    # Default to only using CLDR annotations if config loading fails
+    default_sources = [ALIAS_SOURCE_CLDR]
+    
+    if not YAML_AVAILABLE:
+        print("Warning: PyYAML not installed. Using default alias sources.")
+        return default_sources
+    
+    try:
+        with open(CONFIG_YAML_PATH, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+            sources = config.get('alias-sources', default_sources)
+            
+            # Validate sources
+            valid_sources = []
+            for source in sources:
+                if source in ALIAS_SOURCES:
+                    valid_sources.append(source)
+                else:
+                    print(f"Warning: Unknown alias source '{source}'. Valid sources are: {', '.join(ALIAS_SOURCES)}")
+            
+            # If no valid sources were found, use the default
+            if not valid_sources:
+                print(f"Warning: No valid alias sources found in config. Using default: {default_sources}")
+                return default_sources
+                
+            return valid_sources
+    except Exception as e:
+        print(f"Error loading alias sources configuration: {e}")
+        return default_sources

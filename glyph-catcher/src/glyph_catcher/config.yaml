@@ -1,4 +1,10 @@
 # Dataset configurations for Unifill
+
+# Alias sources to use when processing Unicode data
+# Available sources: formal_aliases, informative_aliases, cldr_annotations
+alias-sources:
+  - cldr_annotations
+
 datasets:
   # Every-day dataset with common Unicode blocks (6975 characters)
   every-day:

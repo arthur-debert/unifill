@@ -243,8 +243,14 @@ class TestProcessor(unittest.TestCase):
         # Check that the function returned an empty dictionary
         self.assertEqual(result, {})
 
-    def test_process_data_files_merges_aliases(self):
+    @patch('glyph_catcher.processor.get_alias_sources')
+    def test_process_data_files_merges_aliases(self, mock_get_alias_sources):
         """Test that process_data_files correctly merges aliases from different sources."""
+        # Mock the get_alias_sources function to return all sources
+        mock_get_alias_sources.return_value = [
+            'formal_aliases', 'informative_aliases', 'cldr_annotations'
+        ]
+        
         # Create test data files
         with tempfile.NamedTemporaryFile(mode='w', delete=False) as unicode_data_file:
             unicode_data_file.write("0041;LATIN CAPITAL LETTER A;Lu;0;L;;;;;N;;;;0061;\n")
@@ -305,10 +311,16 @@ class TestProcessor(unittest.TestCase):
     @patch('glyph_catcher.processor.parse_name_aliases')
     @patch('glyph_catcher.processor.parse_names_list')
     @patch('glyph_catcher.processor.parse_cldr_annotations')
+    @patch('glyph_catcher.processor.get_alias_sources')
     def test_process_data_files_success(
-        self, mock_parse_cldr, mock_parse_names, mock_parse_aliases, mock_parse_unicode
+        self, mock_get_alias_sources, mock_parse_cldr, mock_parse_names, mock_parse_aliases, mock_parse_unicode
     ):
         """Test processing all data files successfully."""
+        # Mock the get_alias_sources function to return all sources
+        mock_get_alias_sources.return_value = [
+            'formal_aliases', 'informative_aliases', 'cldr_annotations'
+        ]
+        
         # Set up the mock returns
         unicode_data = {
             '0041': {'name': 'LATIN CAPITAL LETTER A', 'category': 'Lu', 'char_obj': 'A', 'block': 'Basic Latin'},
@@ -438,6 +450,48 @@ class TestProcessor(unittest.TestCase):
             # Check that all expected aliases are present
             for alias in ['first letter', 'letter a']:
                 self.assertIn(alias, result_aliases['0041'])
+    
+    def test_calculate_alias_statistics(self):
+        """Test calculating alias statistics."""
+        from glyph_catcher.processor import calculate_alias_statistics
+        
+        # Test with empty data
+        empty_stats = calculate_alias_statistics({})
+        self.assertEqual(empty_stats["total_characters"], 0)
+        self.assertEqual(empty_stats["total_aliases"], 0)
+        self.assertEqual(empty_stats["avg_aliases_per_char"], 0)
+        self.assertEqual(empty_stats["median_aliases_per_char"], 0)
+        self.assertEqual(empty_stats["max_aliases"], 0)
+        self.assertEqual(empty_stats["min_aliases"], 0)
+        self.assertEqual(empty_stats["chars_with_no_aliases"], 0)
+        
+        # Test with sample data
+        sample_data = {
+            "0041": ["a", "letter a", "first letter"],  # 3 aliases
+            "0042": ["b", "letter b"],                  # 2 aliases
+            "0043": ["c"],                              # 1 alias
+            "0044": [],                                 # 0 aliases
+            "0045": ["e", "letter e", "vowel", "fifth letter"]  # 4 aliases
+        }
+        
+        stats = calculate_alias_statistics(sample_data)
+        self.assertEqual(stats["total_characters"], 5)
+        self.assertEqual(stats["total_aliases"], 10)
+        self.assertEqual(stats["avg_aliases_per_char"], 2.0)
+        self.assertEqual(stats["median_aliases_per_char"], 2.0)
+        self.assertEqual(stats["max_aliases"], 4)
+        self.assertEqual(stats["min_aliases"], 0)
+        self.assertEqual(stats["chars_with_no_aliases"], 1)
+        
+        # Test with odd number of characters for median calculation
+        odd_sample = {
+            "0041": ["a", "letter a", "first letter"],  # 3 aliases
+            "0042": ["b", "letter b"],                  # 2 aliases
+            "0043": ["c"]                               # 1 alias
+        }
+        
+        odd_stats = calculate_alias_statistics(odd_sample)
+        self.assertEqual(odd_stats["median_aliases_per_char"], 2.0)
 
 
 if __name__ == '__main__':
