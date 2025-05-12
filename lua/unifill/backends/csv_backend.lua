@@ -2,6 +2,7 @@
 -- This backend loads Unicode data from a CSV file
 local log = require("unifill.log")
 local interface = require("unifill.backends.interface")
+local constants = require("unifill.constants")
 
 local CSVBackend = {}
 CSVBackend.__index = CSVBackend
@@ -12,11 +13,13 @@ CSVBackend.__index = CSVBackend
 function CSVBackend.new(config)
     local self = setmetatable({}, CSVBackend)
     self.config = config or {}
-
+    
     -- Set default data path if not provided
     if not self.config.data_path then
         local plugin_root = self:get_plugin_root()
-        self.config.data_path = plugin_root .. "/data/unicode_data.csv"
+        -- Default to every-day dataset if not specified
+        local dataset = self.config.dataset or constants.DEFAULT_DATASET
+        self.config.data_path = plugin_root .. "/data/unicode." .. dataset .. ".csv"
     end
 
     return self

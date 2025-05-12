@@ -1,6 +1,14 @@
 {
   "diagnostics": {
-    "disable": ["lowercase-global"]
+    "disable": ["lowercase-global", "undefined-field"],
+    "globals": [
+      "describe",
+      "it",
+      "before_each",
+      "after_each",
+      "pending",
+      "assert"
+    ]
   },
   "workspace": {
     "ignoreDir": ["data/glyph-catcher"],

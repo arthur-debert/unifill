@@ -241,14 +241,14 @@ class TestExporter(unittest.TestCase):
         mock_csv.return_value = True
         
         # Call the function
-        options = ExportOptions(format_type='csv', output_dir='/tmp')
+        options = ExportOptions(format_type='csv', output_dir='/tmp', dataset='every-day')
         result = export_data(self.unicode_data, self.aliases_data, options)
         
         # Check the result
-        self.assertEqual(result, ['/tmp/unicode_data.csv'])
+        self.assertEqual(result, ['/tmp/unicode.every-day.csv'])
         
         # Check that the correct write function was called
-        mock_csv.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode_data.csv')
+        mock_csv.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode.every-day.csv')
         mock_json.assert_not_called()
         mock_lua.assert_not_called()
         mock_txt.assert_not_called()
@@ -266,22 +266,22 @@ class TestExporter(unittest.TestCase):
         mock_txt.return_value = True
         
         # Call the function
-        options = ExportOptions(format_type='all', output_dir='/tmp')
+        options = ExportOptions(format_type='all', output_dir='/tmp', dataset='every-day')
         result = export_data(self.unicode_data, self.aliases_data, options)
         
         # Check the result
         self.assertEqual(set(result), {
-            '/tmp/unicode_data.csv',
-            '/tmp/unicode_data.json',
-            '/tmp/unicode_data.lua',
-            '/tmp/unicode_data.txt',
+            '/tmp/unicode.every-day.csv',
+            '/tmp/unicode.every-day.json',
+            '/tmp/unicode.every-day.lua',
+            '/tmp/unicode.every-day.txt',
         })
         
         # Check that all write functions were called
-        mock_csv.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode_data.csv')
-        mock_json.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode_data.json')
-        mock_lua.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode_data.lua')
-        mock_txt.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode_data.txt')
+        mock_csv.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode.every-day.csv')
+        mock_json.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode.every-day.json')
+        mock_lua.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode.every-day.lua')
+        mock_txt.assert_called_once_with(self.unicode_data, self.aliases_data, '/tmp/unicode.every-day.txt')
 
     @patch('glyph_catcher.exporter.write_csv_output')
     def test_export_data_write_failure(self, mock_csv):
@@ -291,11 +291,11 @@ class TestExporter(unittest.TestCase):
         mock_csv.return_value = None
         
         # Call the function
-        options = ExportOptions(format_type='csv', output_dir='/tmp')
+        options = ExportOptions(format_type='csv', output_dir='/tmp', dataset='every-day')
         result = export_data(self.unicode_data, self.aliases_data, options)
         
         # The function still adds the file to the output list
-        self.assertEqual(result, ['/tmp/unicode_data.csv'])
+        self.assertEqual(result, ['/tmp/unicode.every-day.csv'])
 
     @patch('os.makedirs')
     @patch('os.path.exists')

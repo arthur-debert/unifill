@@ -243,8 +243,14 @@ class TestProcessor(unittest.TestCase):
         # Check that the function returned an empty dictionary
         self.assertEqual(result, {})
 
-    def test_process_data_files_merges_aliases(self):
+    @patch('glyph_catcher.processor.get_alias_sources')
+    def test_process_data_files_merges_aliases(self, mock_get_alias_sources):
         """Test that process_data_files correctly merges aliases from different sources."""
+        # Mock the get_alias_sources function to return all sources
+        mock_get_alias_sources.return_value = [
+            'formal_aliases', 'informative_aliases', 'cldr_annotations'
+        ]
+        
         # Create test data files
         with tempfile.NamedTemporaryFile(mode='w', delete=False) as unicode_data_file:
             unicode_data_file.write("0041;LATIN CAPITAL LETTER A;Lu;0;L;;;;;N;;;;0061;\n")
@@ -280,19 +286,21 @@ class TestProcessor(unittest.TestCase):
             # Check the merged aliases for the first character
             self.assertIn('0041', aliases_data)
             self.assertEqual(len(aliases_data['0041']), 3)
-            self.assertIn('LATIN LETTER A', aliases_data['0041'])
-            self.assertIn('LA', aliases_data['0041'])
-            self.assertIn('first letter of the Latin alphabet', aliases_data['0041'])
+            
+            # Check that aliases are normalized (lowercase)
+            expected_aliases_a = ['first letter of the latin alphabet', 'la', 'latin letter a']
+            for alias in expected_aliases_a:
+                self.assertIn(alias, aliases_data['0041'])
             
             # Check the merged aliases for the second character
             self.assertIn('0042', aliases_data)
             self.assertEqual(len(aliases_data['0042']), 1)
-            self.assertIn('LATIN LETTER B', aliases_data['0042'])
+            self.assertIn('latin letter b', aliases_data['0042'])
             
             # Check the merged aliases for the third character
             self.assertIn('0043', aliases_data)
             self.assertEqual(len(aliases_data['0043']), 1)
-            self.assertIn('third letter of the Latin alphabet', aliases_data['0043'])
+            self.assertIn('third letter of the latin alphabet', aliases_data['0043'])
         finally:
             # Clean up
             os.unlink(unicode_data_path)
@@ -303,10 +311,16 @@ class TestProcessor(unittest.TestCase):
     @patch('glyph_catcher.processor.parse_name_aliases')
     @patch('glyph_catcher.processor.parse_names_list')
     @patch('glyph_catcher.processor.parse_cldr_annotations')
+    @patch('glyph_catcher.processor.get_alias_sources')
     def test_process_data_files_success(
-        self, mock_parse_cldr, mock_parse_names, mock_parse_aliases, mock_parse_unicode
+        self, mock_get_alias_sources, mock_parse_cldr, mock_parse_names, mock_parse_aliases, mock_parse_unicode
     ):
         """Test processing all data files successfully."""
+        # Mock the get_alias_sources function to return all sources
+        mock_get_alias_sources.return_value = [
+            'formal_aliases', 'informative_aliases', 'cldr_annotations'
+        ]
+        
         # Set up the mock returns
         unicode_data = {
             '0041': {'name': 'LATIN CAPITAL LETTER A', 'category': 'Lu', 'char_obj': 'A', 'block': 'Basic Latin'},
@@ -323,8 +337,6 @@ class TestProcessor(unittest.TestCase):
         cldr_annotations = {'0041': ['letter a']}
         mock_parse_cldr.return_value = cldr_annotations
         
-        # We don't need to mock the merge_aliases function anymore as it's integrated into process_data_files
-        
         # Call the function
         file_paths = {
             'unicode_data': '/path/to/UnicodeData.txt',
@@ -337,19 +349,18 @@ class TestProcessor(unittest.TestCase):
         # Check the result
         self.assertEqual(result_unicode_data, unicode_data)
         
-        # Create expected aliases data by merging the mock data
-        expected_aliases = defaultdict(list)
-        for code_point, aliases in formal_aliases.items():
-            expected_aliases[code_point].extend(aliases)
-        for code_point, aliases in informative_aliases.items():
-            expected_aliases[code_point].extend(aliases)
-        for code_point, aliases in cldr_annotations.items():
-            expected_aliases[code_point].extend(aliases)
-            
-        self.assertEqual(result_aliases, expected_aliases)
+        # Create expected aliases data with normalization and deduplication
+        expected_aliases = {
+            '0041': ['latin letter a', 'letter a'],  # Normalized and sorted
+            '0042': ['second letter']  # Normalized
+        }
         
-        # Check the result
-        self.assertEqual(result_unicode_data, unicode_data)
+        # Check that the result matches our expected normalized and deduplicated aliases
+        self.assertEqual(len(result_aliases), len(expected_aliases))
+        for code_point, aliases in expected_aliases.items():
+            self.assertIn(code_point, result_aliases)
+            for alias in aliases:
+                self.assertIn(alias, result_aliases[code_point])
         
         # Check that the parsing functions were called with the correct arguments
         mock_parse_unicode.assert_called_once_with('/path/to/UnicodeData.txt')
@@ -374,6 +385,113 @@ class TestProcessor(unittest.TestCase):
         # Check that the function returned None for unicode_data and an empty defaultdict for aliases_data
         self.assertIsNone(result_unicode_data)
         self.assertEqual(result_aliases, defaultdict(list))
+        
+    def test_normalize_alias(self):
+        """Test the normalize_alias function."""
+        from glyph_catcher.processor import normalize_alias
+        
+        # Test basic normalization
+        self.assertEqual(normalize_alias("TEST"), "test")
+        self.assertEqual(normalize_alias("Test String"), "test string")
+        
+        # Test whitespace handling
+        self.assertEqual(normalize_alias("  leading spaces"), "leading spaces")
+        self.assertEqual(normalize_alias("trailing spaces  "), "trailing spaces")
+        self.assertEqual(normalize_alias("  both sides  "), "both sides")
+        
+        # Test mixed case
+        self.assertEqual(normalize_alias("MiXeD CaSe"), "mixed case")
+        
+        # Test with special characters
+        self.assertEqual(normalize_alias("Special-Characters!"), "special-characters!")
+        
+        # Test with duplicate aliases that would normalize to the same value
+        self.assertEqual(normalize_alias("Test"), normalize_alias("TEST"))
+        self.assertEqual(normalize_alias("test"), normalize_alias("  Test  "))
+        
+    def test_alias_deduplication(self):
+        """Test that duplicate aliases are properly deduplicated."""
+        from glyph_catcher.processor import process_data_files
+        from collections import defaultdict
+        
+        # Create mock data with duplicate aliases
+        mock_unicode_data = {
+            '0041': {'name': 'LATIN CAPITAL LETTER A', 'category': 'Lu', 'char_obj': 'A', 'block': 'Basic Latin'},
+        }
+        
+        # Mock the parsing functions
+        with patch('glyph_catcher.processor.parse_unicode_data') as mock_parse_unicode, \
+             patch('glyph_catcher.processor.parse_name_aliases') as mock_parse_aliases, \
+             patch('glyph_catcher.processor.parse_names_list') as mock_parse_names, \
+             patch('glyph_catcher.processor.parse_cldr_annotations') as mock_parse_cldr:
+            
+            # Set up the mock returns with duplicate aliases
+            mock_parse_unicode.return_value = mock_unicode_data
+            mock_parse_aliases.return_value = {'0041': ['First Letter', 'FIRST letter']}
+            mock_parse_names.return_value = {'0041': ['first LETTER', 'Letter A']}
+            mock_parse_cldr.return_value = {'0041': ['First Letter', 'letter a']}
+            
+            # Call the function
+            file_paths = {
+                'unicode_data': '/path/to/UnicodeData.txt',
+                'name_aliases': '/path/to/NameAliases.txt',
+                'names_list': '/path/to/NamesList.txt',
+                'cldr_annotations': '/path/to/en.xml',
+            }
+            _, result_aliases = process_data_files(file_paths)
+            
+            # Check that duplicates were removed (case-insensitive)
+            self.assertIn('0041', result_aliases)
+            
+            # There should be exactly 2 unique aliases after normalization and deduplication
+            expected_aliases = ['first letter', 'letter a']
+            self.assertEqual(len(result_aliases['0041']), 2)
+            
+            # Check that all expected aliases are present
+            for alias in ['first letter', 'letter a']:
+                self.assertIn(alias, result_aliases['0041'])
+    
+    def test_calculate_alias_statistics(self):
+        """Test calculating alias statistics."""
+        from glyph_catcher.processor import calculate_alias_statistics
+        
+        # Test with empty data
+        empty_stats = calculate_alias_statistics({})
+        self.assertEqual(empty_stats["total_characters"], 0)
+        self.assertEqual(empty_stats["total_aliases"], 0)
+        self.assertEqual(empty_stats["avg_aliases_per_char"], 0)
+        self.assertEqual(empty_stats["median_aliases_per_char"], 0)
+        self.assertEqual(empty_stats["max_aliases"], 0)
+        self.assertEqual(empty_stats["min_aliases"], 0)
+        self.assertEqual(empty_stats["chars_with_no_aliases"], 0)
+        
+        # Test with sample data
+        sample_data = {
+            "0041": ["a", "letter a", "first letter"],  # 3 aliases
+            "0042": ["b", "letter b"],                  # 2 aliases
+            "0043": ["c"],                              # 1 alias
+            "0044": [],                                 # 0 aliases
+            "0045": ["e", "letter e", "vowel", "fifth letter"]  # 4 aliases
+        }
+        
+        stats = calculate_alias_statistics(sample_data)
+        self.assertEqual(stats["total_characters"], 5)
+        self.assertEqual(stats["total_aliases"], 10)
+        self.assertEqual(stats["avg_aliases_per_char"], 2.0)
+        self.assertEqual(stats["median_aliases_per_char"], 2.0)
+        self.assertEqual(stats["max_aliases"], 4)
+        self.assertEqual(stats["min_aliases"], 0)
+        self.assertEqual(stats["chars_with_no_aliases"], 1)
+        
+        # Test with odd number of characters for median calculation
+        odd_sample = {
+            "0041": ["a", "letter a", "first letter"],  # 3 aliases
+            "0042": ["b", "letter b"],                  # 2 aliases
+            "0043": ["c"]                               # 1 alias
+        }
+        
+        odd_stats = calculate_alias_statistics(odd_sample)
+        self.assertEqual(odd_stats["median_aliases_per_char"], 2.0)
 
 
 if __name__ == '__main__':

@@ -2,6 +2,7 @@
 -- This backend uses ripgrep with minimal Lua processing, leveraging Telescope's native capabilities
 local log = require("unifill.log")
 local interface = require("unifill.backends.interface")
+local constants = require("unifill.constants")
 
 -- Only require telescope modules when not in test environment
 local has_telescope, finders = pcall(require, "telescope.finders")
@@ -24,7 +25,9 @@ function FastGrepBackend.new(config)
     -- Set default data path if not provided
     if not self.config.data_path then
         local plugin_root = self:get_plugin_root()
-        self.config.data_path = plugin_root .. "/data/unicode_data.txt"
+        -- Default to every-day dataset if not specified
+        local dataset = self.config.dataset or constants.DEFAULT_DATASET
+        self.config.data_path = plugin_root .. "/data/unicode." .. dataset .. ".txt"
     end
 
     -- Set default grep command if not provided

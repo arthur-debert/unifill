@@ -1,0 +1,137 @@
+Datasets
+
+Unicode is cool but you know what's algo cool? Being fast.
+With over 500k code points, fuzzy searching  through all of unicode is not
+instantaneous, when it should.
+
+Unifill's goal is to make you look good, al least your text, with common unicode characters for things like arrows, math, greek symbols and above all, emojis.
+Hence, unifill takes a curated approach to what Unicode it includes, by using sets. Each set is a collection of unicode blocks included.
+
+
+1.  The sets
+
+    Here are the available sets: 
+
+        - every-day: brings joy knowing that your substitutions are fast and there is no memory clutter.
+        - complete: for abnormal people with abnormal needs. if you regularly
+          used linear A glyphs or Byzantine music symbol Okseia left, this if for
+          you.
+
+
+    By default, the every day set is loaded. If you don't find the characters you
+    expected to , you can configure this as `dataset`: `full-set`. 
+
+    In through, the Marie Kondo has over 6k characters, which should be quite a
+    bit. The complete set, is, pun intended, already very large and it definitely is
+    more than enough for all of use. 
+
+    The nitty gritty
+
+    Bellow is the detailed composition of each  set: 
+
+
+    1. Every Day  6618 characters
+
+
+        | Unicode Block                         | Count |
+        |---------------------------------------|-------|
+        | Basic Latin                           | 128   |
+        | Latin-1 Supplement                    | 128   |
+        | Latin Extended-A                      | 128   |
+        | Latin Extended-B                      | 208   |
+        | IPA Extensions                        | 96    |
+        | Spacing Modifier Letters              | 80    |
+        | Combining Diacritical Marks           | 112   |
+        | Greek and Coptic                      | 135   |
+        | Currency Symbols                      | 31    |
+        | Combining Diacriticals for Symbols    | 33    |
+        | Letter-like Symbols                    | 80    |
+        | Number Forms                          | 60    |
+        | Arrows                                | 112   |
+        | Mathematical Operators                | 256   |
+        | Miscellaneous Technical               | 251   |
+        | Control Pictures                      | 39    |
+        | Enclosed Alphanumerics                | 160   |
+        | Box Drawing                           | 128   |
+        | Block Elements                        | 32    |
+        | Geometric Shapes                      | 96    |
+        | Miscellaneous Symbols                 | 256   |
+        | Dingbats                              | 192   |
+        | Misc Mathematical Symbols-A           | 48    |
+        | Supplemental Arrows-A                 | 16    |
+        | Supplemental Arrows-B                 | 128   |
+        | Misc Mathematical Symbols-B           | 128   |
+        | Supplemental Math Operators           | 256   |
+        | Misc Symbols and Arrows               | 206   |
+        | Alphabetic Presentation Forms         | 58    |
+        | Variation Selectors                   | 16    |
+        | Vertical Forms                        | 10    |
+        | Combining Half Marks                  | 16    |
+        | Halfwidth and Fullwidth Forms         | 225   |
+        | Ancient Greek Numbers                 | 77    |
+        | Ancient Symbols                       | 13    |
+        | Musical Symbols                       | 231   |
+        | Ancient Greek Musical Notation        | 70    |
+        | Mathematical Alphanumeric Symbols     | 996   |
+        | Arabic Mathematical Alphabetic Symbols| 143   |
+        | Misc Symbols and Pictographs          | 766   |
+        | Emoticons                             | 80    |
+        | Ornamental Dingbats                   | 48    |
+        | Transport and Map Symbols             | 98    |
+        | Geometric Shapes Extended             | 85    |
+        | Supplemental Arrows-C                 | 148   |
+        | Supplemental Symbols and Pictographs  | 15    |
+        |                                       |       |
+        |---------------------------------------|-------|
+        | TOTAL                                 | 6618  |
+
+
+    2. The more than full
+
+     It's the entire unicode set (what we currently have), around 600K characters.
+
+2. Implementation: 
+
+    a. Store the full set as the reference
+
+        We should keep the download and master char file (json ) cached with the
+    full set, and only  to filtering on export. The goal is to make the user's
+    plugin run fast, not the data generation process. It's easier to have a
+    unified flow that only filters the last step.
+
+    b. File names should contain the set name.
+
+        The file layout should become data/:
+
+            unicode.<set name>.<format>
+
+        For example, unicode.every-day.csv
+
+    For example, unicode.every-day.csv. 
+
+    c. Alter the lua code to load the right file
+
+        The plugin should have a user configurable setting, set-name whose
+        valid values are "every-day" and "complete", the former being the
+        default.
+
+        When loading the data, it should use the variable's value.
+
+    d. Point lua tests code to the every-day set
+
+        Tests do load datasets. Make sure tests load the smaller ones. 
+
+    e. Full blocks only
+
+        While it's a common case that blocks few characters of interest,  for
+        simplicity, we'll always include full blocks.
+
+    g. Alter the gen-dataset and the python source code to receive the --set
+    property (defaults to everyday), and work accordingly. Remember to alter
+    both scripts usage / doc-strings.
+
+    h. Alter the python test that use the dataset to rely on the every-day one.
+
+
+
+

@@ -21,7 +21,9 @@ classifiers = [
 dependencies = [
     "requests (>=2.32.3,<3.0.0)",
     "click (>=8.1.3,<9.0.0)",
-    "pytest (>=8.3.5,<9.0.0)"
+    "pytest (>=8.3.5,<9.0.0)",
+    "pyyaml (>=6.0.2,<7.0.0)"
+    # gzip is part of the standard library, no need for external dependency
 ]
 
 [project.optional-dependencies]

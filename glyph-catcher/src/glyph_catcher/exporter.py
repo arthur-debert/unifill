@@ -6,10 +6,12 @@ import os
 import csv
 import json
 import shutil
+import gzip
 from typing import Dict, List, Any, Optional
 
 from .types import ExportOptions
-from .processor import filter_by_unicode_blocks, load_master_data_file
+from .processor import filter_by_unicode_blocks, filter_by_dataset, load_master_data_file
+from .config import get_output_filename
 
 
 def export_data(
@@ -43,8 +45,12 @@ def export_data(
             print(f"Error loading master file: {e}")
             print("Using provided data instead.")
     
-    # Filter data by Unicode blocks if specified
-    if options.unicode_blocks:
+    # Filter data by dataset or Unicode blocks if specified
+    if options.dataset:
+        print(f"Filtering data using dataset: {options.dataset}")
+        unicode_data, aliases_data = filter_by_dataset(unicode_data, aliases_data, options.dataset)
+        print(f"Dataset contains {len(unicode_data)} characters")
+    elif options.unicode_blocks:
         print(f"Filtering data to include only these Unicode blocks: {', '.join(options.unicode_blocks)}")
         unicode_data, aliases_data = filter_by_unicode_blocks(unicode_data, aliases_data, options.unicode_blocks)
         print(f"Filtered data contains {len(unicode_data)} characters")
@@ -58,20 +64,35 @@ def export_data(
     formats = ['csv', 'json', 'lua', 'txt'] if options.format_type == 'all' else [options.format_type]
     
     # Export to each format
+    # Export to each format
     for fmt in formats:
-        output_filename = os.path.join(options.output_dir, f"unicode_data.{fmt}")
+        # Get the output filename based on format and dataset
+        filename = get_output_filename(fmt, options.dataset)
+        output_filename = os.path.join(options.output_dir, filename)
+        
+        # Create a temporary file for uncompressed output
+        temp_filename = output_filename
+        if options.compress:
+            temp_filename = output_filename + ".temp"
         
         if fmt == 'csv':
-            write_csv_output(unicode_data, aliases_data, output_filename)
+            write_csv_output(unicode_data, aliases_data, temp_filename)
         elif fmt == 'json':
-            write_json_output(unicode_data, aliases_data, output_filename)
+            write_json_output(unicode_data, aliases_data, temp_filename)
         elif fmt == 'lua':
-            write_lua_output(unicode_data, aliases_data, output_filename)
+            write_lua_output(unicode_data, aliases_data, temp_filename)
         elif fmt == 'txt':
-            write_txt_output(unicode_data, aliases_data, output_filename)
+            write_txt_output(unicode_data, aliases_data, temp_filename)
         
+        # Compress the file if requested
+        if options.compress:
+            compress_file(temp_filename, output_filename)
+            os.remove(temp_filename)  # Remove the temporary uncompressed file
+            output_filename = output_filename + ".gz"
+            print(f"Data compressed and written to {output_filename}")
+        else:
+            print(f"Data written to {output_filename}")
         output_files.append(output_filename)
-        print(f"Data written to {output_filename}")
     
     return output_files
 
@@ -332,3 +353,40 @@ def save_source_files(file_paths: Dict[str, str], output_dir: str) -> None:
                 print(f"Saved source file: {dest_path}")
     except Exception as e:
         print(f"Error saving source files: {e}")
+
+
+def compress_file(input_filename: str, output_filename: str) -> None:
+    """
+    Compress a file using gzip with maximum compression level.
+    
+    Args:
+        input_filename: Path to the input file
+        output_filename: Path to the output compressed file (without extension)
+    """
+    try:
+        # Use the highest compression level (9) for maximum compression
+        with open(input_filename, 'rb') as f_in:
+            with gzip.open(output_filename + '.gz', 'wb', compresslevel=9) as f_out:
+                f_out.write(f_in.read())
+        
+        print(f"Compressed {input_filename} to {output_filename}.gz")
+    except Exception as e:
+        print(f"Error compressing file: {e}")
+
+
+def decompress_file(input_filename: str, output_filename: str) -> None:
+    """
+    Decompress a gzip compressed file.
+    
+    Args:
+        input_filename: Path to the compressed input file
+        output_filename: Path to the output decompressed file
+    """
+    try:
+        with gzip.open(input_filename, 'rb') as f_in:
+            with open(output_filename, 'wb') as f_out:
+                f_out.write(f_in.read())
+        
+        print(f"Decompressed {input_filename} to {output_filename}")
+    except Exception as e:
+        print(f"Error decompressing file: {e}")

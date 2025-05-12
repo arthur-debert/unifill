@@ -10,7 +10,7 @@ from .types import FetchOptions, ExportOptions
 from .fetcher import fetch_all_data_files, clean_cache
 from .processor import process_data_files, save_master_data_file, get_master_file_path
 from .exporter import export_data, save_source_files
-from .config import DEFAULT_CACHE_DIR, TMP_CACHE_DIR, DEFAULT_DATA_DIR
+from .config import DEFAULT_CACHE_DIR, TMP_CACHE_DIR, DEFAULT_DATA_DIR, DATASETS, DATASET_EVERYDAY
 
 
 def process_unicode_data(
@@ -122,7 +122,19 @@ def cli():
     default=False,
     help="Don't use the master data file for exporting",
 )
-def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_blocks, exit_on_error, data_dir, no_master_file):
+@click.option(
+    "--dataset",
+    type=click.Choice(DATASETS),
+    default=DATASET_EVERYDAY,
+    help=f"Dataset to use (default: {DATASET_EVERYDAY})",
+)
+@click.option(
+    "--compress",
+    is_flag=True,
+    default=False,
+    help="Compress output files using gzip for maximum compression",
+)
+def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_blocks, exit_on_error, data_dir, no_master_file, dataset, compress):
     """
     Generate Unicode character dataset in the specified format.
     
@@ -135,6 +147,12 @@ def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_b
     
     \b
     glyph-catcher generate --unicode-blocks "Basic Latin" --unicode-blocks "Greek and Coptic"
+    
+    You can also select a predefined dataset using the --dataset option:
+    
+    \b
+    glyph-catcher generate --dataset every-day  # Default, includes common blocks (6618 characters)
+    glyph-catcher generate --dataset complete   # Includes all Unicode blocks
     """
     # Create options objects
     fetch_options = FetchOptions(
@@ -152,7 +170,9 @@ def generate(format, output_dir, use_cache, cache_dir, use_temp_cache, unicode_b
         output_dir=output_dir,
         unicode_blocks=blocks_list,
         use_master_file=not no_master_file,
-        master_file_path=get_master_file_path(fetch_options) if not no_master_file else None
+        master_file_path=get_master_file_path(fetch_options) if not no_master_file else None,
+        dataset=dataset,
+        compress=compress
     )
     
     # Process the data
