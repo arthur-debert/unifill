@@ -2,6 +2,7 @@
 -- This backend loads Unicode data from a Lua file
 local log = require("unifill.log")
 local interface = require("unifill.backends.interface")
+local constants = require("unifill.constants")
 
 local LuaBackend = {}
 LuaBackend.__index = LuaBackend
@@ -12,11 +13,13 @@ LuaBackend.__index = LuaBackend
 function LuaBackend.new(config)
     local self = setmetatable({}, LuaBackend)
     self.config = config or {}
-
+    
     -- Set default data path if not provided
     if not self.config.data_path then
         local plugin_root = self:get_plugin_root()
-        self.config.data_path = plugin_root .. "/data/unicode_data.lua"
+        -- Default to every-day dataset if not specified
+        local dataset = self.config.dataset or constants.DEFAULT_DATASET
+        self.config.data_path = plugin_root .. "/data/unicode." .. dataset .. ".lua"
     end
 
     return self

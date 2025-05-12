@@ -114,11 +114,13 @@ describe("unifill backends", function()
         it("can be configured", function()
             -- Configure with custom path
             local plugin_root = data_manager.get_plugin_root()
+            local constants = require("unifill.constants")
             data_manager.setup({
                 backend = "lua",
+                dataset = constants.DATASET.EVERYDAY,
                 backends = {
                     lua = {
-                        data_path = plugin_root .. "/data/unicode_data.lua"
+                        data_path = plugin_root .. "/data/unicode." .. constants.DATASET.EVERYDAY .. ".lua"
                     }
                 }
             })
@@ -135,7 +137,8 @@ describe("unifill backends", function()
             local data1 = data_manager.load_unicode_data()
 
             -- Get data directly through the backend
-            local backend = LuaBackend.new()
+            local constants = require("unifill.constants")
+            local backend = LuaBackend.new({dataset = constants.DATASET.EVERYDAY})
             local data2 = backend:load_data()
 
             -- Both should return the same number of entries

@@ -1,6 +1,7 @@
 -- Data management functionality for unifill
 -- This module manages the data backends and provides a unified interface
 local log = require("unifill.log")
+local constants = require("unifill.constants")
 
 -- Data Manager
 local DataManager = {}
@@ -8,7 +9,7 @@ local DataManager = {}
 -- Default configuration
 local default_config = {
     backend = "lua",
-    dataset = "every-day", -- Default dataset to use (every-day or complete)
+    dataset = constants.DEFAULT_DATASET, -- Default dataset to use (every-day or complete)
     backends = {
         lua = {
             -- Will be set based on plugin root
