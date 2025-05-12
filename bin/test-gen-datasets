@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash
 
 # Exit immediately if a command exits with a non-zero status.
 set -e
@@ -10,29 +11,29 @@ DESTINATION_DIR="$PROJECT_ROOT/data"
 
 # Function to display the current state of the data directory
 show_data_dir() {
-  echo "Current data directory contents:"
-  ls -la "$DESTINATION_DIR" | grep unicode_data
-  echo ""
+    echo "Current data directory contents:"
+    find "$DESTINATION_DIR" -name "unicode_data*" -type f -exec ls -la {} \;
+    echo ""
 }
 
 # Function to run a test case
 run_test() {
-  local test_name=$1
-  local command=$2
-  local expected=$3
-  
-  echo "========================================"
-  echo "Test: $test_name"
-  echo "Command: $command"
-  echo "Expected: $expected"
-  echo "----------------------------------------"
-  
-  eval "$command"
-  show_data_dir
-  
-  echo "Test completed."
-  echo "========================================"
-  echo ""
+    local test_name=$1
+    local command=$2
+    local expected=$3
+
+    echo "========================================"
+    echo "Test: $test_name"
+    echo "Command: $command"
+    echo "Expected: $expected"
+    echo "----------------------------------------"
+
+    eval "$command"
+    show_data_dir
+
+    echo "Test completed."
+    echo "========================================"
+    echo ""
 }
 
 # Make sure the script is executable

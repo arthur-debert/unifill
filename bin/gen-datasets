@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash
 #
 # gen-datasets - Unicode dataset generator for the unifill plugin
 #
@@ -65,9 +66,9 @@ while [[ $# -gt 0 ]]; do
     FORCE=true
     shift
     ;;
-  --help|-h)
-    cat << EOF
-Usage: $(basename $0) [OPTIONS] [-- EXTRA_ARGS]
+  --help | -h)
+    cat <<EOF
+Usage: $(basename "$0") [OPTIONS] [-- EXTRA_ARGS]
 
 Generate Unicode datasets for the unifill plugin.
 
@@ -98,16 +99,16 @@ BEHAVIOR:
 
 EXAMPLES:
   # Generate only missing files
-  $(basename $0)
+  $(basename "$0")
 
   # Force regeneration of all files
-  $(basename $0) --force
+  $(basename "$0") --force
 
   # Generate only the Lua format
-  $(basename $0) --format lua
+  $(basename "$0") --format lua
 
   # Generate only specific Unicode blocks
-  $(basename $0) -- --unicode-blocks "Basic Latin,Latin-1 Supplement"
+  $(basename "$0") -- --unicode-blocks "Basic Latin,Latin-1 Supplement"
 EOF
     exit 0
     ;;
@@ -120,7 +121,7 @@ EOF
     ;;
   *)
     echo "Unknown option: $1"
-    echo "Run '$(basename $0) --help' for usage information."
+    echo "Run '$(basename "$0") --help' for usage information."
     exit 1
     ;;
   esac
@@ -140,13 +141,13 @@ fi
 needs_generation() {
   local format=$1
   local file_path="$DESTINATION_DIR/${FORMAT_FILES[$format]}"
-  
+
   if [ ! -f "$file_path" ]; then
-    return 0  # File doesn't exist, needs generation
+    return 0 # File doesn't exist, needs generation
   elif [ "$FORCE" = true ]; then
-    return 0  # Force flag is set, regenerate regardless
+    return 0 # Force flag is set, regenerate regardless
   else
-    return 1  # File exists and no force flag, skip generation
+    return 1 # File exists and no force flag, skip generation
   fi
 }
 
@@ -172,12 +173,12 @@ for format in "${FORMATS[@]}"; do
   GENERATED_FILE_NAME="${FORMAT_FILES[$format]}"
   SOURCE_FILE_IN_DATAFETCH_DIR="$GENERATED_FILE_NAME"
   DESTINATION_FILE_PATH="$DESTINATION_DIR/$GENERATED_FILE_NAME"
-  
+
   # Check if we need to generate this format
   if needs_generation "$format"; then
     echo "Generating $format format..."
     FILES_GENERATED=true
-    
+
     # Run the data fetching script using Poetry with the specified format
     if [[ ${#EXTRA_ARGS[@]} -gt 0 ]]; then
       echo "Using additional arguments: ${EXTRA_ARGS[*]}"
@@ -194,7 +195,7 @@ for format in "${FORMATS[@]}"; do
 
     # Move the generated file to the project's data directory
     mv "$SOURCE_FILE_IN_DATAFETCH_DIR" "$DESTINATION_FILE_PATH"
-    
+
     # Copy to XDG data directory for system-wide access
     XDG_FILE_PATH="$XDG_DATA_DIR/$GENERATED_FILE_NAME"
     cp "$DESTINATION_FILE_PATH" "$XDG_FILE_PATH"
@@ -215,7 +216,7 @@ echo "SUMMARY"
 echo "------------------------------------"
 if [ "$FILES_GENERATED" = true ]; then
   echo "✓ Dataset generation completed successfully"
-  
+
   # Count generated and skipped formats
   GENERATED_COUNT=0
   SKIPPED_COUNT=0
@@ -226,7 +227,7 @@ if [ "$FILES_GENERATED" = true ]; then
       SKIPPED_COUNT=$((SKIPPED_COUNT + 1))
     fi
   done
-  
+
   echo "  Generated: $GENERATED_COUNT format(s)"
   echo "  Skipped:   $SKIPPED_COUNT format(s)"
   echo ""
