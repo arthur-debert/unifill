@@ -345,7 +345,9 @@ function DataManager.load_unicode_data()
         local err_msg = "Unknown backend: " .. backend_name
         log.error(err_msg)
         vim.notify(err_msg, vim.log.levels.ERROR)
-        return {}
+        -- CRITICAL: Never return an empty table when data loading fails
+        -- This would allow tests to pass with no actual data, giving false positives
+        error(err_msg)
     end
 -- Check if backend is active
 if not backend:is_active() then

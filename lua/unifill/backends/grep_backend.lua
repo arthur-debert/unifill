@@ -112,12 +112,15 @@ function GrepBackend:load_data()
     log.debug("Starting grep unicode data load")
 
     -- Check if file exists
+    -- Check if file exists
     local file = io.open(self.config.data_path, "r")
     if not file then
         local err_msg = "Unicode data file not found at: " .. self.config.data_path
         log.error(err_msg)
         vim.notify(err_msg, vim.log.levels.ERROR)
-        return {}
+        -- CRITICAL: Never return an empty table when data loading fails
+        -- This would allow tests to pass with no actual data, giving false positives
+        error(err_msg)
     end
     file:close()
 
@@ -125,12 +128,14 @@ function GrepBackend:load_data()
     local load_time_ms = (end_time - start_time) / 1000000
     log.info(string.format("Grep backend initialized in %.2f ms", load_time_ms))
 
-    -- In test environment, return an empty table
+    -- In test environment, raise an error instead of returning an empty table
     if not has_telescope then
-        log.debug("Telescope not available, returning empty table")
-        return {}
+        local err_msg = "Telescope not available"
+        log.debug(err_msg)
+        -- CRITICAL: Never return an empty table when data loading fails
+        -- This would allow tests to pass with no actual data, giving false positives
+        error(err_msg)
     end
-
     -- Return a function that will be used by the finder
     return function(prompt)
         return finders.new_oneshot_job({self.config.grep_command, "--no-heading", "--line-number", prompt,

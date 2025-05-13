@@ -112,7 +112,9 @@ function FastGrepBackend:load_data()
         local err_msg = "Unicode data file not found at: " .. self.config.data_path
         log.error(err_msg)
         vim.notify(err_msg, vim.log.levels.ERROR)
-        return {}
+        -- CRITICAL: Never return an empty table when data loading fails
+        -- This would allow tests to pass with no actual data, giving false positives
+        error(err_msg)
     end
     file:close()
 
@@ -120,10 +122,13 @@ function FastGrepBackend:load_data()
     local load_time_ms = (end_time - start_time) / 1000000
     log.info(string.format("Fast grep backend initialized in %.2f ms", load_time_ms))
 
-    -- In test environment, return an empty table
+    -- In test environment, raise an error instead of returning an empty table
     if not has_telescope then
-        log.debug("Telescope not available, returning empty table")
-        return {}
+        local err_msg = "Telescope not available"
+        log.debug(err_msg)
+        -- CRITICAL: Never return an empty table when data loading fails
+        -- This would allow tests to pass with no actual data, giving false positives
+        error(err_msg)
     end
 
     -- Return a function that creates a finder with minimal processing

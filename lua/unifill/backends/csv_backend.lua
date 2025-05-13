@@ -90,7 +90,9 @@ function CSVBackend:load_data()
         local err_msg = "Unicode CSV data file not found at: " .. data_path
         log.error(err_msg)
         vim.notify(err_msg, vim.log.levels.ERROR)
-        return {}
+        -- CRITICAL: Never return an empty table when data loading fails
+        -- This would allow tests to pass with no actual data, giving false positives
+        error(err_msg)
     end
 
     -- Parse the CSV file
