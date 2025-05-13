@@ -75,10 +75,44 @@ EOF
   echo "Dependencies installed."
 fi
 
+# Create a temporary file to capture test output
+TMP_OUTPUT="$PROJECT_ROOT/tmp/unifill_test_output.txt"
+mkdir -p "$(dirname "$TMP_OUTPUT")"
+
 # Run the tests with the test_init.lua
 echo "Running tests with Telescope integration..."
-nvim --headless -u "$INIT_LUA" -c "PlenaryBustedDirectory spec/ { minimal_init = '$INIT_LUA' }"
+nvim --headless -u "$INIT_LUA" -c "PlenaryBustedDirectory spec/ { minimal_init = '$INIT_LUA' }" 2>&1 | tee "$TMP_OUTPUT"
+
+# Define colors using tput
+GREEN=$(tput setaf 2)
+RED=$(tput setaf 1)
+RESET=$(tput sgr0)
+
+# Extract and tally test results
+echo ""
+echo ""
+echo ""
+echo "==== Suite Summary ===="
+echo ""
+SUCCESS_TOTAL=$(grep "Success:" "$TMP_OUTPUT" | cut -f2 | awk '{sum += $1} END {print sum}')
+FAILED_TOTAL=$(grep "Failed :" "$TMP_OUTPUT" | cut -f2 | awk '{sum += $1} END {print sum}')
+ERRORS_TOTAL=$(grep "Errors :" "$TMP_OUTPUT" | cut -f2 | awk '{sum += $1} END {print sum}')
+
+# Set default values if empty
+SUCCESS_TOTAL=${SUCCESS_TOTAL:-0}
+FAILED_TOTAL=${FAILED_TOTAL:-0}
+ERRORS_TOTAL=${ERRORS_TOTAL:-0}
+
+# Print colorized summary
+echo "${GREEN}Success:${RESET} $SUCCESS_TOTAL"
+echo "${RED}Failed :${RESET} $FAILED_TOTAL"
+echo "${RED}Errors :${RESET} $ERRORS_TOTAL"
 
 # Clean up temporary files if needed
 # Uncomment the following line if you want to clean up after tests
 # rm -rf "$PROJECT_ROOT/tmp/test-nvim"
+
+# Return non-zero exit code if there were failures or errors
+if [ "$FAILED_TOTAL" -gt 0 ] || [ "$ERRORS_TOTAL" -gt 0 ]; then
+  exit 1
+fi

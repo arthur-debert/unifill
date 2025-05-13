@@ -133,12 +133,16 @@ local function entry_maker(entry)
     
     -- Create a displayer with specific column widths
     local displayer = entry_display.create {
-        separator = theme.ui.separator,
+        separator = theme.ui.separator or "   ",
         items = {
-            theme.ui.columns.character,
-            theme.ui.columns.name,
-            theme.ui.columns.details,
+            theme.ui.columns and theme.ui.columns.character or { width = 6 },
+            theme.ui.columns and theme.ui.columns.name or { width = 30 },
+            theme.ui.columns and theme.ui.columns.details or { remaining = true },
         },
+        -- Ensure layout is properly initialized
+        layout = function(self, max_width)
+            return self:layout_horizontal(max_width)
+        end
     }
     
     -- Create display function that returns formatted text with highlights

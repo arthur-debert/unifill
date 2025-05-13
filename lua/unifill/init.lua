@@ -26,6 +26,9 @@ local function unifill(opts)
     log.debug("Unifill picker called with opts:", opts)
     opts = opts or {}
     
+    -- Store custom results_limit if provided
+    local custom_results_limit = opts.results_limit
+    
     -- Get config for results limit
     local config = data.get_config()
     local results_limit = config.results_limit
@@ -33,8 +36,8 @@ local function unifill(opts)
     -- Apply dropdown theme with custom sizing
     opts = themes.get_dropdown(theme.ui.layout)
     
-    -- Set results limit from config or default
-    opts.results_limit = results_limit or constants.DEFAULT_RESULTS_LIMIT
+    -- Set results limit from custom value, config, or default
+    opts.results_limit = custom_results_limit or results_limit or constants.DEFAULT_RESULTS_LIMIT
     
     -- Ensure results limit doesn't exceed maximum
     if opts.results_limit > constants.MAX_RESULTS_LIMIT then

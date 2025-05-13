@@ -4,8 +4,8 @@
 # gen-datasets - Unicode dataset downloader for the unifill plugin
 #
 # This script downloads pre-generated Unicode datasets from GitHub releases
-# for use with the unifill plugin. By default, it only downloads files that 
-# don't already exist in the data directory, making it efficient for 
+# for use with the unifill plugin. By default, it only downloads files that
+# don't already exist in the data directory, making it efficient for
 # incremental updates.
 #
 # When the --force flag is used, it removes all existing files and downloads them again,
@@ -129,6 +129,23 @@ needs_download() {
   fi
 }
 
+# Function to uncompress a file
+uncompress_file() {
+  local compressed_file="$1"
+  local uncompressed_file="${compressed_file%.gz}"
+  
+  echo "Uncompressing file: $compressed_file"
+  
+  # Use gunzip to uncompress the file (preserving the original)
+  if gunzip -c "$compressed_file" > "$uncompressed_file"; then
+    echo "Uncompression successful: $uncompressed_file"
+    return 0
+  else
+    echo "Error: Failed to uncompress $compressed_file"
+    return 1
+  fi
+}
+
 # Function to download a file
 download_file() {
   local file_name="unicode.$DATASET.lua.gz"
@@ -140,7 +157,15 @@ download_file() {
   # Use curl to download the file
   if curl -L --fail --silent --show-error --output "$output_path" "$url"; then
     echo "Download successful: $output_path"
-    return 0
+    
+    # Uncompress the downloaded file
+    if uncompress_file "$output_path"; then
+      echo "Uncompressed file created successfully"
+      return 0
+    else
+      echo "Warning: File was downloaded but could not be uncompressed"
+      return 1
+    fi
   else
     echo "Error: Failed to download $url"
     return 1
@@ -163,12 +188,22 @@ if needs_download; then
   
   # Download the file
   if download_file; then
-    # Copy to XDG data directory for system-wide access
-    XDG_FILE_PATH="$XDG_DATA_DIR/unicode.$DATASET.lua.gz"
-    cp "$DESTINATION_DIR/unicode.$DATASET.lua.gz" "$XDG_FILE_PATH"
+    # Copy both compressed and uncompressed files to XDG data directory for system-wide access
+    XDG_COMPRESSED_PATH="$XDG_DATA_DIR/unicode.$DATASET.lua.gz"
+    XDG_UNCOMPRESSED_PATH="$XDG_DATA_DIR/unicode.$DATASET.lua"
+    
+    # Copy compressed file
+    cp "$DESTINATION_DIR/unicode.$DATASET.lua.gz" "$XDG_COMPRESSED_PATH"
+    
+    # Copy uncompressed file if it exists
+    if [ -f "$DESTINATION_DIR/unicode.$DATASET.lua" ]; then
+      cp "$DESTINATION_DIR/unicode.$DATASET.lua" "$XDG_UNCOMPRESSED_PATH"
+    fi
     
     printf "Downloaded: \e[32m%s\e[0m\n" "$DESTINATION_DIR/unicode.$DATASET.lua.gz"
-    printf "Copied to: \e[32m%s\e[0m\n" "$XDG_FILE_PATH"
+    printf "Uncompressed: \e[32m%s\e[0m\n" "$DESTINATION_DIR/unicode.$DATASET.lua"
+    printf "Copied to: \e[32m%s\e[0m\n" "$XDG_COMPRESSED_PATH"
+    printf "Copied to: \e[32m%s\e[0m\n" "$XDG_UNCOMPRESSED_PATH"
   else
     echo "Error: Failed to download dataset."
     exit 1
@@ -190,6 +225,7 @@ if [ "$FILES_DOWNLOADED" = true ]; then
   echo "  - System directory:  $XDG_DATA_DIR/"
   echo ""
   echo "These files are used by the unifill plugin for Unicode character lookup."
+  echo "The uncompressed .lua files are ready for immediate use."
 else
   echo "✓ No files needed to be downloaded"
   echo "  All requested files already exist in $DESTINATION_DIR/"

@@ -68,57 +68,6 @@ local function get_xdg_cache_home()
     end
 end
 
--- Check if a file exists or if a compressed version exists, and decompress if needed
--- @param base_path String with the base path of the file (without extension)
--- @param extension String with the file extension (e.g., ".lua")
--- @return String with the path to the uncompressed file, or nil if not found
-local function ensure_uncompressed_file(base_path, extension)
-    local file_path = base_path .. extension
-    local path = Path:new(file_path)
-    
-    -- Check if uncompressed file exists
-    if path:exists() then
-        log.debug("Found uncompressed file: " .. file_path)
-        return file_path
-    end
-    
-    -- Check for compressed versions
-    local gz_path = Path:new(file_path .. ".gz")
-    local zst_path = Path:new(file_path .. ".zst")  -- For backward compatibility
-    
-    if gz_path:exists() then
-        log.debug("Found gzip compressed file: " .. gz_path.filename)
-        -- Decompress the file
-        local success = decompress_file(gz_path.filename, file_path, "gzip")
-        if success then
-            log.debug("Successfully decompressed file: " .. gz_path.filename)
-            return file_path
-        else
-            log.error("Failed to decompress file: " .. gz_path.filename)
-            return nil
-        end
-    elseif zst_path:exists() then
-        log.debug("Found zstd compressed file: " .. zst_path.filename)
-        -- Decompress the file
-        local success = decompress_file(zst_path.filename, file_path, "zstd")
-        if success then
-            log.debug("Successfully decompressed file: " .. zst_path.filename)
-            return file_path
-        else
-            log.error("Failed to decompress file: " .. zst_path.filename)
-            return nil
-        end
-    end
-    
-    -- No file found
-    log.debug("No file found at: " .. file_path .. " or compressed versions")
-    return nil
-end
-
--- Decompress a file
--- @param compressed_path String with the path to the compressed file
--- @param output_path String with the path to the output file
--- @param format String with the compression format ("gzip" or "zstd")
 -- @return Boolean indicating if decompression was successful
 local function decompress_file(compressed_path, output_path, format)
     log.debug("Decompressing file: " .. compressed_path .. " to " .. output_path)
@@ -180,23 +129,84 @@ local function decompress_file(compressed_path, output_path, format)
     
     -- For gzip, we need to write the output to a file
     if format == "gzip" then
-        local job = Job:new({
-            command = command,
-            args = args,
-            writer = output_path,
-        })
-        
-        job:sync()
-        
-        if job.code ~= 0 then
-            log.error("Failed to decompress file: " .. compressed_path)
+        -- Use io.popen to capture the output of the command
+        local cmd = command .. " " .. table.concat(args, " ")
+        local handle = io.popen(cmd, "r")
+        if not handle then
+            log.error("Failed to execute command: " .. cmd)
             return false
         end
+        
+        -- Read the output
+        local output = handle:read("*a")
+        handle:close()
+        
+        -- Write the output to the file
+        local file = io.open(output_path, "w")
+        if not file then
+            log.error("Failed to open output file for writing: " .. output_path)
+            return false
+        end
+        
+        file:write(output)
+        file:close()
     end
     
     log.debug("File decompressed successfully")
     return true
 end
+
+-- Check if a file exists or if a compressed version exists, and decompress if needed
+-- @param base_path String with the base path of the file (without extension)
+-- @param extension String with the file extension (e.g., ".lua")
+-- @return String with the path to the uncompressed file, or nil if not found
+local function ensure_uncompressed_file(base_path, extension)
+    local file_path = base_path .. extension
+    local path = Path:new(file_path)
+    
+    -- Check if uncompressed file exists
+    if path:exists() then
+        log.debug("Found uncompressed file: " .. file_path)
+        return file_path
+    end
+    
+    -- Check for compressed versions
+    local gz_path = Path:new(file_path .. ".gz")
+    local zst_path = Path:new(file_path .. ".zst")  -- For backward compatibility
+    
+    if gz_path:exists() then
+        log.debug("Found gzip compressed file: " .. gz_path.filename)
+        -- Decompress the file
+        local success = decompress_file(gz_path.filename, file_path, "gzip")
+        if success then
+            log.debug("Successfully decompressed file: " .. gz_path.filename)
+            return file_path
+        else
+            log.error("Failed to decompress file: " .. gz_path.filename)
+            return nil
+        end
+    elseif zst_path:exists() then
+        log.debug("Found zstd compressed file: " .. zst_path.filename)
+        -- Decompress the file
+        local success = decompress_file(zst_path.filename, file_path, "zstd")
+        if success then
+            log.debug("Successfully decompressed file: " .. zst_path.filename)
+            return file_path
+        else
+            log.error("Failed to decompress file: " .. zst_path.filename)
+            return nil
+        end
+    end
+    
+    -- No file found
+    log.debug("No file found at: " .. file_path .. " or compressed versions")
+    return nil
+end
+
+-- Decompress a file
+-- @param compressed_path String with the path to the compressed file
+-- @param output_path String with the path to the output file
+-- @param format String with the compression format ("gzip" or "zstd")
 
 -- Setup the data manager with configuration
 -- @param user_config Table with user configuration
