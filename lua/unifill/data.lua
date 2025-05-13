@@ -347,23 +347,27 @@ function DataManager.load_unicode_data()
         vim.notify(err_msg, vim.log.levels.ERROR)
         return {}
     end
+-- Check if backend is active
+if not backend:is_active() then
+    local err_msg = "Backend '" .. backend_name .. "' is not active. Please use an active backend."
+    log.error(err_msg)
+    vim.notify(err_msg, vim.log.levels.ERROR)
+    -- CRITICAL: Never return an empty table when data loading fails
+    -- This would allow tests to pass with no actual data, giving false positives
+    error(err_msg)
+end
 
-    -- Check if backend is active
-    if not backend:is_active() then
-        local err_msg = "Backend '" .. backend_name .. "' is not active. Please use an active backend."
-        log.error(err_msg)
-        vim.notify(err_msg, vim.log.levels.ERROR)
-        return {}
-    end
+-- Load data
+local data = backend:load_data()
 
-    -- Load data
-    local data = backend:load_data()
-
-    -- Validate data structure
-    if not validate_data(data, backend:get_entry_structure()) then
-        log.error("Data validation failed")
-        return {}
-    end
+-- Validate data structure
+if not validate_data(data, backend:get_entry_structure()) then
+    local err_msg = "Data validation failed"
+    log.error(err_msg)
+    -- CRITICAL: Never return an empty table when data loading fails
+    -- This would allow tests to pass with no actual data, giving false positives
+    error(err_msg)
+end
 
     local end_time = vim.loop.hrtime()
     local load_time_ms = (end_time - start_time) / 1000000

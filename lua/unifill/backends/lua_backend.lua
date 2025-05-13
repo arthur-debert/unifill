@@ -98,7 +98,9 @@ function LuaBackend:load_data()
         local err_msg = "Unicode data file not found at: " .. data_path .. " or " .. compressed_path.filename
         log.error(err_msg)
         vim.notify(err_msg, vim.log.levels.ERROR)
-        return {}
+        -- CRITICAL: Never return an empty table when data loading fails
+        -- This would allow tests to pass with no actual data, giving false positives
+        error(err_msg)
     end
 
     -- Load the data
@@ -107,7 +109,9 @@ function LuaBackend:load_data()
         local err_msg = "Error loading unicode data: " .. tostring(data)
         log.error(err_msg)
         vim.notify(err_msg, vim.log.levels.ERROR)
-        return {}
+        -- CRITICAL: Never return an empty table when data loading fails
+        -- This would allow tests to pass with no actual data, giving false positives
+        error(err_msg)
     end
     log.debug("Unicode data file loaded successfully")
 
@@ -116,7 +120,9 @@ function LuaBackend:load_data()
         local err_msg = "Invalid unicode data format"
         log.error(err_msg)
         vim.notify(err_msg, vim.log.levels.ERROR)
-        return {}
+        -- CRITICAL: Never return an empty table when data loading fails
+        -- This would allow tests to pass with no actual data, giving false positives
+        error(err_msg)
     end
     log.debug("Unicode data validated, entries found:", #data)
 
