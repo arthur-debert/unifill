@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# tests2.0/run-tests
+
+set -e
+
+# Get the project root directory
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Create necessary directories
+mkdir -p "$PROJECT_ROOT/tmp/logs"
+
+# Use the test init file
+INIT_LUA="$PROJECT_ROOT/tests2.0/test_init.lua"
+
+# Run the tests with the test_init.lua
+echo "Running tests with Telescope integration..."
+nvim --headless -u "$INIT_LUA" -c "PlenaryBustedDirectory tests2.0/ { minimal_init = '$INIT_LUA' }"
