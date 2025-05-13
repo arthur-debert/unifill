@@ -49,13 +49,32 @@ This script will:
 
 ## Test Environment
 
-The tests run in a headless Neovim instance with a minimal configuration defined
-in `test_init.lua`. This configuration:
+The tests run in a headless Neovim instance with a minimal configuration defined in `test_init.lua`.
+This configuration:
 
+- Uses isolated paths for Neovim data, config, cache, and state directories
 - Sets up Lazy.nvim for plugin management
 - Loads Plenary for testing
 - Configures the runtime path to include the current project
 - Sets appropriate environment variables for testing
+
+### Isolated Environment
+
+To prevent interference with your regular Neovim setup, the test suite uses isolated directories:
+
+```text
+/tmp/test-nvim/
+├── data/    # Replaces ~/.local/share/nvim
+├── config/  # Replaces ~/.config/nvim
+├── cache/   # Replaces ~/.cache/nvim
+└── state/   # Replaces ~/.local/state/nvim
+```
+
+This isolation is achieved by:
+
+1. Setting XDG environment variables in the `run-tests` script
+2. Overriding the `stdpath` function in `test_init.lua`
+3. Creating all necessary directories in the project's `tmp` folder
 
 ## Adding New Tests
 

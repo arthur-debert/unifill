@@ -6,16 +6,31 @@ set -e
 # Get the project root directory
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
+# Set up isolated test environment paths
+TEST_DATA_PATH="$PROJECT_ROOT/tmp/test-nvim/data"
+TEST_CONFIG_PATH="$PROJECT_ROOT/tmp/test-nvim/config"
+TEST_CACHE_PATH="$PROJECT_ROOT/tmp/test-nvim/cache"
+TEST_STATE_PATH="$PROJECT_ROOT/tmp/test-nvim/state"
+
 # Create necessary directories
-mkdir -p "$PROJECT_ROOT/tmp/logs"
+mkdir -p "$TEST_DATA_PATH"
+mkdir -p "$TEST_CONFIG_PATH"
+mkdir -p "$TEST_CACHE_PATH"
+mkdir -p "$TEST_STATE_PATH"
+mkdir -p "$TEST_CACHE_PATH/logs"
 
 # Use the test init file
 INIT_LUA="$PROJECT_ROOT/tests2.0/test_init.lua"
 
+# Set XDG environment variables to use isolated paths
+export XDG_DATA_HOME="$TEST_DATA_PATH"
+export XDG_CONFIG_HOME="$TEST_CONFIG_PATH"
+export XDG_CACHE_HOME="$TEST_CACHE_PATH"
+export XDG_STATE_HOME="$TEST_STATE_PATH"
+
 # Ensure dependencies are installed
-NVIM_DATA_DIR="$(nvim --headless -c 'echo stdpath("data")' -c 'qa!' 2>&1 | tail -n 1)"
-PLENARY_DIR="$NVIM_DATA_DIR/lazy/plenary.nvim"
-TELESCOPE_DIR="$NVIM_DATA_DIR/lazy/telescope.nvim"
+PLENARY_DIR="$TEST_DATA_PATH/lazy/plenary.nvim"
+TELESCOPE_DIR="$TEST_DATA_PATH/lazy/telescope.nvim"
 
 # Install dependencies if they don't exist
 if [ ! -d "$PLENARY_DIR" ] || [ ! -d "$TELESCOPE_DIR" ]; then
@@ -63,3 +78,7 @@ fi
 # Run the tests with the test_init.lua
 echo "Running tests with Telescope integration..."
 nvim --headless -u "$INIT_LUA" -c "PlenaryBustedDirectory tests2.0/ { minimal_init = '$INIT_LUA' }"
+
+# Clean up temporary files if needed
+# Uncomment the following line if you want to clean up after tests
+# rm -rf "$PROJECT_ROOT/tmp/test-nvim"

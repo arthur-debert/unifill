@@ -1,4 +1,34 @@
 -- tests2.0/test_init.lua
+
+-- Set up isolated test environment paths
+local project_root = vim.fn.getcwd()
+local test_data_path = project_root .. "/tmp/test-nvim/data"
+local test_config_path = project_root .. "/tmp/test-nvim/config"
+local test_cache_path = project_root .. "/tmp/test-nvim/cache"
+local test_state_path = project_root .. "/tmp/test-nvim/state"
+
+-- Create directories if they don't exist
+vim.fn.mkdir(test_data_path, "p")
+vim.fn.mkdir(test_config_path, "p")
+vim.fn.mkdir(test_cache_path, "p")
+vim.fn.mkdir(test_state_path, "p")
+
+-- Override stdpath function to use our isolated paths
+local original_stdpath = vim.fn.stdpath
+vim.fn.stdpath = function(what)
+  if what == "data" then
+    return test_data_path
+  elseif what == "config" then
+    return test_config_path
+  elseif what == "cache" then
+    return test_cache_path
+  elseif what == "state" then
+    return test_state_path
+  else
+    return original_stdpath(what)
+  end
+end
+
 -- Set environment variables for testing
 vim.env.PLENARY_TEST = "1"
 vim.env.LOG_LEVEL = "error"  -- Minimize logging during tests
@@ -9,15 +39,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Create logs directory
-local log_dir = vim.fn.stdpath('cache') .. '/logs'
+local log_dir = test_cache_path .. '/logs'
 vim.fn.mkdir(log_dir, 'p')
 
 -- Add the project directory to runtimepath
-local project_root = vim.fn.getcwd()
 vim.opt.runtimepath:append(project_root)
 
 -- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = test_data_path .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -79,12 +108,12 @@ require("lazy").setup({
 })
 
 -- Manually load dependencies
-local plenary_path = vim.fn.stdpath("data") .. "/lazy/plenary.nvim"
+local plenary_path = test_data_path .. "/lazy/plenary.nvim"
 if vim.fn.isdirectory(plenary_path) == 1 then
   vim.opt.runtimepath:append(plenary_path)
 end
 
-local telescope_path = vim.fn.stdpath("data") .. "/lazy/telescope.nvim"
+local telescope_path = test_data_path .. "/lazy/telescope.nvim"
 if vim.fn.isdirectory(telescope_path) == 1 then
   vim.opt.runtimepath:append(telescope_path)
 end
