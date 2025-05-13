@@ -1,0 +1,44 @@
+# Unifill Test Categories
+
+## Pure Logic Tests (No Telescope UI Required)
+
+1. **unifill_spec.lua**
+   - Basic module loading tests
+   - Logger functionality tests
+   - Unicode data loading tests
+   - Entry formatting tests
+   - Search functionality tests
+   - Theme functionality tests
+
+2. **unifill_backends_spec.lua**
+   - Backend interface tests
+   - Backend implementation tests
+   - Data loading tests
+
+3. **unifill_fast_grep_backend_spec.lua**
+   - Fast grep backend specific tests
+   - Performance tests
+
+4. **unifill_grep_backend_spec.lua**
+   - Grep backend specific tests
+   - Command execution tests
+
+5. **unifill_results_limit_spec.lua**
+   - Results limit configuration tests
+   - Results truncation tests
+
+6. **unifill_xdg_paths_spec.lua**
+   - XDG path resolution tests
+   - Configuration loading tests
+
+## Telescope UI Tests (Require Telescope Integration)
+
+1. **unifill_spec.lua**
+   - Telescope extension registration tests
+   - Picker creation tests
+   - Entry display tests
+
+2. **unifill_results_limit_spec.lua**
+   - Results limit in telescope picker tests
+
+Note: In the old test suite, Telescope was mocked because it couldn't be properly loaded. In our new test suite, we can use the actual Telescope implementation.
