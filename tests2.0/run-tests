@@ -12,6 +12,54 @@ mkdir -p "$PROJECT_ROOT/tmp/logs"
 # Use the test init file
 INIT_LUA="$PROJECT_ROOT/tests2.0/test_init.lua"
 
+# Ensure dependencies are installed
+NVIM_DATA_DIR="$(nvim --headless -c 'echo stdpath("data")' -c 'qa!' 2>&1 | tail -n 1)"
+PLENARY_DIR="$NVIM_DATA_DIR/lazy/plenary.nvim"
+TELESCOPE_DIR="$NVIM_DATA_DIR/lazy/telescope.nvim"
+
+# Install dependencies if they don't exist
+if [ ! -d "$PLENARY_DIR" ] || [ ! -d "$TELESCOPE_DIR" ]; then
+  echo "Installing dependencies..."
+  # Create a temporary init.lua file to install dependencies
+  TMP_INIT="$PROJECT_ROOT/tmp/temp_init.lua"
+  mkdir -p "$(dirname "$TMP_INIT")"
+  
+  cat > "$TMP_INIT" << 'EOF'
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+end
+vim.opt.runtimepath:prepend(lazypath)
+
+-- Install plenary and telescope
+require("lazy").setup({
+  {
+    "nvim-lua/plenary.nvim",
+    priority = 1000,
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    priority = 900,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+})
+EOF
+
+  # Run nvim with the temporary init file to install dependencies
+  nvim --headless -u "$TMP_INIT" -c "Lazy! sync" -c "sleep 3000m" -c "qa!"
+  echo "Dependencies installed."
+fi
+
 # Run the tests with the test_init.lua
 echo "Running tests with Telescope integration..."
 nvim --headless -u "$INIT_LUA" -c "PlenaryBustedDirectory tests2.0/ { minimal_init = '$INIT_LUA' }"
