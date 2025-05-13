@@ -37,8 +37,9 @@ describe("unifill fast grep backend", function()
         assert(structure.aliases == "table", "aliases should be a table")
     end)
     
-    -- Test that the backend can parse grep output lines into entry objects
+    -- Test that the backend can make entries from grep output lines
     -- This is a key function for the fast_grep backend as it's optimized for minimal processing
+    -- This test doesn't depend on the backend being active, as it's testing a pure function
     it("can make entries from grep output lines", function()
         -- Use the make_entry function from the backend
         local make_entry = FastGrepBackend.make_entry
@@ -89,7 +90,42 @@ describe("unifill fast grep backend", function()
         local backend_name = require("unifill.data").get_backend_name()
         assert(backend_name == "fast_grep", "backend_name should be fast_grep")
         
+        -- Verify that attempting to load data with an inactive backend returns an empty table
+        local data = require("unifill.data").load_unicode_data()
+        assert(type(data) == "table", "data should be a table even when backend is inactive")
+        assert(#data == 0, "data should be empty when backend is inactive")
+        
         -- Restore original config
         unifill.setup({ backend = original_backend })
+    end)
+    
+    -- Test that the backend properly reports its inactive status
+    it("correctly reports inactive status", function()
+        local backend = FastGrepBackend.new()
+        assert(backend:is_active() == false, "fast_grep backend should be inactive by default")
+    end)
+    
+    -- Mark tests that would require an active backend as pending
+    pending("can load data when active", function()
+        -- This test is pending because the fast_grep backend is intentionally inactive
+        -- If the backend were to be made active, this test would verify data loading
+        local backend = FastGrepBackend.new()
+        -- Temporarily make the backend active
+        backend.active = true
+        
+        -- Check if the backend is now active
+        assert(backend:is_active() == true, "backend should be active")
+        
+        -- Try to load data
+        local data = backend:load_data()
+        assert(type(data) == "function", "data should be a function for the fast_grep backend")
+        
+        -- Reset the backend to inactive
+        backend.active = false
+    end)
+    
+    pending("can search data when active", function()
+        -- This test is pending because the fast_grep backend is intentionally inactive
+        -- If the backend were to be made active, this test would verify search functionality
     end)
 end)
