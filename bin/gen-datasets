@@ -117,12 +117,12 @@ fi
 
 # Function to check if a file needs to be downloaded
 needs_download() {
-  local file_name="unicode.$DATASET.lua.gz"
-  local file_path="$DESTINATION_DIR/$file_name"
+  local file_name="unicode.${DATASET}.lua.gz"
+  local file_path="${DESTINATION_DIR}/${file_name}"
 
-  if [ ! -f "$file_path" ]; then
+  if [[ ! -f "${file_path}" ]]; then
     return 0 # File doesn't exist, needs download
-  elif [ "$FORCE" = true ]; then
+  elif [[ "${FORCE}" = true ]]; then
     return 0 # Force flag is set, re-download regardless
   else
     return 1 # File exists and no force flag, skip download
@@ -130,38 +130,63 @@ needs_download() {
 }
 
 # Function to uncompress a file
+# Function to uncompress a file
 uncompress_file() {
-  local compressed_file="$1"
+  local compressed_file="${1}"
   local uncompressed_file="${compressed_file%.gz}"
   
-  echo "Uncompressing file: $compressed_file"
+  echo "Uncompressing file: ${compressed_file}"
   
   # Use gunzip to uncompress the file (preserving the original)
-  if gunzip -c "$compressed_file" > "$uncompressed_file"; then
-    echo "Uncompression successful: $uncompressed_file"
+  if gunzip -c "${compressed_file}" > "${uncompressed_file}"; then
+    echo "Uncompression successful: ${uncompressed_file}"
     return 0
   else
-    echo "Error: Failed to uncompress $compressed_file"
+    echo "Error: Failed to uncompress ${compressed_file}"
     return 1
   fi
 }
 
+# Function to validate Lua syntax
+validate_lua_file() {
+  local file_path="${1}"
+  
+  echo "Validating Lua syntax: ${file_path}"
+  
+  # Use the validate_lua script to check syntax
+  if "${SCRIPT_DIR}/validate_lua" "${file_path}"; then
+    echo "Validation successful: ${file_path}"
+    return 0
+  else
+    echo "Error: Lua syntax validation failed for ${file_path}"
+    return 1
+  fi
+}
 # Function to download a file
 download_file() {
-  local file_name="unicode.$DATASET.lua.gz"
-  local url="$GITHUB_RELEASE_URL/$file_name"
-  local output_path="$DESTINATION_DIR/$file_name"
+  local file_name="unicode.${DATASET}.lua.gz"
+  local url="${GITHUB_RELEASE_URL}/${file_name}"
+  local output_path="${DESTINATION_DIR}/${file_name}"
   
-  echo "Downloading dataset for $DATASET..."
+  echo "Downloading dataset for ${DATASET}..."
   
   # Use curl to download the file
-  if curl -L --fail --silent --show-error --output "$output_path" "$url"; then
-    echo "Download successful: $output_path"
+  if curl -L --fail --silent --show-error --output "${output_path}" "${url}"; then
+    echo "Download successful: ${output_path}"
     
     # Uncompress the downloaded file
-    if uncompress_file "$output_path"; then
+    if uncompress_file "${output_path}"; then
       echo "Uncompressed file created successfully"
-      return 0
+      
+      # Validate the uncompressed Lua file
+      local uncompressed_file="${output_path%.gz}"
+      if validate_lua_file "${uncompressed_file}"; then
+        echo "Lua syntax validation passed"
+        return 0
+      else
+        echo "Warning: File was downloaded and uncompressed but failed Lua syntax validation"
+        return 1
+      fi
     else
       echo "Warning: File was downloaded but could not be uncompressed"
       return 1
@@ -189,15 +214,15 @@ if needs_download; then
   # Download the file
   if download_file; then
     # Copy both compressed and uncompressed files to XDG data directory for system-wide access
-    XDG_COMPRESSED_PATH="$XDG_DATA_DIR/unicode.$DATASET.lua.gz"
-    XDG_UNCOMPRESSED_PATH="$XDG_DATA_DIR/unicode.$DATASET.lua"
+    XDG_COMPRESSED_PATH="${XDG_DATA_DIR}/unicode.${DATASET}.lua.gz"
+    XDG_UNCOMPRESSED_PATH="${XDG_DATA_DIR}/unicode.${DATASET}.lua"
     
     # Copy compressed file
-    cp "$DESTINATION_DIR/unicode.$DATASET.lua.gz" "$XDG_COMPRESSED_PATH"
+    cp "${DESTINATION_DIR}/unicode.${DATASET}.lua.gz" "${XDG_COMPRESSED_PATH}"
     
     # Copy uncompressed file if it exists
-    if [ -f "$DESTINATION_DIR/unicode.$DATASET.lua" ]; then
-      cp "$DESTINATION_DIR/unicode.$DATASET.lua" "$XDG_UNCOMPRESSED_PATH"
+    if [[ -f "${DESTINATION_DIR}/unicode.${DATASET}.lua" ]]; then
+      cp "${DESTINATION_DIR}/unicode.${DATASET}.lua" "${XDG_UNCOMPRESSED_PATH}"
     fi
     
     printf "Downloaded: \e[32m%s\e[0m\n" "$DESTINATION_DIR/unicode.$DATASET.lua.gz"
